@@ -1,0 +1,84 @@
+{% extends 'home/layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Hero Start -->
+  <section class="bg-half-175 d-table w-100" id="home" style="padding-top:120px;">
+    <div class="container pt-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7">
+          <div class="title-heading mt-4">
+            <h1 class="heading mb-3">Kolkata: Empowering Careers in the City of Joy</h1>
+            <p class="para-desc text-muted">Kolkata, often called the "City of Joy," is renowned for its rich cultural heritage, vibrant literary scene, and unique cuisine. It's also known for being a hub of Bengali cinema (Tollywood), a major center for Indian football, and the location of the iconic Howrah Bridge.</p>
+            <div class="mt-4 pt-2">
+              <a href="{% url 'franchise' %}" class="btn btn-primary m-1">Partner with Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <img src="{% static 'home/assets/images/enquiries/bangalore4.jpg' %}" alt="" />
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+  <!-- Hero End -->
+
+  <!-- Partners start -->
+
+  <!-- Partners End -->
+
+  <section class="section" style="background-color: #F8F5F4;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+          <div class="row align-items-center">
+            <div class="col-lg-12 col-12">
+              <div class="row">
+                <div class="card rounded shadow border-0 ms-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".5s" style=" background-color: #00A86B;">
+                  <div class="card-body p-4">
+                    {% include 'home/pages/enquiries/form.html' %}
+                  </div>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+          <div class="ms-lg-5">
+            <div class="section-title mb-4 pb-2">
+              <p>Kolkata, a city rich in cultural heritage, is home to a thriving education sector. With over __ number of schools numbering approximately __ students, the city offers a unique blend of traditional and modern career opportunities.</p>
+
+              <p>Career Wader's expert Career Counsellors provide personalized guidance, empowering individuals to make informed decisions about their future. By partnering with Career Wader, Career Counsellors can make a meaningful impact and build a fulfilling career.</p>
+
+              <p>The demand for quality career counselling services in Kolkata is high, and existing services are often insufficient. Against this backdrop, Career Wader offers expert career counselling services to help students and professionals make informed decisions about their future. Career Wader's personalized approach empowers individuals to achieve their career goals.</p>
+
+              <p>By partnering with Career Wader, Career Counsellors can seize this opportunity and build a rewarding career. This partnership offers a fulfilling experience for Career Wader Career Counsellors, enabling them to make a meaningful impact.</p>
+
+              <h5>If you're passionate about shaping young minds and helping individuals achieve their career goals, Career Wader invites you to explore partnership opportunities in Kolkatta</h5>
+
+              <a href="{% url 'franchise' %}" class="btn btn-outline-primary rounded active"><i class="uil uil-store"></i> Join Our Network</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <!-- About Start -->
+  </section>
+  <!-- end section -->
+  {% include 'home/pages/enquiries/common.html' %}
+{% endblock %}

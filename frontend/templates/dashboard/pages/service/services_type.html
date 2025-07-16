@@ -1,0 +1,224 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+
+{% block content %}
+<div class="card shadow m-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Services</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="mb-4" style="width: 100%; display: flex; flex-direction: row;justify-content: space-between;">
+                <div></div>
+                <div>
+                    <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#serviceModel">Add
+                        New</button>
+                </div>
+
+            </div>
+            <table id="serviceTypeTable" class="display table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for service_type in service_types %}
+                    <tr>
+                        <td>{{ service_type.name }}</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger delete-service-btn"
+                                data-id="{{ service_type.id }}"
+                                data-name="{{ service_type.name }}">
+                                <i class='bx bx-trash'></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+                <div>
+                    Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+                </div>
+                <nav>
+                    <ul class="pagination">
+                        {% if page > 1 %}
+                        <li class="page-item">
+                            <a class="page-link"
+                                href="{{ base_url }}&page={{ page|add:'-1' }}&perPage={{ per_page }}">Previous</a>
+                        </li>
+                        {% endif %}
+
+                        {% for i in page_range %}
+                        <li class="page-item {% if page == i %}active{% endif %}">
+                            <a class="page-link" href="{{ base_url }}&page={{ i }}&perPage={{ per_page }}">{{ i }}</a>
+                        </li>
+                        {% endfor %}
+
+                        {% if page < total_pages %} <li class="page-item">
+                            <a class="page-link"
+                                href="{{ base_url }}&page={{ page|add:'1' }}&perPage={{ per_page }}">Next</a>
+                            </li>
+                            {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteServiceModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Delete</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <strong id="deleteServiceName"></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% comment %} Read Modal {% endcomment %}
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Enquiry Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name: </strong><span id="name"></span></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Service Type</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="serviceTypeForm">
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label for="name">Service Type</label>
+                            <input type="text" name="name" id="name" class="form-control">
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+    let serviceToDeleteId = null;
+
+$(document).ready(function () {
+    const getCSRFToken = () => document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    // Handle create
+    $('#serviceTypeForm').on('submit', function (e) {
+        e.preventDefault();
+        const name = $("input[name='name']").val();
+        fetch("/create-service-type/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": getCSRFToken()
+            },
+            body: JSON.stringify({ name }),
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("Service Type added!");
+            location.reload();
+        })
+        .catch(err => console.error(err));
+    });
+
+    // Open delete confirmation modal
+    $('.delete-service-btn').on('click', function () {
+        const id = $(this).data('id');
+        const name = $(this).data('name');
+        $('#deleteServiceName').text(name);
+        serviceToDeleteId = id;
+        $('#deleteServiceModal').modal('show');
+    });
+
+    // Confirm deletion
+    $('#confirmDeleteBtn').on('click', function () {
+        fetch(`/delete-service-type/${serviceToDeleteId}/`, {
+            method: "PATCH",
+            headers: {
+                "X-CSRFToken": getCSRFToken()
+            }
+        })
+        .then(res => {
+            console.log(res)
+            if (!res.ok) throw new Error("Delete failed");
+            return res.json();
+        })
+        .then(data => {
+            alert("Deleted successfully!");
+            location.reload();
+        })
+        .catch(err => console.error(err));
+    });
+});
+    $(document).ready(function () {
+        const params = new URLSearchParams(window.location.search);
+        function getCSRFToken() {
+            return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        }
+
+        $('#serviceTypeForm').on('submit', function (e) {
+            e.preventDefault();
+            let name = $("input[name]").val();
+            fetch("/create-service-type/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCSRFToken()
+                },
+                body: JSON.stringify({ name: name }),
+            }).then((response) => {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.json();
+            }).then((data) => {
+                console.log("Marked as read", data);
+            }).catch((error) => {
+                    console.error("Error:", error);
+                });
+
+        });
+    });
+</script>
+{% endblock %}

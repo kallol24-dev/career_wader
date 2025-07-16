@@ -1,0 +1,1117 @@
+{% extends 'home/layouts/indexbase.html' %}
+{% load static %}
+{% block content %}
+<style>
+    #tags-input-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid #ccc;
+        padding: 6px;
+        border-radius: 4px;
+        min-height: 40px;
+        cursor: text;
+    }
+
+    .tags-container {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 10px;
+        overflow-x: scroll;
+    }
+
+    .tag {
+        background-color: #192335;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .tag .remove-tag {
+        margin-left: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    ::-webkit-scrollbar {
+        width: 1px;
+        height: 8px;
+    }
+</style>
+<section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h4 class="title mb-0">Assesment</h4>
+                </div>
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item">
+                        <a href="#">Page</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">Assesment</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!-- end container -->
+</section>
+<!-- end section -->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!-- Shape End -->
+
+<!-- Login Form Start -->
+<section class="section">
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-12 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+                <div class="card custom-form rounded border-0 p-4">
+                    <div class="app-brand justify-content-center mb-4">
+                        <a href="{% url 'franchise' %}" class="app-brand-link gap-2">
+                            <span class="app-brand-logo demo">
+                                <img src="{% static 'home/assets/images/logo-dark.png' %}" alt="Career Wader" />
+                            </span>
+                        </a>
+                    </div>
+                    <div class="row d-flex" style="gap:10px;">
+                        <form class="assesment-form" id="assesment-form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Name<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="user" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="name" required
+                                                id="name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Age<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="hash" class="fea icon-sm icons"></i>
+                                            <input type="number" class="form-control ps-5" name="age" required
+                                                id="age" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Email<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                            <input type="email" class="form-control ps-5" name="email" required
+                                                id="email" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone number<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                                            <input type="number" class="form-control ps-5" name="phone_number"
+                                                required="" id="phone_number" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Family Details:</h6>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Father's Name<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="fathers_name" 
+                                                id="fathers_name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Mother's Name<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="mothers_name" 
+                                                id="mothers_name" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Siblings<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="number" class="form-control ps-5" name="siblings_no" 
+                                                id="siblings_no" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Family Occupation<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="family_occupation"
+                                                 id="family_occupation" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Academic Background</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Current/Highest Qualification<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5"
+                                                name="highest_qualification"
+                                                id="highest_qualification" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Relevant Subjects</label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="relevant_subject"
+                                                id="relevant_subject" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Grades/Performance Levels</label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="type" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="performance_levels"
+                                                id="performance_levels" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Academic Achievements</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Scholarships</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="scolarships">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="scolarships" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Awards/Recognition</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="award_recognition">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="award_recognition" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Strengths</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="strengths">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="strengths" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Weaknesses</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="weaknesses">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="weaknesses" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Extracurricular Activities</h6>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Hobbies</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="hobbies">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="hobbies" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Sports</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="sports">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="sports" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Voluntary Experiences</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="voluntary_experiences">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="voluntary_experiences" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Other Relevant Activities</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="other_relevant_experiences">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="other_relevant_experiences" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h6>Career Related Interests<span
+                                                class="text-danger">*</span></h6>
+                                    <div class="mb-3 custom-checkbox-group" data-name="career_related_interests">
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Artistic" id="checkDefault">
+                                            <label class="form-check-label" for="checkDefault">
+                                                Artistic
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Scientific" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Scientific
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Social" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Social
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Entrepreneurial" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Entrepreneurial
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Technical" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Technical
+                                            </label>
+                                        </div>
+                                        <div class="tags-input-wrapper" data-name="career_related_interests">
+                                            <div class="tags-container"></div>
+                                            <input type="text" class="tag-input form-control"
+                                                placeholder="press enter to add new values" />
+                                            <input type="hidden" name="career_related_interests" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h6>Career Values<span
+                                                class="text-danger">*</span></h6>
+                                    <div class="mb-3 custom-checkbox-group" data-name="career_values">
+                                        <div class="form-check ">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Making a difference" id="checkDefault">
+                                            <label class="form-check-label" for="checkDefault">
+                                                Making a difference
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Achieving success" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Achieving success
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Having a work-life balance" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Having a work-life balance
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Pursuing creativity" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Pursuing creativity
+                                            </label>
+                                        </div>
+                                        <div class="tags-input-wrapper" data-name="career_values">
+                                            <div class="tags-container"></div>
+                                            <input type="text" class="tag-input form-control"
+                                                placeholder="press enter to add new values" />
+                                            <input type="hidden" name="career_values" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Skills and Abilities</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Technical Skills</label>
+                                        <small class="text-sm text-muted">List relevant technical skills, e.g.,
+                                            programming languages, software proficiency</small>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="technical_skills">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="technical_skills" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Soft Skills</label>
+                                        <small class="text-sm text-muted">List relevant soft skills, e.g., communication,
+                                            teamwork, problem-solving</small>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="soft_skills">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="soft_skills" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Other Relevant Skills</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="other_relevant_skills">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="other_relevant_skills" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Career-Related Experience</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Part-time Jobs/Internships</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="part_time_internships">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="part_time_internships" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Career-Related Projects</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="career_related_projects">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="career_related_projects" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Relevant Work Experience:</label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="career_revelant_work_experiences">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="career_revelant_work_experiences" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Career Preferences and Decision-Making</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">What are your future career options? (List up to
+                                            3)<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="career_options">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="career_options" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3 custom-checkbox-group" data-name="career_decision">
+                                        <label class="form-label">How do you wish to make decisions about your
+                                            career?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Independently" id="checkDefault">
+                                            <label class="form-check-label" for="checkDefault">
+                                                Independently
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="With parental guidance" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                With parental guidance
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="With peer guidance" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                With peer guidance
+                                            </label>
+                                        </div>
+                                        <div class="tags-input-wrapper" data-name="career_decision">
+                                            <div class="tags-container"></div>
+                                            <input type="text" class="tag-input form-control"
+                                                placeholder="press enter to add new values" />
+                                            <input type="hidden" name="career_decision" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3 custom-checkbox-group" data-name="parental_influence">
+                                        <label class="form-label">How much parental influence or pressure do you feel in
+                                            your career decisions?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="" id="checkDefault">
+                                            <label class="form-check-label" for="checkDefault">
+                                                High
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Moderate" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Moderate
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Low" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Low
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="None" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                None
+                                            </label>
+                                        </div>
+                                        <div class="tags-input-wrapper" data-name="parental_influence">
+                                            <div class="tags-container"></div>
+                                            <input type="hidden" name="parental_influence" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Goals and Expectations</h6>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Short-term Career Goals (next 1-2 years)<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="short_term_career_goals">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="short_term_career_goals" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Long-term Career Goals (5+ years)<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="long_term_career_goals">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="long_term_career_goals" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="mb-3">
+                                        <label class="form-label">Career Aspirations<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="career_aspirations">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="career_aspirations" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Social Environment and Career Values</h6>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3 custom-checkbox-group" data-name="social_environment">
+                                        <label class="form-label">What is your social environment like? (Check all that apply)<span class="text-danger">*</span></label>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Supportive family" id="checkDefault">
+                                            <label class="form-check-label" for="checkDefault">
+                                                Supportive family
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Supportive friends" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Supportive friends
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input custom-checkbox" type="checkbox" value="Competitive peers" id="checkChecked"
+                                                checked>
+                                            <label class="form-check-label" for="checkChecked">
+                                                Competitive peers
+                                            </label>
+                                        </div>
+                                        <div class="tags-input-wrapper" data-name="social_environment">
+                                            <div class="tags-container"></div>
+                                            <input type="text" class="tag-input form-control"
+                                                placeholder="press enter to add new values" />
+                                            <input type="hidden" name="social_environment" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">How do you think your social environment and career values will impact your career choices?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <textarea name="impact_of_social_environment" id="impact_of_social_environment" placeholder="Please elaborate" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Counselor's Assessment</h6>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">What are your expectations from this career counselling process?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="your_expectation">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="your_expectation" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">How do you think these assessments will help you in your career journey?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="benifit_in_career_journey">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="benifit_in_career_journey" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Do you have any concerns or questions about the counselling process or assessments?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="questions_about_counselling_process">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="questions_about_counselling_process" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Having chosen a career path, do you intend pursuing the necessary education and skill development in India or abroad? Please specify your reasons and places of choice.<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="intend_to_pursue_abroad">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="intend_to_pursue_abroad" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Have you previously explored any career options? If so, what did you experience or learn during that process?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="previously_explored_any_career_options">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="previously_explored_any_career_options" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">In addition to your interests and personality traits as divulged, how would you describe your preferred learning style? For example, do you learn best through visual-aids, reading/writing or listening, or hands-on-experience?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="preferred_learning_style">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="preferred_learning_style" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Do you believe that a scientific and objective approach to career counseling can support you in making more informed and effective career plans?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <div class="tags-input-wrapper" data-name="any_believe_in_sc_and_ob_approach">
+                                                <div class="tags-container"></div>
+                                                <input type="text" class="tag-input form-control"
+                                                    placeholder="press enter to add new values" />
+                                                <input type="hidden" name="any_believe_in_sc_and_ob_approach" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <h6>Additional Information</h6>
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Is there any additional information you'd like to share that may be relevant to your career counselling?<span
+                                                class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <textarea name="additional_info" id="additional_info" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <img src="" alt="" id="cap_img" />
+                                        <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                                        <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary" type="submit">Submit Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- end custom-form -->
+            </div>
+            <!-- end col -->
+
+            {% comment %} <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                <div class="title-heading ms-lg-4">
+                    <h4 class="mb-4">Complete you payment by filling the details 🚀</h4>
+
+                    <p class="text-muted">Join our Career Counseling Platform – the AI based solution transforming
+                        career choices for students across India.</p>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Personalized Career Guidance</h6>
+                            <p class="text-muted mb-0">Tailored advice for your unique career path</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Comprehensive Resources</h6>
+                            <p class="text-muted mb-0">Access to educational materials and career tools</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Expert Support</h6>
+                            <p class="text-muted mb-0">Guidance from industry professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </div> {% endcomment %}
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- end section -->
+
+{% if messages %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    {% for message in messages %}
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops!',
+        text: '{{ message }}',
+    });
+    {% endfor %}
+</script>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<script>
+    // Cache DOM elements and reuse them
+    const serviceCards = document.querySelectorAll('.service-card');
+    const csrfToken = document.querySelector('input[name=csrfmiddlewaretoken]')?.value;
+
+    function setSelectedService(val) {
+        // Set cookie with secure flag if HTTPS
+        const secureFlag = location.protocol === 'https:' ? '; secure' : '';
+        document.cookie = `setToCheckout=${val}; path=/; max-age=3600${secureFlag}`;
+
+        // Update card styles
+        serviceCards.forEach(card => {
+            card.classList.toggle('border-primary', card.id === `card_${val}`);
+            card.classList.toggle('border-light', card.id !== `card_${val}`);
+        });
+    }
+
+    jQuery(document).ready(function ($) {
+        let key = null
+        // Cookie helper function
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // Initialize selected service
+        const currentService = getCookie('setToCheckout');
+        if (currentService) {
+            $(`input[name=selected_service][value="${currentService}"]`).prop('checked', true);
+        }
+
+        // Tag input functionality
+        function initializeTagInputs() {
+            $('.tags-input-wrapper').each(function () {
+                const $wrapper = $(this);
+                const dataName = $wrapper.data('name');
+                const $hiddenInput = $wrapper.find(`input[name="${dataName}"]`);
+                const $input = $wrapper.find('.tag-input');
+                const $container = $wrapper.find('.tags-container');
+                const $group = $wrapper.closest('.custom-checkbox-group');
+                let tags = [];
+
+                const renderTags = () => {
+                    $container.empty();
+                    tags.forEach(tag => {
+                        $container.append(
+                            `<div class="tag">${tag}<span class="remove-tag" data-tag="${tag}">&times;</span></div>`
+                        );
+                    });
+                    updateHiddenInput();
+                };
+
+                const addTag = (tag) => {
+                    tag = tag.trim();
+                    if (tag && !tags.includes(tag)) {
+                        tags.push(tag);
+                        renderTags();
+                        $input.val('');
+                    }
+                };
+
+                const updateHiddenInput = () => {
+                    const checkboxValues = $group.find('.custom-checkbox:checked').map(function () {
+                        return this.value.trim();
+                    }).get();
+                    const combined = [...new Set([...checkboxValues, ...tags])];
+                    $hiddenInput.val(combined.join('|'));
+                };
+
+                // Event handlers
+                $input.on('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === '|') {
+                        e.preventDefault();
+                        addTag($input.val().replace(/\|/g, ''));
+                    }
+                });
+
+                $container.on('click', '.remove-tag', (e) => {
+                    const tag = $(e.currentTarget).data('tag');
+                    tags = tags.filter(t => t !== tag.toString());
+                    renderTags();
+                });
+
+                $group.find('.custom-checkbox').on('change', updateHiddenInput);
+                $wrapper.on('click', () => $input.focus());
+
+                updateHiddenInput();
+            });
+        }
+
+        // Error handling
+        function markFieldError(input, messages) {
+            input.classList.add("is-invalid");
+            
+            let errorEl = input.nextElementSibling;
+            if (!errorEl || !errorEl.classList.contains("invalid-feedback")) {
+                errorEl = document.createElement("div");
+                errorEl.className = "invalid-feedback";
+                input.insertAdjacentElement("afterend", errorEl);
+            }
+            errorEl.textContent = Array.isArray(messages) ? messages.join(", ") : messages;
+        }
+
+        
+    
+        function getCaptcha() {
+            axios
+            .get(`https://careerwader.in/api/captcha/refresh/`)
+            .then(function (response) {
+                if (response.status == 200) {
+                $('#cap_img').attr('src', response.data.image_url)
+                key = response.data.key // ✅ set global key
+                }
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+        }
+    
+        function verify() {
+            const captchaText = $('#cap_text').val()
+        
+            if (!captchaText || !key) {
+            alert('Captcha or key missing')
+            return
+            }
+        
+            axios
+            .post(`https://careerwader.in/api/captcha/verify/`, {
+                captcha_0: key,
+                captcha_1: captchaText
+            })
+            .then(function (response) {
+                if (response.status == 200 && response.data.success) {
+                submitForm()
+                } else {
+                alert('Captcha verification failed.')
+                getCaptcha() // Refresh on fail
+                }
+            })
+            .catch(function (error) {
+                console.log(error)
+                alert('Verification failed.')
+                getCaptcha() // Refresh anyway
+            })
+        }
+
+        function extractAndMarkErrors(errors, prefix = '') {
+            for (const key in errors) {
+                if (!errors.hasOwnProperty(key)) continue;
+                
+                const fullKey = prefix ? `${prefix}.${key}` : key;
+                const val = errors[key];
+                const input = document.querySelector(`[name="${fullKey}"]`);
+
+                if (Array.isArray(val) && input) {
+                    markFieldError(input, val);
+                } else if (typeof val === 'object' && val !== null) {
+                    extractAndMarkErrors(val, fullKey);
+                }
+            }
+        }
+
+        function submitForm() {
+            const formData = new FormData(this);
+            const user = {
+                country: "IN"
+            };
+            const formDatum = {};
+
+            for (let [key, value] of formData.entries()) {
+                if (['csrfmiddlewaretoken'].includes(key)) continue;
+                
+                if (['name', 'age', 'email', 'phone_number'].includes(key)) {
+                    if (key === 'name') {
+                        const nameParts = value.trim().split(/\s+/);
+                        user.first_name = nameParts[0] || '';
+                        user.last_name = nameParts.slice(1).join(' ') || '';
+                    } else {
+                        user[key === 'phone_number' ? 'phone' : key] = value;
+                    }
+                } else {
+                    formDatum[key] = value;
+                }
+            }
+
+            formDatum.user = user;
+
+            fetch("https://careerwader.in/api/pre-assesment/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": csrfToken,
+                },
+                body: JSON.stringify(formDatum),
+            })
+            .then(async response => {
+                const contentType = response.headers.get("content-type");
+                const isJson = contentType && contentType.includes("application/json");
+                const responseData = isJson ? await response.json() : {};
+
+                if (!response.ok) {
+                    extractAndMarkErrors(responseData);
+                    
+                    let errorMessages = [];
+                    if (responseData.user) {
+                        for (const key in responseData.user) {
+                            errorMessages.push(`${key}: ${responseData.user[key].join(', ')}`);
+                        }
+                    }
+
+                    Swal.fire({
+                        title: 'Failed to save assessment',
+                        html: `<div style="text-align:left;">${errorMessages.join('<br>')}</div>`,
+                        icon: "error",
+                    });
+                } else {
+                    Swal.fire({
+                        title: 'Redirecting to payment page',
+                        icon: "success",
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Unexpected error:", error);
+                Swal.fire({
+                    title: "Unexpected Error",
+                    text: error.message || "Something went wrong.",
+                    icon: 'error',
+                    confirmButtonText: 'Try Again'
+                });
+            });
+        }
+
+        // Form submission
+        $('.assesment-form').on('submit', function (e) {
+            e.preventDefault();
+            verify();
+        });
+
+        // Initialize on DOM ready
+        initializeTagInputs();
+    });
+</script>
+{% endblock %}

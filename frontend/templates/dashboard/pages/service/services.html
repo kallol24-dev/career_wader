@@ -1,0 +1,278 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+
+{% block content %}
+<div class="card shadow m-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Services</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="mb-4" style="width: 100%; display: flex; flex-direction: row;justify-content: space-between;">
+                <div></div>
+                <div>
+                    <button class="btn btn-sm btn-primary add-btn" data-bs-toggle="modal" data-bs-target="#serviceModel">Add
+                        New</button>
+                </div>
+
+            </div>
+            <table id="serviceTypeTable" class="display table table-bordered" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Type</th>
+                        <th>Description</th>
+                        <th>Available?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for service in services %}
+                    <tr class="*:">
+                        <td>{{ service.name }}</td>
+                        <td>
+                            {% if not service.sale_price %} 
+                               ₹{{ service.base_price }} 
+                            {%else%}
+                              <span>₹{{ service.sale_price }}  <del class="text-danger ms-2"> ₹{{ service.base_price }}</del></span>
+                            {%endif%}
+                        </td>
+                        <td>
+                            {% comment %} {% for serviceType in serviceTypes.results %}
+                            {% if serviceType.id == service.type %} {% endcomment %}
+                            {{service.type_name}}
+                            {% comment %} {%endif%}
+                            {% endfor %} {% endcomment %}
+                        </td>
+                        <td>{{ service.description }}</td>
+                        <td>{{ service.available }}</td>
+                        <td>
+                            <button class="btn btn-sm edit-btn" 
+                                    data-enquiry='{
+                                        "id": "{{ service.id }}",
+                                        "name": "{{ service.name|escapejs }}",
+                                        "type": "{{ service.type }}",
+                                        "base_price": "{{ service.base_price }}",
+                                        "sale_price": "{{ service.sale_price }}",
+                                        "description": "{{ service.description|escapejs }}",
+                                        "available": "{{ service.available }}"
+                                    }' 
+                                    data-bs-toggle="modal" data-bs-target="#serviceModel">
+                                <i class="bx bx-show"></i> Edit
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+                <div>
+                    Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+                </div>
+                <nav>
+                    <ul class="pagination">
+                        {% if page > 1 %}
+                        <li class="page-item">
+                            <a class="page-link"
+                                href="{{ base_url }}&page={{ page|add:'-1' }}&perPage={{ per_page }}">Previous</a>
+                        </li>
+                        {% endif %}
+
+                        {% for i in page_range %}
+                        <li class="page-item {% if page == i %}active{% endif %}">
+                            <a class="page-link" href="{{ base_url }}&page={{ i }}&perPage={{ per_page }}">{{ i }}</a>
+                        </li>
+                        {% endfor %}
+
+                        {% if page < total_pages %} <li class="page-item">
+                            <a class="page-link"
+                                href="{{ base_url }}&page={{ page|add:'1' }}&perPage={{ per_page }}">Next</a>
+                            </li>
+                            {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% comment %} Read Modal {% endcomment %}
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalCenterTitle">Enquiry Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Name: </strong><span id="name"></span></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviceModel" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Service Type</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="serviceTypeForm">
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="name">Name</label>
+                            <input type="text" name="service_name" id="service_name" class="form-control">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="type">Type</label>
+                            <select class="form-control" name="type" id="type">
+                                {% for serviceType in serviceTypes.results %}
+                                <option value="{{serviceType.id}}">{{serviceType.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="base_price">Base Price</label>
+                            <input type="text" name="base_price" id="base_price" class="form-control" value="0">
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="sale_price">Sale Price</label>
+                            <input type="text" name="sale_price" id="sale_price" class="form-control" value="0">
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="isAvailable">Is Available</label>
+                            <input type="checkbox" name="isAvailable" id="isAvailable" class="form-check-input">
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <label for="description">Description</label>
+                            <textarea name="description" id="description" class="form-control" rows="5"></textarea>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" id="submit" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+    $(document).ready(function () {
+        const params = new URLSearchParams(window.location.search);
+        function getCSRFToken() {
+            return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+        }
+        $('.add-btn').on('click', function () {
+            let service = $(this).data('enquiry');
+            // Populate the form fields
+            $('#service_name').val("");
+            $('#type').val("");
+            $('#base_price').val("");
+            $('#sale_price').val("");  // optional fallback
+            $('#description').val("");
+            $('#isAvailable').prop('checked', true);
+            
+            // Optional: change button text from "Add" to "Update"
+            $('#serviceTypeForm button[type="submit"]').text("Add");
+        });
+        $('.edit-btn').on('click', function () {
+            let service = $(this).data('enquiry');
+            // Populate the form fields
+            $('#service_name').val(service.name);
+            $('#type').val(service.type);
+            $('#base_price').val(service.base_price);
+            $('#sale_price').val(service.sale_price || '');  // optional fallback
+            $('#description').val(service.description);
+            $("#submit").data("service-id", service.id);
+            $('#isAvailable').prop('checked', service.available === 'True' || service.available === true);
+            
+            // Optional: change button text from "Add" to "Update"
+            $('#serviceTypeForm button[type="submit"]').text("Update");
+        });
+        $('#serviceTypeForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const serviceId = $('#submit').data('service-id'); // may be undefined
+            let data = {
+                name: $("#service_name").val(),
+                base_price: $("#base_price").val(),
+                sale_price: $("#sale_price").val(),
+                type: $("#type").val(),
+                available: $("#isAvailable").is(':checked'),
+                description: $("#description").val()
+            };
+
+            let url = serviceId ? `/update-service/?id=${serviceId}/` : "/create-service/";
+            let method = serviceId ? "PUT" : "POST";
+
+            fetch(url, {
+                method: method,
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCSRFToken()
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (!response.ok) throw new Error(response.statusText);
+                return response.json();
+            })
+            .then(data => {
+                console.log("Saved:", data);
+                location.reload();  // or update the DOM manually
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+        });
+
+        {% comment %}
+        $('#serviceTypeForm').on('submit', function (e) {
+            e.preventDefault();
+            let data= {}
+            data.name =  $("#service_name").val();
+            data.price =  $("#price").val();
+            data.type =  $("#type").val();
+            data.isAvailable =  $("#isAvailable:checked").val() == 'on' ? true : false;
+            data.description =  $("#description").val();
+            console.log(data)
+            fetch("/create-service/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": getCSRFToken()
+                },
+                body: JSON.stringify(data),
+            }).then((response) => {
+                console.log(response.statusText)
+                if (!response.ok) throw new Error(response.statusText);
+                return response.json();
+            }).then((data) => {
+                console.log("Marked as read", data);
+            }).catch((error) => {
+                    console.error("Error:", error);
+                });
+
+        }); 
+        {% endcomment %}
+    });
+</script>
+{% endblock %}

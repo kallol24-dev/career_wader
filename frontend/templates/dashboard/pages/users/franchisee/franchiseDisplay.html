@@ -1,0 +1,378 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+{% load static %}
+{% block content %}
+<style>
+  .position-relative svg{
+    position:absolute;
+    left:10px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  thead{
+    background:#E8E8E8;
+  }
+  thead tr, thead tr th{
+    padding:14px!important;
+    color:#000!important;
+  }
+</style>
+<div class="card shadow m-4">
+  <div class="card-header py-3 text-white mb-4" style="background:#19BC9C;">
+    <h6 class="m-0 font-weight-bold text-white">Franchisee</h6>
+  </div>
+  <div class="row">
+    <div class="card shadow m-4 col-lg-2" style="background:#9cdd00;">
+      <div class="card-body">
+        <div class="avatar flex-shrink-0 mb-1">
+          <img src="{% static 'dashboard/assets/img/dashboard/chart-success.png' %}" alt="chart success" class="rounded" />
+        </div>
+        <h5 class="card-title fw-semibold text-white">Total Franchisee</h5>
+        <p class="card-text fs-3 text-white">{{total_count}}</p>
+      </div>
+    </div>
+    <div class="card shadow m-4 col-lg-2" style="background:#B4C14D;">
+      <div class="card-body">
+        <div class="avatar flex-shrink-0 mb-1">
+          <img src="{% static 'dashboard/assets/img/dashboard/chart-success.png' %}" alt="chart success" class="rounded" />
+        </div>
+        <h5 class="card-title fw-semibold text-white">Shortlisted</h5>
+        <p class="card-text fs-3 text-white">{{total_count}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div class="table-controls mb-3">
+        <div class="d-flex mb-1" style="width:100%; justify-content: space-between;">
+          <div class="table-entries d-flex justify-center align-items-center">
+            <span>Show</span> 
+            <select class="form-control" name="perPage" style="border-radius: 5px;padding: 4px 6px;">
+              <option "10">10</option>
+              <option "25">25</option>
+              <option "50">50</option>
+              <option "100">100</option>
+            </select>
+            <span>Entries</span>
+          </div>
+          <div class="table-right-controls d-flex gap-2 align-items-center">
+            <div>
+              <div class="form-icon position-relative">
+                <i class="map-icon tf-icons bx bxs-map fs-4 lh-0"></i>
+                <select name="state" class="form-control ps-5" id="state" required="" >
+                  <option value="">select state</option>
+                  {% for state in states %}
+                  <option value="{{state}}">{{state}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="form-icon position-relative">
+                <i class="bx bx-search fs-4 lh-0"></i>
+                <input type="text" id="franchiseSearch" class="form-control" style="padding: 8px 32px;" value="" placeholder="search here">
+              </div>
+            </div>
+            <div>
+              <button class='clear-filter btn btn-sm btn-outline-primary view-student-btn'>clear filter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table id="franchiseTable" class="display table table-bordered table-hover" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th style="width:10px"></th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for franchise in franchises %}
+            <tr class="">
+              <td><div class="form-check form-switch">
+                    <input
+                      class="form-check-input franchise-approval"
+                      data-franchiseid="{{ franchise.id }}"
+                      type="checkbox"
+                      {% if franchise.is_approved %}checked{% endif %}>
+                </div></td>
+              <td>{{ franchise.user.first_name }} {{ franchise.user.last_name }}</td>
+              <td><a href="mailto:{{ franchise.user.email }}">{{ franchise.user.email }}</a></td>
+              <td><a href="tel:{{ franchise.user.phone }}">{{ franchise.user.phone }}</a></td>
+              <td>{{ franchise.user.state }}</td>
+              <td>{{ franchise.user.city }}</td>
+              <td>
+                {% if franchise.user.country == "IN" %}
+                    <span>India</span>
+                {% elif franchise.user.country == "ID" %}
+                    <span>Indonesia</span>
+                {% elif franchise.user.country == "IR" %}
+                    <span>Iran</span>
+                {% elif franchise.user.country == "HU" %}
+                    <span>Hungary</span>
+                {% else %}
+                    <span>{{ franchise.user.country }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {{ franchise.user.created_at }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-primary view-franchise-btn"
+                  data-franchise='{
+                    "id": "{{ franchise.user.id }}",
+                    "first_name": "{{ franchise.user.first_name }}",
+                    "last_name": "{{ franchise.user.last_name }}",
+                    "email": "{{ franchise.user.email }}",
+                    "phone": "{{ franchise.user.phone }}",
+                    "state": "{{ franchise.user.state }}",
+                    "city": "{{ franchise.user.city }}",
+                    "country": "{{ franchise.user.country }}",
+                    "created_at": "{{ franchise.user.created_at }}",
+                    "status": "{{ franchise.is_approved }}"
+                  }'
+                  data-bs-toggle="modal"
+                  data-bs-target="#studentModal"
+                >
+                  <i class='bx bx-show'></i>
+                </button>  
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+        <div>
+          Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+        </div>
+        <nav>
+          <ul class="pagination">
+            {% if page > 1 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'-1' }}">Previous</a>
+              </li>
+            {% endif %}
+
+            {% for i in page_range %}
+              <li class="page-item {% if page == i %}active{% endif %}">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ i }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'1' }}">Next</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student Details Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title text-white" id="studentModalTitle">Franchise Details</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-12 text-center mb-3">
+            <div class="avatar avatar-xl mb-3">
+              <span class="avatar-initial rounded-circle bg-primary" id="franchiseInitials"></span>
+            </div>
+            <h4 id="franchiseFullName"></h4>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email</div>
+                    <div class="h6 mb-0 text-gray-800" id="franchiseEmail"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-envelope fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Phone</div>
+                    <div class="h6 mb-0 text-gray-800" id="franchisePhone"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-phone fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Country</div>
+                    <div class="h6 mb-0 text-gray-800" id="franchiseCountry"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-globe fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-secondary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Status</div>
+                    <div class="h6 mb-0 text-gray-800" id="franchiseStatus"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>   
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+  jQuery(document).ready(function($){
+    const params = new URLSearchParams(window.location.search);
+    $(".franchise-approval").on("change", function () {
+      const checkbox = $(this);
+      const franchiseId = checkbox.data("franchiseid");
+      const isApproved = checkbox.is(":checked");
+      if( isApproved ){
+        if( !confirm("Are you sure you want to enable dashboard for this Franchise") ){
+          checkbox.prop("checked", !isApproved);
+          return;
+        }
+      }
+      if( !isApproved ){
+        if( !confirm("Are you sure you want to disable dashboard for this Franchise") ){
+           checkbox.prop("checked", !isApproved);
+          return;
+        }
+      }
+
+      $.ajax({
+        url: "/franchise-approval/",  // Django view URL
+        method: "POST",
+        headers: {
+          "X-CSRFToken": $("meta[name='csrf-token']").attr("content"),
+        },
+        contentType: "application/json",
+        data: JSON.stringify({
+          id: franchiseId,
+          is_approved: isApproved
+        }),
+        success: function (response) {
+          console.log("Updated approval:", response);
+        },
+        error: function (xhr) {
+          alert("Approval update failed.");
+          checkbox.prop("checked", !isApproved); // revert change
+        }
+      });
+    });
+    $("select[name='perPage']").change(function(){     
+      let perPage = $(this).find("option:selected").val();
+      if( perPage ){
+        params.set('perPage', perPage); 
+      }else{
+        params.remove('perPage')
+      }
+      window.location.search = params.toString();
+    })
+    $('#franchiseSearch').on('keyup', function (e) {
+      if (e.key === 'Enter') {
+        let searchQuery = $(this).val().trim();
+        if (searchQuery) {
+          params.set('search', searchQuery);
+        } else {
+          params.delete('search');
+        }
+        params.set('page', 1); // Reset to page 1 on new search
+        window.location.search = params.toString();
+      }
+    });
+    $("select[name='state']").change(function(){     
+      let state = $(this).find("option:selected").val();
+      if( state ){
+        params.set('state', state); 
+      }else{
+        params.remove('state')
+      }
+      window.location.search = params.toString();
+    })
+    $('.clear-filter').click(function(){
+      params.delete('perPage');
+      params.delete('state');
+      params.delete('page');
+      window.location.href = window.location.pathname;
+    })
+
+    $(".view-franchise-btn").click(function(){
+      let franchise = $(this).data('franchise');
+      // If data is still a string, parse it
+      if (typeof franchise === 'string') {
+        franchise = JSON.parse(franchise);
+      }
+      console.log(franchise)
+      // Use the data — example: update modal
+      $('#franchiseInitials').text(`${franchise.first_name.charAt(0)}${franchise.last_name.charAt(0)}`)
+      $('#franchiseFullName').text(`${franchise.first_name} ${franchise.last_name}`);
+      $('#franchiseEmail').text(`${franchise.email}`);
+      $('#franchisePhone').text(`${franchise.phone}`);
+      $('#franchiseCountry').text(`${franchise.country}`);
+      $('#franchiseStatus').text(`${franchise.status == "False" ? "PENINDG": "ONBOARDED"}`);
+
+    })
+  })
+</script>
+{% endblock %}

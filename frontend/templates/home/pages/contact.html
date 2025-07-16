@@ -1,0 +1,250 @@
+{% extends 'home/layouts/indexbase.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-12 text-center">
+          <div class="pages-heading">
+            <h4 class="title mb-0">Contact Us</h4>
+          </div>
+        </div> <!-- end col -->
+      </div>
+      <!-- end row -->
+
+      <div class="position-breadcrumb">
+        <nav aria-label="breadcrumb" class="d-inline-block">
+          <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+            <li class="breadcrumb-item">
+              <a href="#">Page</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Franchise</li>
+          </ul>
+        </nav>
+      </div>
+    </div> <!-- end container -->
+  </section>
+  <!-- end section -->
+  <!-- Hero End -->
+
+  <!-- Shape Start -->
+  <div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </div>
+  <!-- Shape End -->
+
+  <!-- About Start -->
+  <section class="section">
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+          <div class="card custom-form rounded border-0 shadow p-4">
+            <form class="login-form p-4" id="enquiryForm">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label class="form-label">First Name <span class="text-danger">*</span></label>
+                    <div class="form-icon position-relative">
+                      <i data-feather="user" class="fea icon-sm icons"></i>
+                      <input type="text" class="form-control ps-5" placeholder="First Name" id="first_name" name="first_name" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                    <div class="form-icon position-relative">
+                      <i data-feather="user" class="fea icon-sm icons"></i>
+                      <input type="text" class="form-control ps-5" placeholder="Last Name" id="last_name" name="last_name" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label class="form-label">Email <span class="text-danger">*</span></label>
+                    <div class="form-icon position-relative">
+                      <i data-feather="mail" class="fea icon-sm icons"></i>
+                      <input type="email" class="form-control ps-5" id="email" placeholder="Email" name="email" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="mb-3">
+                    <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                    <div class="form-icon position-relative">
+                      <i data-feather="phone" class="fea icon-sm icons"></i>
+                      <input type="tel" class="form-control ps-5" placeholder="Phone Number" id="phone" name="phone_number" required />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-lg-12">
+                  <div class="mb-3">
+                    <label class="form-label">Message <span class="text-danger">*</span></label>
+                    <div class="form-icon position-relative">
+                      <i data-feather="message-circle" class="fea icon-sm icons"></i>
+                      <textarea class="form-control ps-5" placeholder="Write your message here" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="mb-3 d-flex align-items-center">
+                    <img src="" alt="" id="cap_img" />
+                    <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                    <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                  </div>
+                </div>
+                <div class="col-lg-12 mb-0">
+                  <div class="d-grid">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end custom-form -->
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-7 col-md-6 order-1 order-md-2">
+          <div class="title-heading ms-lg-4">
+            <h4 class="mb-4">Contact Details</h4>
+
+            <p class="text-muted">
+              We are there to <span class="text-primary fw-bold">help you.</span> Have Questions? Reach out to us for any queries/support.
+            </p>
+
+            <p class="text-muted">Whether you need help in navigating the platform or have specific questions about your academic or career options, our Career Wader Team is always ready to assist you.</p>
+
+            <div class="d-flex contact-detail align-items-center mt-3">
+              <div class="icon">
+                <i data-feather="mail" class="fea icon-m-md text-dark me-3"></i>
+              </div>
+              <div class="flex-1 content">
+                <h6 class="title fw-bold mb-0">Email</h6>
+                <a href="mailto:info@careerwader.in" class="text-primary">info@careerwader.in</a>
+              </div>
+            </div>
+
+            <div class="d-flex contact-detail align-items-center mt-3">
+              <div class="icon">
+                <i data-feather="phone" class="fea icon-m-md text-dark me-3"></i>
+              </div>
+              <div class="flex-1 content">
+                <h6 class="title fw-bold mb-0">Phone</h6>
+                <a href="tel:+152534-468-854" class="text-primary">+ 91 9108760180/ +91 9591577855</a>
+              </div>
+            </div>
+
+            <div class="d-flex contact-detail align-items-center mt-3">
+              <div class="icon">
+                <i data-feather="map-pin" class="fea icon-m-md text-dark me-3"></i>
+              </div>
+              <div class="flex-1 content">
+                <h6 class="title fw-bold mb-0">Location</h6>
+                Bangalore, Karnataka
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    jQuery(document).ready(function ($) {
+      let key = null
+    
+      function getCaptcha() {
+        axios
+          .get(`https://careerwader.in/api/captcha/refresh/`)
+          .then(function (response) {
+            if (response.status == 200) {
+              $('#cap_img').attr('src', response.data.image_url)
+              key = response.data.key // ✅ set global key
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      }
+    
+      function verify() {
+        const captchaText = $('#cap_text').val()
+    
+        if (!captchaText || !key) {
+          alert('Captcha or key missing')
+          return
+        }
+    
+        axios
+          .post(`https://careerwader.in/api/captcha/verify/`, {
+            captcha_0: key,
+            captcha_1: captchaText
+          })
+          .then(function (response) {
+            if (response.status == 200 && response.data.success) {
+              submitForm()
+            } else {
+              alert('Captcha verification failed.')
+              getCaptcha() // Refresh on fail
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+            alert('Verification failed.')
+            getCaptcha() // Refresh anyway
+          })
+      }
+    
+      function submitForm() {
+        const baseUrl = '{{ api_base_url|escape }}'
+        const data = {
+          first_name: $('#first_name').val(),
+          last_name: $('#last_name').val(),
+          email: $('#email').val(),
+          phone_number: $('#phone').val(),
+          message: $('#message').val()
+        }
+        axios
+          .post(`${baseUrl}api/contactus/post/`, data)
+          .then(function (response) {
+            alert('Enquiry submitted successfully')
+          })
+          .catch(function (error) {
+            alert('Error:\n' + JSON.stringify(error.response.data))
+          })
+      }
+    
+      // Load captcha initially
+      getCaptcha()
+    
+      // Form submit handler
+      $('#enquiryForm').on('submit', function (e) {
+        e.preventDefault()
+        verify() // ✅ Trigger verify *after* user submits
+      })
+    
+      // Optional: Click on image to refresh captcha
+      $('#refCap').on('click', function () {
+        getCaptcha()
+      })
+    })
+  </script>
+{% endblock %}

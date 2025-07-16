@@ -1,0 +1,166 @@
+{% extends "home/layouts/indexbase.html" %}
+{% load static %}
+{% block content %} 
+    <style>
+        .otpField{
+            width: 50px; 
+            height: 50px; 
+            font-size: 1.5rem;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="card shadow-lg border-0" style="width: 450px; max-width: 100%;">
+    <div class="card-body p-4">
+      <h3 class="text-center mb-4">Verification Code</h3>
+      <p class="text-center text-muted mb-4">Please enter the 6 digit code sent to your device</p>
+
+      <form action ="{% url 'submitOtp' %}" method="POST">
+          {% csrf_token %}
+          <input name="email" type="hidden" id="emailField"  value="{{email}}"/>
+          <div class="otp-input-container d-flex justify-content-center gap-2 mb-4">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-1" maxlength="1" autocomplete="off" required  id="digit-1">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-2" maxlength="1" autocomplete="off" required  id="digit-2">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-3" maxlength="1" autocomplete="off" required  id="digit-3">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-4" maxlength="1" autocomplete="off" required  id="digit-4">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-5" maxlength="1" autocomplete="off" required  id="digit-5">
+              <input type="text" class="form-control text-center fw-bold otpField" name="digit-6" maxlength="1" autocomplete="off" required  id="digit-6">
+          </div>
+          
+          <div class="d-grid">
+              <button type="submit" class="btn btn-primary py-2 fw-bold" id="verifyBtn">Verify</button>
+          </div>
+    </form>
+      
+      <div class="text-center mt-3">
+        {% if message %}
+          <span class="text-danger">{{ message }}</span>
+        {% endif %}
+
+          <form action ="{% url 'resendOtp' %}" method="POST">
+            {% csrf_token %}
+            <input name="email" type="hidden" value="{{email}}"/>
+            
+            <p class="text-muted mb-0">Didn't receive code? 
+              <button type="submit" class="btn disabled" id="resendBtn" disabled> 
+                <span class="text-muted">Resend</span>
+              </button>
+            </p>
+          </form>
+        <p class="text-muted mt-3"><span id="timer" class="fw-bold">10:00</span></p>
+      </div> 
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% if otp_error %}
+<script>
+Swal.fire({
+  icon: 'error',
+  title: 'Invalid OTP',
+  text: '{{ otp_error_message }}',
+  confirmButtonText: 'Try Again'
+});
+</script>
+{% endif %}
+
+<script>
+  $(document).ready(function() {
+    // Focus the first input on page load
+    $("#digit-1").focus();
+    
+    // Auto-tab between input fields
+    $(".otp-input-container input").on("input", function() {
+      // Only allow numbers
+      this.value = this.value.replace(/[^0-9]/g, '');
+      
+      if (this.value.length === 1) {
+        const nextInput = $(this).next("input");
+        if (nextInput.length) {
+          nextInput.focus();
+        }
+      }
+    });
+    
+    // Allow backspace to go to previous input
+    $(".otp-input-container input").on("keydown", function(e) {
+      if (e.key === "Backspace" && this.value === "") {
+        const prevInput = $(this).prev("input");
+        if (prevInput.length) {
+          prevInput.focus();
+        }
+      }
+    });
+    
+    
+    // Timer functionality - 10 minutes (600 seconds)
+    let minutes = 10;
+    let seconds = 0;
+    let timeLeft = minutes * 60 + seconds;
+    const timerElement = document.getElementById('timer');
+    
+    const countdown = setInterval(function() {
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        timerElement.textContent = "00:00";
+        $("#resendBtn").removeClass("disabled text-muted").addClass("text-success").prop("disabled", false);
+      } else {
+        const min = Math.floor(timeLeft / 60);
+        const sec = timeLeft % 60;
+        timerElement.textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+        timeLeft--;
+      }
+    }, 1000);
+    
+    // Handle resend button
+    $("#resendBtn").on("click", function(e) {
+      if ($(this).hasClass("disabled")) {
+        e.preventDefault();
+        return false;
+      }
+      
+      // Reset all input fields
+      $(".otp-input-container input").val('');
+      $("#digit-1").focus();
+      
+      // Reset timer
+      minutes = 10;
+      seconds = 0;
+      timeLeft = minutes * 60 + seconds;
+      timerElement.textContent = "10:00";
+      
+      // Disable resend button again
+      $("#resendBtn").addClass("disabled text-muted").removeClass("text-success").prop("disabled", true);
+      
+      // Start countdown again
+      const countdown = setInterval(function() {
+        if (timeLeft <= 0) {
+          clearInterval(countdown);
+          timerElement.textContent = "00:00";
+          $("#resendBtn").removeClass("disabled text-muted").addClass("text-success").prop("disabled", false);
+        } else {
+          const min = Math.floor(timeLeft / 60);
+          const sec = timeLeft % 60;
+          timerElement.textContent = (min < 10 ? "0" + min : min) + ":" + (sec < 10 ? "0" + sec : sec);
+          timeLeft--;
+        }
+      }, 1000);
+      
+      // Show notification
+      Swal.fire({
+        icon: 'success',
+        title: 'Code Resent',
+        text: 'A new verification code has been sent.',
+        timer: 2000,
+        showConfirmButton: false
+      });
+    });
+  });
+</script>
+{% endblock %}

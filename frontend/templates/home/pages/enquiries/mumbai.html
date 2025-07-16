@@ -1,0 +1,94 @@
+{% extends 'home/layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- Hero Start -->
+       <section class="bg-half-175 d-table w-100" id="home" style="padding-top:120px">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 col-md-7">
+                        <div class="title-heading mt-4">
+                            <h1 class="heading mb-3">Mumbai: Career Growth in the City of Dreams</h1>
+
+                            <!-- <h4 class="mb-3">known for its rich history, diverse culture, and unique attractions.</h4> -->
+                            <p class="para-desc text-muted" style=" text-align: justify;">Mumbai&#39;s specialty lies in its vibrant culture, historical landmarks, and bustling commercial and financial center. It&#39;s known for its unique street food, beautiful beaches, and the iconic Gateway of India. Mumbai is also a hub for Bollywood, the Indian film industry, and a major port on the Arabian Sea.</p>
+                            <div class="mt-4 pt-2">
+                                <a href="{% url 'franchise' %}" class="btn btn-primary m-1">Partner with Us</a>
+                                
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                        <img src="{% static 'home/assets/images/enquiries/mumbai.jpg'%}" alt="">
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        </section><!--end section-->
+        <!-- Hero End -->
+
+        <!-- Partners start -->
+        
+        <!-- Partners End -->
+        
+        <section class="section" style="background-color: #F8F5F4;">
+            <div class="container">
+                
+
+                
+                <div class="row ">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="row align-items-center">
+                            
+
+                            <div class="col-lg-12 col-12">
+                                <div class="row">
+                                    
+    
+                                    <div class="card rounded shadow border-0 ms-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".5s" style=" background-color: #00A86B;">
+                            <div class="card-body p-4">
+                               {% include 'home/pages/enquiries/form.html' %}
+                            </div>
+                        </div>
+                                </div><!--end row-->
+                            </div><!--end col-->
+                        </div><!--end row-->
+                    </div><!--end col-->
+
+                    <div class="col-lg-7 col-md-6 mt-4  mt-lg-0 pt-2 pt-lg-0">
+                        <div class="ms-lg-5">
+                            <div class="section-title mb-4 pb-2">
+                                
+                                
+                                <p class="text-muted " style=" text-align: justify; color: #000">Mumbai, the financial capital of India, is a city of opportunities. With over __ number of schools numbering approximately __ students, the city is a hotspot for career growth. However, finding the right career path can be challenging.
+                                </p>
+
+                                <p class="text-muted " style=" text-align: justify;">Career Wader&#39;s career counselling services offer a purposeful approach to help students and professionals navigate their careers smoothly and efficiently. By partnering with Career Wader, Career Counsellors can seize this opportunity and build a rewarding career.</p>
+
+                                <p class="text-muted " style=" text-align: justify;">Wader&#39;s partnership opportunities in Mumbai offer a chance to be part of a dynamic network of Career Counsellors. If you&#39;re passionate about helping individuals achieve their career goals, Career Wader invites you to explore partnership opportunities in Mumbai.</p>
+
+                             
+                                <h5>Unlock your potential and join the Career Wader network of expert Career Counsellors today!</h5>
+
+                                <a href="{% url 'franchise' %}" class="btn btn-outline-primary rounded active"><i class="uil uil-store"></i> Join Our Network</a>
+
+                                
+
+                            </div>
+
+                            
+
+                            
+                        </div>
+                    </div>
+                </div><!--end row-->
+            </div><!--end container-->
+            </div><!--end container-->
+
+            <!-- About Start -->
+            
+        </section><!--end section-->
+
+  {% include 'home/pages/enquiries/common.html' %}
+{% endblock %}

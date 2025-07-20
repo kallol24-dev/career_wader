@@ -1,0 +1,25 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+{% load static %}
+{% block content %}
+<div class="card shadow m-4">
+  <div class="card-header py-3 text-white mb-4" style="background:#19BC9C;">
+    <h6 class="m-0 font-weight-bold text-white">State Wise Franchisee</h6>
+  </div>
+  <div style="display: flex;flex-wrap: wrap;gap:10px; align-items: stretch;;width:100%; padding:10px;">
+    {% for entry in state_data %}
+        <div style="width:18%">
+            <div class="card shadow" style="height:100%;">
+                <div class="card-body">
+                    <div class="avatar flex-shrink-0 mb-1">
+                        <img src="{% static 'dashboard/assets/img/dashboard/chart-success.png' %}" alt="chart success" class="rounded" />
+                    </div>
+                    <a href="https://careerwader.in/franchise-display/?state={{entry.state}}"><h5 class="card-title mb-0">{{ entry.state }}</h5>
+                    <p class="card-text fs-3" style="color:#19BC9C;">{{entry.count}}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

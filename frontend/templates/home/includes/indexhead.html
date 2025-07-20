@@ -1,0 +1,79 @@
+{% load static %}
+
+<header id="topnav" class="defaultscroll sticky">
+  <div class="container">
+    <a class="logo" href="{% url 'index' %}">
+      <img src="{% static 'home/assets/images/logo-dark.png' %}" height="45" class="logo-light-mode" alt="career wader" title="career wader" />
+      <img src="{% static 'home/assets/images/logo-light.png' %}" height="24" class="logo-dark-mode" alt="career wader" title="career wader" />
+    </a>
+    <div class="menu-extras">
+      <div class="menu-item">
+        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <ul class="buy-button list-inline mb-0">
+      <li class="list-inline-item ps-1 mb-0">
+        <a href="{% url 'login' %}"><button class="btn btn-primary" title="career wader">Login / Signup</button></a>
+      </li>
+
+      <li class="list-inline-item ps-1 mb-0">
+        <button class="btn btn-primary" title="career wader" data-bs-toggle="modal"
+                  data-bs-target="#global-contact-popup">Enquire Now</button>
+      </li>
+    </ul>
+    <div id="navigation">
+      <ul class="navigation-menu">
+        {% comment %} <li class="has-submenu parent-parent-menu-item">
+          <a href="{% url 'index' %}">Home</a>
+        </li> {% endcomment %}
+        <li class="has-submenu parent-parent-menu-item">
+          <a href="{%url "about-us"%}">About Us</a>
+        </li>
+        <li class="has-submenu parent-parent-menu-item" style="margin-right: 10px;">
+          <a href="javascript:void(0)">Services</a><span class="menu-arrow"></span>
+          <ul class="submenu">
+            <li class="has-submenu parent-menu-item">
+              <a href="{%url "careerCounselling"%}">Career Counselling</a>
+            </li>
+            <li>
+              <a href="{%url "interviewAssistance"%}" class="sub-menu-item">Interview Assistance</a>
+            </li>
+            <li class="has-submenu parent-menu-item">
+              <a href="javascript:void(0)">Admission Assistance</a><span class="submenu-arrow"></span>
+              <ul class="submenu">
+                <li>
+                  <a href="{%url "studyAbroad"%}" class="sub-menu-item">Study Abroad</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{%url "resumeBuilding"%}" class="sub-menu-item">Resume Building</a>
+            </li>
+
+            <li>
+              <a href="{%url "eduLoan"%}" class="sub-menu-item">Educational Loan</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="">
+          <a href="{% url 'blogs' %}">Blogs</a>
+        </li>
+
+        <li class="has-submenu parent-parent-menu-item">
+          <a href="{% url 'contact' %}">Contact Us</a>
+        </li>
+
+        <li class="has-submenu parent-menu-item">
+          <a href="#" data-bs-toggle="modal" data-bs-target="#LoginForm"><i class="uil uil-users-alt rounded mb-0"></i> Become a Partner</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

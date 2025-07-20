@@ -1,0 +1,399 @@
+{% extends 'home/layouts/indexbase.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+</style>
+<!-- Hero Start -->
+    <section class="home-slider position-relative">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="bg-home-75vh d-flex align-items-center"
+                        style="background: url('{% static 'home/assets/images/testimonials/bg1.jpg' %}') center center;">
+                        <div class="bg-overlay1"></div>
+                        <div class="container">
+                            <div class="row mt-5 justify-content-center">
+                                <div class="col-6">
+                                    <div class="title-heading ">
+                                        <h2 class="text-white title-dark mb-3">Words of Appreciation</h2>
+                                        <ul class="list-unstyled">
+                                            <li class="list-inline-item small user text-white-50 me-2">Testimonials from
+                                                Our Valued Clients</li>
+
+                                        </ul>
+                                        <p class="para-desc text-white-50 mb-0">In 21st century student and industry
+                                            executive is driven by strong likes and dislikes. They are not ready to
+                                            accept mocked-success or opinionated influence. They want their answers
+                                            through facts, figures & data, but touched by the inner voice.</p>
+                                        <div class="mt-4">
+
+                                            {% comment %} <a href="javascript:void(0)" class="btn btn-soft-primary">See More <i
+                                                    data-feather="arrow-right" class="fea icon-sm"></i></a> {% endcomment %}
+                                        </div>
+                                    </div>
+                                </div><!--end col-->
+
+                                <div class="col-6">
+                                    <div class="title-heading ">
+
+                                       
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end slide-->
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </section><!--end section-->
+    <!-- Hero End -->
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 filters-group-wrap">
+                    <div class="filters-group">
+                        <ul class="container-filter list-inline mb-0 filter-options text-center">
+                            <li class="list-inline-item categories-name border text-dark rounded active"
+                                data-group="all">Students</li>
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="business">
+                                Parents</li>
+                            <li class="list-inline-item categories-name border text-dark rounded"
+                                data-group="marketing">Gradutes</li>
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="finance">
+                                Videos</li>
+
+                        </ul>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div id="flex" class="row">
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["all"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/1.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Truly
+                                        transformative experience!"</a></h5>
+                                <p class="text-muted">
+                                    Career Wader helped me understand my strengths through their detailed psychometric
+                                    analysis.
+                                    <span class=" more-content" style="display: none;">
+                                        The counsellor was extremely patient and guided me through career options I
+                                        hadn't even considered before. It’s rare to find such personalized and
+                                        insightful service at such reasonable pricing.
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["marketing"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/2.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Worth every
+                                        penny."</a></h5>
+                                <p class="text-muted">
+                                    I was unsure about which stream to choose after 10th grade. Career Wader's
+                                    comprehensive test
+                                    <span class=" more-content" style="display: none;">
+                                        and one-on-one counselling session made everything clear. The report was easy to
+                                        understand and offered constructive feedback. Highly recommended for students
+                                        and parents alike!
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["marketing"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/1.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Reliable,
+                                        honest, and incredibly helpful."</a></h5>
+                                <p class="text-muted">
+                                    The psychometric test results were spot-on and gave me a clear roadmap
+                                    <span class=" more-content" style="display: none;">
+                                        to explore careers matching my personality and interests. The counsellor didn’t
+                                        just give generic advice – they tailored suggestions based on my potential and
+                                        aspirations. Truly professional service.
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["finance"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/2.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Very
+                                        informative and encouraging."</a></h5>
+                                <p class="text-muted">
+                                    Career Wader gave me clarity when I felt lost in my career path. The session was
+                                    structured well,
+                                    <span class=" more-content" style="display: none;">
+                                        and the analysis was detailed. I would have liked a bit more industry-specific
+                                        examples, but overall, an excellent experience with actionable takeaways.
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["human"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/1.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Professional
+                                        and to the point."</a></h5>
+                                <p class="text-muted">
+                                    What I liked most about Career Wader is the clarity in their counselling. No fluff –
+                                    just honest,
+                                    <span class=" more-content" style="display: none;">
+                                        constructive advice supported by data from the psychometric test. I would
+                                        suggest adding follow-up sessions for even more value.
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["business"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/2.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Helped me find
+                                        my true direction."</a></h5>
+                                <p class="text-muted">
+                                    As someone who switched careers in their 30s, I found Career Wader’s assessment tool
+                                    incredibly accurate.
+                                    <span class=" more-content" style="display: none;">
+                                        The session gave me the confidence to pursue a career in digital design,
+                                        aligning with my skills and passion. Couldn’t be more grateful!
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["marketing"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/1.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Best guidance
+                                        for students and professionals."</a></h5>
+                                <p class="text-muted">
+                                    Career Wader helped my daughter identify her strengths and passion areas.
+                                    <span class=" more-content" style="display: none;">
+                                        The counsellor was empathetic and clear in explaining the results. It made the
+                                        decision-making process so much easier. A big thumbs up from us!
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["finance"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/2.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Great value
+                                        and excellent support."</a></h5>
+                                <p class="text-muted">
+                                    I was skeptical about online counselling, but Career Wader exceeded expectations.
+                                    Their pricing is affordable,
+                                    <span class=" more-content" style="display: none;">
+                                        and the depth of insight from the test and follow-up session was phenomenal. It
+                                        gave me a new perspective on my career choices. Thank you!
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["human"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static 'home/assets/images/testimonials/1.png' %}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <ul class="list-unstyled text-warning mb-0">
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                    <li class="list-inline-item"><i class="mdi mdi-star"></i></li>
+                                </ul>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">"Good service
+                                        with room for improvement."</a></h5>
+                                <p class="text-muted">
+                                    The overall experience was excellent – timely communication, expert counselling,
+                                    <span class=" more-content" style="display: none;">
+                                        and a detailed report. However, a few technical terms in the report could be
+                                        explained better for first-time users. Still, a great career guidance platform!
+                                    </span>
+                                </p>
+
+                                <a href="javascript:void(0)" class="link h6 ">
+                                    <span class="read-more-btn">Read More</span>
+                                    <i class="uil uil-angle-right-b align-middle"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+
+<script>
+        document.querySelectorAll('.read-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const parent = button.closest('.content');
+                const moreContent = parent.querySelector('.more-content');
+
+                const isVisible = moreContent.style.display === 'inline';
+
+                moreContent.style.display = isVisible ? 'none' : 'inline';
+                button.textContent = isVisible ? 'Read More' : 'Read Less';
+            });
+        });
+    </script>
+{% endblock %}

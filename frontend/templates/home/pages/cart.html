@@ -1,0 +1,358 @@
+{% extends "home/layouts/indexbase.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .form-check-label {
+        display: block;
+        cursor: pointer;
+    }
+    .form-check-input {
+        margin-top: 0.3rem;
+        margin-right: 0.6rem;
+    }
+
+    .service-card {
+        transition: border-color 0.3s ease;
+    }
+
+    .border-primary {
+        border: 2px solid #0d6efd !important; /* Bootstrap primary */
+    }
+
+    .border-light {
+        border: 1px solid #dee2e6 !important; /* Bootstrap light */
+    }
+</style>
+<section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h4 class="title mb-0"> Cart </h4>
+                </div>
+            </div> <!--end col-->
+        </div><!--end row-->
+
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a href="#">Page</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Login Form Start -->
+<section class="section">
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-lg-12 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+                <div class="row">
+                {% for service in services %}
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card h-100 shadow-sm border service-card {% if service.id == checkout %}border-primary{% else %}border-light{% endif %}" id="card_{{ service.id }}">
+                            <div class="card-body">
+                                <div class="form-check">
+                                    <input 
+                                        class="form-check-input" 
+                                        type="radio" 
+                                        name="selected_service" 
+                                        id="service_{{ service.id }}" 
+                                        value="{{ service.id }}"
+                                        {% if service.id == checkout %} checked {% endif %} 
+                                        onchange="setSelectedService(this.value)">
+                                    <label class="form-check-label w-100" for="service_{{ service.id }}">
+                                        <strong>{{ service.name }}</strong><br>
+                                        <span class="text-muted">Price: Rs. 
+                                            {% if service.sale_price %}
+                                                <span class="text-danger fw-bold">{{ service.sale_price }}</span>
+                                                <del class="text-muted small ms-1">{{ service.base_price }}</del>
+                                            {% else %}
+                                                {{ service.base_price }}
+                                            {% endif %}
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            </div>
+            <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+                <div class="card custom-form rounded border-0  p-4">
+                    <div class="app-brand justify-content-center mb-4">
+                        <a href="{% url 'franchise' %}" class="app-brand-link gap-2">
+                            <span class="app-brand-logo demo">
+                                <img src="{% static 'home/assets/images/logo-dark.png'%}" alt="Career Wader" />
+                            </span>
+                        </a>
+                    </div>
+                    <div class="row d-flex" style="gap:10px;">
+                        <form class="paymentDetails">
+                            {%csrf_token%}
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Name<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="user" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="name" required id="name"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Your Email<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                                            <input type="email" class="form-control ps-5" name="email" required id="email"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone number<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                                            <input type="number" class="form-control ps-5" name="phone_number" required="" id="phone_number"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label class="form-label text-white">State</label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                            <select name="state" class="form-control ps-5" id="state" required>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                                <option value="Assam">Assam</option>
+                                                <option value="Bihar">Bihar</option>
+                                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                                <option value="Goa">Goa</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                                <option value="Haryana">Haryana</option>
+                                                <option value="Himachal ">Himachal</option>
+                                                <option value="Dharamshala">Dharamshala</option>
+                                                <option value="Jharkhand">Jharkhand</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Belgaum ">Belgaum</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Madhya">Madhya</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Nagpur">Nagpur</option>
+                                                <option value="Manipur">Manipur</option>
+                                                <option value="Meghalaya">Meghalaya</option>
+                                                <option value="Mizoram">Mizoram</option>
+                                                <option value="Nagaland">Nagaland</option>
+                                                <option value="Odisha">Odisha</option>
+                                                <option value="Punjab">Punjab</option>
+                                                <option value="Rajasthan">Rajasthan</option>
+                                                <option value="Sikkim">Sikkim</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Tripura">Tripura</option>
+                                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                                <option value="Uttarakhand">Uttarakhand</option>
+                                                <option value="Dehradun">Dehradun</option>
+                                                <option value="West Bengal">West Bengal</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">City<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                            <input type="text" class="form-control ps-5" name="city" required="" id="city"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Address<span class="text-danger">*</span></label>
+                                        <div class="form-icon position-relative">
+                                            <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                                            <textarea name="address" id="address" rows="4" class="form-control ps-5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3">
+                                        <button class="btn btn-primary">Complete Payment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!--end custom-form-->
+            </div><!--end col-->
+
+            <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                <div class="title-heading ms-lg-4">
+                    <h4 class="mb-4">Complete your payment by filling the details 🚀</h4>
+
+                    <p class="text-muted">Join our Career Counseling Platform – the AI based solution transforming
+                        career choices for students across India.</p>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Personalized Career Guidance</h6>
+                            <p class="text-muted mb-0">Tailored advice for your unique career path</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Comprehensive Resources</h6>
+                            <p class="text-muted mb-0">Access to educational materials and career tools</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Expert Support</h6>
+                            <p class="text-muted mb-0">Guidance from industry professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->
+
+
+{% if messages %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    {% for message in messages %}
+    Swal.fire({
+        icon: 'warning',
+        title: 'Oops!',
+        text: '{{ message }}',
+    });
+    {% endfor %}
+</script>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script>
+    function setSelectedService(val) {
+        document.cookie = `setToCheckout=${val}; path=/; max-age=3600`;
+
+        document.querySelectorAll('.service-card').forEach(function(card) {
+            card.classList.remove('border-primary');
+            card.classList.add('border-light');
+        });
+
+        const selectedCard = document.querySelector(`#card_${val}`);
+        if (selectedCard) {
+            selectedCard.classList.add('border-primary');
+            selectedCard.classList.remove('border-light');
+        }
+    }
+    jQuery(document).ready(function ($) {
+        const current = cookie('setToCheckout');
+        if (current) {
+            $(`input[name=selected_service][value="${current}"]`).prop('checked', true);
+        }
+
+        
+
+        let serviceSelected = cookie('setToCheckout');
+        console.log("Initially selected service:", serviceSelected);
+
+
+        $('.paymentDetails').on('submit', function (e) {
+            e.preventDefault()
+
+             let selectedService = cookie('setToCheckout');
+            console.log("Submitting with service:", selectedService);
+
+            let data = {
+                name:$("input[name=name]").val(),
+                email:$("input[name=email]").val(),
+                phone:$("input[name=phone_number]").val(),
+                address:$("textarea[name=address]").val(),
+                city:$("input[name=city]").val(),
+                state:$("select[name=state]").val(),
+                service:serviceSelected
+            }
+            
+            let token = $('input[name=csrfmiddlewaretoken]').val();
+            
+            fetch("/checkout/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRFToken": token,
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                console.log(response)
+                if (!response.ok){
+                    throw new Error(response.statusText);
+                    Swal.fire({
+                        title: `Failed to save order: ${response.statusText}`,
+                        text: response.message,
+                        icon: "error",
+                    })
+                }else{
+                    Swal.fire({
+                        title: `Redirecting to payment page`,
+                        text: "",
+                        icon: "success",
+                    })
+                }
+            })
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => {
+                console.log(error)
+                Swal.fire({
+                    title: error.statusText,
+                    text: error.message,
+                    icon: 'error',
+                    confirmButtonText: 'Try Again',
+                    didClose: () => {
+                        // Extra guard to ensure modal is NOT visible after alert closes
+                        if (loadingModal && $('#loadingModal').hasClass('show')) {
+                            loadingModal.hide();
+                        }
+                    }
+                });
+            });
+        })
+    })
+</script>
+
+{% endblock %}

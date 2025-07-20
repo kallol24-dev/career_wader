@@ -1,0 +1,431 @@
+{% extends 'home/layouts/indexbase.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+    .bg-home-75vh{
+        background: url('{% static 'home/assets/images/resume-building/resume.jpg' %}') center center;
+      }
+     @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+</style>
+  <!-- Hero Start -->
+  <section class="home-slider position-relative">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <div class="bg-home-75vh d-flex align-items-center" style="">
+            <div class="bg-overlay1"></div>
+            <div class="container">
+              <div class="row mt-2 pt-3 justify-content-center">
+                <div class="col-12 col-md-6">
+                  <div class="title-heading">
+                    <h2 class="text-white title-dark mb-3">Craft a Winning Resume that Gets You Noticed</h2>
+
+                    <p class="para-desc text-white-50 mb-0">"Get professional help in creating a resume that showcases your skills, experience, and achievements. Our expert resume writers will help you stand out from the competition and increase your chances of landing your dream job."</p>
+                    <div class="mt-4"></div>
+                  </div>
+                </div>
+                <!-- end col -->
+
+                <div class="col-12 col-md-6">
+                  <div class="title-heading"></div>
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+          </div>
+          <!-- end slide -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end section -->
+  <div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+      <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </div>
+  <!-- Hero End -->
+
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="section-title text-center mb-4 pb-2">
+            <h2 class="title mb-4">Features</h2>
+            <p class="text-muted para-desc mx-auto mb-0">
+              Career Wader’s <span class="text-primary fw-bold">Resume Building</span> service crafts professional, ATS-friendly resumes tailored to industry standards, enhancing visibility, impact, and job prospects.
+            </p>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+
+      <div class="row align-items-center">
+        <div class="col-lg-3 col-md-6">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon7.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Customized Resumes</a>
+              <p class="text-muted mt-2">Each CV is tailored to the job you're seeking, ensuring relevance and effectiveness.</p><br /><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon8.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Quick Turnaround</a>
+              <p class="text-muted mt-2">Get your resume done quickly and efficiently, without compromising on quality.</p><br /><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon9.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Standout Cover Letters</a>
+              <p class="text-muted mt-2">Our cover letters are designed to grab the attention of hiring managers and increase your chances of getting shortlisted.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon10.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Trending Templates</a>
+              <p class="text-muted mt-2">Our templates are modern, attractive, and apt for the industry you're applying to.</p><br /><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon11.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Affordable Pricing</a>
+              <p class="text-muted mt-2">Our pricing is competitive and designed to provide value for money.</p><br /><br /><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon12.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">ATS Compliant</a>
+              <p class="text-muted mt-2">Our resumes are optimized for Applicant Tracking Systems, ensuring that your application gets through to the hiring manager.</p><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon13.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">AI-Enabled and Consultant-Enriched</a>
+              <p class="text-muted mt-2">Our resumes are crafted with the help of AI tools and reviewed by experienced consultants to ensure quality and effectiveness.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon14.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">LinkedIn Makeover</a>
+              <p class="text-muted mt-2">Get a professional LinkedIn profile makeover at an attractive price as part of our package.</p><br /><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+          <div class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+            <div class="icons text-start">
+              <img src="{% static 'home/assets/images/interview-assistance/icons/icon15.jpg' %}" />
+            </div>
+            <div class="card-body p-0 mt-4">
+              <a href="javascript:void(0)" class="title h5 text-dark">Personal Touch</a>
+              <p class="text-muted mt-2">We guarantee individual attention and a personal touch in every resume we create.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-9 col-md-6 mt-4 pt-2">
+          <img src="{% static 'home/assets/images/resume-building/resume6.jpg' %}" style="width:100%;border-radius: 10px;" />
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container mt-100 mt-60">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center">
+          <div class="section-title mb-4 pb-2">
+            <h4 class="title mb-4">Benefits</h4>
+            <p class="text-muted para-desc mx-auto mb-0">
+              Professional resume building by <span class="text-primary fw-bold">Career Wader</span> boosts credibility, highlights strengths, ensures ATS compatibility, and significantly increases job interview opportunities.
+            </p>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="card blog blog-primary rounded border-0 shadow">
+            <div class="position-relative">
+              <img src="{% static 'home/assets/images/resume-building/resume1.jpg' %}" class="card-img-top rounded-top" alt="..." />
+              <div class="overlay rounded-top"></div>
+            </div>
+            <div class="card-body content">
+              <h5 class="">Increased Visibility</h5>
+              <p class="text-muted mb-0">Get noticed by top employers with a professionally crafted resume.</p><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="card blog blog-primary rounded border-0 shadow">
+            <div class="position-relative">
+              <img src="{% static 'home/assets/images/resume-building/resume2.jpg' %}" class="card-img-top rounded-top" alt="..." />
+              <div class="overlay rounded-top"></div>
+            </div>
+            <div class="card-body content">
+              <h5 class="">Improved Chances</h5>
+              <p class="text-muted mb-0">Increase your chances of getting shortlisted and landing your dream</p><br />
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-4 col-md-6 mt-4 pt-2">
+          <div class="card blog blog-primary rounded border-0 shadow">
+            <div class="position-relative">
+              <img src="{% static 'home/assets/images/resume-building/resume3.jpg' %}" class="card-img-top rounded-top" alt="..." />
+              <div class="overlay rounded-top"></div>
+            </div>
+            <div class="card-body content">
+              <h5 class="">Enhanced Professional Image</h5>
+              <p class="text-muted mb-0">Showcase your skills, experience, and achievements in a professional and effective manner.</p>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">FAQs:</h4>
+            <div class="accordion" id="buyingquestion">
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="headingOne"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How are these resumes prepared to carry an air of confidence?</button></h2>
+                <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                  <div class="accordion-body text-muted">
+                    <p>Our resumes are prepared by experienced consultants who understand the job market and know what hiring managers are looking for in a candidate. We highlight your strengths, achievements, and relevant experience to showcase your confidence and expertise.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading2"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse1">How can a good resume lead to better interaction?</button></h2>
+                <div id="collapse2" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                  <div class="accordion-body text-muted">
+                    <p>A good resume showcases your skills, experience, and achievements, making it easier for you to discuss your qualifications during an interview. It also demonstrates your professionalism and attention to detail, which can make a positive impression on the hiring manager.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading3"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse1">How to answer role-related questions?</button></h2>
+                <div id="collapse3" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                  <div class="accordion-body text-muted">
+                    <p>Our consultants can provide guidance on how to answer role-related questions, including tips on structuring your responses, highlighting relevant experience, and showcasing your skills and achievements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/resume-building/resume4.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="Join careerwader" title="Join careerwader" />
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+
+      <div class="container mt-100 mt-60">
+        <div class="row justify-content-center">
+          <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+              <h4 class="title mb-4">Plans and Pricing</h4>
+              <p class="text-muted para-desc mb-0 mx-auto">
+                Payment Plans for <span class="text-primary fw-bold">Career Wader Career Counselling</span> Services
+              </p>
+            </div>
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+              <div class="card-body">
+                <h6 class="title name fw-bold text-uppercase mb-4">Basic Plan</h6>
+                <div class="d-flex mb-4">
+                  <span class="h4 mb-0 mt-2">Rs</span>
+                  <span class="price h1 mb-0">499/-</span>
+                </div>
+
+                <ul class="list-unstyled mb-0 ps-0">
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>One-Page Resume
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>One Revision
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
+                  </li>
+                </ul>
+                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+
+          <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card pricing pricing-primary business-rate shadow border-0 rounded">
+              <div class="ribbon ribbon-right ribbon-warning overflow-hidden">
+                <span class="text-center d-block shadow small h6">Best</span>
+              </div>
+              <div class="card-body">
+                <h6 class="title name fw-bold text-uppercase mb-4">Premium</h6>
+                <div class="d-flex mb-4">
+                  <span class="h4 mb-0 mt-2">Rs</span>
+                  <span class="price h1 mb-0">949/-</span>
+                </div>
+
+                <ul class="list-unstyled mb-0 ps-0">
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Two-Page Resume
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Two Revisions
+                  </li>
+
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>LinkedIn Profile Optimization
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
+                  </li>
+                </ul>
+                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+
+          <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+              <div class="card-body">
+                <h6 class="title name fw-bold text-uppercase mb-4">Advanced Plan</h6>
+                <div class="d-flex mb-4">
+                  <span class="h4 mb-0 mt-2">Rs</span>
+                  <span class="price h1 mb-0">1449/-</span>
+                </div>
+
+                <ul class="list-unstyled mb-0 ps-0">
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Comprehensive Resume Writing
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Three Revisions
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>LinkedIn Profile Optimization
+                  </li>
+                  <hr />
+                  <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;">
+                    <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>A Cover Letter
+                  </li>
+                </ul>
+                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+              </div>
+            </div>
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+   {% include 'home/pages/blog-common.html' %}
+{% endblock %}

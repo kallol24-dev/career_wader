@@ -1,0 +1,600 @@
+{% extends "home/layouts/indexbase.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+     @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+</style>
+<!-- Hero Start -->
+    <section class="home-slider position-relative">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="bg-home-75vh d-flex align-items-center"
+                        style="background: url('{% static 'home/assets/images/interview-assistance/interviews.jpg' %}') center center;">
+                        <div class="bg-overlay1"></div>
+                        <div class="container">
+                            <div class="row mt-2 pt-3 justify-content-center">
+                                <div class="col-12 col-md-6">
+                                    <div class="title-heading ">
+                                        <h2 class="text-white title-dark mb-3">Ace Your Interviews with Expert Guidance
+                                        </h2>
+
+                                        <p class="para-desc text-white-50 mb-0" style=" color: #fff;">At Career Wader,
+                                            we understand the importance of acing an interview to land your dream job.
+                                            Our expert guidance is tailored to provide you with successful outcomes. Our
+                                            time-proven steps will walk you through the process, ensuring you're
+                                            well-prepared to face any interview.</p>
+                                        <div class="mt-4">
+
+
+                                        </div>
+                                    </div>
+                                </div><!--end col-->
+
+                                <div class="col-12 col-md-6">
+                                    <div class="title-heading ">
+
+
+
+
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div>
+                    </div><!--end slide-->
+                </div>
+
+
+
+
+            </div>
+
+
+
+        </div>
+    </section><!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-color-white">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <section class="section">
+        <div class="container ">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="section-title text-center mb-4 pb-2">
+                        <h2 class="title mb-4">Our Guidance Includes</h2>
+                        <p class="text-muted para-desc mx-auto mb-0">Ace your dream job with <span
+                                class="text-primary fw-bold">Career Wader’s</span> interview assistance—expert coaching, mock sessions, and confidence-building for career success.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-6">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon01.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Understand the Job Offer</a>
+                            <p class="text-muted mt-2">We help you thoroughly understand the job requirements,
+                                responsibilities, and expectations, enabling you to tailor your approach and showcase
+                                your relevant skills.</p><br>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon02.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Resume SWOT Analysis</a>
+                            <p class="text-muted mt-2">Our experts will analyze your resume, identifying your strengths,
+                                weaknesses, opportunities, and threats. This analysis will help us create a personalized
+                                strategy to enhance your strengths and work on your weaknesses</p>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon03.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Custom Interview Questions
+                                Sequence</a>
+                            <p class="text-muted mt-2">We'll prepare a customized set of questions that are likely to be
+                                asked in the interview, helping you practice and perfect your responses.</p><br>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon04.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Mock Interview Playback &
+                                Feedback</a>
+                            <p class="text-muted mt-2">Our mock interview sessions will simulate the actual interview
+                                experience, providing you with valuable feedback on your performance, body language, and
+                                communication skills.</p>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon05.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Follow-up Sessions to Clarify and
+                                Improve Weak Areas</a>
+                            <p class="text-muted mt-2">We'll work with you to identify areas of improvement and provide
+                                guidance on how to overcome them, ensuring you're confident and prepared for the actual
+                                interview.</p>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                    <div
+                        class="card border-0 features feature-primary feature-clean course-feature p-4 overflow-hidden shadow">
+                        <div class="icons text-start">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/icon06.jpg' %}">
+                        </div>
+                        <div class="card-body p-0 mt-4">
+                            <a href="javascript:void(0)" class="title h5 text-dark">Confident Interview Readiness
+                                Conclusions</a>
+                            <p class="text-muted mt-2">Our expert guidance will equip you with the skills and confidence
+                                to tackle any question or situation that arises during the interview.</p><br>
+
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+
+
+
+
+
+
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <div class="container mt-100 mt-60">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-6 order-2 order-md-1 mt-4 mt-sm-0 pt-2 pt-sm-0">
+                    <div class="section-title me-lg-5">
+                        <h4 class="title ">Assured Outcomes</h4>
+                        <h5 class=" mb-2"><span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Individual Tailor-Made Initial
+                            Assessments: </h5>
+                        <p class="text-muted">We'll conduct a thorough assessment of your strengths, weaknesses, and
+                            position requirements, providing you with a personalized roadmap for success.</p>
+                        <h5 class=" mb-2"><span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Elaborate Practice Question
+                            Lists: </h5>
+                        <p class="text-muted">You'll receive extensive practice question lists covering various aspects
+                            of the interview, helping you prepare and practice your responses.</p>
+                        <h5 class=" mb-2"><span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Extensive Pointed Feedback</h5>
+                        <p class="text-muted">Our mock interviews will provide you with detailed feedback on your
+                            performance, highlighting areas of improvement and suggesting ways to enhance your skills.
+                        </p>
+
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                    <div class="about-right">
+                        <div class="position-relative shadow p-2 rounded bg-white-color img-one">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/4.jpg' %}" class="img-fluid rounded" alt="work-image">
+                        </div>
+
+                        <div class="img-two shadow rounded-3 overflow-hidden p-2 bg-white-color">
+                            <img src="{% static 'home/assets/images/interview-assistance/icons/3.jpg' %}" class="img-fluid rounded-3" alt="work-image">
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <div class="container mt-100 mt-60">
+
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <div class="position-relative">
+                            <h4 class="title mb-4">Key Elements for a Likely <br>Successful Interview</h4>
+                        </div>
+                        <p class="text-muted mx-auto para-desc mb-0">Key elements for a successful interview: preparation, confidence, communication skills, body language, research, and presenting your best professional self.</p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+
+            <div class="row">
+                <div class="col-12 mt-4 pt-2">
+                    <div class="timeline-page position-relative">
+                        <div class="timeline-item">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="duration date-label-left position-relative text-md-end">
+                                        <img src="{% static 'home/assets/images/interview-assistance/icons/round1.jpg' %}" class="rounded-pill avatar avatar-ex-small"
+                                            alt="">
+
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-6 col-md-6 col-sm-6 mt-4 mt-sm-0">
+                                    <div class="event event-description-right float-left text-start">
+                                        <h5 class="my-2">Boosting Confidence</h5>
+                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">We'll work on building your
+                                            confidence, enabling you to showcase your skills and personality
+                                            effectively.</p>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end timeline item-->
+
+                        <div class="timeline-item mt-5 pt-2">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2 mt-4 mt-sm-0">
+                                    <div class="event event-description-left float-left text-end">
+                                        <h5 class="my-2">Communication Fluency and Ease</h5>
+                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">Our guidance will help you
+                                            develop clear, concise, and effective communication skills, making you more
+                                            articulate and confident in your responses.</p>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
+                                    <img src="{% static 'home/assets/images/interview-assistance/icons/round2.jpg' %}" class="rounded-pill avatar avatar-ex-small"
+                                        alt="">
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end timeline item-->
+
+                        <div class="timeline-item mt-5 pt-2">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 mt-4 mt-sm-0">
+                                    <div class="duration date-label-left position-relative text-md-end">
+                                        <img src="{% static 'home/assets/images/interview-assistance/icons/round3.jpg' %}" class="rounded-pill avatar avatar-ex-small"
+                                            alt="">
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-6 col-md-6 col-sm-6 mt-4 mt-sm-0">
+                                    <div class="event event-description-right float-left text-start">
+                                        <h5 class="my-2">Subject Knowledge and Understanding of Logics Within</h5>
+                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">We'll ensure you have a deep
+                                            understanding of the subject matter and the underlying logic, enabling you
+                                            to answer complex questions with ease.</p>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end timeline item-->
+
+                        <div class="timeline-item mt-5 pt-2">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-1 order-2 mt-4 mt-sm-0">
+                                    <div class="event event-description-left float-left text-end">
+                                        <h5 class="my-2">Quick Grasp of Grey and Dark Areas</h5>
+                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">Our experts will help you
+                                            identify and improve areas where you need more knowledge or practice,
+                                            ensuring you're well-prepared for any question.</p>
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-6 col-md-6 col-sm-6 order-sm-2 order-1">
+                                    <div class="duration duration-right position-relative">
+                                        <img src="{% static 'home/assets/images/interview-assistance/icons/round4.jpg' %}" class="rounded-pill avatar avatar-ex-small"
+                                            alt="">
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end timeline item-->
+
+                        <div class="timeline-item mt-5 pt-2">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 mt-4 mt-sm-0">
+                                    <div class="duration date-label-left position-relative text-md-end">
+                                        <img src="{% static 'home/assets/images/interview-assistance/icons/round5.jpg' %}" class="rounded-pill avatar avatar-ex-small"
+                                            alt="">
+                                    </div>
+                                </div><!--end col-->
+                                <div class="col-lg-6 col-md-6 col-sm-6 mt-4 mt-sm-0">
+                                    <div class="event event-description-right float-left text-start">
+                                        <h5 class="my-2">Finishing Techniques of Successful Interviews</h5>
+                                        <p class="timeline-subtitle mt-3 mb-0 text-muted">We'll ensure you have a deep
+                                            understanding of the subject matter and the underlying logic, enabling you
+                                            to answer complex questions with ease.</p>
+                                    </div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end timeline item-->
+                    </div><!--end timeline page-->
+                    <!-- TIMELINE END -->
+                </div><!--end col-->
+            </div><!--end row-->
+
+
+
+
+
+
+        </div><!--end container-->
+        <div class="container-fluid mt-100 mt-60 px-md-3 px-0">
+            <div class="bg-half-175 rounded-md rounded-md-0 shadow-md position-relative overflow-hidden jarallax"
+                data-jarallax data-speed="0.5" style="background: url('{% static 'home/assets/images/interview-assistance/icons/bg4.jpg' %}') center center;"></div>
+            <!--end slide-->
+        </div><!--end container-->
+    </section><!--end section-->
+
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="features-absolute">
+                        <div class="row align-items-end">
+                            <div class="col-md-3 col-6">
+                                <img src="{% static 'home/assets/images/interview-assistance/icons/cta1.jpg' %}" class="img-fluid rounded-md shadow" alt="">
+                            </div><!--end col-->
+
+                            <div class="col-md-3 col-6">
+                                <img src="{% static 'home/assets/images/interview-assistance/icons/cta2.jpg' %}" class="img-fluid rounded-md shadow" alt="">
+                            </div><!--end col-->
+
+                            <div class="col-md-6 col-12">
+                                <div class="section-title bg-white-color p-4 rounded-md text-md-start text-center">
+                                    <img src="{% static 'home/assets/images/interview-assistance/icons/3.png' %}" alt="">
+                                    <h2 class="fw-bold mb-3">Why Career Wader</h2>
+                                    <a href="#!" class="btn btn-link primary text-muted title-dark fw-semibold">Why
+                                        us?</a>
+                                </div>
+                            </div><!--end col-->
+                        </div>
+                    </div>
+                </div>
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <div class="card blog blog-primary rounded border-0 shadow">
+
+                        <div class="card-body content">
+                            <h5>Strategic Changes</h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <p>Our expert guidance will help you make strategic changes to your approach, ensuring
+                                    you're well-prepared for the interview</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <div class="card blog blog-primary rounded border-0 shadow">
+
+                        <div class="card-body content">
+                            <h5>Elaborate Feedback and Control Systems</h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <p>Our feedback mechanism will provide you with detailed insights into your performance,
+                                    helping you improve and refine your skills.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <div class="card blog blog-primary rounded border-0 shadow">
+
+                        <div class="card-body content">
+                            <h5><a href="javascript:void(0)" class="card-title title text-dark">Handy Practical Tips</a>
+                            </h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <p>We'll share practical tips and tricks to help you navigate the interview process with
+                                    ease.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--end col-->
+                <div class="col-lg-6 col-md-6 mt-4 pt-2">
+                    <div class="card blog blog-primary rounded border-0 shadow">
+
+                        <div class="card-body content">
+                            <h5><a href="javascript:void(0)" class="card-title title text-dark">Hands-on Practice
+                                    Guidance</a></h5>
+                            <div class="post-meta d-flex justify-content-between mt-3">
+                                <p>Our guidance will include hands-on practice sessions, ensuring you're well-prepared
+                                    and confident for the actual interview.</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+
+        <div class="container mt-100 mt-60">
+            <div class="row justify-content-center">
+                <div class="col-12 text-center">
+                    <div class="section-title mb-4 pb-2">
+                        <h4 class="title mb-4">Plans and Pricing</h4>
+                        <p class="text-muted para-desc mb-0 mx-auto">Payment Plans for <span
+                                class="text-primary fw-bold">Career Wader Interview Assistance</span> Services </p>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+                        <div class="card-body">
+                            <h6 class="title name fw-bold text-uppercase mb-4">Basic Positions</h6>
+                            <div class="d-flex mb-4">
+                                <span class="h4 mb-0 mt-2">Rs</span>
+                                <span class="price h1 mb-0">4000/-</span>
+
+
+                            </div>
+
+
+                            <ul class="list-unstyled mb-0 ps-0">
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Initial Assessment</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Practice Question Lists
+                                </li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Mock Interview</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Feedback</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
+                                </li>
+
+
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="card pricing pricing-primary business-rate shadow border-0 rounded">
+                        <div class="ribbon ribbon-right ribbon-warning overflow-hidden"><span
+                                class="text-center d-block shadow small h6">Best</span></div>
+                        <div class="card-body">
+                            <h6 class="title name fw-bold text-uppercase mb-4">Intermediate Positions</h6>
+                            <div class="d-flex mb-4">
+                                <span class="h4 mb-0 mt-2">Rs</span>
+                                <span class="price h1 mb-0">6000/-</span>
+
+
+                            </div>
+
+                            <ul class="list-unstyled mb-0 ps-0">
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Comprehensive
+                                    Assessment</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Extensive Practice
+                                    Question </li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Multiple Mock
+                                    Interviews</li>
+
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Detailed Feedback</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
+                                </li>
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+
+
+                <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                    <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+                        <div class="card-body">
+                            <h6 class="title name fw-bold text-uppercase mb-4">Apex Positions </h6>
+                            <div class="d-flex mb-4">
+                                <span class="h4 mb-0 mt-2">Rs</span>
+                                <span class="price h1 mb-0">9000/-</span>
+
+
+                            </div>
+
+                            <ul class="list-unstyled mb-0 ps-0">
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Personalized Coaching
+                                </li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>In-Depth Assessment
+                                </li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Advanced Practice
+                                    Question </li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Multiple Mock
+                                    Interviews</li>
+                                <hr>
+                                <li class="h6 text-muted mb-0" style="font-size:16px; font-weight: 400;"><span
+                                        class="icon h5 me-2"><i
+                                            class="uil uil-check-circle align-middle"></i></span>Detailed Feedback</li>
+
+                            </ul>
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                        </div>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+{% include 'home/pages/blog-common.html' %}
+{% endblock %}

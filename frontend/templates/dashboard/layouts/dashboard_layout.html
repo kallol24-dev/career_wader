@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html
+lang="en"
+class="light-style layout-menu-fixed"
+dir="ltr"
+data-theme="theme-default"
+data-assets-path="../assets/"
+data-template="vertical-menu-template-free"
+>
+<head>
+  <meta charset="utf-8" />
+  <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+  />
+  
+  <title>Career Wader - Dashboard</title>
+  
+  <meta name="description" content="" />
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <!-- Favicon -->
+  <link rel="icon" href="{%static 'assets/images/fav.ico' %}" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+  rel="stylesheet"
+  />
+  
+  <!-- Icons. Uncomment required icon fonts -->
+  <link rel="stylesheet" href="{% static 'dashboard/assets/vendor/fonts/boxicons.css'%}" />
+  <link href="{% static 'home/assets/libs/mdi/font/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+  <link href="{% static 'home/assets/libs/iconscout/unicons/css/line.css' %}" type="text/css" rel="stylesheet" />
+  {% comment %} <script src="{% static 'json/states_cities.json' %}"></script> {% endcomment %}
+
+    <!-- Core CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/vendor/css/core.css'%}"
+      class="template-customizer-core-css"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/vendor/css/theme-default.css'%}"
+      class="template-customizer-theme-css"
+    />
+    <link rel="stylesheet" href="{% static 'dashboard/assets/css/demo.css'%}" />
+
+    <!-- Vendors CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'%}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'dashboard/assets/vendor/libs/apex-charts/apex-charts.css'%}"
+    />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link href="{% static 'home/assets/libs/mdi/font/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'home/assets/libs/iconscout/unicons/css/line.css' %}" type="text/css" rel="stylesheet" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{% static 'dashboard/assets/vendor/js/helpers.js'%}"></script>
+
+    <!-- ! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!-- ? Config: Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file. -->
+    <script src="{% static 'dashboard/assets/js/config.js'%}"></script>
+  </head>
+
+  <body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Sidebar -->
+        {% include 'dashboard/includes/sidebar.html' %}
+        <!-- / Sidebar -->
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+          {% include 'dashboard/includes/header.html' %}
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          {% block content %} {%endblock%}
+      </div>
+
+      <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{% static 'dashboard/assets/vendor/libs/jquery/jquery.js'%}"></script>
+    <script src="{% static 'dashboard/assets/vendor/libs/popper/popper.js'%}"></script>
+    <script src="{% static 'dashboard/assets/vendor/js/bootstrap.js'%}"></script>
+    <script src="{% static 'dashboard/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'%}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'dashboard/assets/vendor/js/menu.js'%}"></script>
+
+    <!-- endbuild -->
+    
+    <!-- Vendors JS -->
+    <script src="{% static 'dashboard/assets/vendor/libs/apex-charts/apexcharts.js'%}"></script>
+    
+    <!-- Main JS -->
+    <script src="{% static 'dashboard/assets/js/main.js'%}"></script>
+    
+    <!-- Page JS -->
+    <script src="{% static 'dashboard/assets/js/dashboards-analytics.js'%}"></script>
+    
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="http://127.0.0.1:8000/static/home/assets/libs/feather-icons/feather.min.js"></script>
+      <script>
+        function logout() {
+          // Overwrite each cookie with max-age=0 to delete
+            document.cookie = "access_token=; path=/; max-age=0";
+            document.cookie = "refresh_token=; path=/; max-age=0";
+            document.cookie = "role=; path=/; max-age=0";
+            localStorage.removeItem('user')
+            const redirectURL = "{% url 'franchise' %}";
+      
+            window.location.href = redirectURL;  // Redirect to login page
+          }
+        function setCurrentUser() {
+          const user = JSON.parse(localStorage.getItem("user"));
+          const userContainer = document.querySelector(".current-user");
+
+          if (user && userContainer) {
+            userContainer.innerHTML = `
+              <span class="fw-semibold d-block cu-name">${user.first_name} ${user.last_name}</span>
+              <small class="text-muted cu-role">${user.role}</small>
+            `;
+          }
+        }
+
+        // ✅ Run after DOM loads
+        document.addEventListener("DOMContentLoaded", function () {
+          setCurrentUser();
+        });
+      </script>
+    {% block script %} {% endblock %}
+  </body>
+</html>

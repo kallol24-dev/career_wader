@@ -1,0 +1,315 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>CAREER WADER</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Welcome to Career Wader, a Platform where AI meets personalized career planning and counseling" />
+    <meta name="keywords" content="AI based Career Counseling Platform, Affordable pricing, Franchise Partner, AI driven Career Counseling Platform, personalized Career Guidance, Franchise Partner, India " />
+    <meta name="author" content="CAREER WADER" />
+    <meta name="email" content="CAREER WADER" />
+    <meta name="website" content="CAREER WADER" />
+    <meta name="Version" content="v4.9.0" />
+
+    <!-- favicon -->
+    <link rel="icon" href="{% static 'home/assets/images/fav.ico' %}" type="image/x-icon" />
+
+    <!-- Style Css -->
+    <link href="{% static 'home/assets/libs/tiny-slider/tiny-slider.css' %}" rel="stylesheet" />
+    <link href="{% static 'home/assets/libs/tobii/css/tobii.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'home/assets/libs/animate.css/animate.min.css' %}" rel="stylesheet" />
+
+    <!-- Bootstrap Css -->
+    <link href="{% static 'home/assets/css/bootstrap-green.min.css' %}" id="bootstrap-style" class="theme-opt" rel="stylesheet" type="text/css" />
+    <!-- Icons Css -->
+    <link href="{% static 'home/assets/libs/mdi/font/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'home/assets/libs/iconscout/unicons/css/line.css' %}" type="text/css" rel="stylesheet" />
+    <!-- Style Css -->
+    <link href="{% static 'home/assets/css/style-green.min.css' %}" id="color-opt" class="theme-opt" rel="stylesheet" type="text/css" />
+
+    {% block pageStyle %}
+
+    {% endblock %}
+  </head>
+
+  <body>
+    {% include 'home/includes/indexhead.html' %}
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% include 'home/includes/footer.html' %}
+
+    <div class="modal fade" id="global-contact-popup" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div style="position: absolute;z-index: 1200; right: 0;padding: 10px;">
+            <i type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></i>
+          </div>
+          <div class="modal-body p-0">
+            <div class="container-fluid px-0">
+              <div class="row align-items-center g-0">
+                <div class="col-lg-6 col-md-5">
+                  <img src="{% static 'home/assets/images/course/online/ab02.jpg' %}" class="img-fluid" alt="" />
+                </div>
+                <!-- end col -->
+
+                <div class="col-lg-6 col-md-7">
+                  <form class="enquiry-form p-4" id="globalEnquiryForm">
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">First Name <span class="text-danger">*</span></label>
+                          <div class="form-icon position-relative">
+                            <i data-feather="user" class="fea icon-sm icons"></i>
+                            <input type="text" class="form-control ps-5" placeholder="First Name" id="first_name" name="first_name" required />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                          <div class="form-icon position-relative">
+                            <i data-feather="user" class="fea icon-sm icons"></i>
+                            <input type="text" class="form-control ps-5" placeholder="Last Name" id="last_name" name="last_name" required />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">Email <span class="text-danger">*</span></label>
+                          <div class="form-icon position-relative">
+                            <i data-feather="mail" class="fea icon-sm icons"></i>
+                            <input type="email" class="form-control ps-5" id="email" placeholder="Email" name="email" required />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-6">
+                        <div class="mb-3">
+                          <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                          <div class="form-icon position-relative">
+                            <i data-feather="phone" class="fea icon-sm icons"></i>
+                            <input type="tel" class="form-control ps-5" placeholder="Phone Number" id="phone" name="phone_number" required />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label class="form-label">Message <span class="text-danger">*</span></label>
+                          <div class="form-icon position-relative">
+                            <i data-feather="message-circle" class="fea icon-sm icons"></i>
+                            <textarea class="form-control ps-5" placeholder="Write your message here" id="message" name="message" rows="4" required></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-12">
+                        <div class="mb-3 d-flex align-items-center">
+                          <img src="" alt="" id="gcap_img" />
+                          <span id="grefCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                          <input type="text" class="form-control" name="gcap_text" id="gcap_text" />
+                        </div>
+                      </div>
+                      <div class="col-lg-12 mb-0">
+                        <div class="d-grid">
+                          <button class="btn btn-primary" type="submit">Submit</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal PArtner -->
+    <div class="modal fade" id="LoginForm" tabindex="-1" aria-labelledby="LoginForm-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded shadow border-0">
+          <div class="modal-header border-bottom">
+            <h5 class="modal-title" id="LoginForm-title">Select your platform to register</h5>
+            <button type="button" class="btn btn-icon btn-close" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4 text-dark"></i></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-lg-4 col-sm-6 col-md-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="{% url 'franchise' %}"><img src="{% static 'home/assets/images/distribution-sales.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Franchise Partner</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-md-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="{% url 'careerCounsellor' %}"><img src="{% static 'home/assets/images/sales-crm.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Career Counsellor</p>
+                  </div>
+                </div>
+              </div>
+              {% comment %} <div class="col-lg-4 col-sm-6 col-md-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/recruitmentmanagement.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Recruitment Mng.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-md-4" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/competency-assessment.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Competency Ass.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/learning-management.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Learning Management</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div style="text-align: center; border: 1px solid #e9e9e9">
+                  <div class="inner">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/sales-crm.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Sales CRM</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div>
+                  <div class="inner" style="text-align: center; border: 1px solid #e9e9e9">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/scholarship-administration.jpg' %}" alt="Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Scholarship Admin.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div>
+                  <div class="inner" style="text-align: center; border: 1px solid #e9e9e9">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/affiliate-sales.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Affiliate Sales Partner</p>
+                  </div>
+                </div>
+              </div> {% endcomment %}
+
+              {% comment %} <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div>
+                  <div class="inner" style="text-align: center; border: 1px solid #e9e9e9">
+                    <div class="thumbnail">
+                      <a href="{% url 'register' 'counsellor' %}"><img src="{% static 'home/assets/images/career-counselling.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Career Counselling</p>
+                  </div>
+                </div>
+              </div> {% endcomment %}
+
+              {% comment %} <div class="col-lg-4 col-sm-6 col-md-4 pt-2" data-sal-delay="100" data-sal="slide-up" data-sal-duration="800">
+                <div>
+                  <div class="inner" style="text-align: center; border: 1px solid #e9e9e9">
+                    <div class="thumbnail">
+                      <a href="product-details.html"><img src="{% static 'assets/images/teaching.jpg' %}" alt="Shop Images" /></a>
+                    </div>
+                    <p style="
+                          font-size: 0.8pc;
+                          line-height: 15px;
+                          padding-top: 10px;
+                        ">Teaching at Career Wader</p>
+                  </div>
+                </div>
+              </div> {% endcomment %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Content End -->
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- javascript -->
+  <!-- JAVASCRIPT -->
+  <script src="{% static 'home/assets/libs/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- Lightbox -->
+  <script src="{% static 'home/assets/libs/shufflejs/shuffle.min.js' %}"></script>
+  <!-- SLIDER -->
+  <script src="{% static 'home/assets/libs/tiny-slider/min/tiny-slider.js' %}"></script>
+  <!-- Main Js -->
+  <script src="{% static 'home/assets/libs/feather-icons/feather.min.js' %}"></script>
+  <script src="{% static 'home/assets/js/plugins.init.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Note: All init js like tiny slider, counter, countdown, maintenance, lightbox, gallery, swiper slider, aos animation etc. -->
+  <script src="{% static 'home/assets/js/app.js' %}"></script>
+  <script src="{% static 'home/assets/js/franchiseEnquiry.js' %}"></script>
+  <script src="{% static 'home/assets/js/global.js' %}"></script>
+  <!-- Note: All important javascript like page loader, menu, sticky menu, menu-toggler, one page menu etc. -->
+</html>

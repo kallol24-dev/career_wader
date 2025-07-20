@@ -1,0 +1,2521 @@
+{% extends "home/layouts/indexbase.html" %}
+{% load static %}
+
+<!-- Loader -->
+    <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+    <!-- Loader -->
+
+    <!-- Navbar Start -->
+
+    <!--end header-->
+    <!-- Navbar End -->
+
+    {% block content %} 
+
+    <section class="bg-half-260 bg-light d-table w-100 bg-linear-gradient-primary">
+        <div class="container">
+          <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+              <div class="title-heading">
+                <span class="badge rounded-pill bg-soft-primary"
+                  ><b>Career Counselling </b></span
+                >
+                <h4 class="heading mb-3">
+                  Leading Digital Platform for
+                  <span
+                    class="text-primary typewrite"
+                    data-period="2000"
+                    data-type='[ "Students", "Parents", "Job Seeker" ]'
+                  >
+                    <span class="wrap"></span>
+                  </span>
+                  Counselling
+                </h4>
+                <p class="para-desc mx-auto text-muted mb-0">
+                  Welcome to Career Wader, a Platform where AI meets personalized
+                  career planning and counseling.
+                </p>
+  
+                <div class="mt-4 pt-2">
+                  {% comment %} <a
+                    href="javascript:void(0)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#login-popup"
+                    class="btn btn-pills btn-primary m-1"
+                    >Get Started</a
+                  > {% endcomment %}
+                  <a
+                  href="{% url 'about-us' %}"
+                  class="btn btn-pills btn-primary m-1"
+                  >Learn More</a
+                >
+                  <a
+                    href="javascript:void(0)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#enquiry-popup"
+                    class="btn btn-pills btn-soft-primary m-1"
+                    >Enquire Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+      </section>
+      <!--end section-->
+  
+      <div class="position-relative">
+        <div class="shape overflow-hidden text-color-white">
+          <svg
+            viewBox="0 0 2880 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+      </div>
+  
+      <!-- Start -->
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-11">
+              <div class="features-absolute">
+                <div id="grid" class="row">
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/8.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/6.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/4.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/7.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/5.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/3.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/1.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-4 col-6 spacing picture-item">
+                    <img
+                      src="{% static 'home/assets/images/seo/2.png'%}"
+                      class="img-fluid shadow seo-hero-widget rounded-md"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end div-->
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+  
+        <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="section-title mb-4 pb-2">
+                <span class="badge rounded-pill bg-soft-primary"
+                  >Why Career Counseling?</span
+                >
+                <h4 class="title mt-3 mb-4">
+                  Unlock your potential with expert guidance.
+                </h4>
+                <p class="text-muted para-desc mb-0 mx-auto">
+                  In today’s fast-paced and competitive world, making informed
+                  <span class="text-primary fw-bold">career choices</span> is more
+                  critical than ever. Career Counseling empowers individuals to
+                  navigate their
+                  <span class="text-primary fw-bold">professional journeys</span>
+                  with confidence and clarity. Here is why career counseling is
+                  essential:
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row">
+            <div class="col-md-4 col-12 mt-5 pt-4">
+              <div class="features feature-primary text-center">
+                <div class="image position-relative d-inline-block">
+                  <i class="uil uil-chart-line h2 text-primary"></i>
+                </div>
+  
+                <div class="content mt-4">
+                  <h5>Personalized Insights</h5>
+                  <p class="text-muted mb-0">
+                    Understand your strengths, skills and interests through
+                    personalized evidence-based assessments.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-md-4 col-12 mt-5 pt-4">
+              <div class="features feature-primary text-center">
+                <div class="image position-relative d-inline-block">
+                  <i class="uil uil-adjust-circle h2 text-primary"></i>
+                </div>
+  
+                <div class="content mt-4">
+                  <h5>Overcoming Challenges</h5>
+                  <p class="text-muted mb-0">
+                    Navigate mid-career transitions and challenges with the
+                    support of trained and expert counselors. Get the guidance you
+                    need to overcome obstacles and achieve your goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-md-4 col-12 mt-5 pt-4">
+              <div class="features feature-primary text-center">
+                <div class="image position-relative d-inline-block">
+                  <i class="uil uil-award h2 text-primary"></i>
+                </div>
+  
+                <div class="content mt-4">
+                  <h5>Life-long Career Management</h5>
+                  <p class="text-muted mb-0">
+                    Develop new skills for ongoing career management. Stay ahead
+                    in your field and quickly adapt to the ever-changing job
+                    demands.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-12 mt-5 text-center">
+              <a href="{% url 'about-us' %}" class="btn btn-pills btn-primary">See More</a>
+            </div>
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+        <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Our Services</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary fw-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-rupee-sign h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Career Counselling</a></h5>
+                                    <p class="text-muted mt-3 mb-0">If the distribution of letters and 'words' is random, the reader will not be distracted.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-shield h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Psychological Counselling</a></h5>
+                                    <p class="text-muted mt-3 mb-0">For this reason, dummy text usually consists of a more or less random series of words.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-headphones h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Admission Assistance</a></h5>
+                                    <p class="text-muted mt-3 mb-0">This prevents repetitive patterns from impairing the overall visual impression.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-exchange h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Coaching & Mentoring</a></h5>
+                                    <p class="text-muted mt-3 mb-0">It is advantageous when the dummy text is relatively realistic so that the layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-exchange h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Personality Development</a></h5>
+                                    <p class="text-muted mt-3 mb-0">It is advantageous when the dummy text is relatively realistic so that the layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card bg-light rounded shadow border-0">
+                            <div class="card-body py-5">
+                                <i class="uil uil-exchange h2 text-primary"></i>
+                                <div class="mt-2">
+                                    <h5 class="card-title"><a href="javascript:void(0)" class="text-primary"> Educational Load</a></h5>
+                                    <p class="text-muted mt-3 mb-0">It is advantageous when the dummy text is relatively realistic so that the layout.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+          </div>
+        <!--end container-->
+        
+        <div class="container mt-100 mt-60">
+          <div class="row align-items-center">
+            <div class="col-lg-5 col-md-5 col-12">
+              <img
+                src="{% static 'home/assets/images/empower.png'%}"
+                class="img-fluid mx-auto d-block"
+                alt=""
+              />
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-7 col-md-7 col-12 mt-4 mt-sm-0 pt-2 pt-sm-0">
+              <div class="section-title">
+                <h4 class="title mb-4">
+                  Empower your <br />
+                  Future
+                </h4>
+  
+                <p class="text-muted para-desc mb-0">
+                  Discover your
+                  <span class="text-primary fw-bold"
+                    >Perfect-fit career with AI</span
+                  >
+                  driven Scientific Evidence based Career Counseling
+                </p>
+  
+                <p class="text-muted para-desc mb-0">
+                  Unravel your true strengths and potential through personalized
+                  Career and Educational Guidance using cutting edge Ai methods.
+                  Tailored solutions for Students and Working Professionals.
+                </p>
+                <div class="d-inline-block">
+                  <div class="pt-4 d-flex align-items-center border-top">
+                    <i
+                      data-feather="smartphone"
+                      class="fea icon-md me-2 text-primary"
+                    ></i>
+                    <div class="content">
+                      <h6 class="mb-0">Start your Career Journey Today</h6>
+                      <a
+                        href="javascript:void(0)"
+                        data-bs-toggle="modal"
+                        data-bs-target="#login-popup"
+                        class="text-primary h6"
+                        >Get Started <i class="uil uil-angle-right-b"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+  
+        {% comment %} <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">How to get started</h4>
+                <p class="text-muted para-desc mx-auto mb-0">
+                  At <span class="text-primary fw-bold">Career Wader</span> we
+                  don’t just offer Franchise Opportunities. We offer Partnerships
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row">
+            <div class="col-md-4 mt-4 pt-2">
+              <div
+                class="card work-process border-0 rounded shadow"
+                style="height: 200px"
+              >
+                <div class="card-body">
+                  <h4 class="title">Easy Entry</h4>
+                  <p class="text-muted para">Low Costs; High Rewards Model</p>
+                  <a href="franchise.html" class="text-primary"
+                    >Read more <i class="uil uil-angle-right-b"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-md-4 mt-4 pt-2">
+              <div
+                class="card work-process border-0 rounded shadow"
+                style="height: 200px"
+              >
+                <div class="card-body">
+                  <h4 class="title">Comprehensive Training</h4>
+                  <p class="text-muted para">
+                    Become an expert Career Counselor with our simple, practical
+                    training
+                  </p>
+                  <a href="franchise.html" class="text-primary"
+                    >Read more <i class="uil uil-angle-right-b"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-md-4 mt-4 pt-2">
+              <div class="card work-process border-0 rounded shadow">
+                <div class="card-body">
+                  <h4 class="title">Little or no exposure is needed</h4>
+                  <p class="text-muted para">
+                    If you are an Undergraduate , passionate about guiding others
+                    and self-motivated, we will take care of the rest!
+                  </p>
+                  <a href="franchise.html" class="text-primary"
+                    >Read more <i class="uil uil-angle-right-b"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div> {% endcomment %}
+        <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Listen To People Just Like You</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">At <span class="text-primary fw-bold">Career Wader</span> we don’t just offer Franchise Opportunities. We offer Partnerships</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="card border-0 work-container work-primary work-modern position-relative d-block overflow-hidden rounded">
+                                        <div class="card-body p-0">
+                                            <img src="{% static 'home/assets/images/cw-testimonial.png'%}" class="img-fluid" alt="work-image">
+                                            <div class="overlay-work"></div>
+                                            
+                                            <div class="icons text-center">
+                                                <a href="#!" data-type="youtube" data-id="yba7hPeTSjk" class="work-icon bg-white d-inline-flex rounded-pill lightbox"><i data-feather="video" class="fea icon-sm image-icon"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+        <!--end container-->
+  
+        <div class="container mt-100 mt-60">
+          <div class="row align-items-end mb-4 pb-2">
+            {% comment %} <div class="col-md-8">
+              <div class="section-title text-center text-md-start">
+                <h5 class="text-primary">Our Counsellors</h5>
+                <h4 class="title mt-2 mb-4">
+                  Career Wader India Franchise Program
+                </h4>
+                <p class="text-muted mb-0 para-desc">
+                  Join us as a
+                  <span class="text-primary fw-bold">strategic partner,</span> not
+                  just a Franchise, Be a part of our Growth. With Revenue Sharing
+                  and Exclusive Portfolio.
+                </p>
+              </div>
+            </div> {% endcomment %}
+            <!--end col-->
+  
+            {% comment %} <div class="col-md-4 mt-4 mt-sm-0">
+              <div class="text-center text-md-end">
+                <a href="{% url 'franchise' %}" class="text-primary h6"
+                  >See More <i data-feather="arrow-right" class="fea icon-sm"></i
+                ></a>
+              </div>
+            </div> {% endcomment %}
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+
+        {% comment %} <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12 mt-4 pt-2">
+              <div class="tiny-six-item">
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/1.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Career Counselor Orientation program</a
+                      >
+                      <p class="text-white-50 mb-0">Video</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/2.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Career Guidance Report
+                      </a>
+                      <p class="text-white-50 mb-0">Counseling</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/3.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Power Mentoring + Counseling Program</a
+                      >
+                      <p class="text-white-50 mb-0">Video</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/4.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Digital Marketing Masterclass</a
+                      >
+                      <p class="text-white-50 mb-0">Web content</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/5.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >International Studies Career</a
+                      >
+                      <p class="text-white-50 mb-0">Counselor Program</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/6.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Career Counselor Orientation program</a
+                      >
+                      <p class="text-white-50 mb-0">Video</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+  
+                <div class="tiny-slide">
+                  <div
+                    class="features feature-primary feature-clean position-relative overflow-hidden rounded-md mx-2"
+                  >
+                    <img
+                      src="{% static 'assets/images/lawyer/7.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                    <div class="bg-overlay bg-linear-gradient-2"></div>
+                    <div
+                      class="position-absolute bottom-0 end-0 start-0 mx-4 mb-4"
+                    >
+                      <a
+                        href="#"
+                        class="fs-5 title fw-semibold text-white title-dark"
+                        >Six Sigma-Correlation & Regression with tool</a
+                      >
+                      <p class="text-white-50 mb-0">Video</p>
+                    </div>
+                  </div>
+                  <!--end tour post-->
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div> {% endcomment %}
+
+        <!--end container-fluid-->
+  
+        <div class="container mt-100 mt-60">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0 pt-2 pt-lg-0">
+              <div class="section-title me-lg-5">
+                <h5 class="text-primary">Why choose Career Wader?</h5>
+                <h4 class="title mb-4">Our Unique Career Counseling Approach</h4>
+                <p class="text-muted">
+                  Our career counseling methods and techniques set us apart by
+                  focusing on a holistic as well as personalized approach. Here is
+                  how we are different
+                </p>
+                <ul class="list-unstyled text-muted">
+                  <li class="mb-1">
+                    <span class="text-primary h5 me-2"
+                      ><i class="uil uil-check-circle align-middle"></i></span
+                    >Best Fit for your Life.
+                  </li>
+                  <li class="mb-1">
+                    <span class="text-primary h5 me-2"
+                      ><i class="uil uil-check-circle align-middle"></i></span
+                    >Real 360-degree assessment.
+                  </li>
+                </ul>
+                <a href="{% url 'about-us' %}" class="mt-3 h6 text-primary"
+                  >Find Out More <i class="uil uil-angle-right-b"></i
+                ></a>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-6 mt-4 pt-2 mt-lg-0 pt-lg-0">
+              <div class="card border-0 shadow rounded ms-lg-4 overflow-hidden">
+                <div
+                  class="d-flex p-2 bg-light justify-content-between align-items-center"
+                >
+                  <div>
+                    <a href="javascript:void(0)" class="text-danger"
+                      ><i class="mdi mdi-circle"></i
+                    ></a>
+                    <a href="javascript:void(0)" class="text-warning"
+                      ><i class="mdi mdi-circle"></i
+                    ></a>
+                    <a href="javascript:void(0)" class="text-success"
+                      ><i class="mdi mdi-circle"></i
+                    ></a>
+                  </div>
+  
+                  <small class="fw-bold"
+                    ><i class="mdi mdi-circle-medium text-success"></i> Career
+                    Wader</small
+                  >
+                </div>
+                <div class="bg-light px-2 position-relative">
+                  {% comment %} <video class="w-100 rounded" controls autoplay loop>
+                    <source src="{% static 'assets/images/video/call.mp4'%}" type="video/mp4" />
+                  </video> {% endcomment %}
+
+                  <img
+                  src="{% static 'home/assets/images/join.jpg'%}"
+                  class="img-fluid mx-auto rounded-md shadow-lg d-block"
+                  alt=""
+                />
+                 
+  
+                  {% comment %} <div class="position-absolute top-0 start-0">
+                    <div class="mt-2 ms-3">
+                      <span class="badge text-bg-danger">LIVE</span>
+                      <small class="mb-0 text-white title-dark"
+                        >4 Attendance</small
+                      >
+                    </div>
+                  </div> {% endcomment %}
+                </div>
+  
+                {% comment %} <div class="p-2 bg-light">
+                  <p class="text-muted mb-0">
+                    <b>Note:</b> This video is only for demo purposes.
+                  </p>
+                </div> {% endcomment %}
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+  
+        <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="section-title text-center mb-4 pb-2">
+                <h4 class="title mb-4">
+                  <span class="text-primary">AI</span> Powered Tools
+                </h4>
+                <p class="text-muted para-desc mb-0 mx-auto">
+                  Revolutionizing
+                  <span class="text-primary fw-bold">Career Counseling </span>
+                  through modern AI
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row align-items-center">
+            <div class="col-md-5 mt-4 pt-2">
+              <ul
+                class="nav nav-pills nav-justified flex-column mb-0"
+                id="pills-tab"
+                role="tablist"
+              >
+                <li class="nav-item bg-light rounded-md">
+                  <a
+                    class="nav-link rounded-md active"
+                    id="dashboard"
+                    data-bs-toggle="pill"
+                    href="#dash-board"
+                    role="tab"
+                    aria-controls="dash-board"
+                    aria-selected="false"
+                  >
+                    <div class="p-3 text-start">
+                      <h5 class="title">Management Dashboard</h5>
+                      <p class="text-muted tab-para mb-0">
+                        Dummy text is text that is used in the publishing industry
+                        or by web designers.
+                      </p>
+                    </div> </a
+                  ><!--end nav link-->
+                </li>
+                <!--end nav item-->
+  
+                <li class="nav-item bg-light rounded-md mt-4">
+                  <a
+                    class="nav-link rounded-md"
+                    id="timeline"
+                    data-bs-toggle="pill"
+                    href="#time-line"
+                    role="tab"
+                    aria-controls="time-line"
+                    aria-selected="false"
+                  >
+                    <div class="p-3 text-start">
+                      <h5 class="title">Management Timeline</h5>
+                      <p class="text-muted tab-para mb-0">
+                        Dummy text is text that is used in the publishing industry
+                        or by web designers.
+                      </p>
+                    </div> </a
+                  ><!--end nav link-->
+                </li>
+                <!--end nav item-->
+  
+                <li class="nav-item bg-light rounded-md mt-4">
+                  <a
+                    class="nav-link rounded-md"
+                    id="paymentmanagement"
+                    data-bs-toggle="pill"
+                    href="#payment-management"
+                    role="tab"
+                    aria-controls="payment-management"
+                    aria-selected="false"
+                  >
+                    <div class="p-3 text-start">
+                      <h5 class="title">Payment Management</h5>
+                      <p class="text-muted tab-para mb-0">
+                        Dummy text is text that is used in the publishing industry
+                        or by web designers.
+                      </p>
+                    </div> </a
+                  ><!--end nav link-->
+                </li>
+                <!--end nav item-->
+  
+                <li class="nav-item bg-light rounded-md mt-4">
+                  <a
+                    class="nav-link rounded-md"
+                    id="fileintegrate"
+                    data-bs-toggle="pill"
+                    href="#file-integrate"
+                    role="tab"
+                    aria-controls="file-integrate"
+                    aria-selected="false"
+                  >
+                    <div class="p-3 text-start">
+                      <h5 class="title">File Integrate</h5>
+                      <p class="text-muted tab-para mb-0">
+                        Dummy text is text that is used in the publishing industry
+                        or by web designers.
+                      </p>
+                    </div> </a
+                  ><!--end nav link-->
+                </li>
+                <!--end nav item-->
+              </ul>
+              <!--end nav pills-->
+            </div>
+            <!--end col-->
+  
+            <div class="col-md-7 col-12 mt-4 pt-2">
+              <div class="tab-content ms-lg-4" id="pills-tabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="dash-board"
+                  role="tabpanel"
+                  aria-labelledby="dashboard"
+                >
+                  <img
+                    src="{% static 'home/assets/images/task/apps.png'%}"
+                    class="img-fluid mx-auto rounded-md shadow-lg d-block"
+                    alt=""
+                  />
+                </div>
+                <!--end teb pane-->
+  
+                <div
+                  class="tab-pane fade"
+                  id="time-line"
+                  role="tabpanel"
+                  aria-labelledby="timeline"
+                >
+                  <img
+                    src="{% static 'home/assets/images/task/widgets2.png'%}"
+                    class="img-fluid mx-auto rounded-md shadow-lg d-block"
+                    alt=""
+                  />
+                </div>
+                <!--end teb pane-->
+  
+                <div
+                  class="tab-pane fade"
+                  id="payment-management"
+                  role="tabpanel"
+                  aria-labelledby="paymentmanagement"
+                >
+                  <img
+                    src="{% static 'home/assets/images/task/task.png'%}"
+                    class="img-fluid mx-auto rounded-md shadow-lg d-block"
+                    alt=""
+                  />
+                </div>
+                <!--end teb pane-->
+  
+                <div
+                  class="tab-pane fade"
+                  id="file-integrate"
+                  role="tabpanel"
+                  aria-labelledby="fileintegrate"
+                >
+                  <img
+                    src="{% static 'home/assets/images/task/file.png'%}"
+                    class="img-fluid mx-auto rounded-md shadow-lg d-block"
+                    alt=""
+                  />
+                </div>
+                <!--end teb pane-->
+              </div>
+              <!--end tab content-->
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div>
+        <!--end container-->
+  
+        <section class="section overflow-hidden">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-12 text-center">
+                <div
+                  class="section-title mb-4 pb-2 wow animate__animated animate__fadeInUp"
+                  data-wow-delay=".1s"
+                >
+                  <span class="badge rounded-pill bg-soft-primary"
+                    >How it works
+                  </span>
+                  <h4 class="title fw-semibold my-4">
+                    The smart way to choose <br />
+                    <strong class="text-primary">your career path</strong>
+                  </h4>
+                  <p class="text-muted para-desc mb-0 mx-auto">
+                    Step by step Breakdown
+                  </p>
+                </div>
+              </div>
+              <!--end col-->
+            </div>
+            <!--end row-->
+  
+            <div class="row">
+              <div class="col-12 mt-4 pt-2">
+                <img
+                  src="{% static 'home/assets/images/seo/support.png'%}"
+                  class="img-fluid"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          <!--end container-->
+        </section>
+
+        <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Success Stories</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Hear from our <span class="text-primary fw-bold">Students and Professionals</span></p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12 mt-4">
+                        <div class="tiny-three-item">
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tiny-slide">
+                                <div class="d-flex client-testi m-2">
+                                    <img src="{% static 'home/assets/images/success-stories-prof.jpg' %}" class="avatar avatar-small client-image rounded shadow" alt="">
+                                    <div class="card flex-1 content p-3 shadow rounded position-relative">
+                                        <ul class="list-unstyled mb-0">
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                            <li class="list-inline-item"><i class="mdi mdi-star text-warning"></i></li>
+                                        </ul>
+                                        <p class="text-muted mt-2">"I found my ideal career path thanks to ‘Career wader. The AI based platform with its accurate reports and also the personalized counseling with more career choices to make, provided real, actionable advice "</p>
+                                        <h6 class="text-primary">- Name <small class="text-muted">Student</small></h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Plans and Pricing</h4>
+                            <p class="text-muted para-desc mb-0 mx-auto"><span class="text-primary fw-bold">Affordable and Accessible</span> Career Guidance for All </p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+                            <div class="card-body">
+                                <h6 class="title name fw-bold text-uppercase mb-4">Free or low </h6>
+                                <div class="d-flex mb-4">
+                                    <span class="h4 mb-0 mt-2">₹</span>
+                                    <span class="price h1 mb-0">0</span>
+                                    <span class="h4 align-self-end mb-1">/mo</span>
+                                </div>
+                                
+                                <ul class="list-unstyled mb-0 ps-0">
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Full Access</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Source Files</li>
+                                </ul>
+                                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card pricing pricing-primary business-rate shadow border-0 rounded">
+                            <div class="ribbon ribbon-right ribbon-warning overflow-hidden"><span class="text-center d-block shadow small h6">Best</span></div>
+                            <div class="card-body">
+                                <h6 class="title name fw-bold text-uppercase mb-4">Basic Plan</h6>
+                                <div class="d-flex mb-4">
+                                    <span class="h4 mb-0 mt-2">₹</span>
+                                    <span class="price h1 mb-0">39</span>
+                                    <span class="h4 align-self-end mb-1">/mo</span>
+                                </div>
+
+                                <ul class="list-unstyled mb-0 ps-0">
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Full Access</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Source Files</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Free Appointments</li>
+                                </ul>
+                                <a href="javascript:void(0)" class="btn btn-primary mt-4">Get Started</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+                            <div class="card-body">
+                                <h6 class="title name fw-bold text-uppercase mb-4">Premium Plan</h6>
+                                <div class="d-flex mb-4">
+                                    <span class="h4 mb-0 mt-2">₹</span>
+                                    <span class="price h1 mb-0">59</span>
+                                    <span class="h4 align-self-end mb-1">/mo</span>
+                                </div>
+                                
+                                <ul class="list-unstyled mb-0 ps-0">
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Full Access</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Source Files</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>1 Domain Free</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Enhanced Security</li>
+                                </ul>
+                                <a href="javascript:void(0)" class="btn btn-primary mt-4">Try It Now</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded">
+                            <div class="card-body">
+                                <h6 class="title name fw-bold text-uppercase mb-4">Elite Plan</h6>
+                                <div class="d-flex mb-4">
+                                    <span class="h4 mb-0 mt-2">₹</span>
+                                    <span class="price h1 mb-0">79</span>
+                                    <span class="h4 align-self-end mb-1">/mo</span>
+                                </div>
+                                
+                                <ul class="list-unstyled mb-0 ps-0">
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Full Access</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Enhanced Security</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Source Files</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>1 Domain Free</li>
+                                    <li class="h6 text-muted mb-0"><span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Free Installment</li>
+                                </ul>
+                                <a href="javascript:void(0)" class="btn btn-primary mt-4">Started Now</a>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div><!--end container-->
+
+            <div class="container mt-100 mt-60">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <div class="section-title mb-4 pb-2">
+                            <h4 class="title mb-4">Latest News</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">Start working with <span class="text-primary fw-bold">Career Wader</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card blog blog-primary rounded border-0 shadow">
+                            <div class="position-relative">
+                                <img src="{% static 'home/assets/images/1.jpg' %}" class="card-img-top rounded-top" alt="...">
+                                <div class="overlay rounded-top"></div>
+                            </div>
+                            <div class="card-body content">
+                                <h5><a href="javascript:void(0)" class="card-title title text-dark">Design your apps in your own way</a></h5>
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i class="uil uil-heart me-1"></i>33</a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i class="uil uil-comment me-1"></i>08</a></li>
+                                    </ul>
+                                    <a href="blog-detail.html" class="text-muted readmore">Read More <i class="uil uil-angle-right-b"></i></a>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <small class="user d-block"><i class="uil uil-user"></i> Calvin Carlo</small>
+                                <small class="date"><i class="uil uil-calendar-alt"></i> 25th June 2021</small>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card blog blog-primary rounded border-0 shadow">
+                            <div class="position-relative">
+                                <img src="{% static 'home/assets/images/2.jpg' %}" class="card-img-top rounded-top" alt="...">
+                                <div class="overlay rounded-top"></div>
+                            </div>
+                            <div class="card-body content">
+                                <h5><a href="javascript:void(0)" class="card-title title text-dark">How apps is changing the IT world</a></h5>
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i class="uil uil-heart me-1"></i>33</a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i class="uil uil-comment me-1"></i>08</a></li>
+                                    </ul>
+                                    <a href="blog-detail.html" class="text-muted readmore">Read More <i class="uil uil-angle-right-b"></i></a>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <small class="user d-block"><i class="uil uil-user"></i> Calvin Carlo</small>
+                                <small class="date"><i class="uil uil-calendar-alt"></i> 25th June 2021</small>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                    
+                    <div class="col-lg-4 col-md-6 mt-4 pt-2">
+                        <div class="card blog blog-primary rounded border-0 shadow">
+                            <div class="position-relative">
+                                <img src="{% static 'home/assets/images/3.jpg' %}" class="card-img-top rounded-top" alt="...">
+                                <div class="overlay rounded-top"></div>
+                            </div>
+                            <div class="card-body content">
+                                <h5><a href="javascript:void(0)" class="card-title title text-dark">Smartest Applications for Business</a></h5>
+                                <div class="post-meta d-flex justify-content-between mt-3">
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="list-inline-item me-2 mb-0"><a href="javascript:void(0)" class="text-muted like"><i class="uil uil-heart me-1"></i>33</a></li>
+                                        <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted comments"><i class="uil uil-comment me-1"></i>08</a></li>
+                                    </ul>
+                                    <a href="blog-detail.html" class="text-muted readmore">Read More <i class="uil uil-angle-right-b"></i></a>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <small class="user d-block"><i class="uil uil-user"></i> Calvin Carlo</small>
+                                <small class="date"><i class="uil uil-calendar-alt"></i> 25th June 2021</small>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+        <!--end section-->
+  
+        {% comment %} <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Success Stories</h4>
+                <p class="text-muted para-desc mx-auto mb-0">
+                  Hear from our
+                  <span class="text-primary fw-bold"
+                    >Students and Professionals</span
+                  >
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row justify-content-center">
+            <div class="col-lg-12 mt-4">
+              <div class="tiny-three-item">
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="tiny-slide">
+                  <div class="d-flex client-testi m-2">
+                    <img
+                      src="{% static 'assets/images/client/01.jpg'%}"
+                      class="avatar avatar-small client-image rounded shadow"
+                      alt=""
+                    />
+                    <div
+                      class="card flex-1 content p-3 shadow rounded position-relative"
+                    >
+                      <ul class="list-unstyled mb-0">
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                        <li class="list-inline-item">
+                          <i class="mdi mdi-star text-warning"></i>
+                        </li>
+                      </ul>
+                      <p class="text-muted mt-2">
+                        "I found my ideal career path thanks to ‘Career wader. The
+                        AI based platform with its accurate reports and also the
+                        personalized counseling with more career choices to make,
+                        provided real, actionable advice "
+                      </p>
+                      <h6 class="text-primary">
+                        - Name <small class="text-muted">Student</small>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div> {% endcomment %}
+        <!--end container-->
+  
+        {% comment %} <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Plans and Pricing</h4>
+                <p class="text-muted para-desc mb-0 mx-auto">
+                  <span class="text-primary fw-bold"
+                    >Affordable and Accessible</span
+                  >
+                  Career Guidance for All
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+              <div
+                class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded"
+              >
+                <div class="card-body">
+                  <h6 class="title name fw-bold text-uppercase mb-4">
+                    Free or low
+                  </h6>
+                  <div class="d-flex mb-4">
+                    <span class="h4 mb-0 mt-2">$</span>
+                    <span class="price h1 mb-0">0</span>
+                    <span class="h4 align-self-end mb-1">/mo</span>
+                  </div>
+  
+                  <ul class="list-unstyled mb-0 ps-0">
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Full Access
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Source Files
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0)" class="btn btn-primary mt-4"
+                    >Buy Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+              <div
+                class="card pricing pricing-primary business-rate shadow border-0 rounded"
+              >
+                <div class="ribbon ribbon-right ribbon-warning overflow-hidden">
+                  <span class="text-center d-block shadow small h6">Best</span>
+                </div>
+                <div class="card-body">
+                  <h6 class="title name fw-bold text-uppercase mb-4">
+                    Basic Plan
+                  </h6>
+                  <div class="d-flex mb-4">
+                    <span class="h4 mb-0 mt-2">$</span>
+                    <span class="price h1 mb-0">39</span>
+                    <span class="h4 align-self-end mb-1">/mo</span>
+                  </div>
+  
+                  <ul class="list-unstyled mb-0 ps-0">
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Full Access
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Source Files
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Free Appointments
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0)" class="btn btn-primary mt-4"
+                    >Get Started</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+              <div
+                class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded"
+              >
+                <div class="card-body">
+                  <h6 class="title name fw-bold text-uppercase mb-4">
+                    Premium Plan
+                  </h6>
+                  <div class="d-flex mb-4">
+                    <span class="h4 mb-0 mt-2">$</span>
+                    <span class="price h1 mb-0">59</span>
+                    <span class="h4 align-self-end mb-1">/mo</span>
+                  </div>
+  
+                  <ul class="list-unstyled mb-0 ps-0">
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Full Access
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Source Files
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >1 Domain Free
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Enhanced Security
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0)" class="btn btn-primary mt-4"
+                    >Try It Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2">
+              <div
+                class="card pricing pricing-primary business-rate shadow bg-light border-0 rounded"
+              >
+                <div class="card-body">
+                  <h6 class="title name fw-bold text-uppercase mb-4">
+                    Elite Plan
+                  </h6>
+                  <div class="d-flex mb-4">
+                    <span class="h4 mb-0 mt-2">$</span>
+                    <span class="price h1 mb-0">79</span>
+                    <span class="h4 align-self-end mb-1">/mo</span>
+                  </div>
+  
+                  <ul class="list-unstyled mb-0 ps-0">
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Full Access
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Enhanced Security
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Source Files
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >1 Domain Free
+                    </li>
+                    <li class="h6 text-muted mb-0">
+                      <span class="icon h5 me-2"
+                        ><i class="uil uil-check-circle align-middle"></i></span
+                      >Free Installment
+                    </li>
+                  </ul>
+                  <a href="javascript:void(0)" class="btn btn-primary mt-4"
+                    >Started Now</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div> {% endcomment %}
+        <!--end container-->
+  
+        {% comment %} <div class="container mt-100 mt-60">
+          <div class="row justify-content-center">
+            <div class="col-12 text-center">
+              <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Latest News</h4>
+                <p class="text-muted para-desc mx-auto mb-0">
+                  Start working with
+                  <span class="text-primary fw-bold">Career Wader</span> that can
+                  provide everything you need to generate awareness, drive
+                  traffic, connect.
+                </p>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+  
+          <div class="row">
+            <div class="col-lg-4 col-md-6 mt-4 pt-2">
+              <div class="card blog blog-primary rounded border-0 shadow">
+                <div class="position-relative">
+                  <img
+                    src="{% static 'assets/images/blog/01.jpg'%}"
+                    class="card-img-top rounded-top"
+                    alt="..."
+                  />
+                  <div class="overlay rounded-top"></div>
+                </div>
+                <div class="card-body content">
+                  <h5>
+                    <a
+                      href="javascript:void(0)"
+                      class="card-title title text-dark"
+                      >Design your apps in your own way</a
+                    >
+                  </h5>
+                  <div class="post-meta d-flex justify-content-between mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li class="list-inline-item me-2 mb-0">
+                        <a href="javascript:void(0)" class="text-muted like"
+                          ><i class="uil uil-heart me-1"></i>33</a
+                        >
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="javascript:void(0)" class="text-muted comments"
+                          ><i class="uil uil-comment me-1"></i>08</a
+                        >
+                      </li>
+                    </ul>
+                    <a href="blog-detail.html" class="text-muted readmore"
+                      >Read More <i class="uil uil-angle-right-b"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="author">
+                  <small class="user d-block"
+                    ><i class="uil uil-user"></i> Calvin Carlo</small
+                  >
+                  <small class="date"
+                    ><i class="uil uil-calendar-alt"></i> 25th June 2021</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-4 col-md-6 mt-4 pt-2">
+              <div class="card blog blog-primary rounded border-0 shadow">
+                <div class="position-relative">
+                  <img
+                    src="{% static 'assets/images/blog/02.jpg' %}"
+                    class="card-img-top rounded-top"
+                    alt="..."
+                  />
+                  <div class="overlay rounded-top"></div>
+                </div>
+                <div class="card-body content">
+                  <h5>
+                    <a
+                      href="javascript:void(0)"
+                      class="card-title title text-dark"
+                      >How apps is changing the IT world</a
+                    >
+                  </h5>
+                  <div class="post-meta d-flex justify-content-between mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li class="list-inline-item me-2 mb-0">
+                        <a href="javascript:void(0)" class="text-muted like"
+                          ><i class="uil uil-heart me-1"></i>33</a
+                        >
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="javascript:void(0)" class="text-muted comments"
+                          ><i class="uil uil-comment me-1"></i>08</a
+                        >
+                      </li>
+                    </ul>
+                    <a href="blog-detail.html" class="text-muted readmore"
+                      >Read More <i class="uil uil-angle-right-b"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="author">
+                  <small class="user d-block"
+                    ><i class="uil uil-user"></i> Calvin Carlo</small
+                  >
+                  <small class="date"
+                    ><i class="uil uil-calendar-alt"></i> 25th June 2021</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+  
+            <div class="col-lg-4 col-md-6 mt-4 pt-2">
+              <div class="card blog blog-primary rounded border-0 shadow">
+                <div class="position-relative">
+                  <img
+                    src="{% static 'assets/images/blog/03.jpg'%}"
+                    class="card-img-top rounded-top"
+                    alt="..."
+                  />
+                  <div class="overlay rounded-top"></div>
+                </div>
+                <div class="card-body content">
+                  <h5>
+                    <a
+                      href="javascript:void(0)"
+                      class="card-title title text-dark"
+                      >Smartest Applications for Business</a
+                    >
+                  </h5>
+                  <div class="post-meta d-flex justify-content-between mt-3">
+                    <ul class="list-unstyled mb-0">
+                      <li class="list-inline-item me-2 mb-0">
+                        <a href="javascript:void(0)" class="text-muted like"
+                          ><i class="uil uil-heart me-1"></i>33</a
+                        >
+                      </li>
+                      <li class="list-inline-item">
+                        <a href="javascript:void(0)" class="text-muted comments"
+                          ><i class="uil uil-comment me-1"></i>08</a
+                        >
+                      </li>
+                    </ul>
+                    <a href="blog-detail.html" class="text-muted readmore"
+                      >Read More <i class="uil uil-angle-right-b"></i
+                    ></a>
+                  </div>
+                </div>
+                <div class="author">
+                  <small class="user d-block"
+                    ><i class="uil uil-user"></i> Calvin Carlo</small
+                  >
+                  <small class="date"
+                    ><i class="uil uil-calendar-alt"></i> 25th June 2021</small
+                  >
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+        </div> {% endcomment %}
+      </section>
+      <!--end section-->
+      <!-- End -->
+  
+      <!-- Footer Start -->
+      <!--end footer-->
+      <!-- Footer End -->
+  
+     
+  
+      <!-- Cookies Start -->
+      <div class="card cookie-popup shadow rounded py-3 px-4">
+        <p class="text-muted mb-0">
+          This website uses cookies to provide you with a great user experience.
+          By using it, you accept our
+          <a href="#" target="_blank" class="text-success h6">use of cookies</a>
+        </p>
+        <div class="cookie-popup-actions text-end">
+          <button><i class="uil uil-times text-dark fs-4"></i></button>
+        </div>
+      </div>
+      <!--Note: Cookies Js including in plugins.init.js (path like; js/plugins.init.js) and Cookies css including in _helper.scss (path like; scss/_helper.scss)-->
+      <!-- Cookies End -->
+  
+      <!-- Offcanvas Start -->
+      <div
+        class="offcanvas offcanvas-end shadow border-0" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header p-4 border-bottom">
+          <h5 id="offcanvasRightLabel" class="mb-0">
+            <img
+              src="{% static 'home/assets/images/logo-dark.png'%}"
+              height="24"
+              class="light-version"
+              alt=""
+            />
+            <img
+              src="{% static 'home/assets/images/logo-light.png'%}"
+              height="24"
+              class="dark-version"
+              alt=""
+            />
+          </h5>
+          <button
+            type="button"
+            class="btn-close d-flex align-items-center text-dark"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <i class="uil uil-times fs-4"></i>
+          </button>
+        </div>
+        <div class="offcanvas-body p-4">
+          <div class="row">
+            <div class="col-12">
+              <div class="card border-0 mt-4" style="z-index: 1">
+                <div class="card-body p-0">
+                  <h4 class="card-title text-center">Login</h4>
+                  <form class="login-form mt-4">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Your Email <span class="text-danger">*</span></label
+                          >
+                          <div class="form-icon position-relative">
+                            <i data-feather="user" class="fea icon-sm icons"></i>
+                            <input
+                              type="email"
+                              class="form-control ps-5"
+                              placeholder="Email"
+                              name="email"
+                              required=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+  
+                      <div class="col-lg-12">
+                        <div class="mb-3">
+                          <label class="form-label"
+                            >Password <span class="text-danger">*</span></label
+                          >
+                          <div class="form-icon position-relative">
+                            <i data-feather="key" class="fea icon-sm icons"></i>
+                            <input
+                              type="password"
+                              class="form-control ps-5"
+                              placeholder="Password"
+                              required=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <!--end col-->
+  
+                      <div class="col-lg-12">
+                        <div class="d-flex justify-content-between">
+                          <div class="mb-3">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="flexCheckDefault"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="flexCheckDefault"
+                                >Remember me</label
+                              >
+                            </div>
+                          </div>
+                          <p class="forgot-pass mb-0">
+                            <a
+                              href="auth-cover-re-password.html"
+                              class="text-dark fw-bold"
+                              >Forgot password ?</a
+                            >
+                          </p>
+                        </div>
+                      </div>
+                      <!--end col-->
+  
+                      <div class="col-lg-12 mb-0">
+                        <div class="d-grid">
+                          <button class="btn btn-primary">Sign in</button>
+                        </div>
+                      </div>
+                      <!--end col-->
+  
+                      <div class="col-12 text-center">
+                        <p class="mb-0 mt-3">
+                          <small class="text-dark me-2"
+                            >Don't have an account ?</small
+                          >
+                          <a
+                            href="{% url 'register' 'students' %}"
+                            class="text-dark fw-bold"
+                            >Sign Up</a
+                          >
+                        </p>
+                      </div>
+                      <!--end col-->
+                    </div>
+                    <!--end row-->
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="offcanvas-footer p-4 border-top text-center">
+          <ul class="list-unstyled social-icon social mb-0">
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-shopping-cart align-middle" title="Buy Now"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-dribbble align-middle" title="dribbble"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-behance align-middle" title="behance"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-facebook-f align-middle" title="facebook"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-instagram align-middle" title="instagram"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-twitter align-middle" title="twitter"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" class="rounded"
+                ><i class="uil uil-envelope align-middle" title="email"></i
+              ></a>
+            </li>
+            <li class="list-inline-item mb-0">
+              <a href="#" target="_blank" class="rounded"
+                ><i class="uil uil-globe align-middle" title="website"></i
+              ></a>
+            </li>
+          </ul>
+          <!--end icon-->
+        </div>
+      </div>
+      <!-- Offcanvas End -->
+      <!-- Switcher Start -->
+  
+      <div class="modal fade" id="login-popup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content rounded shadow border-0">
+            <div style="position: absolute;z-index: 1200; right: 0;padding: 10px;">
+                <i type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></i>
+            </div>
+            <div class="modal-body p-0">
+              <div class="container-fluid px-0">
+                <div class="row align-items-center g-0">
+                  <div class="col-lg-6 col-md-5">
+                    <img
+                      src="{% static 'home/assets/images/course/online/ab02.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-6 col-md-7">
+                    <form class="login-form p-4">
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label"
+                              >Your Email
+                              <span class="text-danger">*</span></label
+                            >
+                            <div class="form-icon position-relative">
+                              <i
+                                data-feather="user"
+                                class="fea icon-sm icons"
+                              ></i>
+                              <input
+                                type="email"
+                                class="form-control ps-5"
+                                placeholder="Email"
+                                name="email"
+                                required=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!--end col-->
+  
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label"
+                              >Password <span class="text-danger">*</span></label
+                            >
+                            <div class="form-icon position-relative">
+                              <i data-feather="key" class="fea icon-sm icons"></i>
+                              <input
+                                type="password"
+                                class="form-control ps-5"
+                                placeholder="Password"
+                                required=""
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <!--end col-->
+  
+                        <div class="col-lg-12">
+                          <div class="d-flex justify-content-between">
+                            <div class="mb-3">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="flexCheckDefault4"
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="flexCheckDefault4"
+                                  >Remember me</label
+                                >
+                              </div>
+                            </div>
+                            <p class="forgot-pass mb-0">
+                              <a
+                                href="auth-re-password.html"
+                                class="text-dark fw-bold"
+                                >Forgot password ?</a
+                              >
+                            </p>
+                          </div>
+                        </div>
+                        <!--end col-->
+  
+                        <div class="col-lg-12 mb-0">
+                          <div class="d-grid">
+                            <button class="btn btn-primary">Sign in</button>
+                          </div>
+                        </div>
+                        <!--end col-->
+  
+                        <div class="col-12 text-center">
+                          <p class="mb-0 mt-3">
+                            <small class="text-dark me-2"
+                              >Don't have an account ?</small
+                            >
+                            <a href="{% url 'register' 'students' %}" class="text-dark fw-bold"
+                              >Sign Up</a
+                            >
+                          </p>
+                        </div>
+                        <!--end col-->
+                      </div>
+                      <!--end row-->
+                    </form>
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end container-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="enquiry-popup" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content rounded shadow border-0">
+            <div style="position: absolute;z-index: 1200; right: 0;padding: 10px;">
+                <i type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></i>
+            </div>
+            <div class="modal-body p-0">
+              <div class="container-fluid px-0">
+                <div class="row align-items-center g-0">
+                  <div class="col-lg-6 col-md-5">
+                    <img
+                      src="{% static 'home/assets/images/course/online/ab01.jpg'%}"
+                      class="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <!--end col-->
+  
+                  <div class="col-lg-6 col-md-7">
+                    <form class="login-form p-4" id="enquiryForm">
+                      {% csrf_token %}
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              First Name <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                              <i data-feather="user" class="fea icon-sm icons"></i>
+                              <input
+                                type="text"
+                                class="form-control ps-5"
+                                placeholder="First Name"
+                                id="first_name"
+                                name="first_name"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              Last Name <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                              <i data-feather="user" class="fea icon-sm icons"></i>
+                              <input
+                                type="text"
+                                class="form-control ps-5"
+                                placeholder="Last Name"
+                                id="last_name"
+                                name="last_name"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              Email <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                              <i data-feather="mail" class="fea icon-sm icons"></i>
+                              <input
+                                type="email"
+                                class="form-control ps-5"
+                                id="email"
+                                placeholder="Email"
+                                name="email"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              Phone Number <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                              <i data-feather="phone" class="fea icon-sm icons"></i>
+                              <input
+                                type="tel"
+                                class="form-control ps-5"
+                                placeholder="Phone Number"
+                                id="phone"
+                                name="phone_number"
+                                required
+                              />
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-lg-12">
+                          <div class="mb-3">
+                            <label class="form-label">
+                              Message <span class="text-danger">*</span>
+                            </label>
+                            <div class="form-icon position-relative">
+                              <i data-feather="message-circle" class="fea icon-sm icons"></i>
+                              <textarea
+                                class="form-control ps-5"
+                                placeholder="Write your message here"
+                                id="message"
+                                name="message"
+                                rows="4"
+                                required
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                    
+                        <div class="col-lg-12 mb-0">
+                          <div class="d-grid">
+                            <button class="btn btn-primary" type="submit">Submit</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    
+                  </div>
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end container-->
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Switcher End -->
+  
+      <!-- Back to top -->
+      <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fs-5"><i data-feather="arrow-up" class="fea icon-sm icons align-middle"></i></a>
+      <!-- Back to top -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+  <script>
+      {% comment %} jQuery(document).ready(function($){
+        console.log("oj")
+        const baseUrl1 = "{{ config(API_BASE_URL) }}";
+      console.log(baseUrl1);
+    $('#enquiryForm').on('submit', function(e) {
+      e.preventDefault();
+      const baseUrl = "config(API_BASE_URL)";
+      const data = {
+          first_name: $('#first_name').val(),
+          last_name: $('#last_name').val(),
+          email: $('#email').val(),
+          phone_number: $('#phone').val(),
+          message: $('#message').val(),
+      };
+      axios.post(`${baseUrl}api/enquiry/post/`, data)
+        .then(function(response) {
+          alert('Registration successful!');
+          console.log(response.data);
+        })
+        .catch(function(error) {
+          console.error(error.response.data);
+          alert('Error:\n' + JSON.stringify(error.response.data));
+        });
+    });
+      }) {% endcomment %}
+      $('#enquiryForm').on('submit', function(e) {
+        e.preventDefault();
+        const baseUrl = "{{ api_base_url|escape }}";
+        let first_name = $('#first_name').val();
+        let last_name = $('#last_name').val();
+        const data = {
+            full_name: `${first_name} ${last_name}`,
+            email: $('#email').val(),
+            phone_number: $('#phone').val(),
+            message: $('#message').val(),
+        };
+        axios.post(`${baseUrl}api/enquiry/post/`, data)
+          .then(function(response) {
+            console.log(response);
+            alert('Enquiry submitted successfully');
+          })
+          .catch(function(error) {
+            alert('Error:\n' + JSON.stringify(error.response.data));
+          });
+    });
+  </script>
+    {% endblock %}

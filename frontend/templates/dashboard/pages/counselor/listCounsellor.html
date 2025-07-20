@@ -1,0 +1,543 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+{% block content %}
+<div class="card shadow m-4">
+  <div class="card-header py-3 bg-primary text-white mb-4">
+    <h6 class="m-0 font-weight-bold text-white">Counselor</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div class="table-controls">
+        <div class="d-flex mb-1" style="width:100%; justify-content: space-between;">
+          <div class="table-entries d-flex justify-center align-items-center">
+            <span>Show</span> 
+            <select class="form-control" name="perPage">
+              <option "10">10</option>
+              <option "25">25</option>
+              <option "50">50</option>
+              <option "100">100</option>
+            </select>
+            <span>Entries</span>
+          </div>
+          <div class="table-right-controls d-flex gap-2 align-items-center">
+            <div>
+              <button class="btn btn-sm btn-outline-primary view-counselor-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#counselorModal">Add Counsellor</button>
+            </div>
+            <div>
+              <select class="form-control" name='state'>
+                <option value="">select state</option>
+              {% for state in states %}
+              <option value="{{state}}">{{state}}</option>
+              {% endfor %}
+              </select>
+            </div>
+            <div class="d-flex">
+              <input type="text" id="counselorSearch" class="form-control" value="" placeholder="search here">
+            </div>
+            <div>
+              <button class='clear-filter btn btn-sm btn-outline-primary view-student-btn'>clear filter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table id="counselorTable" class="display table table-bordered table-hover" width="100%" cellspacing="0">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for counselor in counselors %}
+            <tr class="">
+              <td>{{ counselor.user.first_name }} {{ counselor.user.last_name }}</td>
+              <td><a href="mailto:{{ counselor.user.email }}">{{ counselor.user.email }}</a></td>
+              <td><a href="tel:{{ counselor.user.phone }}">{{ counselor.user.phone }}</a></td>
+              <td>{{ counselor.user.state }}</td>
+              <td>{{ counselor.user.city }}</td>
+              <td>
+                {% if counselor.user.country == "IN" %}
+                    <span>India</span>
+                {% elif counselor.user.country == "ID" %}
+                    <span>Indonesia</span>
+                {% elif counselor.user.country == "IR" %}
+                    <span>Iran</span>
+                {% elif counselor.user.country == "HU" %}
+                    <span>Hungary</span>
+                {% else %}
+                    <span>{{ counselor.user.country }}</span>
+                {% endif %}
+              </td>
+              <td>
+                {{ counselor.user.created_at }}
+              </td>
+              <td>
+                {% comment %} {'id': 4, 'user': {'id': 42, 'email': '2121@gmail.com', 'first_name': 'Ronit', 'last_name': 'Pradhan', 'phone': '8999991111', 'country': 'IN', 'is_active': True, 'role': 'counselor', 'state': None, 'city': None, 'created_at': '2025-07-14 13:14:49', 'updated_at': '2025-07-14 13:14:49'}, 'current_occupation': None, 'experience_in_years': None, 'is_terms_agreed': False, 'is_approved': False, 'background': [{'id': 5, 'counselling_specialization': '21', 'certification_qualification': 'https://careerwader.in/media/certifications/edu-loan11.jpg', 'relevant_exp': 21}]} {% endcomment %}
+                <button
+                  class="btn btn-sm btn-outline-primary view-counselor-btn"
+                  data-counselor='{
+                    "id": "{{ counselor.user.id }}",
+                    "first_name": "{{ counselor.user.first_name }}",
+                    "last_name": "{{ counselor.user.last_name }}",
+                    "email": "{{ counselor.user.email }}",
+                    "phone": "{{ counselor.user.phone }}",
+                    "state": "{{ counselor.user.state }}",
+                    "city": "{{ counselor.user.city }}",
+                    "country": "{{ counselor.user.country }}",
+                    "created_at": "{{ counselor.user.created_at }}",
+                    "status": "{{ counselor.is_approved }}",
+                    "current_occupation": "{{ counselor.current_occupation }}",
+                    "experience_in_years": "{{ counselor.experience_in_years }}",
+                    "background": "{{ counselor.background }}",
+                    "motivation_reason": "{{ counselor.motivation_reason }}",
+                    "hope_reason": "{{ counselor.hope_reason }}"
+                  }'
+                  data-bs-toggle="modal"
+                  data-bs-target="#studentModal"
+                >
+                  <i class='bx bx-show'></i> View
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+        <div>
+          Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+        </div>
+        <nav>
+          <ul class="pagination">
+            {% if page > 1 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'-1' }}">Previous</a>
+              </li>
+            {% endif %}
+
+            {% for i in page_range %}
+              <li class="page-item {% if page == i %}active{% endif %}">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ i }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'1' }}">Next</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Counselor Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Counselor Profile</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="row text-center mb-4">
+          <div class="col-12">
+            <div class="avatar avatar-xl bg-light rounded-circle mx-auto mb-3">
+              <span class="avatar-initial text-primary fw-bold fs-2" id="counselorInitials"></span>
+            </div>
+            <h4 id="counselorFullName" class="mb-0"></h4>
+            <div><span class="badge bg-secondary" id="counselorStatusBadge"></span></div>
+          </div>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card shadow-sm border-left-primary">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-envelope fa-lg text-primary me-3"></i>
+                <div>
+                  <small class="text-muted">Email</small>
+                  <div id="counselorEmail" class="fw-semibold"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm border-left-success">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-phone fa-lg text-success me-3"></i>
+                <div>
+                  <small class="text-muted">Phone</small>
+                  <div id="counselorPhone" class="fw-semibold"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-2">
+          <div class="col-md-4">
+            <div class="card shadow-sm border-left-info">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-globe fa-lg text-info me-3"></i>
+                <div>
+                  <small class="text-muted">Country</small>
+                  <div id="counselorCountry"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm border-left-warning">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-user-tie fa-lg text-warning me-3"></i>
+                <div>
+                  <small class="text-muted">Occupation</small>
+                  <div id="counselorOccupation"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card shadow-sm border-left-dark">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-briefcase fa-lg text-dark me-3"></i>
+                <div>
+                  <small class="text-muted">Experience</small>
+                  <div id="counselorExperience"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-12">
+            <h6 class="text-uppercase text-muted">Certifications & Specializations</h6>
+            <div id="counselorCertifications" class="mt-2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Counselor Modal -->
+<div class="modal fade" id="counselorModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title text-white" id="counselorModalTitle">Add Counselor</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="d-block" id="formAuthentication" class="login-form">
+          {% csrf_token %}
+          <input type="text" name="user" value="1" hidden />
+          <div class="row">
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          First Name <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-rename'></i> 
+                          <input
+                              type="text"
+                              class="form-control ps-5"
+                              placeholder="First Name"
+                              id="first_name"
+                              name="first_name"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Last Name <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-rename'></i> 
+                          <input
+                              type="text"
+                              class="form-control ps-5"
+                              placeholder="Last Name"
+                              id="last_name"
+                              name="last_name"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Email <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-envelope'></i> 
+                          <input
+                              type="email"
+                              class="form-control ps-5"
+                              id="email"
+                              placeholder="Email"
+                              name="email"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Password <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-lock'></i> 
+                          <input
+                              type="password"
+                              class="form-control ps-5"
+                              placeholder="Password"
+                              id="password"
+                              name="password"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Phone <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-phone'></i> 
+                          <input
+                              type="tel"
+                              class="form-control ps-5"
+                              placeholder="Phone Number"
+                              id="phone"
+                              name="phone"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Country <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-globe'></i> 
+                          <select name="country" class="form-control ps-5" id="country" required>
+                              <option value="IN">India</option>
+                              <option value="ID">Indonesia</option>
+                              <option value="IR">Iran</option>
+                              <option value="HU">Hungary</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          State <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-location'></i> 
+                          <select name="state" class="form-control ps-5" id="state" required>
+                              <option value="Andhra Pradesh">Andhra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option>
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Haryana">Haryana</option>
+                              <option value="Himachal ">Himachal </option>
+                              <option value="Dharamshala">Dharamshala</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Belgaum ">Belgaum </option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Madhya">Madhya</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Nagpur">Nagpur</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Odisha">Odisha</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttar Pradesh">Uttar Pradesh</option>
+                              <option value="Uttarakhand">Uttarakhand</option>
+                              <option value="Dehradun">Dehradun</option>
+                              <option value="West Bengal">West Bengal</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          City <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx bx-location-pin'></i> 
+                          <input
+                              type="tel"
+                              class="form-control ps-5"
+                              placeholder="City"
+                              id="city"
+                              name="city"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-12 mb-0">
+                  <div class="d-grid">
+                      <button class="btn btn-primary" type="submit">Add Counselor</button>
+                  </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>   
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+  jQuery(document).ready(function($){
+    const params = new URLSearchParams(window.location.search);
+    
+    $("select[name='perPage']").change(function(){     
+      let perPage = $(this).find("option:selected").val();
+      if( perPage ){
+        params.set('perPage', perPage); 
+      }else{
+        params.remove('perPage')
+      }
+      window.location.search = params.toString();
+    })
+    $('#counselorSearch').on('keyup', function (e) {
+      if (e.key === 'Enter') {
+        let searchQuery = $(this).val().trim();
+        if (searchQuery) {
+          params.set('search', searchQuery);
+        } else {
+          params.delete('search');
+        }
+        params.set('page', 1); // Reset to page 1 on new search
+        window.location.search = params.toString();
+      }
+    });
+    $("select[name='state']").change(function(){     
+      let state = $(this).find("option:selected").val();
+      if( state ){
+        params.set('state', state); 
+      }else{
+        params.remove('state')
+      }
+      window.location.search = params.toString();
+    })
+    $('.clear-filter').click(function(){
+      params.delete('perPage');
+      params.delete('state');
+      params.delete('page');
+      window.location.href = window.location.pathname;
+    })
+
+    $(".view-counselor-btn").click(function () {
+      let counselor = $(this).data("counselor");
+      console.log(counselor);
+      if (typeof counselor === "string") {
+        counselor = JSON.parse(counselor);
+      }
+      
+
+      // Fallbacks and transformations
+      const initials = `${counselor.first_name?.charAt(0) ?? ""}${counselor.last_name?.charAt(0) ?? ""}`;
+      const fullName = `${counselor.first_name ?? "N/A"} ${counselor.last_name ?? ""}`;
+      const statusLabel = counselor.status === "True" || counselor.status === true ? "Active" : "Inactive";
+      const statusClass = counselor.status === "True" || counselor.status === true ? "bg-success" : "bg-danger";
+
+      $("#counselorInitials").text(initials);
+      $("#counselorFullName").text(fullName);
+      $("#counselorEmail").text(counselor.email ?? "N/A");
+      $("#counselorPhone").text(counselor.phone ?? "N/A");
+      $("#counselorCountry").text(counselor.country ?? "N/A");
+      $("#counselorOccupation").text(counselor.current_occupation ?? "N/A");
+      $("#counselorExperience").text(counselor.experience_in_years ? `${counselor.experience_in_years} yrs` : "N/A");
+
+      $("#counselorStatusBadge")
+        .text(statusLabel)
+        .removeClass("bg-success bg-danger")
+        .addClass(statusClass);
+
+      // Render Certifications and Specializations
+      const certs = [];
+      try {
+        const background = typeof counselor.background === "string"
+          ? JSON.parse(counselor.background.replace(/'/g, '"'))
+          : counselor.background;
+
+        background.forEach((item) => {
+          certs.push(`
+            <div class="mb-2 p-2 border rounded shadow-sm">
+              <div><strong>Specialization:</strong> ${item.counselling_specialization}</div>
+              <div><strong>Experience:</strong> ${item.relevant_exp} yrs</div>
+              ${item.certification_qualification ? `<div><a href="${item.certification_qualification}" target="_blank" class="btn btn-sm btn-outline-primary mt-2">View Certificate</a></div>` : ''}
+            </div>
+          `);
+        });
+      } catch (e) {
+        certs.push("<p class='text-muted'>No certification data available.</p>");
+      }
+
+      $("#counselorCertifications").html(certs.join(""));
+    });
+  })
+</script>
+{% endblock %}

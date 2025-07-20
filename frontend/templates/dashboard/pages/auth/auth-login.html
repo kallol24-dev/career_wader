@@ -1,0 +1,373 @@
+{% extends "home/layouts/indexbase.html" %}
+{% load static %}
+{% block content %} 
+{% comment %} {% extends "home/layouts/base.html" %}
+{% load static  %}
+
+{% block content %} {% endcomment %}
+<section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+        <div class="row mt-5 justify-content-center">
+            <div class="col-lg-12 text-center">
+                <div class="pages-heading">
+                    <h4 class="title mb-0"> Login </h4>
+                </div>
+            </div>  <!--end col-->
+        </div><!--end row-->
+        
+        <div class="position-breadcrumb">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+                <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+                    <li class="breadcrumb-item"><a href="#">Page</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Login</li>
+                </ul>
+            </nav>
+        </div>
+    </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+        <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+<!--Shape End-->
+
+<!-- Login Form Start -->
+<section class="section">
+    <div class="container mt-100 mt-60">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
+                <div class="card custom-form rounded border-0 shadow p-4">
+                    <div class="app-brand justify-content-center mb-4">
+                        <a href="{% url 'franchise' %}" class="app-brand-link gap-2">
+                            <span class="app-brand-logo demo">
+                                <img src="{% static 'home/assets/images/logo-dark.png'%}" alt="Career Wader" />
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <form id="formAuthentication" class="login-form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <label class="form-label">
+                                        Email or Username <span class="text-danger">*</span>
+                                    </label>
+                                    <div class="form-icon position-relative">
+                                        <i data-feather="user" class="fea icon-sm icons"></i>
+                                        <input
+                                            type="text"
+                                            class="form-control ps-5"
+                                            placeholder="Enter your email or username"
+                                            id="email"
+                                            name="email-username"
+                                            autofocus
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between">
+                                        <label class="form-label">
+                                            Password <span class="text-danger">*</span>
+                                        </label>
+                                        <a href="{% url 'forgetPassword' %}" class="text-primary fw-bold">
+                                            <small>Forgot Password?</small>
+                                        </a>
+                                    </div>
+                                    <div class="form-icon position-relative">
+                                        <i data-feather="lock" class="fea icon-sm icons"></i>
+                                        <input
+                                            type="password"
+                                            class="form-control ps-5"
+                                            placeholder="Enter your password"
+                                            id="password"
+                                            name="password"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="remember-me" />
+                                        <label class="form-check-label" for="remember-me"> Remember Me </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="mb-3 d-flex align-items-center">
+                                    <img src="" alt="" id="cap_img" />
+                                    <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                                    <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                                </div>
+                            </div>
+                            <div class="col-lg-12 mb-0">
+                                <div class="d-grid">
+                                    <button class="btn btn-primary" sty type="submit">Sign In</button>
+                                </div>
+                            </div>
+                            <a href="{% url 'register' 'franchise' %}" class="text-primary fw-bold mt-3">
+                                <small>Sign up as Francisee instead</small>
+                            </a>
+                            {% comment %} <div class="col-lg-12 mt-3 text-center">
+                                <p class="mb-0">
+                                    <span>New on our platform?</span>
+                                    <a href="{% url 'register'%}" class="text-primary fw-bold">
+                                        Create an account
+                                    </a>
+                                </p>
+                            </div> {% endcomment %}
+                        </div>
+                    </form>
+                </div><!--end custom-form-->
+            </div><!--end col-->
+
+             <div class="col-lg-6 col-md-6 order-1 order-md-2">
+                <div class="title-heading ms-lg-4">
+                    <h4 class="mb-4">Login using your credentials 🚀</h4>
+
+                    <p class="text-muted">Join our Career Counseling Platform – the AI based solution transforming career choices for students across India.</p>
+                    
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Personalized Career Guidance</h6>
+                            <p class="text-muted mb-0">Tailored advice for your unique career path</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Comprehensive Resources</h6>
+                            <p class="text-muted mb-0">Access to educational materials and career tools</p>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex contact-detail align-items-center mt-3">
+                        <div class="icon">
+                            <i data-feather="check-circle" class="fea icon-m-md text-dark me-3"></i>
+                        </div>
+                        <div class="flex-1 content">
+                            <h6 class="title fw-bold mb-0">Expert Support</h6>
+                            <p class="text-muted mb-0">Guidance from industry professionals</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!--end col-->
+        </div><!--end row-->
+    </div><!--end container-->
+</section><!--end section-->
+
+<!-- Loading Modal -->
+<div class="modal fade" id="loadingModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loadingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center p-4">
+                <div class="spinner-border text-success mb-3" role="status" style="width: 3rem; height: 3rem">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <h5 class="mt-3">Signing in...</h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if messages %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    {% for message in messages %}
+        Swal.fire({
+            icon: 'warning',
+            title: 'Oops!',
+            text: '{{ message }}',
+        });
+    {% endfor %}
+</script>
+{% endif %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    const redirectURL = "{% url 'dashboard' %}";
+</script>
+
+<script>
+    let loadingModal;
+// Declare loadingModal globally so it can be reused
+jQuery(document).ready(function ($) {
+    let key = null
+    
+    function getCaptcha() {
+        axios
+        .get(`{{ api_base_url}}api/captcha/refresh/`)
+        .then(function (response) {
+        if (response.status == 200) {
+           var base = "{{ api_base_url | escape }}".replace(/\/+$/, '');
+            var url = response.data.image_url;
+            final_url = base + url;
+            console.log(final_url)
+
+            $('#cap_img').attr('src', final_url);
+            key = response.data.key // ✅ set global key
+        }
+        })
+        .catch(function (error) {
+        console.log(error)
+        })
+    }
+    
+    function verify() {
+        const captchaText = $('#cap_text').val()
+
+        if (!captchaText || !key) {
+            alert('Captcha or key missing')
+            return
+        }
+
+        axios
+        .post(`{{ api_base_url | escape }}api/captcha/verify/`, {
+            captcha_0: key,
+            captcha_1: captchaText
+        })
+        .then(function (response) {
+            console.log(response)
+            if (response.status == 200 && response.data.success) {
+                submitForm()
+            } else {
+                alert('Captcha verification failed.')
+                getCaptcha() // Refresh on fail
+            }
+        })
+        .catch(function (error) {
+            console.log(error)
+            alert('Verification failed.')
+            getCaptcha() // Refresh anyway
+        })
+    }
+    
+    function submitForm() {
+        const data = {
+            email: $('#email').val(),
+            password: $('#password').val()
+        };
+
+        const baseUrl = "{{ api_base_url|escape }}".replace(/\/+$/, ''); // Ensure no trailing slash
+        if (!loadingModal) {
+            loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
+        }
+
+        loadingModal.show(); // Show modal before sending request
+        console.log("Submitting data:", `${baseUrl}api/token/`);
+        axios.post(`${baseUrl}/api/token/`, data)
+        .then(function(response) {
+            console.log(response)
+            const accessToken = response.data?.access;
+            const refreshToken = response.data?.refresh;
+            const role = response.data?.role?.toLowerCase() || "user";
+
+            if (!accessToken || !refreshToken) {
+                throw new Error("Missing tokens");
+            }
+
+            // Set cookies
+            document.cookie = `access_token=${accessToken}; path=/; max-age=3600`;
+            document.cookie = `refresh_token=${refreshToken}; path=/; max-age=86400`;
+            document.cookie = `role=${role}; path=/; max-age=86400`;
+            localStorage.setItem("user", JSON.stringify({
+                id: response.data?.id,
+                email: response.data?.email,
+                first_name: response.data?.first_name,
+                last_name: response.data?.last_name,
+                phone: response.data?.phone,
+                role: response.data?.role
+            }));
+
+
+            // Hide modal and redirect
+            loadingModal.hide();
+            window.location.href = `${baseUrl}/dashboard`
+        })
+        .catch(function(error) {
+            console.log(error)
+            loadingModal.hide(); // Ensure it hides immediately
+
+            let title = 'Login Failed!';
+            let message = 'An error occurred. Please try again later.';
+
+            if (error.response) {
+                const status = error.response.status;
+                switch (status) {
+                    case 400:
+                        message = 'Bad request. Please check your input.';
+                        break;
+                    case 401:
+                        message = 'Unauthorized. Invalid username or password.';
+                        break;
+                    case 403:
+                        message = 'Forbidden. You do not have access.';
+                        break;
+                    case 404:
+                        message = 'API endpoint not found.';
+                        break;
+                    case 500:
+                        message = 'Internal Server Error. Please try again later.';
+                        break;
+                    default:
+                        message = error.response.data?.detail || message;
+                }
+            } else if (error.request) {
+                message = 'No response from the server. Please check your internet connection.';
+            } else {
+                message = 'Request setup error: ' + error.message;
+            }
+
+            // Show error alert
+            Swal.fire({
+                title: title,
+                text: message,
+                icon: 'error',
+                confirmButtonText: 'Try Again',
+                didClose: () => {
+                    // Extra guard to ensure modal is NOT visible after alert closes
+                    if (loadingModal && $('#loadingModal').hasClass('show')) {
+                        loadingModal.hide();
+                    }
+                }
+            });
+        });
+    }
+    
+      // Load captcha initially
+    getCaptcha()
+    
+      // Optional: Click on image to refresh captcha
+    $('#refCap').on('click', function () {
+        getCaptcha()
+    })
+
+    $('#formAuthentication').on('submit', function(e) {
+    e.preventDefault();
+        verify()
+    });
+})
+</script>
+{% endblock %}

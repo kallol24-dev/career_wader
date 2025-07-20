@@ -1,0 +1,627 @@
+{% extends "home/layouts/indexbase.html" %}
+{% load static %}
+
+{% block content %}
+     
+ <!-- Hero Start -->
+ <section class="bg-half-170 bg-light d-table w-100">
+    <div class="container">
+      <div class="row mt-5 justify-content-center">
+        <div class="col-lg-12 text-center">
+          <div class="pages-heading">
+            <h4 class="title mb-0">Franchise</h4>
+          </div>
+        </div>
+        <!--end col-->
+      </div>
+      <!--end row-->
+
+      <div class="position-breadcrumb">
+        <nav aria-label="breadcrumb" class="d-inline-block">
+          <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+            <li class="breadcrumb-item"><a href="#">Page</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Franchise
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!--end container-->
+  </section>
+  <!--end section-->
+  <!-- Hero End -->
+
+  <!-- Shape Start -->
+  <div class="position-relative">
+    <div class="shape overflow-hidden text-color-white">
+      <svg
+        viewBox="0 0 2880 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <!--Shape End-->
+
+  <!-- About Start -->
+  <section class="section">
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="section-title">
+            <h4 class="title mb-4">
+              Unfold your path to success with our Career Counseling
+              <span class="text-primary">Franchise</span> Opportunity!
+            </h4>
+
+            <h5>Become an Eduprenuer today</h5>
+            <p class="text-muted para-desc">
+              Are you looking to build a rewarding
+              <span class="text-primary fw-bold">enterprise (business)</span>
+              while helping students to shape their future?
+            </p>
+
+            <p class="text-muted para-desc">
+              Join our Career Counseling Platform – the AI based solution
+              transforming career choices for students across India.
+            </p>
+          </div>
+        </div>
+        <!--end col-->
+
+        <div class="col-lg-6">
+          <div class="position-relative">
+            <img
+              src="{% static 'home/assets/images/unfold.jpg'%}"
+              class="rounded img-fluid mx-auto d-block"
+              alt=""
+            />
+          </div>
+        </div>
+        <!--end col-->
+      </div>
+      <!--end row-->
+    </div>
+    <!--end container-->
+
+    <div class="container mt-100 mt-60">
+      <h4 class="title mb-4">FAQ</h4>
+
+      <div class="accordion" id="buyingquestion">
+        <div class="accordion-item rounded">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button border-0 bg-light"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              What is the purpose of this network?
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse border-0 collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                Our network aims to provide comprehensive career counseling
+                services to students, professionals, and entrepreneurs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              What are the benefits of joining this network?
+            </button>
+          </h2>
+          <div
+            id="collapse2"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                As a member of our network, you will have the opportunity to
+                make a positive impact, enhance your skills, and connect with
+                like-minded professionals.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              What are the requirements for joining this network?
+            </button>
+          </h2>
+          <div
+            id="collapse3"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We require a minimum of [X] years of experience in career
+                counseling, mentoring, coaching, or counseling, and a
+                [Degree/Certification] in Psychology, Education, or a related
+                field.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading1">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse1"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+              What do we offer?
+            </button>
+          </h2>
+          <div
+            id="collapse1"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <ul class="list-unstyled text-muted">
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >AI powered Career Tests that align the students’ career
+                  with their skills, interests, strength, motivation and
+                  personality traits.
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Different Plans and Affordable pricing to ensure that we
+                  reach more number of enrolments, creating an impact and
+                  growth opportunities for you.
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Training and support at nominal costs with refundable
+                  deposit plans ensuring that your investment is safe with us.
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Earn up to 50% of Revenues from student enrolments – A
+                  highly lucrative business opportunity
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Why Partner with Career Wader?
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <ul class="list-unstyled text-muted">
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Scalable & High Growth due to high Demand: Career
+                  Counseling is a growing need across students and working
+                  professionals capturing an estimated Current Market Size of
+                  over 5000 crores in India for students in Metros, Tier 2 and
+                  Tier 3 Cities of India.
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Minimal set up required to operate from as small as 500
+                  sq.ft. space.
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Quick Returns and High Earnings: With our easy to implement
+                  system and support, you can start seeing results in no time.
+                  <br />
+
+                  Be a part of the Revolution
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >100 + Franchisees in Record Time
+                </li>
+
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Exclusive Territories in Tier 2 and Tier 3 Cities and 3-4
+                  Franchisees per Metro/ Tier 1 City.
+                </li>
+
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Affordable, sustainable Model- Perfect for Tier 3 Cities
+                  owing to the highly aspirational population and in
+                  particular parents.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="headingthree">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsethree"
+              aria-expanded="false"
+              aria-controls="collapsethree"
+            >
+              Your Role as a Franchise Partner:
+            </button>
+          </h2>
+          <div
+            id="collapsethree"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingthree"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <ul class="list-unstyled text-muted">
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Promote and Market our Career Counseling Services in your
+                  City/town
+                </li>
+                <li class="mb-1">
+                  <span class="text-primary h5 me-2"
+                    ><i class="uil uil-check-circle align-middle"></i></span
+                  >Help students make informed Career decisions and choices
+                  backed by cutting edge AI Technology and expert guidance.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% comment %} Professional Development {% endcomment %}
+    <div class="container mt-100 mt-60">
+      <h4 class="title mb-4">Professional Development</h4>
+
+      <div class="accordion" id="buyingquestion">
+        <div class="accordion-item rounded">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button border-0 bg-light"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOneP"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+            What opportunities are available for professional development within the network?
+            </button>
+          </h2>
+          <div
+            id="collapseOneP"
+            class="accordion-collapse border-0 collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We offer various opportunities for professional development, including training sessions, workshops, and webinars. These sessions are designed to help you enhance your skills, stay updated on industry trends, and expand your knowledge in specific areas of career counselling.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2P"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            How can I access mentorship or coaching within the network?
+            </button>
+          </h2>
+          <div
+            id="collapse2P"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We have a mentorship program in place where experienced counsellors can provide guidance and support to newer members. You can also access coaching services to help you develop specific skills or address challenges in your practice.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3P"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            Are there any opportunities for networking within the network?
+
+            </button>
+          </h2>
+          <div
+            id="collapse3P"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                Yes, we host regular networking events, conferences, and online forums where you can connect with other career counselling consultants, share experiences, and build relationships.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+    {% comment %} Business Development {% endcomment %}
+    <div class="container mt-100 mt-60">
+      <h4 class="title mb-4">Business Development</h4>
+
+      <div class="accordion" id="buyingquestion">
+        <div class="accordion-item rounded">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button border-0 bg-light"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOneB"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+            How can I grow my business or practice within the network?
+            </button>
+          </h2>
+          <div
+            id="collapseOneP"
+            class="accordion-collapse border-0 collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We provide various resources and support to help you grow your business, including marketing guidance, business development tools, and access to a network of potential clients.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2B"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            Can I access any business development tools or resources?
+            </button>
+          </h2>
+          <div
+            id="collapse2B"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                Yes, we offer a range of business development tools and resources, including templates, worksheets, and guides. These resources are designed to help you streamline your practice, attract new clients, and increase your revenue.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3B"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            How can I increase my visibility within the network?
+
+            </button>
+          </h2>
+          <div
+            id="collapse3B"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We offer various opportunities to increase your visibility, including featured profiles, speaking engagements, and social media promotions.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {% comment %} Technology and Tools {% endcomment %}
+    <div class="container mt-100 mt-60">
+      <h4 class="title mb-4">Technology and Tools</h4>
+
+      <div class="accordion" id="buyingquestion">
+        <div class="accordion-item rounded">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button border-0 bg-light"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOneT"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+            What technology and tools are available to support my practice?
+
+            </button>
+          </h2>
+          <div
+            id="collapseOneT"
+            class="accordion-collapse border-0 collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We provide access to various technology and tools, including online platforms, software, and apps. These tools are designed to help you streamline your practice, manage client relationships, and deliver high-quality services.
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading2">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse2T"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            How can I stay up to date with the latest trends and technologies in career counselling?
+
+            </button>
+          </h2>
+          <div
+            id="collapse2T"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                We offer regular training sessions, webinars, and workshops to help you stay current with the latest trends and technologies in career counselling.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item rounded mt-2">
+          <h2 class="accordion-header" id="heading3">
+            <button
+              class="accordion-button border-0 bg-light collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3T"
+              aria-expanded="false"
+              aria-controls="collapse1"
+            >
+            Can I access any resources or support for using technology and tools?
+
+
+            </button>
+          </h2>
+          <div
+            id="collapse3T"
+            class="accordion-collapse border-0 collapse"
+            aria-labelledby="headingOne"
+            data-bs-parent="#buyingquestion"
+          >
+            <div class="accordion-body text-muted">
+              <p>
+                Yes, we provide technical support and resources to help you effectively use technology and tools in your practice.
+
+
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!--end section-->
+
+{% endblock %}

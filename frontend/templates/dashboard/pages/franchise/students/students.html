@@ -1,0 +1,542 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+{% block content %}
+<div class="card shadow m-4">
+  <div class="card-header py-3 bg-primary text-white mb-4">
+    <h6 class="m-0 font-weight-bold text-white">Student</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div class="table-controls">
+        <div class="d-flex mb-1" style="width:100%; justify-content: space-between;">
+          <div class="table-entries d-flex justify-center align-items-center">
+            <span>Show</span> 
+            <select class="form-control" name="perPage">
+              <option "10">10</option>
+              <option "25">25</option>
+              <option "50">50</option>
+              <option "100">100</option>
+            </select>
+            <span>Entries</span>
+          </div>
+          <div class="table-right-controls d-flex gap-2 align-items-center">
+            <div>
+              <button class="btn btn-sm btn-outline-primary enroll-student-btn"
+                data-bs-toggle="modal"
+                data-bs-target="#studentModal">Enrol Student</button>
+            </div>
+            <div>
+              <select class="form-control" name="state">
+                <option value="">select state</option>
+              {% for state in states %}
+              <option value="{{state}}">{{state}}</option>
+              {% endfor %}
+              </select>
+            </div>
+            <div class="d-flex">
+              <input type="text" id="studentSearch" class="form-control" value="" placeholder="search here">
+            </div>
+            <div>
+              <button class='clear-filter btn btn-sm btn-outline-primary view-student-btn'>clear filter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table id="studentTable" class="display table table-bordered table-hover" width="100%" cellspacing="0">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Plan</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr class="">
+              <td>{{ student.name }}</td>
+              <td><a href="mailto:{{ student.email }}">{{ student.email }}</a></td>
+              <td><a href="tel:{{ student.phone }}">{{ student.phone }}</a></td>
+              <td>{{ student.service.name }}</a></td>
+              <td>{{ student.state }}</td>
+              <td>{{ student.city }}</td>
+              <td>
+                {{ student.user.created_at }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-primary view-student-btn"
+                  data-student='{
+                    "id": "{{ student.id }}",
+                    "name": "{{ student.name }}",
+                    "email": "{{ student.email }}",
+                    "phone": "{{ student.phone }}",
+                    "state": "{{ student.state }}",
+                    "city": "{{ student.city }}",
+                    "status": "{{ student.status }}",
+                    "created_at": "{{ student.user.created_at }}"
+                  }'
+                  data-bs-toggle="modal"
+                  data-bs-target="#studentViewModal"
+                >
+                  <i class='bx bx-show'></i> View
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+        <div>
+          Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+        </div>
+        <nav>
+          <ul class="pagination">
+            {% if page > 1 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'-1' }}">Previous</a>
+              </li>
+            {% endif %}
+
+            {% for i in page_range %}
+              <li class="page-item {% if page == i %}active{% endif %}">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ i }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'1' }}">Next</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student Details Modal -->
+<div class="modal fade" id="studentViewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title text-white" id="studentModalTitle">Student Details</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-12 text-center mb-3">
+            <div class="avatar avatar-xl mb-3">
+              <span class="avatar-initial rounded-circle bg-primary" id="studentInitials"></span>
+            </div>
+            <h4 id="studentFullName"></h4>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentEmail"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-envelope fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Phone</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentPhone"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-phone fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Country</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentCountry"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-globe fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-secondary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">State</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentStatus"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>   
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Counselor Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title text-white" id="counselorModalTitle">Enroll Student</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="d-block" id="enrollStudent" class="login-form">
+          <input type="text" name="user" value="1" hidden />
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Name <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-rename'></i> 
+                          <input
+                              type="text"
+                              class="form-control ps-5"
+                              placeholder="Name"
+                              id="name"
+                              name="name"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Email <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-envelope'></i> 
+                          <input
+                              type="email"
+                              class="form-control ps-5"
+                              id="email"
+                              placeholder="Email"
+                              name="email"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          Phone <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-phone'></i> 
+                          <input
+                              type="tel"
+                              class="form-control ps-5"
+                              placeholder="Phone Number"
+                              id="phone"
+                              name="phone"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          State <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx  bx-location'></i> 
+                          <select name="selectedState" class="form-control ps-5" id="state" required>
+                              <option value="Andhra Pradesh">Andhra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option>
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Haryana">Haryana</option>
+                              <option value="Himachal ">Himachal </option>
+                              <option value="Dharamshala">Dharamshala</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Belgaum ">Belgaum </option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Madhya">Madhya</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Nagpur">Nagpur</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Odisha">Odisha</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Tamil Nadu">Tamil Nadu</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttar Pradesh">Uttar Pradesh</option>
+                              <option value="Uttarakhand">Uttarakhand</option>
+                              <option value="Dehradun">Dehradun</option>
+                              <option value="West Bengal">West Bengal</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-6">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          City <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <i class='bx bx-location-pin'></i> 
+                          <input
+                              type="tel"
+                              class="form-control ps-5"
+                              placeholder="City"
+                              id="city"
+                              name="city"
+                              required
+                          />
+                      </div>
+                  </div>
+              </div>
+             <div class="col-lg-12">
+                  <div class="mb-3">
+                      <label class="form-label">Address<span class="text-danger">*</span></label>
+                      <div class="form-icon position-relative">
+                          <i data-feather="map-pin" class="fea icon-sm icons"></i>
+                          <textarea name="address" id="address" rows="4" class="form-control ps-5"></textarea>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-12">
+                  <div class="mb-3">
+                      <label class="form-label">
+                          service <span class="text-danger">*</span>
+                      </label>
+                      <div class="form-icon position-relative">
+                          <select name="service" class="form-control">
+                            {% for service in services  %}
+                              <option value="{{service.id}}">
+                                {{service.name}} - <span class="mb-0">Rs</span>
+                                {%if not service.sale_price %} {{service.base_price}} {%else%}{{service.sale_price}}/-{%endif%}
+                            {% endfor %}
+                          </select>
+                      </div>
+                  </div>
+              </div>
+          
+              <div class="col-lg-12 mb-0">
+                  <div class="d-grid">
+                      <button class="btn btn-primary" type="submit">Enroll Students</button>
+                  </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>   
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+  jQuery(document).ready(function($){
+    const baseUrl = "{{ api_base_url|escape }}";
+    const params = new URLSearchParams(window.location.search);
+    $("#enrollStudent").on("submit", function (e) {
+    e.preventDefault();
+        const studentModalEl = document.getElementById('studentModal');
+        const modalInstance = bootstrap.Modal.getInstance(studentModalEl);
+        if (modalInstance) {
+            modalInstance.hide();
+        }
+        const name = $("input[name=name]").val();
+        const email = $("input[name=email]").val();
+        const phone = $("input[name=phone]").val();
+        const state = $("select[name=selectedState]").val();
+        const city = $("input[name=city]").val();
+        const address = $("textarea[name=address]").val();
+        const service = $("select[name=service]").val();
+
+        const payload = JSON.stringify({
+            name,
+            email,
+            phone,
+            state,
+            city,
+            address,
+            service,
+        });
+        console.log(payload)
+        $.ajax({
+            url: `https://careerwader.in/franchise-enroll-student/`,
+            method: "POST",
+            headers: {
+                "X-CSRFToken": $("meta[name='csrf-token']").attr("content"),
+            },
+            contentType: "application/json",
+            data: payload,
+            success: function (response) {
+                {% comment %} console.log("Student enrolled successfully:", response); {% endcomment %}
+                {% comment %} alert("Enrollment successful!"); {% endcomment %}
+                if (response.success == true) {
+                    Swal.fire({
+                        title: "New Enrollment",
+                        text: response.message || "Student enrolled successfully!",
+                        icon: 'success',
+                        confirmButtonText: 'OK',
+                        didClose: () => {
+                            // ✅ Close modal safely
+                            const studentModalEl = document.getElementById('studentModal');
+                            const modalInstance = bootstrap.Modal.getInstance(studentModalEl);
+                            if (modalInstance) {
+                                modalInstance.hide();
+                            }
+                        }
+                    });
+
+                    // ✅ Clear the form
+                    $("#enrollStudent")[0].reset();
+                }
+            },
+            error: function (xhr) {
+                console.error("Error enrolling student:", xhr);
+                let message = "";
+                if( xhr.statusText == "Internal Server Error"){
+                  message = "Something went wrong. Please contact admin or try again later."
+                }else{
+                  message = xhr.responseText;
+                }
+                Swal.fire({
+                        title: "Woops!!",
+                        text: `${message}`,
+                        icon: 'error',
+                        confirmButtonText: 'OK',
+                        didClose: () => {
+                            // ✅ Close modal safely
+                            const studentModalEl = document.getElementById('studentModal');
+                            const modalInstance = bootstrap.Modal.getInstance(studentModalEl);
+                            if (modalInstance) {
+                                modalInstance.hide();
+                            }
+                        }
+                    });
+            },
+        });
+    });
+    $("select[name='perPage']").change(function(){     
+      let perPage = $(this).find("option:selected").val();
+      if( perPage ){
+        params.set('perPage', perPage); 
+      }else{
+        params.remove('perPage')
+      }
+      window.location.search = params.toString();
+    })
+    $('#studentSearch').on('keyup', function (e) {
+      if (e.key === 'Enter') {
+        let searchQuery = $(this).val().trim();
+        if (searchQuery) {
+          params.set('search', searchQuery);
+        } else {
+          params.delete('search');
+        }
+        params.set('page', 1); // Reset to page 1 on new search
+        window.location.search = params.toString();
+      }
+    });
+    $("select[name='state']").change(function(){     
+      let state = $(this).find("option:selected").val();
+      if( state ){
+        params.set('state', state); 
+      }else{
+        params.remove('state')
+      }
+      window.location.search = params.toString();
+    })
+    $('.clear-filter').click(function(){
+      params.delete('perPage');
+      params.delete('state');
+      params.delete('page');
+      window.location.href = window.location.pathname;
+    })
+
+    $(".view-student-btn").click(function(){
+      let student = $(this).data('student');
+      // If data is still a string, parse it
+      if (typeof student === 'string') {
+        student = JSON.parse(student);
+      }
+      console.log(student)
+      // Use the data — example: update modal
+      $('#studentInitials').text(`${student.name.charAt(0)}`)
+      $('#studentFullName').text(`${student.name}`);
+      $('#studentEmail').text(`${student.email}`);
+      $('#studentPhone').text(`${student.phone}`);
+      $('#studentCountry').text(`${student.city}`);
+      $('#studentStatus').text(`${student.state}`);
+    })
+  })
+</script>
+{% endblock %}

@@ -1,0 +1,108 @@
+"""
+URL configuration for website project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path
+from views.home import mainPageViews, enquiryViews
+from views.dashboard import pageViews,usersViews,otpViews, enquiryViews as shortEnquiryViews, contactFormDisplay
+
+
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    
+    
+    # Home Page Routes
+    path('', mainPageViews.index, name = 'index'),
+    path('index/', mainPageViews.index, name = 'index1'),
+    path('contact/', mainPageViews.contact, name="contact"),
+    path('franchise/', mainPageViews.franchiseLandi6ng, name="franchise"),
+    path('about-us/', mainPageViews.about, name='about-us'),
+    path('counsellor/',mainPageViews.counsellor, name='counsellor'),
+    # path('franchise-landing/',mainPageViews.franchiseLanding, name = "franchiseLanding"),
+    path('faq-franchise/',mainPageViews.faqFranchise, name = "faqFranchise"),
+    
+    
+    #enquiries
+    path('enquiries/bangalore/',enquiryViews.enquiryBanglore, name = 'enquiryBanglore'),
+    path('enquiries/mysore/',enquiryViews.enquiryMysore, name = 'enquiryMysore'),
+    path('enquiries/hubli/',enquiryViews.enquiryHubli, name = 'enquiryHubli'),
+    path('enquiries/mangalore/',enquiryViews.enquiryMangalore, name = 'enquiryMangalore'),
+    path('enquiries/shimoga/',enquiryViews.enquiryShimoga, name = 'enquiryShimoga'),
+    path('enquiries/devangere/',enquiryViews.enquiryDevangere, name = 'enquiryDevangere'),
+    path('enquiries/tumkur/',enquiryViews.enquiryTumkur, name = 'enquiryTumkur'),
+    path('enquiries/gulbarga/',enquiryViews.enquiryGulbarga, name = 'enquiryGulbarga'),
+    path('enquiries/bidar/',enquiryViews.enquiryBidar, name = 'enquiryBidar'),
+    path('enquiries/belgaum/',enquiryViews.enquiryBelgaum, name = 'enquiryBelgaum'),
+    path('enquiries/vijaywada/',enquiryViews.enquiryVijaywada, name = 'enquiryVijaywada'),
+    path('enquiries/vishakapatnam/',enquiryViews.enquiryVishakapatnam, name = 'enquiryVishakapatnam'),
+    path('enquiries/nellore/',enquiryViews.enquiryNellore, name = 'enquiryNellore'),
+    path('enquiries/kurnool/',enquiryViews.enquiryKurnool, name = 'enquiryKurnool'),
+    path('enquiries/anantapur/',enquiryViews.enquiryAnantapur, name = 'enquiryAnantapur'),
+    path('enquiries/eluru/',enquiryViews.enquiryEluru, name = 'enquiryEluru'),
+    path('enquiries/tirupati/',enquiryViews.enquiryTirupati, name = 'enquiryTirupati'),
+    path('enquiries/gwalior/',enquiryViews.enquiryGwalior, name = 'enquiryGwalior'),
+    path('enquiries/indore/',enquiryViews.enquiryIndore, name = 'enquiryIndore'),
+    path('enquiries/bhopal/',enquiryViews.enquiryBhopal, name = 'enquiryBhopal'),
+    path('enquiries/hyderabad/',enquiryViews.enquiryHyderabad, name = 'enquiryHyderabad'),
+    path('enquiries/nizamabad/',enquiryViews.enquiryNizamabad, name = 'enquiryNizamabad'),
+    path('enquiries/warangal/',enquiryViews.enquiryWarangal, name = 'enquiryWarangal'),
+    path('enquiries/mahabubnagar/',enquiryViews.enquiryMahabubnagar, name = 'enquiryMahabubnagar'),
+    path('enquiries/coimbatore/',enquiryViews.enquiryCoimbatore, name = 'enquiryCoimbatore'),
+    path('enquiries/erode/',enquiryViews.enquiryErode, name = 'enquiryErode'),
+    path('enquiries/hosur/',enquiryViews.enquiryHosur, name = 'enquiryHosur'),
+    path('enquiries/trichy/',enquiryViews.enquiryTrichy, name = 'enquiryTrichy'),
+    path('enquiries/madurai/',enquiryViews.enquiryMadurai, name = 'enquiryMadurai'),
+    path('enquiries/mumbai/',enquiryViews.enquiryMumbai, name = 'enquiryMumbai'),
+    path('enquiries/pune/',enquiryViews.enquiryPune, name = 'enquiryPune'),
+    path('enquiries/nagpur/',enquiryViews.enquiryNagpur, name = 'enquiryNagpur'),
+    path('enquiries/nashik/',enquiryViews.enquiryNashik, name = 'enquiryNashik'),   
+    path('enquiries/kolhapur/',enquiryViews.enquiryKolhapur, name = 'enquiryKolhapur'),
+    path('enquiries/gurgaon/',enquiryViews.enquiryGurgaon, name = 'enquiryGurgaon'),
+    path('enquiries/jaipur/',enquiryViews.enquiryJaipur, name = 'enquiryJaipur'),
+    path('enquiries/udaipur/',enquiryViews.enquiryUdaipur, name = 'enquiryUdaipur'),
+    path('enquiries/prayagraj/',enquiryViews.enquiryPrayagraj, name = 'enquiryPrayagraj'),
+    path('enquiries/meerut/',enquiryViews.enquiryMeerut, name = 'enquiryMeerut'),
+    path('enquiries/lucknow/',enquiryViews.enquiryLucknow, name = 'enquiryLucknow'),
+    path('enquiries/bhubaneswar/',enquiryViews.enquiryBhubaneswar, name = 'enquiryBhubaneswar'),
+    path('enquiries/delhi/',enquiryViews.enquiryDelhi, name = 'enquiryDelhi'),
+    path('enquiries/kolkata/',enquiryViews.enquiryKolkata, name = 'enquiryKolkata'),
+    
+    # path('test/', mainPageViews.test),
+    
+    # Login Register Route
+    path('login/', pageViews.loginPageDisplay, name = 'login'),
+    path('register/<str:role>/',pageViews.registerDisplay, name = 'register'),
+    path('verify-otp/',pageViews.verifyOtp, name = 'verifyOtp'),
+    path('forget-password/',pageViews.forgetPassword, name = 'forgetPassword'),
+    path('confirm-reset-password/',pageViews.confirmResetPassword, name = 'confirmResetPassword'),
+    
+    #OTP Views
+    path('submit-otp/',otpViews.submitOtp, name="submitOtp"),
+    path('resend-otp/',otpViews.resendOtp, name="resendOtp"),
+        
+    # Admin Page Routes
+    path('dashboard/', pageViews.dashboard, name='dashboard'),
+
+    
+    
+    # Admin Form Display Routes
+    path('short-enquiry-display/',shortEnquiryViews.shortEnquiryDisplay, name = 'shortEnquiryDisplay'),
+    path('contact-form/', contactFormDisplay.contactFromFDetails, name = 'contactFromFDetails'),
+    path('student-display/',usersViews.studentDisplay, name = 'studentDisplay'),
+    path('franchise-display/',usersViews.franchiseDisplay, name = 'franchiseDisplay'),
+    
+]

@@ -1,0 +1,195 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+
+{% block content %}
+<div class="card shadow m-4">
+  <div class="card-header py-3">
+    <h6 class="m-0 font-weight-bold text-primary">Contact Form</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div class="d-flex mb-1" style="width:100%;    justify-content: space-between;">
+          <div class="table-entries d-flex justify-center align-items-center">
+            <span>Show</span> 
+            <select class="form-control" name="perPage">
+              <option>10</option>
+              <option>25</option>
+            </select> 
+            <span>Entries</span>
+          </div>
+          <div class="table-right-controls d-flex gap-2 align-items-center">
+            <div class="d-flex">
+              <input type="text" id="contactSearch" class="form-control" value="" placeholder="search here">
+            </div>
+            <div>
+              <button class='clear-filter btn btn-sm btn-outline-primary view-student-btn'>clear filter</button>
+            </div>
+          </div>
+        </div>
+      <table id="enquiryTable" class="display table table-bordered" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          {% for enquiry in enquiries %}
+            <tr class="{% if not enquiry.is_read %} bg-primary text-white {%endif%}">
+              <td>{{ enquiry.first_name }} {{ enquiry.last_name }}</td>
+              <td>{{ enquiry.email }}</td>
+              <td>{{ enquiry.phone_number }}</td>
+              <td>{{ enquiry.message }}</td>
+              <td>{{ enquiry.created_at }}</td>
+              <td>
+                <button class="btn btn-sm {% if not enquiry.is_read %} btn-outline-light {% else %}btn-outline-primary{% endif %}  view-contact-btn"
+                  data-contact="{
+                    &quot;id&quot;: &quot;{{ enquiry.id }}&quot;, 
+                    &quot;name&quot;: &quot;{{ enquiry.first_name }} {{ enquiry.last_name }}&quot;, 
+                    &quot;email&quot;: &quot;{{ enquiry.email }}&quot;, 
+                    &quot;phone_number&quot;: &quot;{{ enquiry.phone_number }}&quot;, 
+                    &quot;message&quot;: &quot;{{ enquiry.message|escapejs }}&quot;, 
+                    &quot;created_at&quot;: &quot;{{ enquiry.created_at }}&quot;
+                  }"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modalCenter">
+                  <i class='bx bx-show'></i> View
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+        <div>
+          Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+        </div>
+        <nav>
+          <ul class="pagination">
+            {% if page > 1 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}&page={{ page|add:'-1' }}&perPage={{ per_page }}">Previous</a>
+              </li>
+            {% endif %}
+
+            {% for i in page_range %}
+              <li class="page-item {% if page == i %}active{% endif %}">
+                <a class="page-link" href="{{ base_url }}&page={{ i }}&perPage={{ per_page }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}&page={{ page|add:'1' }}&perPage={{ per_page }}">Next</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% comment %} Read Modal {% endcomment %}
+<div class="modal fade" id="modalCenter" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCenterTitle">Contact Details</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+           
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+  jQuery(document).ready(function($){
+    const params = new URLSearchParams(window.location.search);
+    function getCSRFToken() {
+      return document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    }
+    $("select[name='perPage']").change(function(){     
+      let perPage = $(this).find("option:selected").val();
+      if( perPage ){
+        params.set('perPage', perPage); 
+      }else{
+        params.remove('perPage')
+      }
+      window.location.search = params.toString();
+    })
+
+    $('.clear-filter').click(function(){
+      params.delete('perPage');
+      params.delete('page');
+      window.location.href = window.location.pathname;
+    })
+    $('#contactSearch').on('keyup', function (e) {
+      if (e.key === 'Enter') {
+        console.log(e.key)
+        let searchQuery = $(this).val().trim();
+        if (searchQuery) {
+          params.set('search', searchQuery);
+        } else {
+          params.delete('search');
+        }
+        params.set('page', 1); // Reset to page 1 on new search
+        window.location.search = params.toString();
+      }
+    });
+    $(".view-contact-btn").click(function(){
+        $(this).closest('tr').removeClass('bg-primary text-white')
+        $(this).closest('tr').addClass('text-dark')
+        let data = $(this).attr('data-contact');
+        let contactData = JSON.parse(data);
+
+        // Clear the modal body and inject new content
+        $('.modal-body').html(`
+          <p><strong>Name:</strong> <span>${contactData.name}</span></p>
+          <p><strong>Email:</strong> <span>${contactData.email}</span></p>
+          <p><strong>Phone:</strong> <span>${contactData.phone_number}</span></p>
+          <p><strong>Message:</strong> <span>${contactData.message}</span></p>
+        `);
+
+        fetch("/mark-contact-as-read/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": getCSRFToken()
+          },
+          body: JSON.stringify({ id: contactData.id }),
+        }).then((response) => {
+            if (!response.ok) throw new Error("Failed to mark as read");
+            return response.json();
+            $(this).closest('tr').removeClass('bg-primary text-white')
+            $(this).closest('tr').addClass('text-dark')
+          })
+          .then((data) => {
+            {% comment %} $("#enquiryTable").load() {% endcomment %}
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    })
+</script>
+{% endblock %}

@@ -87,3 +87,17 @@ def careerCounsellor(request):
         return render(request, 'home/pages/call-counselor.html')
     except Exception as e:
         return HttpResponse(f"An error occured {e}", status = 500)
+
+
+def termsAndConditions(request):
+    try:
+        return render(request, 'home/pages/terms-and-conditions.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)
+
+
+def privacyPolicy(request):
+    try:
+        return render(request, 'home/pages/privacy-policy.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)

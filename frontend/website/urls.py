@@ -47,6 +47,8 @@ urlpatterns = [
     path('study-abroad/',mainPageViews.studyAbroad, name = "studyAbroad"),
     path('career-counsellor/',mainPageViews.careerCounsellor, name = "careerCounsellor"),
     path('education-loan/',mainPageViews.eduLoan, name = "eduLoan"),
+    path('terms-and-conditions/',mainPageViews.termsAndConditions, name = "termsAndConditions"),
+    path('privacy-policy/',mainPageViews.privacyPolicy, name = "privacyPolicy"),
     
     
     

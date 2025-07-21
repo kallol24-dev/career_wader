@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <div style="margin-top:100px">
+        <form action="{% url 'submitTest' %}">
+            <input  name="name" class="form-input" />
+        </form>
+        
+    </div>
+
+{% endblock %}

@@ -1,0 +1,279 @@
+{% load static %}
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+  <div class="app-brand demo">
+    <a href="{% url 'index' %}" class="app-brand-link"><span class="app-brand-logo demo"><img src="{% static 'home/assets/images/logo-light.png' %}" height="45" class="logo-light-mode" alt="" /></span></a>
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"><i class="bx bx-chevron-left bx-sm align-middle"></i></a>
+  </div>
+
+  {% comment %} <div class="menu-inner-shadow"></div> {% endcomment %}
+
+  <ul class="menu-inner py-1">
+    <li class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active open{% endif %}">
+      <a href="{% url 'dashboard' %}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Dashboard</div>
+      </a>
+    </li>
+    <li class="menu-item {% if request.resolver_match.url_name == 'notifications' %}active open{% endif %}">
+      <a href="{% url 'notifications' %}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Notifications</div>
+      </a>
+    </li>
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">Franchisee</span>
+    </li>
+    {% if request.COOKIES.role == 'admin' %}
+      <li class="menu-item {% if request.resolver_match.url_name == 'shortEnquiryDisplay' %}active{% endif %}">
+        <a href="{% url 'shortEnquiryDisplay' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Account">Franchise Enquiries</div>
+        </a>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'franchiseDisplay' %}active{% endif %}">
+        <a href="{% url 'franchiseDisplay' %}" class="menu-link"><i class="menu-icon tf-icons bx bxs-happy-alt"></i><div data-i18n="Account">Franchise Shortlisted</div></a>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'franchiseOnboarded' %}active{% endif %}">
+        <a href="{%url 'franchiseOnboarded'%}" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-hand"></i>
+          <div data-i18n="Account">Franchise Onboard</div>
+        </a>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'state_franchise_display' %}active{% endif %}">
+        <a href="{% url 'state_franchise_display' %}" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link">
+          <div data-i18n="Account">
+            <i class="menu-icon tf-icons bx bxs-report"></i>Franchise Reports
+          </div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Counsellors</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'counselorDisplay' %}active{% endif %}">
+        <a href="{%url 'counselorDisplay'%}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Account">Counselors Application</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bxs-happy-alt"></i><div data-i18n="Account">Counselors Onboard</div></a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-hand"></i>
+          <div data-i18n="Account">Counselors Shortlisted</div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link">
+          <div data-i18n="Account">
+            <i class="menu-icon tf-icons bx bxs-report"></i>Counselors Reports
+          </div>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Career Test</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'careerCategories' %}active{% endif %}">
+        <a href="{% url 'careerCategories' %}" class="menu-link"><div data-i18n="Account">Categories</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Paid Services</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'serviceList' %}active{% endif %}">
+        <a href="{% url 'serviceList' %}" class="menu-link"><div data-i18n="Account">Services</div></a>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'serviceTypes' %}active{% endif %}">
+        <a href="{% url 'serviceTypes' %}" class="menu-link"><div data-i18n="Account">Service Types</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Contact Forms</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'contactFromFDetails' %}active{% endif %}">
+        <a href="{% url 'contactFromFDetails' %}" class="menu-link"><div data-i18n="Account">Genral Enquiry</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Students</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
+        <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+      </li>
+    {% endif %}
+    {% if request.COOKIES.role == 'franchise' %}
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Students</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'franchiseStudentEnrolments' %}active open{% endif %}">
+        <a href="{% url 'franchiseStudentEnrolments' %}" class="menu-link"><div data-i18n="Account">Students</div></a>
+      </li>
+      <li class="menu-header small text-uppercase">
+        <span class="menu-header-text">Task Update</span>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'leads' %}active open{% endif %}">
+        <a href="{% url 'leads' %}" class="menu-link"><div data-i18n="Account">Tasks</div></a>
+      </li>
+    {% endif %} 
+  </ul>
+</aside>
+
+{% comment %} {% load static %}
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+  <div class="app-brand demo">
+    <a href="{% url 'index' %}" class="app-brand-link"><span class="app-brand-logo demo"><img src="{% static 'home/assets/images/logo-dark.png' %}" height="45" class="logo-light-mode" alt="" /></span></a>
+
+    <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none"><i class="bx bx-chevron-left bx-sm align-middle"></i></a>
+  </div>
+
+  <div class="menu-inner-shadow"></div>
+
+  <ul class="menu-inner py-1">
+    <li class="menu-item {% if request.resolver_match.url_name == 'dashboard' %}active open{% endif %}">
+      <a href="{% url 'dashboard' %}" class="menu-link">
+        <i class="menu-icon tf-icons bx bx-home-circle"></i>
+        <div data-i18n="Analytics">Dashboard</div>
+      </a>
+    </li>
+    <li class="menu-header small text-uppercase">
+      <span class="menu-header-text">Pages</span>
+    </li>
+    {% if request.COOKIES.role == 'admin' %}
+      <li class="menu-item {% if request.resolver_match.url_name == 'contactFromFDetails' %}active open{% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-dock-top"></i>
+          <div data-i18n="Account Settings">Conact From</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {% if request.resolver_match.url_name == 'contactFromFDetails' %}active{% endif %}">
+            <a href="{% url 'contactFromFDetails' %}" class="menu-link"><div data-i18n="Account">Contact Form</div></a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'counselorDisplay' %}
+          
+          
+          
+          
+          
+          
+          
+          active open
+
+
+
+
+
+
+
+        {% elif request.resolver_match.url_name == 'addCounselor' %}
+          
+          
+          
+          
+          
+          
+          
+          active open
+
+
+
+
+
+
+
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+          <div data-i18n="Account Settings">Counselor</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {% if request.resolver_match.url_name == 'counselorDisplay' %}active{% endif %}">
+            <a href="{% url 'counselorDisplay' %}" class="menu-link"><div data-i18n="Account">All Counselor</div></a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'franchiseDisplay' %}
+          
+          
+          
+          
+          
+          
+          
+          active open
+
+
+
+
+
+
+
+        {% elif request.resolver_match.url_name == 'shortEnquiryDisplay' %}
+          
+          
+          
+          
+          
+          
+          
+          active open
+
+
+
+
+
+
+
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+          <div data-i18n="Account Settings">Franchisee</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {% if request.resolver_match.url_name == 'franchiseDisplay' %}active{% endif %}">
+            <a href="{% url 'franchiseDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+          </li>
+          <li class="menu-item {% if request.resolver_match.url_name == 'shortEnquiryDisplay' %}active{% endif %}">
+            <a href="{% url 'shortEnquiryDisplay' %}" class="menu-link"><div data-i18n="Account">Enquiries</div></a>
+          </li>
+        </ul>
+      </li>
+      <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active open{% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+          <div data-i18n="Account Settings">Students</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
+            <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+          </li>
+        </ul>
+      </li>
+    {% endif %}
+    {% if request.COOKIES.role == 'franchise' %}
+      <li class="menu-item {% if request.resolver_match.url_name == 'franchiseStudentEnrolments' %}active open{% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+          <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+          <div data-i18n="Misc">Enrolments</div>
+        </a>
+        <ul class="menu-sub">
+          <li class="menu-item {% if request.resolver_match.url_name == 'franchiseStudentEnrolments' %}active open{% endif %}">
+            <a href="{% url 'franchiseStudentEnrolments' %}" class="menu-link"><div data-i18n="Account">Students</div></a>
+          </li>
+        </ul>
+      </li>
+    {% endif %}
+  </ul>
+</aside> {% endcomment %}

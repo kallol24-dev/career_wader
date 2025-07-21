@@ -1,0 +1,82 @@
+{% extends 'home/layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <!-- Hero Start -->
+  <section class="bg-half-175 d-table w-100" id="home" style="padding-top:120px;">
+    <div class="container pt-5">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7">
+          <div class="title-heading mt-4">
+            <h1 class="heading mb-3">Unlocking Career Potential in India's Silicon Valley</h1>
+            <p class="para-desc text-muted">Bangalore, known as Silicon City or Garden City of India, abounds in numerous opportunities for business people and career seekers alike. With over __ number of schools numbering approximately __ students, the city is a hub for education and career growth. However, getting to the center stage of this bustling city can be a daunting task, especially when it comes to navigating the complex world of career choices.</p>
+            <div class="mt-4 pt-2">
+              <a href="{% url 'franchise' %}" class="btn btn-primary m-1">Partner with Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <img src="{% static 'home/assets/images/enquiries/bangalore4.jpg' %}" alt="" />
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+  <!-- Hero End -->
+
+  <!-- Partners start -->
+
+  <!-- Partners End -->
+
+  <section class="section" style="background-color: #F8F5F4;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+          <div class="row align-items-center">
+            <div class="col-lg-12 col-12">
+              <div class="row">
+                <div class="card rounded shadow border-0 ms-lg-4 wow animate__animated animate__fadeInUp" data-wow-delay=".5s" style=" background-color: #00A86B;">
+                  <div class="card-body p-4">
+                    {% include 'home/pages/enquiries/form.html' %}
+                  </div>
+                </div>
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+          <div class="ms-lg-5">
+            <div class="section-title mb-4 pb-2">
+              <p class="text-muted" style=" text-align: justify; color: #000">The numbers and quality of career counselling available to satisfy this demand are seen to be highly wanting. Against this backdrop, Career Wader offers services in purposeful Career counselling to help students and professionals alike to navigate this smoothly and efficiently. Career Wader&#39;s expert Career Counsellors provide personalized guidance, empowering individuals to make informed decisions about their future.</p>
+
+              <p class="text-muted" style=" text-align: justify;">By partnering with Career Wader, Career Counsellors can seize this opportunity and navigate to a rewarding career experience. It needs no emphasis that this will be a highly satisfying and rewarding experience for the Career Wader Career Counsellors as well.</p>
+
+              <p class="text-muted" style=" text-align: justify;">If you're passionate about shaping young minds and helping individuals achieve their career goals, Career Wader invites you to explore the possibilities of partnering with them in Bangalore.</p>
+
+              <h5>Unlock your potential and join the Career Wader network of expert Career Counsellors today!</h5>
+
+              <a href="{% url 'franchise' %}" class="btn btn-outline-primary rounded active"><i class="uil uil-store"></i> Join Our Network</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <!-- About Start -->
+  </section>
+  <!-- end section -->
+  {% include 'home/pages/enquiries/common.html' %}
+{% endblock %}

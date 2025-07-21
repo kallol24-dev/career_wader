@@ -1,0 +1,279 @@
+{% extends "dashboard/layouts/dashboard_layout.html" %}
+{% block content %}
+<div class="card shadow m-4">
+  <div class="card-header py-3 bg-primary text-white mb-4">
+    <h6 class="m-0 font-weight-bold text-white">Student</h6>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <div class="table-controls">
+        <div class="d-flex mb-1" style="width:100%;    justify-content: space-between;">
+          <div class="table-entries d-flex justify-center align-items-center">
+            <span>Show</span> 
+            <select class="form-control" name="perPage">
+              <option "10">10</option>
+              <option "25">25</option>
+              <option "50">50</option>
+              <option "100">100</option>
+            </select>
+            <span>Entries</span>
+          </div>
+          <div class="table-right-controls d-flex gap-2 align-items-center">
+            <div>
+              <select class="form-control" name='state'>
+                <option value="">select state</option>
+              {% for state in states %}
+              <option value="{{state}}">{{state}}</option>
+              {% endfor %}
+              </select>
+            </div>
+            <div class="d-flex">
+              <input type="text" id="studentSearch" class="form-control" value="" placeholder="search here">
+            </div>
+            <div>
+              <button class='clear-filter btn btn-sm btn-outline-primary view-student-btn'>clear filter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <table id="studentTable" class="display table table-bordered table-hover" width="100%" cellspacing="0">
+        <thead class="table-light">
+          <tr>
+            <th>Name</th>
+            <th>Franchise</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Service</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for student in students %}
+            <tr class="">
+              <td>{{ student.name }}</td>
+              <td>{% if student.franchaise_uuid_id  %} {{ student.franchaise_uuid_id }}{%endif%}</td>
+              <td><a href="mailto:{{ student.user.email }}">{{ student.email }}</a></td>
+              <td><a href="tel:{{ student.user.phone }}">{{ student.phone }}</a></td>
+               <td>{{ student.service.name }}</a></td>
+              <td>{{ student.state }}</td>
+              <td>{{ student.city }}</td>
+              <td>{{ student.status }}</td>
+              <td>
+                {{ student.created_at }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-sm btn-outline-primary view-student-btn"
+                  data-student='{
+                    "id": "{{ student.id }}",
+                    "name": "{{ student.name }}",
+                    "email": "{{ student.email }}",
+                    "phone": "{{ student.phone }}",
+                    "state": "{{ student.state }}",
+                    "city": "{{ student.city }}",
+                    "status": "{{ student.status }}",
+                    "created_at": "{{ student.user.created_at }}"
+                  }'
+                  data-bs-toggle="modal"
+                  data-bs-target="#studentModal"
+                >
+                  <i class='bx bx-show'></i> View
+                </button>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="pagination-container mt-3 d-flex justify-content-between align-items-center">
+        <div>
+          Showing {{ start_index }}–{{ end_index }} of {{ total_count }} entries
+        </div>
+        <nav>
+          <ul class="pagination">
+            {% if page > 1 %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'-1' }}">Previous</a>
+              </li>
+            {% endif %}
+
+            {% for i in page_range %}
+              <li class="page-item {% if page == i %}active{% endif %}">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ i }}">{{ i }}</a>
+              </li>
+            {% endfor %}
+
+            {% if page < total_pages %}
+              <li class="page-item">
+                <a class="page-link" href="{{ base_url }}{% if '?' in base_url %}&{% else %}?{% endif %}page={{ page|add:'1' }}">Next</a>
+              </li>
+            {% endif %}
+          </ul>
+
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Student Details Modal -->
+<div class="modal fade" id="studentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title text-white" id="studentModalTitle">Student Details</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-12 text-center mb-3">
+            <div class="avatar avatar-xl mb-3">
+              <span class="avatar-initial rounded-circle bg-primary" id="studentInitials"></span>
+            </div>
+            <h4 id="studentFullName"></h4>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Email</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentEmail"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-envelope fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-success shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Phone</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentPhone"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-phone fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-info shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Country</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentCountry"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-globe fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+          <div class="col-md-6 mb-3">
+            <div class="card border-left-secondary shadow h-100 py-2">
+              <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                  <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Status</div>
+                    <div class="h6 mb-0 text-gray-800" id="studentStatus"></div>
+                  </div>
+                  <div class="col-auto">
+                    <i class="fas fa-check-circle fa-2x text-gray-300"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+          Close
+        </button>   
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+<script>
+  jQuery(document).ready(function($){
+    const params = new URLSearchParams(window.location.search);
+    
+    $("select[name='perPage']").change(function(){     
+      let perPage = $(this).find("option:selected").val();
+      if( perPage ){
+        params.set('perPage', perPage); 
+      }else{
+        params.remove('perPage')
+      }
+      window.location.search = params.toString();
+    })
+    $('#studentSearch').on('keyup', function (e) {
+      if (e.key === 'Enter') {
+        let searchQuery = $(this).val().trim();
+        if (searchQuery) {
+          params.set('search', searchQuery);
+        } else {
+          params.delete('search');
+        }
+        params.set('page', 1); // Reset to page 1 on new search
+        window.location.search = params.toString();
+      }
+    });
+    $("select[name='state']").change(function(){     
+      let state = $(this).find("option:selected").val();
+      if( state ){
+        params.set('state', state); 
+      }else{
+        params.remove('state')
+      }
+      window.location.search = params.toString();
+    })
+    $('.clear-filter').click(function(){
+      params.delete('perPage');
+      params.delete('state');
+      params.delete('page');
+      window.location.href = window.location.pathname;
+    })
+
+    $(".view-student-btn").click(function(){
+      let student = $(this).data('student');
+      if (typeof student === 'string') {
+        student = JSON.parse(student);
+      }
+      // Use the data — example: update modal
+      $('#studentInitials').text(`${student.name.charAt(0)}`)
+      $('#studentEmail').text(`${student.email}`);
+      $('#studentPhone').text(`${student.phone}`);
+      $('#studentCountry').text(`${student.country}`);
+      $('#studentStatus').text(`${student.status}`);
+
+    })
+  })
+</script>
+{% endblock %}

@@ -1,0 +1,742 @@
+{% extends 'home/layouts/indexbase.html' %}
+
+{% load static %}
+
+{% block content %}
+  <style>
+    body > header {
+      background-color: #ffffff !important;
+    }
+    
+    .bg-home-75vh {
+      background: url('https://careerwader.in/static/home/assets/images/resume-building/resume.jpg') center center;
+    }
+    
+    @media (max-width: 660px) {
+      .bg-home-75vh {
+        background: url('https://careerwader.in/static/home/assets/images/resume-building/resume.jpg') center left;
+      }
+    }
+  </style>
+  <!-- Hero Start -->
+  <section class="bg-half-175 border-bottom d-table w-100" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-6">
+          <div class="title-heading mt-4">
+            <div class="alert alert-pills shadow text-dark" role="alert">
+              <span class="content">
+                Call for <span class="text-primary">Career Counseling</span>
+                Professionals
+              </span>
+            </div>
+            <h4 class="title mb-4 mt-3">JOIN OUR NETWORK OF EXPERTS</h4>
+
+            <p class="para-desc text-muted">We are seeking experienced and passionate career counseling professionals to join our network. As a member of our network, you will have the opportunity to make a positive impact on people's lives, enhance your skills, and connect with like-minded professionals.</p>
+
+            <div class="mt-4">
+              <a href="javascript:void(0)" class="btn btn-outline-primary rounded active" data-bs-toggle="modal" data-bs-target="#counsellor-register-form"><i class="uil uil-store"></i> Join Now</a>
+              <a href="javascript:void(0)" class="btn btn-outline-primary rounded" data-bs-toggle="modal" data-bs-target="#global-contact-popup"><i class="uil uil-store"></i> Contact us</a>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/counsellor/careercounsil.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+  <!-- Hero End -->
+
+  <div class="container mt-100 mt-60">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="section-title mb-4 pb-2">
+          <h4 class="title mb-4">Benefits of Joining Our Network</h4>
+        </div>
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mt-4 pt-2">
+        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+          <img src="{% static 'home/assets/images/counsellor/make1.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+          <br />
+
+          <div class="card-body p-0 content">
+            <h4 class="h5 text-dark">Make a Difference</h4>
+
+            <p class="text-muted">Join a community of professionals dedicated to empowering individuals to achieve their career goals.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+
+      <div class="col-lg-3 col-md-6 mt-4 pt-2">
+        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+          <img src="{% static 'home/assets/images/plans.webp' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+
+          <br />
+
+          <div class="card-body p-0 content">
+            <h4 class="h5 text-dark">Professional Growth</h4>
+
+            <p class="text-muted">Enhance your skills and knowledge through our training programs, workshops, and webinars.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+
+      <div class="col-lg-3 col-md-6 mt-4 pt-2">
+        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+          <img src="{% static 'home/assets/images/counsellor/make2.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+
+          <br />
+
+          <div class="card-body p-0 content">
+            <h4 class="h5 text-dark">Network Opportunities</h4>
+
+            <p class="text-muted">Connect with other professionals in the field, share best practices, and collaborate on projects.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+
+      <div class="col-lg-3 col-md-6 mt-4 pt-2">
+        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+          <img src="{% static 'home/assets/images/counsellor/make3.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+
+          <br />
+
+          <div class="card-body p-0 content">
+            <h4 class="h5 text-dark">Flexible Engagement</h4>
+
+            <p class="text-muted">Choose from various engagement models, including part-time, full-time, or project-based collaborations.</p>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+    </div>
+  </div>
+  <div class="container mt-100 mt-60">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="section-title mb-4 pb-2">
+          <h4 class="title mb-4">Requirements</h4>
+        </div>
+
+        <img src="{% static 'home/assets/images/free.svg' %}" class="img-fluid" alt="" />
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+
+  <section class="bg-cta1" id="volunteer" style="background: url('{% static 'home/assets/images/application.webp' %}') center;">
+    <div class="container">
+      <div class="row justify-content-end" style="padding: 80px 0px;">
+        <div class="col-lg-6 col-md-6 col-12 p-6">
+          <div class="card p-4 border-0 rounded">
+            <div class="section-title">
+              <h4 class="title mb-4">How to Apply</h4>
+              <p class="mb-0 text-muted">If you are interested in joining our network, please submit your application, including:</p>
+            </div>
+
+            <ul class="list-unstyled text-muted pt-2">
+              <li class="mb-1">
+                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><strong>Resume:</strong> A detailed resume highlighting your experience, qualifications, and skills.
+              </li>
+              <li class="mb-1">
+                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><strong>Cover letter:</strong>
+                A brief cover letter outlining your motivation for joining our network and your relevant experience.
+              </li>
+              <li class="mb-1">
+                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span><strong>Contact information:</strong> Your email address and phone number.
+              </li>
+            </ul>
+
+            <div class="section-title">
+              <h5><a href="javascript:void(0)" class="card-title1 title1 text-dark">What's Next:</a></h5>
+              <p class="mb-0 text-muted">Once we receive your application, our team will review it and contact you for further discussion.</p>
+            </div>
+            <br />
+            <a href="javascript:void(0)" data-bs-toggle="modal" data-bs-target="#counsellor-register-form" class="btn btn-primary">Register Now</a>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </section>
+  <!-- end section -->
+
+  <!-- About Start -->
+  <section class="section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+          <img src="{% static 'home/assets/images/counsellor/call3.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">FAQs:</h4>
+            <div class="accordion" id="buyingquestion">
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="headingOne"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is the purpose of this network?</button></h2>
+                <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                  <div class="accordion-body text-muted">
+                    <p>Our network aims to provide comprehensive career counseling services to students, professionals, and entrepreneurs.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading2"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse1">What are the benefits of joining this network?</button></h2>
+                <div id="collapse2" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                  <div class="accordion-body text-muted">
+                    <p>As a member of our network, you will have the opportunity to make a positive impact, enhance your skills, and connect with like-minded professionals.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">Professional Development</h4>
+            <div class="accordion" id="buyingquestion1">
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="headingOne1"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">What opportunities are available for professional development within the network?</button></h2>
+                <div id="collapsethree" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne1" data-bs-parent="#buyingquestion1">
+                  <div class="accordion-body text-muted">
+                    <p>We offer various opportunities for professional development, including training sessions, workshops, and webinars. These sessions are designed to help you enhance your skills, stay updated on industry trends, and expand your knowledge in specific areas of career counselling.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading21"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsethree">How can I access mentorship or coaching within the network?</button></h2>
+                <div id="collapsefour" class="accordion-collapse border-0 collapse" aria-labelledby="heading21" data-bs-parent="#buyingquestion1">
+                  <div class="accordion-body text-muted">
+                    <p>We have a mentorship program in place, where experienced counsellors can provide guidance and support to newer members. You can also access coaching services to help you develop specific skills or address challenges in your practice.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading22"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefive" aria-expanded="false" aria-controls="collapsefour">Are there any opportunities for networking within the network?</button></h2>
+                <div id="collapsefive" class="accordion-collapse border-0 collapse" aria-labelledby="heading22" data-bs-parent="#buyingquestion1">
+                  <div class="accordion-body text-muted">
+                    <p>Yes, we host regular networking events, conferences, and online forums where you can connect with other career counselling consultants, share experiences, and build relationships.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/counsellor/call2.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/counsellor/call1.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+          </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">Business Development</h4>
+            <div class="accordion" id="buyingquestion2">
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="headingOne1"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapsesix" aria-expanded="true" aria-controls="collapsethree">How can I grow my business or practice within the network?</button></h2>
+                <div id="collapsesix" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne1" data-bs-parent="#buyingquestion2">
+                  <div class="accordion-body text-muted">
+                    <p>We provide various resources and support to help you grow your business, including marketing guidance, business development tools, and access to a network of potential clients.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading21"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapsesix">Can I access any business development tools or resources?</button></h2>
+                <div id="collapse7" class="accordion-collapse border-0 collapse" aria-labelledby="heading21" data-bs-parent="#buyingquestion2">
+                  <div class="accordion-body text-muted">
+                    <p>Yes, we offer a range of business development tools and resources, including templates, worksheets, and guides. These resources are designed to help you streamline your practice, attract new clients, and increase your revenue.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading22"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse7">How can I increase my visibility within the network?</button></h2>
+                <div id="collapse8" class="accordion-collapse border-0 collapse" aria-labelledby="heading22" data-bs-parent="#buyingquestion2">
+                  <div class="accordion-body text-muted">
+                    <p>We offer various opportunities to increase your visibility, including featured profiles, speaking engagements, and social media promotions.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">Technology and Tools</h4>
+            <div class="accordion" id="buyingquestion3">
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="headingOne1"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="true" aria-controls="collapsethree">What technology and tools are available to support my practice?</button></h2>
+                <div id="collapse9" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne1" data-bs-parent="#buyingquestion3">
+                  <div class="accordion-body text-muted">
+                    <p>We provide access to various technology and tools, including online platforms, software, and apps. These tools are designed to help you streamline your practice, manage client relationships, and deliver high-quality services.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading21"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse9">How can I stay up to date with the latest trends and technologies in career counselling?</button></h2>
+                <div id="collapse10" class="accordion-collapse border-0 collapse" aria-labelledby="heading21" data-bs-parent="#buyingquestion3">
+                  <div class="accordion-body text-muted">
+                    <p>We offer regular training sessions, webinars, and workshops to help you stay current with the latest trends and technologies in career counselling.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading22"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse10">Can I access any resources or support for using technology and tools?</button></h2>
+                <div id="collapse11" class="accordion-collapse border-0 collapse" aria-labelledby="heading22" data-bs-parent="#buyingquestion3">
+                  <div class="accordion-body text-muted">
+                    <p>Yes, we provide technical support and resources to help you effectively use technology and tools in your practice.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item rounded">
+                <h2 class="accordion-header" id="heading22"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse11">What are the requirements for joining this network?</button></h2>
+                <div id="collapse12" class="accordion-collapse border-0 collapse" aria-labelledby="heading22" data-bs-parent="#buyingquestion3">
+                  <div class="accordion-body text-muted">
+                    <p>We require a minimum of [X] years of experience in career counseling, mentoring, coaching, or counseling, and a [Degree/Certification] in Psychology, Education, or a related field.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/counsellor/call.jpg' %}" class="rounded img-fluid mx-auto d-block" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-100 mt-60">
+      <div class="row align-items-center">
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="position-relative">
+            <img src="{% static 'home/assets/images/join.webp' %}" class="rounded img-fluid mx-auto d-block" alt="Join careerwader" title="Join careerwader" />
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+          <div class="section-title ms-lg-4">
+            <h4 class="title mb-4">For any questions or concerns, please feel free to contact us at:</h4>
+            <p class="text-muted">
+              <span class="text-primary fw-bold">Contact Number: 9591577855; 9108760180</span><br />
+              <span class="text-primary fw-bold">Email</span>:Support@careerwader.in
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal fade" id="counsellor-register-form" tabindex="-1" aria-labelledby="LoginForm-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content rounded shadow border-0">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title" id="LoginForm-title">Join Our Career Counsellor Network</h5>
+          <button type="button" class="btn btn-icon btn-close" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4 text-dark"></i></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="container-fluid px-0">
+            <div class="row g-0">
+              <div class="col-lg-12 col-md-7">
+                <form class="login-form p-4" id="counselorRegister">
+                  {% csrf_token %}
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">First Name <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="user" class="fea icon-sm icons"></i>
+                          <input type="text" class="form-control ps-5" placeholder="First Name" id="counsellor_first_name" name="counsellor_first_name" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="user" class="fea icon-sm icons"></i>
+                          <input type="text" class="form-control ps-5" placeholder="Last Name" id="counsellor_last_name" name="counsellor_last_name" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Email <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="mail" class="fea icon-sm icons"></i>
+                          <input type="email" class="form-control ps-5" id="counsellor_email" placeholder="Email" name="counsellor_email" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="phone" class="fea icon-sm icons"></i>
+                          <input type="tel" class="form-control ps-5" placeholder="Phone Number" id="counsellor_phone_number" name="counsellor_phone_number" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Current Occupation <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="briefcase" class="fea icon-sm icons"></i>
+                          <input type="text" class="form-control ps-5" placeholder="Current Occupation" id="current_occupation" name="current_occupation" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">Years of Experience <span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="calendar" class="fea icon-sm icons"></i>
+                          <input type="number" class="form-control ps-5" placeholder="Years of Experience" id="years_of_experience" name="years_of_experience" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Counselling Background Label -->
+                    <div class="col-lg-12">
+                      <div class="mb-3 d-flex justify-content-between align-items-center">
+                        <label class="form-label">Your Counselling Background <span class="text-danger">*</span></label>
+                        <button type="button" class="btn btn-sm btn-success" onclick="addCounsellingRow()">+ Add New</button>
+                      </div>
+                    </div>
+
+                    <!-- Counselling Background Rows Container -->
+                    <div id="counsellingRowsContainer"></div>
+
+                    <!-- Hidden Template for Cloning -->
+                    <div id="counsellingRowTemplate" class="d-none">
+                      <div class="counselling-row row mb-3 border p-3 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-2 bg-danger" style="z-index:999999999999999;" onclick="removeCounsellingRow(this)"><i data-feather="minus" class="fea icon-sm icons"></i></button>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Counselling Specialization<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="counselling_specialization[]" placeholder="Specialization" />
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Certifications/Qualifications<span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" name="certification_qualification[]" />
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Relevant Experience<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="relevant_experience[]" placeholder="Years" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div id="counsellingRowTemplate" class="d-none">
+                      <div class="counselling-row row mb-3 border p-3 position-relative">
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-2 bg-danger" style="z-index:999999999999999;" onclick="removeCounsellingRow(this)"><i data-feather="minus" class="fea icon-sm icons"></i></button>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Counselling Specialization<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" name="counselling_specialization[]" placeholder="Specialization" />
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Certifications/Qualifications<span class="text-danger">*</span></label>
+                            <input type="file" class="form-control" name="certification_qualification[]" />
+                          </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                          <div class="mb-3">
+                            <label class="form-label">Relevant Experience<span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" name="relevant_experience[]" placeholder="Years" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">What motivated you to join our network?<span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="zap" class="fea icon-sm icons"></i>
+                          <input type="text" class="form-control ps-5" placeholder="" id="motivation_reason" name="motivation_reason" required />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <label class="form-label">What do you hope to achieve as a member of our network?<span class="text-danger">*</span></label>
+                        <div class="form-icon position-relative">
+                          <i data-feather="thumbs-up" class="fea icon-sm icons"></i>
+                          <input type="text" class="form-control ps-5" placeholder="" id="hope_reason" name="hope_reason" required />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="mb-3 d-flex align-items-center">
+                        <img src="" alt="" id="cap_img" />
+                        <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                        <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="is_terms_agreed" name="is_terms_agreed" required>
+                          <label class="form-check-label" for="flexCheckDefault">
+                            By submitting the form, I agree to the <span class="text-primary">terms and conditions.</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-12 mb-0">
+                      <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Register</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    function addCounsellingRow() {
+      const template = document.getElementById('counsellingRowTemplate').innerHTML
+      const container = document.getElementById('counsellingRowsContainer')
+      container.insertAdjacentHTML('beforeend', template)
+    }
+    
+    function removeCounsellingRow(button) {
+      const row = button.closest('.counselling-row')
+      row.remove()
+    }
+    
+    // Optional: Add one row on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      addCounsellingRow()
+    })
+    
+    jQuery(document).ready(function ($) {
+      function getRandomString(length = 8) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+        let result = ''
+        for (let i = 0; i < length; i++) {
+          result += chars.charAt(Math.floor(Math.random() * chars.length))
+        }
+        return result
+      }
+    
+      let key = null
+    
+      function getCaptcha() {
+        axios
+          .get(`https://careerwader.in/api/captcha/refresh/`)
+          .then(function (response) {
+            if (response.status == 200) {
+              $('#cap_img').attr('src', response.data.image_url)
+              key = response.data.key // ✅ set global key
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      }
+    
+      function verify() {
+        const captchaText = $('#cap_text').val()
+    
+        if (!captchaText || !key) {
+          alert('Captcha or key missing')
+          return
+        }
+    
+        axios
+          .post(`https://careerwader.in/api/captcha/verify/`, {
+            captcha_0: key,
+            captcha_1: captchaText
+          })
+          .then(function (response) {
+            if (response.status == 200 && response.data.success) {
+              submitForm()
+            } else {
+              alert('Captcha verification failed.')
+              getCaptcha() // Refresh on fail
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+            alert('Verification failed.')
+            getCaptcha() // Refresh anyway
+          })
+      }
+    
+      function submitForm() {
+        const formData = new FormData()
+    
+        formData.append('user[first_name]', $('#counsellor_first_name').val())
+        formData.append('user[last_name]', $('#counsellor_last_name').val())
+        formData.append('user[email]', $('#counsellor_email').val())
+        formData.append('user[phone]', $('#counsellor_phone_number').val())
+        formData.append('user[current_occupation]', $('#current_occupation').val())
+        formData.append('user[experience_in_years]', $('#years_of_experience').val())
+        formData.append('user[password]', getRandomString())
+        formData.append('user[country]', 'IN')
+        formData.append('user[motivation_reason]', $("#motivation_reason").val())
+        formData.append('user[hope_reason]', $("#hope_reason").val())
+        formData.append('user[is_terms_agreed]', $("#is_terms_agreed").is(':checked') ? true : false)
+        // Dynamic counselling fields (multiple entries)
+        $('.counselling-row').each(function (index, row) {
+          const specialization = $(row).find("input[name='counselling_specialization[]']").val()
+          const experience = $(row).find("input[name='relevant_experience[]']").val()
+          const fileInput = $(row).find("input[name='certification_qualification[]']")[0]
+          const file = fileInput.files[0]
+    
+          if (specialization) formData.append(`background[${index}][counselling_specialization]`, specialization)
+          if (experience) formData.append(`background[${index}][relevant_exp]`, experience)
+          if (file) formData.append(`background[${index}][certification_qualification]`, file)
+        })
+    
+        for (const [key, val] of formData.entries()) {
+          console.log(`${key}:`, val)
+        }
+        const role = '{{ role|escape }}'
+        const baseUrl = '{{ api_base_url|escape }}'
+
+        axios
+          .post(`https://careerwader.in/api/counselors/register/`, formData, {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          })
+          .then(function (response) {
+            Swal.fire({
+              title: 'Registered Successfully!',
+              text: "Wel`'ll get back to you soon.",
+              icon: 'success',
+              confirmButtonText: 'Continue'
+            })
+    
+            // Optional: handle next UI steps here
+          })
+          .catch(function (error) {
+            let errorMessage = 'Registration failed.'
+            const errorData = error.response?.data || {}
+            const status = error.response?.status
+    
+            if (status === 400) {
+              let messageList = []
+    
+              Object.keys(errorData).forEach((key) => {
+                const messages = errorData[key]
+                if (Array.isArray(messages)) {
+                  messageList.push(`${key}: ${messages.join(' ')}`)
+                }
+              })
+    
+              if (messageList.length > 0) {
+                errorMessage = messageList.join('\n')
+              }
+            }
+    
+            Swal.fire({
+              title: 'Registration Failed!',
+              text: errorMessage,
+              icon: 'error',
+              confirmButtonText: 'Try Again'
+            })
+          })
+      }
+      getCaptcha()
+    
+      // Form submit handler
+      $('#counselorRegister').on('submit', function (e) {
+        e.preventDefault()
+        verify() // ✅ Trigger verify *after* user submits
+      })
+    
+      // Optional: Click on image to refresh captcha
+      $('#refCap').on('click', function () {
+        getCaptcha()
+      })
+    })
+  </script>
+{% endblock %}

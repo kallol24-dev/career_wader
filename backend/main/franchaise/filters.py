@@ -9,4 +9,4 @@ class FilterClassFranchise(django_filters.FilterSet):
 
     class Meta:
         model = Franchise
-        fields = ['state', 'city', 'country', 'created_at']
+        fields = ['is_approved','state', 'city', 'country', 'created_at']

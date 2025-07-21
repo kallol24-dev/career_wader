@@ -81,7 +81,7 @@ class CounselorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Counselor
         fields = [
-            "id", "user", "current_occupation", "experience_in_years",
+            "id", "user", "current_occupation", "experience_in_years","motivation_reason","hope_reason",
             "is_terms_agreed", "is_approved", "background"
         ]
 

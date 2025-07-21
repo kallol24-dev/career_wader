@@ -441,7 +441,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-12">
+              {% comment %} <div class="col-lg-12">
                 <div class="mb-3">
                   <label class="form-label">Nearest Office <span class="text-danger">*</span></label>
                   <div class="form-icon position-relative">
@@ -516,7 +516,7 @@
                     </select>
                   </div>
                 </div>
-              </div>
+              </div> {% endcomment %}
               <div class="col-lg-12">
                 <div class="mb-3">
                   <label class="form-label">Are you looking for coaching? <span class="text-danger">*</span></label>
@@ -617,7 +617,6 @@
           phone: $('#phone').val(),
           city: $('#city').val(),
           preferred_destination: $('#preferred_destination').val(),
-          nearest_office: $('#nearest_office').val(),
           is_coaching: $('#is_coaching').val() === 'Yes',
           is_loan: $('#is_loan').val() === 'Yes'
         }

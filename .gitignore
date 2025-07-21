@@ -56,4 +56,5 @@ docker-compose.override.yml
 
 # === Git merge leftovers ===
 *.orig
+backend/main/dump.rdb
 dump.rdb

@@ -7,4 +7,5 @@ urlpatterns = [
     path('<int:pk>/', views.ServiceDetailView.as_view(), name='service-detail'),
     path('<int:pk>/update/', views.ServiceUpdateDeleteView.as_view(), name='service-update'),
     path('<int:pk>/delete/', views.ServiceUpdateDeleteView.as_view(), name='service-delete'),
+    path('serviceTypes/<int:pk>/delete/', views.ServiceTypeSoftDeleteView.as_view(), name='service-type-soft-delete'),
 ]

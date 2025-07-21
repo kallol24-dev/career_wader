@@ -37,7 +37,7 @@ class FranchiseListView(generics.ListAPIView):
     # filterset_fields = ['user__state', 'user__city', 'user__created_at', 'user__country']
     filterset_class = FilterClassFranchise
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    search_fields = ['user__city', 'user__state', 'user__created_at', 'user__phone', 'user__email', 'user__first_name', 'user__last_name', 'user__country']
+    search_fields = ['is_approved','user__city', 'user__state', 'user__created_at', 'user__phone', 'user__email', 'user__first_name', 'user__last_name', 'user__country']
     
     
     

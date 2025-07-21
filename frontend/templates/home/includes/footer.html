@@ -6,9 +6,19 @@
         <div class="footer-py-60">
           <div class="row">
             <div class="col-lg-4 col-12 mb-0 mb-md-4 pb-0 pb-md-2">
-              <a href="{% url 'index' %}" class="logo-footer"><img src="{% static 'home/assets/images/logo-light.png' %}" height="24" alt="" style="width: auto;" /></a>
+              <a href="{% url 'index' %}" class="logo-footer"><img src="{% static 'home/assets/images/logo-light.png' %}" height="34" alt="" style="width: auto;" /></a>
               <p class="mt-4">Welcome to Career Wader, a Platform where AI meets personalized career planning and counseling.</p>
-              <p class="mt-4">Unlock your potential with expert guidance. Career Counseling empowers individuals to navigate their professional journeys with confidence and clarity.</p>
+              <div style="display: flex;">
+                <a href="https://www.facebook.com/profile.php?id=61578334921458" target="_blank" style="font-size: 24px;">
+                  <i class="uil uil-facebook me-1"></i>
+                </a>
+                <a href="https://www.instagram.com/careerwader/" target="_blank" style="font-size: 24px;">
+                  <i class="uil uil-instagram me-1"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/career-wader-5791b5375/" target="_blank" style="font-size: 24px;">
+                  <i class="uil uil-linkedin me-1"></i>
+                </a>
+              </div>
             </div>
             <!-- end col -->
 
@@ -23,7 +33,7 @@
                   <a href="{% url 'interviewAssistance' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Interview Assistance</a>
                 </li>
                 <li>
-                  <a href="javascript:void(0)" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Admission Assistance</a>
+                  <a href="{%url 'studyAbroad' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Admission Assistance</a>
                 </li>
                 <li>
                   <a href="{% url 'resumeBuilding' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Resume Building</a>
@@ -53,6 +63,10 @@
                 </li>
                 <li>
                   <a href="{% url 'blogs' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Blogs</a>
+                <li>
+                  <a href="{% url 'termsAndConditions' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Terms and Conditions</a>
+                <li>
+                  <a href="{% url 'privacyPolicy' %}" class="text-foot"><i class="uil uil-angle-right-b me-1"></i> Privacy Policy</a>
                 </li>
               </ul>
             </div>

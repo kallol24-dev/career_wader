@@ -21,8 +21,6 @@ class Question(models.Model):
         ('college', 'College Students'),
         ('working', 'Working Professionals'),
     ]
-    
-   
 
     question = models.TextField()
     category = models.ForeignKey(TestType, on_delete=models.CASCADE, related_name="questions")

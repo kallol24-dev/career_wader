@@ -10,13 +10,15 @@
     .bg-home-75vh{
         background: url('{% static 'home/assets/images/resume-building/resume.jpg' %}') center center;
       }
-    @media (max-width:660px) {
-      .bg-home-75vh{
-        background: url('{% static 'home/assets/images/resume-building/resume.jpg' %}') center left;
-      }
+   @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+    .tab-pane img{
+        width:100%;
     }
 </style>
-
     <!-- Hero Start -->
     <section class="home-slider position-relative">
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -31,38 +33,23 @@
                                     <div class="title-heading ">
                                         <h2 class="text-white title-dark mb-3">Study Abroad Placements with Career Wader
                                         </h2>
-
                                         <p class="para-desc text-white-50 mb-0">At Career Wader, we specialize in
                                             guiding students through the process of securing admissions to top
                                             universities abroad. As a partner with KC Overseas, we leverage their
                                             expertise and Course Finder platform to offer comprehensive support.</p>
                                         <div class="mt-4">
-
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-12 col-md-6">
                                     <div class="title-heading ">
-
-
-
-
                                     </div>
                                 </div><!--end col-->
                             </div><!--end row-->
                         </div>
                     </div><!--end slide-->
                 </div>
-
-
-
-
             </div>
-
-
-
         </div>
     </section><!--end section-->
     <div class="position-relative">
@@ -73,7 +60,6 @@
         </div>
     </div>
     <!-- Hero End -->
-
     <section class="section">
         <div class="container ">
             <div class="row">
@@ -86,9 +72,7 @@
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
-
             <div class="row align-items-center">
-
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
                         <div class="icons text-center">
@@ -99,11 +83,9 @@
                                     Universities</a></h5>
                             <p class="text-muted mb-0">We collaborate with a vast network of universities across 9
                                 leading countries, ensuring students have access to a wide range of programs.</p>
-
                         </div>
                     </div>
                 </div><!--end col-->
-
                 <div class="col-lg-6 col-md-6 col-12">
                     <div class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
                         <div class="icons text-center">
@@ -114,23 +96,19 @@
                                     Facilitated</a></h5>
                             <p class="text-muted mb-0">Our expertise and partnerships have enabled us to secure
                                 placements for thousands of students, helping them achieve their academic dreams.</p>
-
                         </div>
                     </div>
                 </div>
             </div><!--end row-->
         </div><!--end container-->
-
         <div class="container mt-100 mt-60">
             <div class="row align-items-center">
                 <div class="col-lg-5 col-md-6">
                     <img src="{% static 'home/assets/images/study-abroad/university1.png'%}" class="img-fluid" alt="">
                 </div><!--end col-->
-
                 <div class="col-lg-7 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0">
                     <div class="section-title ms-lg-5">
                         <h4 class="title mb-4">Our Services</h4>
-
                         <h5><i class="uil uil-arrow-circle-right text-primary me-1"></i>Personalized University Matching
                         </h5>
                         <p class="text-muted para-desc ms-4 ps-2">Using Course Finder, we match students with the
@@ -143,11 +121,11 @@
                         </h5>
                         <p class="text-muted para-desc ms-4 ps-2">We guide students through the process of securing
                             financial aid, making studying abroad more accessible</p>
+                            <a href="#" class="btn btn-primary text-center" data-bs-toggle="modal" data-bs-target="#abroad-edu-form">Apply Now<i class="mdi mdi-arrow-right align-middle"></i></a>
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
         </div><!--end container-->
-
         <div class="container mt-100 mt-60">
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -159,7 +137,6 @@
                     </div>
                 </div><!--end col-->
             </div><!--end row-->
-
             <div class="row justify-content-center">
                 <div class="col-lg-12 col-md-5 mt-4 pt-2 text-center">
                     <ul class="nav nav-pills nav-justified flex-sm-row rounded px-0 bg-light shadow" id="pills-tab"
@@ -173,7 +150,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-two-tab" data-bs-toggle="pill" href="#pills-two"
                                 role="tab" aria-controls="pills-two" aria-selected="false">
@@ -183,7 +159,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-three-tab" data-bs-toggle="pill" href="#pills-three"
                                 role="tab" aria-controls="pills-three" aria-selected="false">
@@ -193,7 +168,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-four-tab" data-bs-toggle="pill" href="#pills-four"
                                 role="tab" aria-controls="pills-four" aria-selected="false">
@@ -203,7 +177,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-five-tab" data-bs-toggle="pill" href="#pills-five"
                                 role="tab" aria-controls="pills-five" aria-selected="false">
@@ -213,7 +186,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-six-tab" data-bs-toggle="pill" href="#pills-six"
                                 role="tab" aria-controls="pills-six" aria-selected="false">
@@ -223,7 +195,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-7-tab" data-bs-toggle="pill" href="#pills-7"
                                 role="tab" aria-controls="pills-7" aria-selected="false">
@@ -233,7 +204,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-8-tab" data-bs-toggle="pill" href="#pills-8"
                                 role="tab" aria-controls="pills-8" aria-selected="false">
@@ -243,7 +213,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded " id="pills-9-tab" data-bs-toggle="pill" href="#pills-9"
                                 role="tab" aria-controls="pills-9" aria-selected="false">
@@ -253,7 +222,6 @@
                                 </div>
                             </a><!--end nav link-->
                         </li><!--end nav item-->
-
                         <li class="nav-item">
                             <a class="nav-link rounded" id="pills-10-tab" data-bs-toggle="pill" href="#pills-10"
                                 role="tab" aria-controls="pills-10" aria-selected="false">
@@ -266,7 +234,6 @@
                     </ul>
                 </div><!--end col-->
             </div><!--end row-->
-
             <div class="row">
                 <div class="col-12 mt-4 pt-2">
                     <div class="tab-content" id="pills-tabContent">
@@ -287,41 +254,34 @@
                                             <p class="text-muted mb-0">The US education system is renowned for its
                                                 flexibility and diversity, with a wide range of courses and programs
                                                 available.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">US universities are known for their academic
                                                 excellence, innovative research, and strong industry connections.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">The US offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -329,104 +289,78 @@
                                                 depending on the university and location, with average costs ranging
                                                 from $20,000 to $50,000 per year. Living costs can range from $8,000 to
                                                 $15,000 per year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with over 1,000 universities in the
                                                 US, offering thousands of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
                                             <p class="text-muted mb-0">Many US universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including Harvard, Stanford, and MIT.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
                         <div class="tab-pane fade " id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
                             <div class="col-12 mb-4"
                                 style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
                                 <img src="{% static 'home/assets/images/study-abroad/uk1.png'%}">
                             </div>
                             <div class="row">
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">The UK education system is known for its academic
                                                 rigor and high standards, with a strong focus on research and
                                                 innovation.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">UK universities offer a vibrant academic
                                                 atmosphere, with opportunities to engage with world-class faculty and
                                                 research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">The UK offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -434,105 +368,79 @@
                                                 university and location, with average costs ranging from £10,000 to
                                                 £20,000 per year. Living costs can range from £8,000 to £12,000 per
                                                 year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with over 150 universities in the UK,
                                                 offering a wide range of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
                                             <p class="text-muted mb-0">Many UK universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including Oxford, Cambridge, and Imperial College London.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
                         <div class="tab-pane fade " id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
                             <div class="col-12 mb-4"
                                 style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
                                 <img src="{% static 'home/assets/images/study-abroad/aus1.png'%}">
                             </div>
                             <div class="row">
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">The Australian education system is known for its
                                                 high standards and strong industry connections, with a focus on
                                                 practical skills and research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">Australian universities offer a welcoming and
                                                 supportive academic atmosphere, with opportunities to engage with
                                                 world-class faculty and research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">Australia offers various employment
                                                 opportunities, including internships, part-time jobs, and post-study
                                                 work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -540,30 +448,24 @@
                                                 university and location, with average costs ranging from AUD 15,000 to
                                                 AUD 30,000 per year. Living costs can range from AUD 12,000 to AUD
                                                 18,000 per year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with over 40 universities in
                                                 Australia, offering a wide range of courses across various disciplines.
                                             </p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
@@ -571,74 +473,54 @@
                                                 top institutions globally, with some of the most prestigious
                                                 universities including the University of Melbourne and the University of
                                                 Sydney.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
                         <div class="tab-pane fade " id="pills-four" role="tabpanel" aria-labelledby="pills-four-tab">
                             <div class="col-12 mb-4"
                                 style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
                                 <img src="{% static 'home/assets/images/study-abroad/canada1.png'%}">
                             </div>
                             <div class="row">
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">The Canadian education system is known for its
                                                 high standards and strong focus on research and innovation.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">Canadian universities offer a diverse and
                                                 inclusive academic atmosphere, with opportunities to engage with
                                                 world-class faculty and research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">Canada offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -646,29 +528,23 @@
                                                 university and location, with average costs ranging from CAD 10,000 to
                                                 CAD 20,000 per year. Living costs can range from CAD 8,000 to CAD 12,000
                                                 per year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with over 90 universities in Canada,
                                                 offering a wide range of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
@@ -676,70 +552,50 @@
                                                 top institutions globally, with some of the most prestigious
                                                 universities including the University of Toronto and the University of
                                                 British Columbia.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
                         <div class="tab-pane fade " id="pills-five" role="tabpanel" aria-labelledby="pills-five-tab">
                             <div class="col-12 mb-4"
                                 style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
                                 <img src="{% static 'home/assets/images/study-abroad/nz.png'%}">
                             </div>
                             <div class="row">
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">New Zealand's education system is known for its
                                                 high quality and flexibility, with a wide range of courses and programs
                                                 available.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">New Zealand universities offer a welcoming and
                                                 supportive academic atmosphere, with opportunities to engage with
                                                 world-class faculty and research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">New Zealand offers various employment
                                                 opportunities, including internships, part-time jobs, and post-study
                                                 work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
@@ -747,7 +603,6 @@
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -755,26 +610,21 @@
                                                 university and location, with average costs ranging from NZD 22,000 to
                                                 NZD 32,000 per year. Living costs can range from NZD 15,000 to NZD
                                                 20,000 per year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with eight universities in New
                                                 Zealand, offering a wide range of courses across various disciplines.
                                             </p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
@@ -785,54 +635,40 @@
                                             <p class="text-muted mb-0">New Zealand universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including the University of Auckland and the University of Otago</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
-
-
                         <div class="tab-pane fade " id="pills-six" role="tabpanel" aria-labelledby="pills-six-tab">
                             <div class="row">
-
+                                <div class="col-12 mb-4"
+                                    style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
+                                    <img src="{% static 'home/assets/images/study-abroad/Ireland1.jpg'%}">
+                                </div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">Ireland's education system is known for its high
                                                 standards and strong focus on research and innovation.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">Irish universities offer a vibrant academic
                                                 atmosphere, with opportunities to engage with world-class faculty and
                                                 research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
@@ -842,15 +678,12 @@
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">Ireland offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -858,101 +691,78 @@
                                                 university and location, with average costs ranging from €15,000 to
                                                 €30,000 per year. Living costs can range from €10,000 to €15,000 per
                                                 year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with several universities in Ireland,
                                                 offering a wide range of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
                                             <p class="text-muted mb-0">Irish universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including Trinity College Dublin and University College Dublin.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
-
                         <div class="tab-pane fade " id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
                             <div class="row">
-
+                                <div class="col-12 mb-4"
+                                    style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
+                                    <img src="{% static 'home/assets/images/study-abroad/Germany1.jpg'%}">
+                                </div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">Germany's education system is known for its
                                                 strong engineering and technology programs, with many universities
                                                 offering courses in English.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">German universities offer a rigorous academic
                                                 atmosphere, with opportunities to engage with world-class faculty and
                                                 research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">Germany offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -960,101 +770,78 @@
                                                 university and location, with average costs ranging from €1,500 to
                                                 €20,000 per year. Living costs can range from €6,000 to €12,000 per
                                                 year.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with several universities in Germany,
                                                 offering a wide range of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
                                             <p class="text-muted mb-0">German universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including Technical University of Munich and University of Berlin.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
-
                         <div class="tab-pane fade " id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
                             <div class="row">
-
+                                <div class="col-12 mb-4"
+                                    style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
+                                    <img src="{% static 'home/assets/images/study-abroad/france1.jpg'%}">
+                                </div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Education
                                                     System</a></h5>
                                             <p class="text-muted mb-0">France's education system is known for its strong
                                                 focus on arts, humanities, and social sciences, with many universities
                                                 offering courses in English.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Academic
                                                     Atmosphere</a></h5>
                                             <p class="text-muted mb-0">French universities offer a vibrant academic
                                                 atmosphere, with opportunities to engage with world-class faculty and
                                                 research.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Employment
                                                     Possibilities</a></h5>
                                             <p class="text-muted mb-0">France offers various employment opportunities,
                                                 including internships, part-time jobs, and post-study work options.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Tuition and
                                                     Living Costs</a></h5>
@@ -1063,52 +850,40 @@
                                                 €3,770 per year for EU students and €2,770 to €12,000 per year for
                                                 non-EU students. Living costs can range from €8,000 to €15,000 per year.
                                             </p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">University
                                                     Options</a></h5>
                                             <p class="text-muted mb-0">We partner with several universities in France,
                                                 offering a wide range of courses across various disciplines.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
-
                                         <div class="flex-1 content ">
                                             <h5 class="mb-1"><a href="javascript:void(0)" class="text-dark">Rankings</a>
                                             </h5>
                                             <p class="text-muted mb-0">French universities are ranked among the top
                                                 institutions globally, with some of the most prestigious universities
                                                 including Sorbonne University and École Polytechnique.</p>
-
                                         </div>
                                     </div>
                                 </div><!--end col-->
-
-
-
-
-
-
                             </div><!--end row-->
                         </div><!--end teb pane-->
-
-
                         <div class="tab-pane fade " id="pills-9" role="tabpanel" aria-labelledby="pills-9-tab">
                             <div class="row">
-
+                                <div class="col-12 mb-4"
+                                    style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
+                                    <img src="{% static 'home/assets/images/study-abroad/sweden1.jpg'%}">
+                                </div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
@@ -1209,7 +984,10 @@
 
                         <div class="tab-pane fade " id="pills-10" role="tabpanel" aria-labelledby="pills-10-tab">
                             <div class="row">
-
+                                <div class="col-12 mb-4"
+                                    style=" border: 1px solid #EBEBEB; border-radius: 10px; padding: 10px;">
+                                    <img src="{% static 'home/assets/images/study-abroad/singapore1.jpg'%}">
+                                </div>
                                 <div class="col-lg-4 col-md-6 col-12">
                                     <div
                                         class="d-flex align-items-center features feature-primary feature-clean shadow rounded p-4">
@@ -1499,4 +1277,303 @@
         
 {% include 'home/pages/blog-common.html' %}
     </section><!--end section-->
-{% endblock %}
+
+<div class="modal fade" id="abroad-edu-form" tabindex="-1" aria-labelledby="LoginForm-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded shadow border-0">
+        <div class="modal-header border-bottom">
+          <h5 class="modal-title" id="LoginForm-title">Enquiry Form</h5>
+          <button type="button" class="btn btn-icon btn-close" data-bs-dismiss="modal" id="close-modal"><i class="uil uil-times fs-4 text-dark"></i></button>
+        </div>
+        <div class="modal-body">
+          <form id="loanform">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Name <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <input type="text" class="form-control ps-5" placeholder="" id="name" name="name" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Email Address <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <input type="email" class="form-control ps-5" placeholder="" id="email" name="email" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <input type="number" class="form-control ps-5" placeholder="" id="phone" name="phone" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">City <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <select name="city" id="city" class="form-control ps-5">
+                      <option value="">Please Select</option>
+                      <option value="Agra">Agra</option>
+                      <option value="Ahmedabad">Ahmedabad</option>
+                      <option value="Ahmednagar">Ahmednagar</option>
+                      <option value="Akola">Akola</option>
+                      <option value="Allahabad">Allahabad</option>
+                      <option value="Amravati">Amravati</option>
+                      <option value="Anantapur">Anantapur</option>
+                      <option value="Bangalore">Bangalore</option>
+                      <option value="Bhandara">Bhandara</option>
+                      <option value="Bhilai">Bhilai</option>
+                      <option value="Bhopal">Bhopal</option>
+                      <option value="Bhusawal">Bhusawal</option>
+                      <option value="Buldana">Buldana</option>
+                      <option value="Ch. Sambhajinagar">Ch. Sambhajinagar</option>
+                      <option value="Chalisgaon">Chalisgaon</option>
+                      <option value="Chandigarh">Chandigarh</option>
+                      <option value="Chandrapur">Chandrapur</option>
+                      <option value="Chhindwara">Chhindwara</option>
+                      <option value="Coimbatore">Coimbatore</option>
+                      <option value="Delhi">Delhi</option>
+                      <option value="Dhule">Dhule</option>
+                      <option value="Ernakulam">Ernakulam</option>
+                      <option value="Faridabad">Faridabad</option>
+                      <option value="Gondia">Gondia</option>
+                      <option value="Gurugram">Gurugram</option>
+                      <option value="Gwalior">Gwalior</option>
+                      <option value="Hinganghat">Hinganghat</option>
+                      <option value="Hyderabad">Hyderabad</option>
+                      <option value="Indore">Indore</option>
+                      <option value="Jabalpur">Jabalpur</option>
+                      <option value="Jaipur">Jaipur</option>
+                      <option value="Jalandhar">Jalandhar</option>
+                      <option value="Jalgaon">Jalgaon</option>
+                      <option value="Jalna">Jalna</option>
+                      <option value="Jodhpur">Jodhpur</option>
+                      <option value="Kaithal">Kaithal</option>
+                      <option value="Katol">Katol</option>
+                      <option value="Kochi">Kochi</option>
+                      <option value="Kota">Kota</option>
+                      <option value="Kottayam">Kottayam</option>
+                      <option value="Kozhikode">Kozhikode</option>
+                      <option value="Latur">Latur</option>
+                      <option value="Lucknow">Lucknow</option>
+                      <option value="Madurai">Madurai</option>
+                      <option value="Malegaon">Malegaon</option>
+                      <option value="Mangalore">Mangalore</option>
+                      <option value="Mumbai">Mumbai</option>
+                      <option value="Nagpur-IT Park (Branch)">Nagpur-IT Park (Branch)</option>
+                      <option value="Nagpur-Sadar (Branch)">Nagpur-Sadar (Branch)</option>
+                      <option value="Nanded">Nanded</option>
+                      <option value="Nashik">Nashik</option>
+                      <option value="Navi Mumbai">Navi Mumbai</option>
+                      <option value="Noida">Noida</option>
+                      <option value="Other">Other</option>
+                      <option value="Paithan">Paithan</option>
+                      <option value="Palghar">Palghar</option>
+                      <option value="Patna">Patna</option>
+                      <option value="Pondicherry">Pondicherry</option>
+                      <option value="Pune">Pune</option>
+                      <option value="Raipur">Raipur</option>
+                      <option value="Raver">Raver</option>
+                      <option value="Thane">Thane</option>
+                      <option value="Vijayawada">Vijayawada</option>
+                      <option value="Warangal">Warangal</option>
+                      <option value="Wardha">Wardha</option>
+                      <option value="Wayanad">Wayanad</option>
+                      <option value="Yavatmal">Yavatmal</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Preferred Destination <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <select name="preferred_destination" id="preferred_destination" class="form-control ps-5">
+                      <option value="">Please Select</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Canada">Canada</option>
+                      <option value="China">China</option>
+                      <option value="Croatia">Croatia</option>
+                      <option value="Cyprus">Cyprus</option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="Dubai">Dubai</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Lithuania">Lithuania</option>
+                      <option value="Malaysia">Malaysia</option>
+                      <option value="Malta">Malta</option>
+                      <option value="Mauritius">Mauritius</option>
+                      <option value="Monaco">Monaco</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="New Zealand">New Zealand</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Russia">Russia</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Spain">Spain</option>
+                      <option value="South Korea">South Korea</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="United States">United States</option>
+                      <option value="Vietnam">Vietnam</option>
+                      <option value="Sri Lanka">Sri Lanka</option>
+                      <option value="Sharjah">Sharjah</option>
+                      <option value="Abu Dhabi">Abu Dhabi</option>
+                      <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Are you looking for coaching? <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <select name="is_coaching" id="is_coaching" class="form-control ps-5">
+                      <option>select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Are you looking for Education Loan? <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <select name="is_loan" id="is_loan" class="form-control ps-5">
+                      <option>select</option>
+                      <option value="yes">Yes</option>
+                      <option value="no">No</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3 d-flex align-items-center">
+                  <img src="" alt="" id="cap_img" />
+                  <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
+                  <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                </div>
+              </div>
+              <div class="col-lg-12 mb-0">
+                <div class="d-grid">
+                  <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <script>
+    jQuery(document).ready(function ($) {
+      let key = null
+    
+      function getCaptcha() {
+        axios
+          .get(`https://careerwader.in/api/captcha/refresh/`)
+          .then(function (response) {
+            if (response.status == 200) {
+              $('#cap_img').attr('src', response.data.image_url)
+              key = response.data.key // ✅ set global key
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+          })
+      }
+    
+      function verify() {
+        const captchaText = $('#cap_text').val()
+    
+        if (!captchaText || !key) {
+          alert('Captcha or key missing')
+          return
+        }
+        
+        axios
+          .post(`https://careerwader.in/api/captcha/verify/`, {
+            captcha_0: key,
+            captcha_1: captchaText
+          })
+          .then(function (response) {
+            if (response.status == 200 && response.data.success) {
+              submitForm()
+            } else {
+              alert('Captcha verification failed.')
+              getCaptcha() // Refresh on fail
+            }
+          })
+          .catch(function (error) {
+            console.log(error)
+            alert('Verification failed.')
+            getCaptcha() // Refresh anyway
+          })
+      }
+    
+      function submitForm() {
+        const data = {
+          full_name: $('#name').val(),
+          email: $('#email').val(),
+          phone: $('#phone').val(),
+          city: $('#city').val(),
+          preferred_destination: $('#preferred_destination').val(),
+          is_coaching: $('#is_coaching').val() === 'Yes',
+          is_loan: $('#is_loan').val() === 'Yes'
+        }
+    
+        axios
+          .post(`https://careerwader.in/api/placement-enquiry/`, data)
+          .then(function (response) {
+            console.log(response)
+            alert('Enquiry submitted successfully')
+          })
+          .catch(function (error) {
+            console.log(error)
+            alert('Error:\n' + JSON.stringify(error.response.data))
+          })
+      }
+    
+      // Load captcha initially
+      getCaptcha()
+    
+      // Form submit handler
+      $('#loanform').on('submit', function (e) {
+        e.preventDefault()
+        //verify() // ✅ Trigger verify *after* user submits
+      })
+    
+      // Optional: Click on image to refresh captcha
+      $('#refCap').on('click', function () {
+        getCaptcha()
+      })
+    })
+  </script>
+  {% endblock %}

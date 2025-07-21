@@ -46,6 +46,8 @@ urlpatterns = [
     path('study-abroad/',mainPageViews.studyAbroad, name = "studyAbroad"),
     path('career-counsellor/',mainPageViews.careerCounsellor, name = "careerCounsellor"),
     path('education-loan/',mainPageViews.eduLoan, name = "eduLoan"),
+    path('terms-and-conditions/',mainPageViews.termsAndConditions, name = "termsAndConditions"),
+    path('privacy-policy/',mainPageViews.privacyPolicy, name = "privacyPolicy"),
     
     
     
@@ -122,6 +124,7 @@ urlpatterns = [
     
     #counsellor
     path('counselor-display/',counselorViews.counselorDisplay, name = 'counselorDisplay'),
+    # path('counselor-display/',counselorViews.Display, name = 'counselorDisplay'),
     
     #franchise
     path('short-enquiry-display/',shortEnquiryViews.shortEnquiryDisplay, name = 'shortEnquiryDisplay'),
@@ -168,6 +171,9 @@ urlpatterns = [
     path("strategic-approach-to-job-hunting/", blogs.blog3, name="blog3"),
     path("finding-the-best-fit/", blogs.blog4, name="blog4"),
     path("finding-the-fittest-job/", blogs.blog5, name="blog5"),
+    path("implementing-new-career/", blogs.blog6, name="blog6"),
+    path("perfect-resume/", blogs.blog7, name="blog7"),
+    path("rethinking-career/", blogs.blog8, name="blog8"),
     path("blogs/", blogs.blogs, name="blogs"),    
     re_path(r'^index(\.html?|\.php)?$', lambda request: redirect('', permanent=True)),
 ]

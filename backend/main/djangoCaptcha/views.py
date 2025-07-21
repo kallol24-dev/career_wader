@@ -20,6 +20,7 @@ class CaptchaRefreshAPIView(APIView):
 class CaptchaVerifyAPIView(APIView):
     permission_classes = [permissions.AllowAny]
     def post(self, request):
+        print(self.request)
         serializer = CaptchaVerifySerializer(data=request.data)
         if serializer.is_valid():
             return Response({"success": True})

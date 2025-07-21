@@ -540,7 +540,7 @@
                         <label class="form-label">What do you hope to achieve as a member of our network?<span class="text-danger">*</span></label>
                         <div class="form-icon position-relative">
                           <i data-feather="thumbs-up" class="fea icon-sm icons"></i>
-                          <input type="text" class="form-control ps-5" placeholder="" id="motivation_reason" name="motivation_reason" required />
+                          <input type="text" class="form-control ps-5" placeholder="" id="hope_reason" name="hope_reason" required />
                         </div>
                       </div>
                     </div>
@@ -549,6 +549,16 @@
                         <img src="" alt="" id="cap_img" />
                         <span id="refCap" style="padding:5px;"><i data-feather="refresh-ccw" class="fea icon-sm icons"></i></span>
                         <input type="text" class="form-control" name="cap_text" id="cap_text" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="mb-3">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="is_terms_agreed" name="is_terms_agreed" required>
+                          <label class="form-check-label" for="flexCheckDefault">
+                            By submitting the form, I agree to the <span class="text-primary">terms and conditions.</span>
+                          </label>
+                        </div>
                       </div>
                     </div>
                     <div class="col-lg-12 mb-0">
@@ -599,16 +609,10 @@
     
       function getCaptcha() {
         axios
-          .get(`{{ api_base_url}}api/captcha/refresh/`)
+          .get(`https://careerwader.in/api/captcha/refresh/`)
           .then(function (response) {
             if (response.status == 200) {
-              var base = "{{ api_base_url | escape }}".replace(/\/+$/, '');
-            var url = response.data.image_url;
-            final_url = base + url;
-            console.log("final : " + final_url)
-
-            $('#cap_img').attr('src', final_url);
-              /*$('#cap_img').attr('src', response.data.image_url)*/
+              $('#cap_img').attr('src', response.data.image_url)
               key = response.data.key // ✅ set global key
             }
           })
@@ -626,7 +630,7 @@
         }
     
         axios
-          .post(`{{ api_base_url | escape }}api/captcha/verify/`, {
+          .post(`https://careerwader.in/api/captcha/verify/`, {
             captcha_0: key,
             captcha_1: captchaText
           })
@@ -653,10 +657,12 @@
         formData.append('user[email]', $('#counsellor_email').val())
         formData.append('user[phone]', $('#counsellor_phone_number').val())
         formData.append('user[current_occupation]', $('#current_occupation').val())
-        formData.append('user[years_of_experience]', $('#years_of_experience').val())
+        formData.append('user[experience_in_years]', $('#years_of_experience').val())
         formData.append('user[password]', getRandomString())
         formData.append('user[country]', 'IN')
-    
+        formData.append('user[motivation_reason]', $("#motivation_reason").val())
+        formData.append('user[hope_reason]', $("#hope_reason").val())
+        formData.append('user[is_terms_agreed]', $("#is_terms_agreed").is(':checked') ? true : false)
         // Dynamic counselling fields (multiple entries)
         $('.counselling-row').each(function (index, row) {
           const specialization = $(row).find("input[name='counselling_specialization[]']").val()
@@ -674,9 +680,9 @@
         }
         const role = '{{ role|escape }}'
         const baseUrl = '{{ api_base_url|escape }}'
-    
+
         axios
-          .post(`{{ api_base_url | escape }}api/counselors/register/`, formData, {
+          .post(`https://careerwader.in/api/counselors/register/`, formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

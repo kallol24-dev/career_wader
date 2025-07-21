@@ -94,7 +94,7 @@
                     "created_at": "{{ counselor.user.created_at }}",
                     "status": "{{ counselor.is_approved }}",
                     "current_occupation": "{{ counselor.current_occupation }}",
-                    "experience_in_years": "{{ counselor.experience_in_years }}",
+                    "years_of_experience": "{{ counselor.years_of_experience }}",
                     "background": "{{ counselor.background }}",
                     "motivation_reason": "{{ counselor.motivation_reason }}",
                     "hope_reason": "{{ counselor.hope_reason }}"
@@ -215,6 +215,30 @@
                 <div>
                   <small class="text-muted">Experience</small>
                   <div id="counselorExperience"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 mt-2">
+          <div class="col-md-6">
+            <div class="card shadow-sm border-left-info">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-globe fa-lg text-info me-3"></i>
+                <div>
+                  <small class="text-muted">Motivation Reason</small>
+                  <div id="motivation_reason"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card shadow-sm border-left-info">
+              <div class="card-body d-flex align-items-center">
+                <i class="fas fa-globe fa-lg text-info me-3"></i>
+                <div>
+                  <small class="text-muted">Hope Reason</small>
+                  <div id="hope_reason"></div>
                 </div>
               </div>
             </div>
@@ -509,7 +533,9 @@
       $("#counselorPhone").text(counselor.phone ?? "N/A");
       $("#counselorCountry").text(counselor.country ?? "N/A");
       $("#counselorOccupation").text(counselor.current_occupation ?? "N/A");
-      $("#counselorExperience").text(counselor.experience_in_years ? `${counselor.experience_in_years} yrs` : "N/A");
+      $("#counselorExperience").text(counselor.years_of_experience ? `${counselor.years_of_experience}` : "N/A");
+      $("#motivation_reason").text(counselor.motivation_reason ? `${counselor.motivation_reason}` : "N/A");
+      $("#hope_reason").text(counselor.hope_reason ? `${counselor.hope_reason}` : "N/A");
 
       $("#counselorStatusBadge")
         .text(statusLabel)

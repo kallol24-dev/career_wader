@@ -31,9 +31,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 # Custom URLs
-# API_BASE_URL = "https://careerwader.in/"
-API_BASE_URL = "http://127.0.0.1:8001/"
-
+API_BASE_URL = "https://careerwader.in/"
 # TOKEN_URL = config('TOKEN_URL')
 
 # Application definition
@@ -157,7 +155,7 @@ USE_TZ = True
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATIC_URL = '/static/'
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # for development enable debug also
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),

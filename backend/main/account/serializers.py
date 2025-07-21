@@ -65,8 +65,6 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 #             return obj.groups.first().name if obj.groups.exists() else None
 #         return None
     
-    
-    
 class UserSerializer(serializers.ModelSerializer):
     role = serializers.SerializerMethodField()
     created_at = serializers.DateTimeField(read_only=True, format="%Y-%m-%d %H:%M:%S")
@@ -99,7 +97,6 @@ class UserSerializer(serializers.ModelSerializer):
         if hasattr(obj, "groups") and callable(getattr(obj.groups, "exists", None)):
             return obj.groups.first().name if obj.groups.exists() else None
         return None
-    
 
 
 

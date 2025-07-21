@@ -218,15 +218,10 @@ jQuery(document).ready(function ($) {
     
     function getCaptcha() {
         axios
-        .get(`{{ api_base_url}}api/captcha/refresh/`)
+        .get(`https://careerwader.in/api/captcha/refresh/`)
         .then(function (response) {
         if (response.status == 200) {
-           var base = "{{ api_base_url | escape }}".replace(/\/+$/, '');
-            var url = response.data.image_url;
-            final_url = base + url;
-            console.log(final_url)
-
-            $('#cap_img').attr('src', final_url);
+            $('#cap_img').attr('src', response.data.image_url)
             key = response.data.key // ✅ set global key
         }
         })
@@ -244,7 +239,7 @@ jQuery(document).ready(function ($) {
         }
 
         axios
-        .post(`{{ api_base_url | escape }}api/captcha/verify/`, {
+        .post(`https://careerwader.in/api/captcha/verify/`, {
             captcha_0: key,
             captcha_1: captchaText
         })
@@ -270,14 +265,14 @@ jQuery(document).ready(function ($) {
             password: $('#password').val()
         };
 
-        const baseUrl = "{{ api_base_url|escape }}".replace(/\/+$/, ''); // Ensure no trailing slash
+        const baseUrl = "{{ api_base_url|escape }}";
         if (!loadingModal) {
             loadingModal = new bootstrap.Modal(document.getElementById('loadingModal'));
         }
 
         loadingModal.show(); // Show modal before sending request
-        console.log("Submitting data:", `${baseUrl}api/token/`);
-        axios.post(`${baseUrl}/api/token/`, data)
+
+        axios.post(`${baseUrl}api/token/`, data)
         .then(function(response) {
             console.log(response)
             const accessToken = response.data?.access;
@@ -304,7 +299,7 @@ jQuery(document).ready(function ($) {
 
             // Hide modal and redirect
             loadingModal.hide();
-            window.location.href = `${baseUrl}/dashboard`
+            window.location.href = `${baseUrl}dashboard`
         })
         .catch(function(error) {
             console.log(error)

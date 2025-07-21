@@ -57,29 +57,57 @@ class CustomTokenObtainPairView(TokenObtainPairView):
 
 class FranchiseApprovalUpdateView(generics.UpdateAPIView):
     queryset = Franchise.objects.all()
+    
     serializer_class = FranchiseApprovalSerializer
     permission_classes = []  # only admin can approve
 
     lookup_field = 'pk'
     
+    
+    def generate_franchise_uuid(self,city):
+        city = city.strip()
+        city_code = CITY_CODES.get(city)
+        print(city_code)
+        if not city_code:
+            raise ValueError(f"No city code found for '{city}'")
+
+        # Get the latest franchise with that city code prefix
+        last_franchise = Franchise.objects.filter(
+            franchaise_uuid__startswith=f"CW{city_code}"
+        ).order_by('-franchaise_uuid').first()
+        print(last_franchise)
+        if last_franchise:
+            try:
+                last_serial = int(last_franchise.franchaise_uuid[-4:])
+            except (ValueError, TypeError):
+                last_serial = 0
+        else:
+            last_serial = 0
+
+        new_serial = f"{last_serial + 1:04d}" 
+        print(f"CW{city_code}{new_serial}")# Pad with 0s
+        return f"CW{city_code}{new_serial}"
+    
     def perform_update(self, serializer):
         instance = serializer.instance
         was_approved = instance.is_approved  # Before update
         franchise_uuid = instance.franchaise_uuid
-        
+        print(instance.user.city)
        
-        city = instance.city.strip()
+        city = instance.user.city.strip()
         print("City:", city)
-        code = CITY_CODES.get(city)
+        code = self.generate_franchise_uuid(city)
+        print(code)
         
         if not code:
             raise ValueError(f"No city code found for '{city}'")
 
         user = instance.user
+        
         full_name = f"{user.first_name.strip()} {user.last_name.strip()}"
         # create a unique franchise UUID if not already set
         if not franchise_uuid:
-            franchise_uuid = f"FRAN-{code}-{instance.id}-{timezone.now().strftime('%Y%m%d%H%M%S')}"
+            franchise_uuid = code
             instance.franchaise_uuid = franchise_uuid
             instance.save(update_fields=['franchaise_uuid'])
         # Save updated data
@@ -93,6 +121,7 @@ class FranchiseApprovalUpdateView(generics.UpdateAPIView):
             html_body = f"""
             <h2>Dear {full_name},</h2>
             <p>Congratulations! Your franchise account has been <strong>Approved</strong>.</p>
+            <p> This is your Unique Identification Code {franchise_uuid}<p>
             <p>You can now log in to your dashboard and start onboarding students.</p>
             <br>
             <p>Regards,<br>Career Wader Team</p>

@@ -1,0 +1,60 @@
+# === Virtualenv ===
+venv/
+backend/main-backup/
+
+# === Environment Variables ===
+.env
+*.env
+*.env.*
+
+# === Python cache/compiled ===
+__pycache__/
+*.py[cod]
+*$py.class
+
+# === Django SQLite DB (not for prod) ===
+db.sqlite3
+*.sqlite3
+
+# === Static/Media (Don't ignore collected static or templates) ===
+# DO NOT ignore these if using static/templates in version control
+# Commented out to retain them
+# staticfiles/
+# media/
+frontend/static/
+backend/main/static/
+backend/main/media/
+
+# === Logs ===
+*.log
+
+# === IDE/editor ===
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# === OS/system ===
+.DS_Store
+Thumbs.db
+
+# === Test/coverage ===
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+.mypy_cache/
+
+# === Build/packaging ===
+build/
+dist/
+*.egg-info/
+
+# === Docker runtime ===
+*.pid
+docker-compose.override.yml
+
+# === Git merge leftovers ===
+*.orig
+backend/main/dump.rdb
+dump.rdb

@@ -58,5 +58,3 @@ docker-compose.override.yml
 *.orig
 backend/main/dump.rdb
 dump.rdb
-career_wader-main.zip
-migrations/

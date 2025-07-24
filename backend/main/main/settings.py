@@ -70,7 +70,8 @@ INSTALLED_APPS = [
     'placementEnquiry',
     'captcha',
     'channels',
-    'notifications'
+    'notifications',
+    'educationLoan',
     
     
     

@@ -519,28 +519,46 @@
               </div> {% endcomment %}
               <div class="col-lg-12">
                 <div class="mb-3">
-                  <label class="form-label">Are you looking for coaching? <span class="text-danger">*</span></label>
+                  <label class="form-label">University <span class="text-danger">*</span></label>
                   <div class="form-icon position-relative">
                     <i data-feather="user" class="fea icon-sm icons"></i>
-                    <select name="is_coaching" id="is_coaching" class="form-control ps-5">
-                      <option>select</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
+                    <input type="text" class="form-control ps-5" placeholder="" id="university" name="university" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Course Name <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <input type="text" class="form-control ps-5" placeholder="" id="course_name" name="course_name" required />
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <div class="mb-3">
+                  <label class="form-label">Loan Amount <span class="text-danger">*</span></label>
+                  <div class="form-icon position-relative">
+                    <i data-feather="user" class="fea icon-sm icons"></i>
+                    <select name="loan_amount" id="loan_amount" class="form-control ps-5">
+                      <option value="">Please Select</option>
+                      <option value="10 to 20 Lakhs">10 to 20 Lakhs</option>
+                      <option value="20 to 30 Lakhs">20 to 30 Lakhs</option>
+                      <option value="30 to 40 Lakhs">30 to 40 Lakhs</option>
+                      <option value="40 Lakhs &amp; above">40 Lakhs &amp; above</option>
                     </select>
                   </div>
                 </div>
               </div>
               <div class="col-lg-12">
                 <div class="mb-3">
-                  <label class="form-label">Are you looking for Education Loan? <span class="text-danger">*</span></label>
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                  <label class="form-check-label" for="flexCheckDefault" id="is_terms_agreed" name="is_terms_agreed" required>I agree to the terms & conditions</label>
+                  {% comment %} <label class="form-label">I agree to the terms & conditions <span class="text-danger">*</span></label>
                   <div class="form-icon position-relative">
                     <i data-feather="user" class="fea icon-sm icons"></i>
-                    <select name="is_loan" id="is_loan" class="form-control ps-5">
-                      <option>select</option>
-                      <option value="yes">Yes</option>
-                      <option value="no">No</option>
-                    </select>
-                  </div>
+                    <input type="checkbox" class="form-control ps-5" placeholder="" id="is_terms_agreed" name="is_terms_agreed" required />
+                  </div> {% endcomment %}
                 </div>
               </div>
               <div class="col-lg-12">
@@ -563,11 +581,14 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+    let loadingModal
     jQuery(document).ready(function ($) {
       let key = null
-    
+      if (!loadingModal) {
+        loadingModal = new bootstrap.Modal(document.getElementById('enquiry-form-loan'))
+      }
       function getCaptcha() {
         axios
           .get(`https://careerwader.in/api/captcha/refresh/`)
@@ -586,7 +607,18 @@
         const captchaText = $('#cap_text').val()
     
         if (!captchaText || !key) {
-          alert('Captcha or key missing')
+          Swal.fire({
+            title: 'Verification Failed',
+            text: 'Captcha or key missing',
+            icon: 'error',
+            confirmButtonText: 'try again',
+            didClose: () => {
+              // Extra guard to ensure modal is NOT visible after alert closes
+              if ($('#enquiry-form-loan').hasClass('show')) {
+                loadingModal.hide()
+              }
+            }
+          })
           return
         }
     
@@ -599,37 +631,76 @@
             if (response.status == 200 && response.data.success) {
               submitForm()
             } else {
-              alert('Captcha verification failed.')
+              Swal.fire({
+                title: 'Verification Failed',
+                text: 'Captcha verification was unsuccessful.',
+                icon: 'error',
+                confirmButtonText: 'try again',
+                didClose: () => {
+                  // Extra guard to ensure modal is NOT visible after alert closes
+                  if ($('#enquiry-form-loan').hasClass('show')) {
+                    loadingModal.hide()
+                  }
+                }
+              })
               getCaptcha() // Refresh on fail
             }
           })
           .catch(function (error) {
-            console.log(error)
-            alert('Verification failed.')
+            Swal.fire({
+              title: 'Error',
+              text: 'Something went wrong, try again or cantact admin.',
+              icon: 'error',
+              confirmButtonText: 'Try Again'
+            })
             getCaptcha() // Refresh anyway
           })
       }
     
       function submitForm() {
         const data = {
-          full_name: $('#name').val(),
+          name: $('#name').val(),
           email: $('#email').val(),
-          phone: $('#phone').val(),
+          phone_number: $('#phone').val(),
           city: $('#city').val(),
-          preferred_destination: $('#preferred_destination').val(),
-          is_coaching: $('#is_coaching').val() === 'Yes',
-          is_loan: $('#is_loan').val() === 'Yes'
+          prefered_destination: $('#preferred_destination').val(),
+          university: $('#university').val(),
+          course: $('#course_name').val(),
+          loan_amount: $('#loan_amount').val(),
+          is_terms_agreed: $('#is_terms_agreed').is(':checked')
         }
-    
+        console.log(data)
         axios
-          .post(`https://careerwader.in/api/placement-enquiry/`, data)
+          .post(`https://careerwader.in/api/education/loan/create/`, data)
           .then(function (response) {
             console.log(response)
-            alert('Enquiry submitted successfully')
+            Swal.fire({
+              title: 'Enquiry submitted successfuly',
+              text: "Thank you for contacting us. We'll get back to you soon.",
+              icon: 'success',
+              confirmButtonText: 'ok',
+              didClose: () => {
+                // Extra guard to ensure modal is NOT visible after alert closes
+                if ($('#enquiry-form-loan').hasClass('show')) {
+                  loadingModal.hide()
+                }
+              }
+            })
           })
           .catch(function (error) {
             console.log(error)
-            alert('Error:\n' + JSON.stringify(error.response.data))
+            Swal.fire({
+              title: 'Something went wrong',
+              text: JSON.stringify(error.response.data),
+              icon: 'error',
+              confirmButtonText: 'ok',
+              didClose: () => {
+                // Extra guard to ensure modal is NOT visible after alert closes
+                if ($('#enquiry-form-loan').hasClass('show')) {
+                  loadingModal.hide()
+                }
+              }
+            })
           })
       }
     

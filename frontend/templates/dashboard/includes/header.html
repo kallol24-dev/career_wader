@@ -94,3 +94,54 @@
     </ul>
   </div>
 </nav>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+   <script>
+  $(document).ready(function () {
+    let audioUnlocked = false;
+
+      $(document).one('click keypress', function () {
+        const audio = $('#adminNotifySound')[0];
+        if (audio) {
+          audio.play().catch(() => {}); // try unlocking
+          audioUnlocked = true;
+        }
+      });
+
+    const socket = new WebSocket('wss://' + window.location.hostname + '/ws/admin/notifications/');
+    console.log("socket:", socket);
+
+    socket.onmessage = function (event) {
+      console.log("Received event:", event);
+      const data = JSON.parse(event.data);
+      const message = data.message || '📢 New notification';
+
+      // Update badge
+      const $badge = $('#adminNotifyBadge');
+      console.log($badge);
+      let currentCount = parseInt($badge.text());
+      if (isNaN(currentCount)) currentCount = 0;
+      currentCount += 1;
+      $badge.text(currentCount).show();
+
+      // Append to dropdown
+      const $list = $('#adminNotificationList');
+      const $item = $(`
+        <li>
+          <a class="dropdown-item" href="#">
+            <i class="bx bx-message-square-dots me-2"></i> ${message}
+          </a>
+        </li>
+      `);
+      $item.insertBefore($list.find('.dropdown-divider').first());
+
+      // Play sound
+      // Play sound if unlocked
+      const audio = $('#adminNotifySound')[0];
+      if (audio && audioUnlocked) {
+        audio.play().catch(err => console.warn('Audio play error:', err));
+      }
+    };
+  });
+</script>

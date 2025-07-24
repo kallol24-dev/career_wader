@@ -26,7 +26,7 @@ ENV = config('ENV', default='development')
 SECRET_KEY = 'django-insecure-faa6q9be5*3#qnsk_@3c=y%bxo4g*##oiu-@*rf_9x(ylrs0j_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -152,14 +152,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+
+STATIC_URL = config('STATIC_URL')
+STATIC_ROOT = os.path.join(BASE_DIR, config('STATIC_ROOT'))
+# STATIC_URL = config('STATIC_URL')
+# STATIC_ROOT = os.path.join(BASE_DIR, config('STATIC_ROOT'))
 # for development enable debug also
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 # for production disable debug
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')

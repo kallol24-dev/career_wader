@@ -94,8 +94,8 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                  <label for="notes" class="form-label">Notes (Admin Only)</label>
-                  <textarea class="form-control" id="notes" name="notes" rows="3" readonly></textarea>
+                  <label for="notes" hidden="true" class="form-label">Notes (Admin Only)</label>
+                  <textarea class="form-control" hidden="true" id="notes" name="notes" rows="3" readonly></textarea>
                 </div>
 
                 <div class="col-md-6 mb-3">
@@ -201,7 +201,7 @@
       formData.forEach((value, key) => leadData[key] = value);
 
       $.ajax({
-        url: 'http://127.0.0.1:8001/api/franchise/lead/post/',
+        url: 'https://careerwader.in/api/franchise/lead/post/',
         method: 'POST',
         data: formData,
         processData: false,
@@ -253,7 +253,7 @@
       formData.append('file', compiledFileBlob, 'compiled_leads.xlsx');
 
       $.ajax({
-        url: 'http://127.0.0.1:8001/api/franchise/send-leads-to-admin/',
+        url: 'https://careerwader.in/api/franchise/send-leads-to-admin/',
         method: 'POST',
         data: formData,
         processData: false,

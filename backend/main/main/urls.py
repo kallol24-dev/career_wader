@@ -65,6 +65,7 @@ urlpatterns = [
     path('captcha/', include('captcha.urls')),
     path('api/captcha/', include('djangoCaptcha.urls')),
     path('api/notifications/', include('notifications.urls')),
+    path('api/education/loan/', include('educationLoan.urls')),
 
     # Swagger API Documentation
     path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

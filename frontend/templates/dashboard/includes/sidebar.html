@@ -15,12 +15,14 @@
         <div data-i18n="Analytics">Dashboard</div>
       </a>
     </li>
+    {% if request.COOKIES.role == 'admin' %}
     <li class="menu-item {% if request.resolver_match.url_name == 'notifications' %}active open{% endif %}">
       <a href="{% url 'notifications' %}" class="menu-link">
         <i class="menu-icon tf-icons bx bx-home-circle"></i>
         <div data-i18n="Analytics">Notifications</div>
       </a>
     </li>
+    {% endif %}
     <li class="menu-header small text-uppercase">
       <span class="menu-header-text">Franchisee</span>
     </li>

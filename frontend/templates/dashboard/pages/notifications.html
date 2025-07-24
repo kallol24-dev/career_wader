@@ -1,4 +1,5 @@
 {% extends 'dashboard/layouts/dashboard_layout.html' %}
+{% comment %} 
 {% load static %}
 
 {% block content %}
@@ -76,5 +77,63 @@
     </div>
 
   </div>
+</div>
+{% endblock %} {% endcomment %}
+
+{% comment %} {% extends 'dashboard/layouts/dashboard_layout.html' %} {% endcomment %}
+{% load static %}
+
+{% block content %}
+<div class="container-xxl flex-grow-1 container-p-y">
+  <h4 class="mb-4">Franchise Notifications</h4>
+
+  {% regroup notifications by franchaise_uuid as grouped_notifications %}
+
+  <div class="accordion" id="franchiseAccordion">
+  {% for group in grouped_notifications %}
+    {% with franchise=group.list.0.sender %}
+    {% with latest=group.list.0.created_at %}
+    {% with uid=forloop.counter %}
+    <div class="accordion-item mb-3">
+      <h2 class="accordion-header" id="heading-{{ uid }}">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapse-{{ uid }}" aria-expanded="false"
+          aria-controls="collapse-{{ uid }}">
+          <div class="d-flex flex-column">
+            <strong>{{ franchise.first_name }} {{ franchise.last_name }}</strong>
+            <small>ID: {{ group.grouper }} | {{ franchise.city }}, {{ franchise.state }}</small>
+          </div>
+          
+        </button>
+      </h2>
+      <div id="collapse-{{ uid }}" class="accordion-collapse collapse"
+        aria-labelledby="heading-{{ uid }}" data-bs-parent="#franchiseAccordion">
+        <div class="accordion-body">
+          <ul class="list-group">
+            {% for notification in group.list %}
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+              <div>
+                <div class="fw-semibold">{{ notification.message }}</div>
+                <small class="text-muted">{{ notification.created_at|slice:":10" }}</small>
+                {% if notification.file %}
+                  <div><a href="{{ notification.file }}" target="_blank">View File</a></div>
+                {% endif %}
+              </div>
+              <span class="badge {% if notification.is_read %}bg-success{% else %}bg-warning text-dark{% endif %} ms-2">
+                {% if notification.is_read %}Read{% else %}Unread{% endif %}
+              </span>
+            </li>
+            {% empty %}
+            <li class="list-group-item">No notifications.</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    {% endwith %}
+    {% endwith %}
+    {% endwith %}
+  {% endfor %}
+</div>
 </div>
 {% endblock %}

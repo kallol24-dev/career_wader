@@ -1,5 +1,5 @@
 from account.serializers import UserSerializer
-from .models import Franchise
+from .models import Franchise, FranchiseTask
 from rest_framework import serializers
 from account.models import User
 
@@ -32,9 +32,13 @@ class AdminFranchiseActionSerializer(serializers.Serializer):
     action = serializers.ChoiceField(choices=["SHORTLISTED", "REJECTED"])
     
 # form for updating farainchise tasks 
-class FranchiseTaskUpdateSerializer(serializers.Serializer):
-    franchise_id = serializers.IntegerField()
-    task = serializers.CharField(required=True)
-    status = serializers.ChoiceField(choices=["PENDING", "COMPLETED", "FAILED"], default="PENDING")
-    notes = serializers.CharField(required=False, allow_blank=True)
-    
+class FranchiseTaskUpdateSerializer(serializers.ModelSerializer):
+   
+    class Meta:
+        model = FranchiseTask
+        fields = '__all__'
+        read_only_fields = ['user']
+       
+    def create(self, validated_data):
+        validated_data['user'] = self.context['request'].user
+        return super().create(validated_data)

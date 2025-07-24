@@ -8,6 +8,8 @@ urlpatterns = [
      path("action/", views.AdminFranchiseActionView.as_view(), name="admin-franchise-action"),
      path('students/onboard-by-franchise/', views.FranchiseStudentRegisterView.as_view(), name='franchise-onboard-student'),
      
-
+     path('lead/post/', views.FranchiseCreateLeadReport.as_view(), name='lead-post'),
+     path('leads/', views.FranchiseTasks.as_view(), name='lead-list'),
+     path('leads/submit/', views.FranchiseTaskSubmissionView.as_view(), name='lead-submit'),
 ]
 

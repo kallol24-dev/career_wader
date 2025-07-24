@@ -14,13 +14,17 @@ from django.utils import timezone
 from account.views import EmailSendFailed
 from student.models import Student
 from student.serializers import StudentSerializer
-from .models import Franchise
-from .serializers import AdminFranchiseActionSerializer, FranchiseSerializer, ShortlistByCitySerializer
+from .models import Franchise, FranchiseTask
+from .serializers import AdminFranchiseActionSerializer, FranchiseSerializer, FranchiseTaskUpdateSerializer, ShortlistByCitySerializer
 from account.views import send_zeptomail
 from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend
 from franchaise.filters import FilterClassFranchise
-
+from channels.layers import get_channel_layer
+from asgiref.sync import async_to_sync
+from rest_framework.parsers import MultiPartParser
+from django.core.files.storage import default_storage
+from notifications.models import Notification
 # Create your views here.
 class FranchiseListView(generics.ListAPIView):
     # queryset = Franchise.objects.all()
@@ -248,3 +252,51 @@ class FranchiseUUIDCreateView(generics.CreateAPIView):
         franchise.franchaise_uuid = ''.join(random.choices(string.ascii_letters + string.digits, k=10))
         franchise.save(update_fields=['franchaise_uuid'])
         return franchise
+    
+class FranchiseCreateLeadReport(generics.CreateAPIView):
+    queryset = FranchiseTask.objects.all()
+    serializer_class = FranchiseTaskUpdateSerializer
+    permission_classes=[permissions.IsAuthenticated]
+    
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request
+        return context
+
+class FranchiseTasks(generics.ListAPIView):
+    queryset = FranchiseTask.objects.all()
+    serializer_class = FranchiseTaskUpdateSerializer
+    permission_classes=[permissions.IsAuthenticated]
+    
+    def get_queryset(self):
+        user = self.request.user
+        return FranchiseTask.objects.filter(user=user)
+    
+class FranchiseTaskSubmissionView(generics.CreateAPIView):
+    parser_classes = [MultiPartParser]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def post(self, request, *args, **kwargs):
+        excel_file = request.FILES.get("excel_file")
+        if not excel_file:
+            return Response({"error": "No file provided"}, status=400)
+
+        # Save the file (optional: change path)
+        file_path = default_storage.save(f"leads/excel/{excel_file.name}", excel_file)
+        notification = Notification.objects.create(
+            sender=request.user,
+            message=f"📄 New Excel file submitted by franchise: {excel_file.name}",
+            file=file_path
+        )
+        # Notify admin via Redis Channel
+        channel_layer = get_channel_layer()
+        async_to_sync(channel_layer.group_send)(
+            "admin_notifications",
+            {
+                "type": "send_notification",
+                "message": notification.message,
+                "file_url": notification.file.url if notification.file else ''
+            }
+        )
+
+        return Response({"message": "Excel submitted and admin notified."})

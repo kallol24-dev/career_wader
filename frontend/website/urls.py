@@ -18,8 +18,7 @@ from django.contrib import admin #type:ignore
 from django.urls import path #type:ignore
 from views.home import mainPageViews, enquiryViews
 from views.dashboard import careertest, pageViews,usersViews,otpViews, enquiryViews as shortEnquiryViews,\
-    contactFormDisplay, counselorViews, serviceType, services, dashboard \
-
+    contactFormDisplay, counselorViews, serviceType, services, dashboard, notifications
 from views.franchise import myStudentEnrolments, leads
 from views.home import cart, blogs
 from django.urls import path, re_path #type:ignore
@@ -115,6 +114,7 @@ urlpatterns = [
         
     # Admin Page Routes
     path('dashboard/', dashboard.dashboard, name='dashboard'),
+    path('notifications/', notifications.notifications, name='notifications'),
 
     # Admin Form Display Routes
     path('contact-form/', contactFormDisplay.contactFromFDetails, name = 'contactFromFDetails'),
@@ -157,7 +157,8 @@ urlpatterns = [
     path("franchise-student-enrolments/", myStudentEnrolments.studentDisplay, name="franchiseStudentEnrolments"),
     path("franchise-enroll-student/", myStudentEnrolments.enrollStudent, name="franchiseEnrollStudents"),
     path("leads/", leads.leadsDisplay, name="leads"),
-    
+    # path("leads-create/", leads.createLead, name="create_lead"),
+
     #checkout
     path("cart/", cart.cart, name="cart"),
     path("add-to-cart/", cart.addToCart, name="addToCart"),

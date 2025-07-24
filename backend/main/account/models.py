@@ -45,11 +45,11 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)  # Use email as the unique identifier
     phone = models.CharField(max_length=15, unique=True)
     state = models.CharField(max_length=100, null=True, blank=True)
-    age = models.IntegerField(blank=True, null=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     is_verified = models.BooleanField(default=False)
     verification_code = models.CharField(max_length=6, blank=True, null=True)
     verification_expiry = models.DateTimeField(blank=True, null=True)
+    age = models.IntegerField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True, blank=True)
     

@@ -59,7 +59,7 @@ class Migration(migrations.Migration):
                 ('additional_info', models.TextField(max_length=200)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, related_name='preassesment', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

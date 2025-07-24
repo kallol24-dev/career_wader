@@ -68,7 +68,7 @@ def cart(request):
         checkout = safe_int(cookie_value)
         
         
-        data = services_list("",access_token,refresh_token)
+        data = services_list(request,None,None)
         services = data['results']
         context = {
             'set_to_checkout': cookie_value,

@@ -8,9 +8,10 @@
 #     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 # ]
 
-from django.urls import path, include # type: ignore
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path, include # type: ignore
+
 # from account.views import UserListView, StudentRegisterView, CounselorRegisterView, StudentListView, CounselorListView
 from account import views
 from django.contrib import admin # type: ignore
@@ -63,6 +64,8 @@ urlpatterns = [
     path('api/placement-enquiry/', include('placementEnquiry.urls')),
     path('captcha/', include('captcha.urls')),
     path('api/captcha/', include('djangoCaptcha.urls')),
+    path('api/notifications/', include('notifications.urls')),
+    path('api/education/loan/', include('educationLoan.urls')),
 
     # Swagger API Documentation
     path('api/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
@@ -71,5 +74,4 @@ urlpatterns = [
     
     
 ]
-
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

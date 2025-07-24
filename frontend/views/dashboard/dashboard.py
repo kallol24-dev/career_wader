@@ -47,14 +47,20 @@ def dashboard(request):
             refresh_token, 
             access_token
         )
-        
+        onNotifications = getStats(
+            f"{settings.API_BASE_URL}api/notifications/?{urlencode({'page': 1, 'page_size': 1})}", 
+            refresh_token, 
+            access_token
+        )
+        print("onNotifications", onNotifications)
         return render(request, 'dashboard/pages/dashboard.html', {
             'role': role, 
             'api_base_url': settings.API_BASE_URL,
             'allFranchise':allFranchise,
             'approvedFranchise':approvedFranchisee,
             'onHoldFranchise':onHoldFranchise,
-            'allStudents':allStudents
+            'allStudents':allStudents,
+            'notifications': onNotifications,
             })
     except requests.exceptions.RequestException as e:
         return HttpResponse(f"An error occurred while fetching data: {e}", status=500)

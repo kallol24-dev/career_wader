@@ -27,3 +27,33 @@ class Franchise(models.Model):
 
     def __str__(self):
         return f"{self.user.email} ({self.city})"
+    
+
+class FranchiseTask(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="franchise_tasks")
+    TASK_STATUS_CHOICE = [
+        ('NOT INTERESTED', 'not interested'),
+        ('INTERESTED', 'interested'),
+        ('PENDING','pending'),
+        ('COMPLETED', 'completed'),
+        ('FOLLOW UP', 'follow up'),
+        
+    ]
+    
+    
+    
+    lead_title = models.CharField(max_length=100)
+    progress_status =  models.CharField(max_length=100)
+    comments = models.TextField(max_length=150)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    status = models.CharField(max_length=20, choices=TASK_STATUS_CHOICE, default="PENDING")
+    source = models.CharField(max_length=100)
+    interested_service = models.CharField(max_length=100)
+    follow_up_dates = models.DateTimeField(null=True, blank=True)
+    description = models.TextField(max_length=150)
+    # Fields to be updated by admin only
+    notes = models.TextField(blank=True, null=True)
+    remarks = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

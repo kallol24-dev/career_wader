@@ -35,6 +35,10 @@ ALLOWED_HOSTS = ['*', 'localhost','49.47.140.249','49.47.145.165']
 STATIC_URL = config('STATIC_URL')
 STATIC_ROOT = os.path.join(BASE_DIR, config('STATIC_ROOT'))
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -64,8 +68,23 @@ INSTALLED_APPS = [
     'checkout',
     'preassesment',
     'placementEnquiry',
-    'captcha'
+    'captcha',
+    'channels',
+    'notifications',
+    'educationLoan',
+    
+    
+    
 ]
+# Use Redis as Channel Layer Backend
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

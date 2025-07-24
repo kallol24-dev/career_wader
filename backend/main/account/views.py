@@ -27,7 +27,7 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from rest_framework.permissions import IsAuthenticated
 from django_filters.rest_framework import DjangoFilterBackend
 from account.utils import CITY_CODES 
-
+from decouple import config
 
 
 
@@ -178,13 +178,13 @@ class VerifyEmailView(generics.GenericAPIView):
 def send_mail():
     
 
-    url = "https://api.zeptomail.in/v1.1/email"
+    url = config("ZEPTOMAIL_URL", default=None)
 
     payload = "{\n\"from\": { \"address\": \"noreply@tripnest.in\"},\n\"to\": [{\"email_address\": {\"address\": \"johnnongrum9@gmail.com\",\"name\": \"reiford\"}}],\n\"subject\":\"Test Email\",\n\"htmlbody\":\"<div><b> Test email sent successfully.  </b></div>\"\n}"
     headers = {
     'accept': "application/json",
     'content-type': "application/json",
-    'authorization': "Zoho-enczapikey PHtE6r1eEOq5iGIv8RgD4aS8HsOtZN97rO4xKgAWsttBWPIFTU1Uoo96wTXkrxkiVvUWQvOTzd89tbiaur+CcWvoN2cZXGqyqK3sx/VYSPOZsbq6x00asFkTc03YU4Xuc9Fv1ybfstrbNA==",
+    'authorization': config("ZEPTOMAIL_API_KEY", default=None)
     }
 
     response = requests.request("POST", url, data=payload, headers=headers)
@@ -197,9 +197,9 @@ class EmailSendFailed(APIException):
     default_code = "email_send_failed"
 
 
-def send_zeptomail(to_email, subject, html_body, from_email="support@careerwader.in"):
-    api_url = "https://api.zeptomail.in/v1.1/email"
-    api_token = "Zoho-enczapikey PHtE6r0LFLziiWItoREI5//rEsb1Pdl8+LxvKVQWuNtLX6IEHE1VqNsvmmSxoh14UKJFEPHIyt1t5bPIsrrRd2m+ZGcZX2qyqK3sx/VYSPOZsbq6x00ct14ScEHUXY7tddBq3SbVs97eNA=="
+def send_zeptomail(to_email, subject, html_body, from_email=config("DEFAULT_FROM_EMAIL", default="support@careerwader.in")):
+    api_url = config("ZEPTOMAIL_URL", default=None)
+    api_token = config("ZEPTOMAIL_API_KEY", default=None)
     headers = {
         "Authorization": f"{api_token}",
         "Content-Type": "application/json"

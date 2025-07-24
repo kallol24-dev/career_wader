@@ -50,8 +50,8 @@ def serviceList(request):
         return HttpResponse(f"Error loading services: {e}", status=500)
     
 def services_list(request, query_params=None, response_override=None):
-    query_string = urlencode(query_params or {})
-    url = f"{settings.API_BASE_URL}api/services/?{query_string}"
+    
+    url = f"{settings.API_BASE_URL}api/services/"
     response, _ = fetch_api_data_with_new_token(request, url, response_override)
 
     if not response:

@@ -174,7 +174,10 @@ urlpatterns = [
     path("implementing-new-career/", blogs.blog6, name="blog6"),
     path("perfect-resume/", blogs.blog7, name="blog7"),
     path("rethinking-career/", blogs.blog8, name="blog8"),
+    path("coaching-business-industry/", blogs.blog9, name="blog9"),
+    path("normative-questions/", blogs.blog10, name="blog10"),
     path("blogs/", blogs.blogs, name="blogs"),    
+    
     re_path(r'^index(\.html?|\.php)?$', lambda request: redirect('', permanent=True)),
 ]
 

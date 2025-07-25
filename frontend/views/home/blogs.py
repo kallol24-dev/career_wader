@@ -54,3 +54,15 @@ def blog8(request):
         return render(request, 'home/pages/blogs/rethinking-career.html')
     except Exception as e:
         return HttpResponse(f"An error occured {e}", status = 500)
+    
+def blog9(request):
+    try:
+        return render(request, 'home/pages/blogs/coaching-business-industry.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)
+    
+def blog10(request):
+    try:
+        return render(request, 'home/pages/blogs/normative-questions.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)

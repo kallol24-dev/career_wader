@@ -27,7 +27,7 @@ def studentDisplay(request):
     url = f"{settings.API_BASE_URL}api/checkout/?{urlencode(query_params)}"
     headers = {'Authorization': f'Bearer {access_token}'}
     refresh_url = settings.API_BASE_URL + 'api/token/refresh/'
-    serviceData = services_list("",access_token,refresh_token)
+    serviceData = services_list(request,None,None)
     
     try:
         response = requests.get(url, headers=headers)

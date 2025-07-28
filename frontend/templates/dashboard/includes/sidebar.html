@@ -16,235 +16,341 @@
       </a>
     </li>
     {% if request.COOKIES.role == 'admin' %}
-    <li class="menu-item {% if request.resolver_match.url_name == 'notifications' %}active open{% endif %}">
-      <a href="{% url 'notifications' %}" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-circle"></i>
-        <div data-i18n="Analytics">Notifications</div>
-      </a>
-    </li>
-    {% endif %}
-    
-    {% comment %} Franchisee Tabs {% endcomment %}
-    <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'shortEnquiryDisplay franchiseDisplay franchiseOnboarded state_franchise_display' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Franchisee">Franchisee</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-          <li class="menu-item {% if request.resolver_match.url_name == 'shortEnquiryDisplay' %}active{% endif %}">
-            <a href="{% url 'shortEnquiryDisplay' %}" class="menu-link">
-              <i class="menu-icon tf-icons bx bxs-dock-top"></i>
-              <div data-i18n="Franchise Enquiries">Franchise Enquiries</div>
-            </a>
-          </li>
-
-          <li class="menu-item {% if request.resolver_match.url_name == 'franchiseDisplay' %}active{% endif %}">
-            <a href="{% url 'franchiseDisplay' %}" class="menu-link">
-              <i class="menu-icon tf-icons bx bxs-happy-alt"></i>
-              <div data-i18n="Account">Franchise Shortlisted</div>
-            </a>
-          </li>
-
-          <li class="menu-item {% if request.resolver_match.url_name == 'franchiseOnboarded' %}active{% endif %}">
-            <a href="{% url 'franchiseOnboarded' %}" class="menu-link">
-              <i class="menu-icon tf-icons bx bxs-hand"></i>
-              <div data-i18n="Account">Franchise Onboard</div>
-            </a>
-          </li>
-          <li class="menu-item {% if request.resolver_match.url_name == 'state_franchise_display' %}active{% endif %}">
-            <a href="{% url 'state_franchise_display' %}" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link">
-              <div data-i18n="Account">
-                <i class="menu-icon tf-icons bx bxs-report"></i>Franchise Reports
-              </div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
-          </li>
-        </ul>
-        {% endif %}
+      <li class="menu-item {% if request.resolver_match.url_name == 'notifications' %}active open{% endif %}">
+        <a href="{% url 'notifications' %}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Notifications</div>
+        </a>
       </li>
-    
-    </li>
+      
+      
+      {% comment %} Franchisee Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'shortEnquiryDisplay franchiseDisplay franchiseOnboarded state_franchise_display' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Franchisee">Franchisee</div>
+        </a>
 
+          
+          <ul class="menu-sub no-bullets" >
+            <li class="menu-item {% if request.resolver_match.url_name == 'shortEnquiryDisplay' %}active{% endif %}">
+              <a href="{% url 'shortEnquiryDisplay' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-dock-top"></i>
+                <div data-i18n="Franchise Enquiries">Franchise Enquiries</div>
+              </a>
+            </li>
 
+            <li class="menu-item {% if request.resolver_match.url_name == 'franchiseDisplay' %}active{% endif %}">
+              <a href="{% url 'franchiseDisplay' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-happy-alt"></i>
+                <div data-i18n="Account">Franchise Shortlisted</div>
+              </a>
+            </li>
 
-    {% comment %} Counsellors Tabs {% endcomment %}
-
-    <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'counselorDisplay' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Counsellors">Counsellors</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-          <li class="menu-item {% if request.resolver_match.url_name == 'counselorDisplay' %}active{% endif %}">
-            <a href="{%url 'counselorDisplay'%}" class="menu-link">
-              <i class="menu-icon tf-icons bx bx-dock-top"></i>
-              <div data-i18n="Account">Counselors Application</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bxs-happy-alt"></i><div data-i18n="Account">Counselors Onboard</div></a>
-          </li>
-
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link">
-              <i class="menu-icon tf-icons bx bxs-hand"></i>
-              <div data-i18n="Account">Counselors Shortlisted</div>
-            </a>
-          </li>
-
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
-          </li>
-
-
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link">
-              <div data-i18n="Account">
-                <i class="menu-icon tf-icons bx bxs-report"></i>Counselors Reports
-              </div>
-            </a>
-          </li>
-
-
-          <li class="menu-item">
-            <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
-          </li>
-
-
-        </ul>
-        {% endif %}
-      </li>
-    
-    </li>
-
-
-    {% comment %} Career Test Tabs {% endcomment %}
-     <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'careerCategories' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Test">Career Test</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-          <li class="menu-item {% if request.resolver_match.url_name == 'careerCategories' %}active{% endif %}">
-              <a href="{% url 'careerCategories' %}" class="menu-link"><div data-i18n="Account">Categories</div></a>
-          </li>
-
-        </ul>
-        {% endif %}
-      </li>
-    
-    </li>
-
-
-
-    {% comment %} Paid Service Tabs {% endcomment %}
-
-    <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'serviceList serviceTypes' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Services">Paid Services</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-          <li class="menu-item {% if request.resolver_match.url_name == 'serviceList' %}active{% endif %}">
-              <a href="{% url 'serviceList' %}" class="menu-link"><div data-i18n="Account">Services</div></a>
-          </li>
-          <li class="menu-item {% if request.resolver_match.url_name == 'serviceTypes' %}active{% endif %}">
-            <a href="{% url 'serviceTypes' %}" class="menu-link"><div data-i18n="Account">Service Types</div></a>
-          </li>
-
-        </ul>
-        {% endif %}
-      </li>
-    
-    </li>
-
-    {% comment %} Short Enquiry Tabs {% endcomment %}
-    <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'contactFromFDetails' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Services">Contact Form</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-          <li class="menu-item {% if request.resolver_match.url_name == 'contactFromFDetails' %}active{% endif %}">
-              <a href="{% url 'contactFromFDetails' %}" class="menu-link"><div data-i18n="Account">General Enquiry</div></a>
-          </li>
-
-        </ul>
-        {% endif %}
-      </li>
-    
-    </li>
-
-
-
-    {% comment %} Student Tabs {% endcomment %}
-    <li class="menu-item has-sub text-white 
-      {% if request.resolver_match.url_name in 'studentDisplay' %}
-        open
-      {% endif %}">
-      <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
-          <div data-i18n="Services">Students</div>
-      </a>
-
-        {% if request.COOKIES.role == 'admin' %}
-        <ul class="menu-sub no-bullets" >
-         <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
-              <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+            <li class="menu-item {% if request.resolver_match.url_name == 'franchiseOnboarded' %}active{% endif %}">
+              <a href="{% url 'franchiseOnboarded' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-hand"></i>
+                <div data-i18n="Account">Franchise Onboard</div>
+              </a>
+            </li>
+            <li class="menu-item {% if request.resolver_match.url_name == 'state_franchise_display' %}active{% endif %}">
+              <a href="{% url 'state_franchise_display' %}" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link">
+                <div data-i18n="Account">
+                  <i class="menu-icon tf-icons bx bxs-report"></i>Franchise Reports
+                </div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
+            </li>
+          </ul>
         </li>
-
-        </ul>
-        {% endif %}
+      
       </li>
-    
-    </li>
 
 
+
+      {% comment %} Counsellors Tabs {% endcomment %}
+
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'counselorDisplay' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Counsellors">Counsellors</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+            <li class="menu-item {% if request.resolver_match.url_name == 'counselorDisplay' %}active{% endif %}">
+              <a href="{%url 'counselorDisplay'%}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account">Counselors Application</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+                <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bxs-happy-alt"></i><div data-i18n="Account">Counselors Onboard</div></a>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-hand"></i>
+                <div data-i18n="Account">Counselors Shortlisted</div>
+              </a>
+            </li>
+
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-cube-alt"></i><div data-i18n="Account">Total Area-Wise</div></a>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link">
+                <div data-i18n="Account">
+                  <i class="menu-icon tf-icons bx bxs-report"></i>Counselors Reports
+                </div>
+              </a>
+            </li>
+
+
+            <li class="menu-item">
+              <a href="javascript:void(0)" class="menu-link"><i class="menu-icon tf-icons bx bx-money"></i><div data-i18n="Account">Sales & Revenue</div></a>
+            </li>
+
+
+          </ul>
+        
+        </li>
+      
+      </li>
+
+
+      {% comment %} Career Test Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'careerCategories' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Test">Career Test</div>
+        </a>
+
+          <ul class="menu-sub no-bullets" >
+            <li class="menu-item {% if request.resolver_match.url_name == 'careerCategories' %}active{% endif %}">
+                <a href="{% url 'careerCategories' %}" class="menu-link"><div data-i18n="Account">Categories</div></a>
+            </li>
+
+          </ul>
+        </li>
+      
+      </li>
+
+
+
+      {% comment %} Paid Service Tabs {% endcomment %}
+
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'serviceList serviceTypes' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Services">Paid Services</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+            <li class="menu-item {% if request.resolver_match.url_name == 'serviceList' %}active{% endif %}">
+                <a href="{% url 'serviceList' %}" class="menu-link"><div data-i18n="Account">Services</div></a>
+            </li>
+            <li class="menu-item {% if request.resolver_match.url_name == 'serviceTypes' %}active{% endif %}">
+              <a href="{% url 'serviceTypes' %}" class="menu-link"><div data-i18n="Account">Service Types</div></a>
+            </li>
+
+          </ul>
+          
+        </li>
+      
+      </li>
+
+      {% comment %} Short Enquiry Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'contactFromFDetails' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Services">Contact Form</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+            <li class="menu-item {% if request.resolver_match.url_name == 'contactFromFDetails' %}active{% endif %}">
+                <a href="{% url 'contactFromFDetails' %}" class="menu-link"><div data-i18n="Account">General Enquiry</div></a>
+            </li>
+
+          </ul>
+        
+        </li>
+      
+      </li>
+
+
+
+      {% comment %} Student Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'studentDisplay' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Services">Students</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+          <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
+                <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+          </li>
+
+          </ul>
+          
+        </li>
+      
+      </li>
+
+
+      {% comment %} Preassesment Tab {% endcomment %}
+      {% comment %} <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'studentDisplay' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Preassesment">Preassesment</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+          <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
+                <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Registration</div></a>
+          </li>
+
+          </ul>
+          
+        </li>
+      
+      </li> {% endcomment %}
+
+      {% comment %} Payments Tabs {% endcomment %}
+      {% comment %} <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'studentDisplay' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Payments">Payments</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+          <li class="menu-item {% if request.resolver_match.url_name == 'studentDisplay' %}active{% endif %}">
+                <a href="{% url 'studentDisplay' %}" class="menu-link"><div data-i18n="Account">Payment Details</div></a>
+          </li>
+
+          </ul>
+          
+        </li>
+      
+      </li> {% endcomment %}
+
+    {% endif %}
   
     {% if request.COOKIES.role == 'franchise' %}
-      <li class="menu-header small text-uppercase">
+
+
+
+      {% comment %} Student Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'franchiseStudentEnrolments' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Students">Students</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+          <li class="menu-item {% if request.resolver_match.url_name == 'franchiseStudentEnrolments' %}active{% endif %}">
+                <a href="{% url 'franchiseStudentEnrolments' %}" class="menu-link"><div data-i18n="Account">Students</div></a>
+          </li>
+
+          </ul>
+          
+        </li>
+      
+      </li>
+
+
+      {% comment %} Student Tabs {% endcomment %}
+      <li class="menu-item has-sub text-white 
+        {% if request.resolver_match.url_name in 'leads' %}
+          open
+        {% endif %}">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons bx bx-briefcase-alt"></i>
+            <div data-i18n="Students">Task Update</div>
+        </a>
+
+          
+          <ul class="menu-sub no-bullets" >
+          <li class="menu-item {% if request.resolver_match.url_name == 'leads' %}active{% endif %}">
+               <a href="{% url 'leads' %}" class="menu-link"><div data-i18n="Account">Tasks</div></a>
+          </li>
+
+          </ul>
+          
+        </li>
+      
+      </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {% comment %} <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Students</span>
       </li>
       <li class="menu-item {% if request.resolver_match.url_name == 'franchiseStudentEnrolments' %}active open{% endif %}">
         <a href="{% url 'franchiseStudentEnrolments' %}" class="menu-link"><div data-i18n="Account">Students</div></a>
-      </li>
-      <li class="menu-header small text-uppercase">
+      </li> {% endcomment %}
+      {% comment %} <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Task Update</span>
       </li>
       <li class="menu-item {% if request.resolver_match.url_name == 'leads' %}active open{% endif %}">
         <a href="{% url 'leads' %}" class="menu-link"><div data-i18n="Account">Tasks</div></a>
-      </li>
+      </li> {% endcomment %}
     {% endif %} 
   </ul>
 </aside>

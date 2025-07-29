@@ -68,6 +68,12 @@ def eduLoan(request):
     except Exception as e:
         return HttpResponse(f"An error occured {e}", status = 500)
     
+def freelanceCareerCounselor(request):
+    try:
+        return render(request, 'home/pages/freelance-career-counselor.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)
+    
     
 def testimonial(request):
     try:

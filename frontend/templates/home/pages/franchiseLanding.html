@@ -1,471 +1,819 @@
 {% extends "home/layouts/indexbase.html" %}
 {% load static %}
-{% block content %} 
+{% block content %}
 {% comment %} {% extends 'home/layouts/base.html' %} {% load static %} {% block pageStyle %}
-  <link href="{% static 'home/assets/css/style.min.css' %}" rel="stylesheet" />
+<link href="{% static 'home/assets/css/style.min.css' %}" rel="stylesheet" />
 {% endblock %} {% block content %} {% endcomment %}
-  <!-- Hero Start -->
-  <section class="bg-half-175 border-bottom d-table w-100" id="home">
+<!-- Hero Start -->
+<section class="bg-half-175 border-bottom d-table w-100" id="home">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7 col-md-6">
-          <div class="title-heading mt-4">
-            <div class="alert alert-pills shadow text-dark" role="alert">
-              <span class="content">
-                Unfold your path to
-                <span class="text-primary">success with</span> our Career Counseling Franchise Opportunity!
-              </span>
-            </div>
-            <h4 class="title mb-4 mt-3">BECOME AN EDUPRENUER TODAY</h4>
-            <p class="text-muted para-desc">
-              <span class="text-primary fw-bold">Are you looking to build a rewarding enterprise (business) while helping students to shape their future?</span>
-            </p>
-            <p class="para-desc text-muted">Join our Career Counseling Platform – the AI based solution transforming career choices for students across India.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-6">
+                <div class="title-heading mt-4">
+                    <div class="alert alert-pills shadow text-dark" role="alert">
+                        <span class="content">
+                            Unfold your path to
+                            <span class="text-primary">success with</span> our Career Counseling Franchise Opportunity!
+                        </span>
+                    </div>
+                    <h4 class="title mb-4 mt-3">BECOME AN EDUPRENUER TODAY</h4>
+                    <p class="text-muted para-desc">
+                        <span class="text-primary fw-bold">Are you looking to build a rewarding enterprise (business)
+                            while helping students to shape their future?</span>
+                    </p>
+                    <p class="para-desc text-muted">Join our Career Counseling Platform – the AI based solution
+                        transforming career choices for students across India.</p>
 
-            <div class="mt-4">
-              <a href="{% url 'register' 'franchise' %}" class="btn btn-outline-primary rounded active" title="join career wader"><i class="uil uil-store"></i> Join Now</a>
-              <a href="{% url 'contact' %}" class="btn btn-outline-primary rounded" title="contact career wader"><i class="uil uil-store"></i> Contact Us</a>
+                    <div class="mt-4">
+                        <a href="{% url 'register' 'franchise' %}" class="btn btn-outline-primary rounded active"
+                            title="join career wader"><i class="uil uil-store"></i> Join Now</a>
+                        <a href="{% url 'contact' %}" class="btn btn-outline-primary rounded"
+                            title="contact career wader"><i class="uil uil-store"></i> Contact Us</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- end col -->
+            <!-- end col -->
 
-        <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
-          <div class="position-relative">
-            <img src="{% static 'home/assets/images/partner1.webp' %}" class="rounded img-fluid mx-auto d-block" alt="Career Counseling Franchise" title="Career Counseling Franchise" />
-          </div>
+            <div class="col-lg-5 col-md-6 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                <div class="position-relative">
+                    <img src="{% static 'home/assets/images/partner1.jpg' %}" class="rounded img-fluid mx-auto d-block"
+                        alt="Career Counseling Franchise" title="Career Counseling Franchise" />
+                </div>
+            </div>
+            <!-- end col -->
         </div>
-        <!-- end col -->
-      </div>
-      <!-- end row -->
+        <!-- end row -->
     </div>
     <!-- end container -->
-  </section>
-  <!-- end section -->
-  <!-- Hero End -->
+</section>
+<!-- end section -->
+<!-- Hero End -->
 
-  <div class="container mt-100 mt-60">
+<div class="container mt-100 mt-60">
     <div class="row justify-content-center">
-      <div class="col-12 text-center">
-        <div class="section-title mb-4 pb-2">
-          <h4 class="title mb-4">What Do We Offer?</h4>
+        <div class="col-12 text-center">
+            <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">What Do We Offer?</h4>
+            </div>
         </div>
-      </div>
-      <!-- end col -->
+        <!-- end col -->
     </div>
     <!-- end row -->
 
     <div class="row">
-      <div class="col-lg-3 col-md-6 mt-4 pt-2">
-        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
-          <img src="{% static 'home/assets/images/ai.webp' %}" class="rounded img-fluid mx-auto d-block" alt="AI powered Career Tests" title="AI powered Career Tests" />
-          <br />
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+            <div
+                class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+                <img src="{% static 'home/assets/images/ai.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="AI powered Career Tests" title="AI powered Career Tests" />
+                <br />
 
-          <div class="card-body p-0 content">
-            <p class="text-muted">AI powered Career Tests that align the students’ career with their skills, interests, strength, motivation and personality traits.</p>
-          </div>
-        </div>
-      </div>
-      <!-- end col -->
-
-      <div class="col-lg-3 col-md-6 mt-4 pt-2">
-        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
-          <img src="{% static 'home/assets/images/plans.webp' %}" class="rounded img-fluid mx-auto d-block" alt="affordable pricing" title="affordable pricing" />
-
-          <br />
-
-          <div class="card-body p-0 content">
-            <p class="text-muted">Different Plans and Affordable pricing to ensure that we reach more number of enrolments, creating an impact and growth opportunities for you.</p>
-          </div>
-        </div>
-      </div>
-      <!-- end col -->
-
-      <div class="col-lg-3 col-md-6 mt-4 pt-2">
-        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
-          <img src="{% static 'home/assets/images/training.webp' %}" class="rounded img-fluid mx-auto d-block" alt="training and support" title="training and support" />
-
-          <br />
-
-          <div class="card-body p-0 content">
-            <p class="text-muted">Training and support at nominal costs with refundable deposit plans ensuring that your investment is safe with us.</p>
-          </div>
-        </div>
-      </div>
-      <!-- end col -->
-
-      <div class="col-lg-3 col-md-6 mt-4 pt-2">
-        <div class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
-          <img src="{% static 'home/assets/images/revenue.webp' %}" class="rounded img-fluid mx-auto d-block" alt="student enrollment" title="student enrollment" />
-
-          <br />
-
-          <div class="card-body p-0 content">
-            <p class="text-muted">Earn up to 50% of Revenues from student enrolments – A highly lucrative business opportunity</p>
-          </div>
-        </div>
-      </div>
-      <!-- end col -->
-    </div>
-    <!-- end row -->
-  </div>
-
-  <div class="container mt-100 mt-60">
-    <div class="row align-items-center">
-      <div class="col-lg-4 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
-        <div class="position-relative">
-          <img src="{% static 'home/assets/images/why.webp' %}" class="rounded img-fluid mx-auto d-block" alt="partner with career wader" title="partner with career wader" />
-        </div>
-      </div>
-      <!-- end col -->
-
-      <div class="col-lg-8 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
-        <div class="section-title ms-lg-4">
-          <h4 class="title mb-4">Why Partner with Career Wader?</h4>
-          <ul class="list-unstyled text-muted">
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Scalable & High Growth due to high Demand: Career Counseling is a growing need across students and working professionals capturing an estimated Current Market Size of over 5000 crores in India for students in Metros, Tier 2 and Tier 3 Cities of India.
-            </li>
-
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Minimal set up required to operate from as small as 500 sq.ft. space.
-            </li>
-
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Quick Returns and High Earnings: With our easy to implement system and support, you can start seeing results in no time. Be a part of the Revolution
-            </li>
-
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>100 + Franchisees in Record Time
-            </li>
-
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Exclusive Territories in Tier 2 and Tier 3 Cities and 3-4 Franchisees per Metro/ Tier 1 City.
-            </li>
-
-            <li style=" text-align: justify;" class="mb-1">
-              <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Affordable, sustainable Model- Perfect for Tier 3 Cities owing to the highly aspirational population and in particular parents.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- end col -->
-    </div>
-    <!-- end row -->
-  </div>
-
-  <section class="bg-cta1 mt-100 mt-60" id="volunteer" style="background: url('{% static 'home/assets/images/application.webp' %}') center">
-    <div class="container">
-      <div class="row justify-content-end" style="padding: 80px 0px;">
-        <div class="col-lg-6 col-md-6 col-12">
-          <div class="card p-4 border-0 rounded">
-            <div class="section-title">
-              <h4 class="title mb-4">Your Role as a Franchise Partner</h4>
+                <div class="card-body p-0 content">
+                    <p class="text-muted">AI powered Career Tests that align the students’ career with their skills,
+                        interests, strength, motivation and personality traits.</p>
+                </div>
             </div>
-
-            <ul class="list-unstyled text-muted pt-2">
-              <li class="mb-1">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Promote and Market our Career Counseling Services in your City/town
-              </li>
-              <li class="mb-1">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Help students make informed Career decisions and choices backed by cutting edge AI Technology and expert guidance.
-              </li>
-            </ul>
-
-            <br />
-            <a href="{% url 'register' 'franchise' %}" class="btn btn-primary">Register Now</a>
-          </div>
         </div>
         <!-- end col -->
-      </div>
-      <!-- end row -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+            <div
+                class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+                <img src="{% static 'home/assets/images/plans.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="affordable pricing" title="affordable pricing" />
+
+                <br />
+
+                <div class="card-body p-0 content">
+                    <p class="text-muted">Different Plans and Affordable pricing to ensure that we reach more number of
+                        enrolments, creating an impact and growth opportunities for you.</p>
+                </div>
+            </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+            <div
+                class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+                <img src="{% static 'home/assets/images/training.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="training and support" title="training and support" />
+
+                <br />
+
+                <div class="card-body p-0 content">
+                    <p class="text-muted">Training and support at nominal costs with refundable deposit plans ensuring
+                        that your investment is safe with us.</p>
+                </div>
+            </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-3 col-md-6 mt-4 pt-2">
+            <div
+                class="card features feature-primary feature-clean explore-feature p-3 border-0 rounded-md shadow text-center">
+                <img src="{% static 'home/assets/images/revenue.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="student enrollment" title="student enrollment" />
+
+                <br />
+
+                <div class="card-body p-0 content">
+                    <p class="text-muted">Earn up to 50% of Revenues from student enrolments – A highly lucrative
+                        business opportunity</p>
+                </div>
+            </div>
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>
+
+<div class="container mt-100 mt-60">
+    <div class="row align-items-center">
+        <div class="col-lg-4 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <div class="position-relative">
+                <img src="{% static 'home/assets/images/why.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="partner with career wader" title="partner with career wader" />
+            </div>
+        </div>
+        <!-- end col -->
+
+        <div class="col-lg-8 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <div class="section-title ms-lg-4">
+                <h4 class="title mb-4">Why Partner with Career Wader?</h4>
+                <ul class="list-unstyled text-muted">
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span>Scalable & High Growth due to high
+                        Demand: Career Counseling is a growing need across students and working professionals capturing
+                        an estimated Current Market Size of over 5000 crores in India for students in Metros, Tier 2 and
+                        Tier 3 Cities of India.
+                    </li>
+
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span>Minimal set up required to operate
+                        from as small as 500 sq.ft. space.
+                    </li>
+
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Quick
+                        Returns and High Earnings: With our easy to implement system and support, you can start seeing
+                        results in no time. Be a part of the Revolution
+                    </li>
+
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>100 +
+                        Franchisees in Record Time
+                    </li>
+
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span>Exclusive Territories in Tier 2 and
+                        Tier 3 Cities and 3-4 Franchisees per Metro/ Tier 1 City.
+                    </li>
+
+                    <li style=" text-align: justify;" class="mb-1">
+                        <span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span>Affordable, sustainable Model-
+                        Perfect for Tier 3 Cities owing to the highly aspirational population and in particular parents.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>
+
+<section class="bg-cta1 mt-100 mt-60" id="volunteer"
+    style="background: url('{% static 'home/assets/images/application.webp' %}') center">
+    <div class="container">
+        <div class="row justify-content-end" style="padding: 80px 0px;">
+            <div class="col-lg-6 col-md-6 col-12">
+                <div class="card p-4 border-0 rounded">
+                    <div class="section-title">
+                        <h4 class="title mb-4">Your Role as a Franchise Partner</h4>
+                    </div>
+
+                    <ul class="list-unstyled text-muted pt-2">
+                        <li class="mb-1">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Promote and Market our Career
+                            Counseling Services in your City/town
+                        </li>
+                        <li class="mb-1">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Help students make informed
+                            Career decisions and choices backed by cutting edge AI Technology and expert guidance.
+                        </li>
+                    </ul>
+
+                    <br />
+                    <a href="{% url 'register' 'franchise' %}" class="btn btn-primary">Register Now</a>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
     </div>
     <!-- end container -->
-  </section>
+</section>
 
-  <section class="section">
+<section class="section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-5 col-md-6">
-          <img src="{% static 'home/assets/images/growth.webp' %}" class="rounded img-fluid mx-auto d-block" alt="growth" title="growth" />
-        </div>
-        <!-- end col -->
-
-        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-          <div class="ms-lg-4">
-            <div class="section-title">
-              <span class="badge bg-soft-primary rounded-pill fw-bold">Join us as a strategic partner, not just a Franchise</span>
-              <h4 class="title mb-4 mt-3">
-                Be a part of our Growth. With Revenue <br />
-                Sharing and Exclusive Portfolio.
-              </h4>
-
-              <p class="text-muted para-desc">
-                <span class="text-primary fw-bold">Expansion Opportunities</span>
-              </p>
-
-              <p class="text-muted para-desc">At Career Wader, we don’t just offer Franchise Opportunities. We offer Partnerships.</p>
-
-              <p class="text-muted para-desc">When you become a part of our AI driven Career Counseling Platform, you are not just joining a network, but gaining stake in the future of ‘personalized Career Guidance ‘</p>
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6">
+                <img src="{% static 'home/assets/images/growth.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="growth" title="growth" />
             </div>
-          </div>
+            <!-- end col -->
+
+            <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                <div class="ms-lg-4">
+                    <div class="section-title">
+                        <span class="badge bg-soft-primary rounded-pill fw-bold">Join us as a strategic partner, not
+                            just a Franchise</span>
+                        <h4 class="title mb-4 mt-3">
+                            Be a part of our Growth. With Revenue <br />
+                            Sharing and Exclusive Portfolio.
+                        </h4>
+
+                        <p class="text-muted para-desc">
+                            <span class="text-primary fw-bold">Expansion Opportunities</span>
+                        </p>
+
+                        <p class="text-muted para-desc">At Career Wader, we don’t just offer Franchise Opportunities. We
+                            offer Partnerships.</p>
+
+                        <p class="text-muted para-desc">When you become a part of our AI driven Career Counseling
+                            Platform, you are not just joining a network, but gaining stake in the future of
+                            ‘personalized Career Guidance ‘</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- end row -->
+        <!-- end row -->
     </div>
     <!-- end container -->
 
     <div class="container mt-100 mt-60">
-      <div class="row align-items-center">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                <div class="section-title ms-lg-4">
+                    <h4 class="title mb-4">Why Franchise Partner with us?</h4>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-1" style=" text-align: justify;">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Revenue Sharing Model: Enjoy a
+                            mutually beneficial relationship where your success is directly tied to us. We believe in
+                            sharing the rewards as you grow the business.
+                        </li>
+
+                        <li class="mb-1" style=" text-align: justify;">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Exclusive Portfolio Expansion
+                            Benefits: As a Franchise Partner, you will get access to ongoing opportunities for growth
+                            and expansion. Participate in our innovative solutions and diverse portfolio offering that
+                            will keep you ahead in the market.
+                        </li>
+
+                        <li class="mb-1">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Access to cutting edge AI
+                            Technology
+                        </li>
+
+                        <li class="mb-1">
+                            <span class="text-primary h5 me-2"><i
+                                    class="uil uil-check-circle align-middle"></i></span>Collaborative Success
+                        </li>
+                    </ul>
+
+                    <p>
+                        <a href="{% url 'register' 'franchise' %}" class="btn btn-primary m-1">
+                            Ready to take the Next Steps?
+                            <i class="uil uil-angle-right-b align-middle"></i>
+                        </a>
+                    </p>
+
+                    <p class="text-muted para-desc">
+                        Become a Partner in our exciting journey and unlock high levels of growth and
+                        opportunity.<br /><a href="{% url 'contact' %}" class="text-primary fw-bold">Contact us</a>
+                        to learn more about becoming a Franchise partner with us.
+                    </p>
+                </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+                <div class="position-relative">
+                    <img src="{% static 'home/assets/images/sharing.webp' %}" class="rounded img-fluid mx-auto d-block"
+                        alt="franchise-partner" title="franchise partner with us" />
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+
+<section class="section" style="background-color: #ededed">
+    <div class="container mt-60">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center">
+                <div class="section-title mb-4 pb-2">
+                    <h4 class="title mb-4">How To Get Started?</h4>
+                </div>
+            </div>
+            <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <img src="{% static 'home/assets/images/easy-entry.webp' %}" class="rounded img-fluid mx-auto d-block"
+                alt="How to Get Started?" title="How to Get Started?" />
+        </div>
+        <!-- end row -->
+    </div>
+</section>
+
+<!-- Team Start -->
+
+<div class="container mt-100 mt-60">
+    <div class="row align-items-center">
         <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
-          <div class="section-title ms-lg-4">
-            <h4 class="title mb-4">Why Franchise Partner with us?</h4>
-            <ul class="list-unstyled text-muted">
-              <li class="mb-1" style=" text-align: justify;">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Revenue Sharing Model: Enjoy a mutually beneficial relationship where your success is directly tied to us. We believe in sharing the rewards as you grow the business.
-              </li>
+            <div class="section-title ms-lg-4">
+                <h4 class="title mb-4">Ready to Make a Difference in your Life</h4>
+                <p style="text-align: justify" class="text-muted">
+                    <span class="text-primary fw-bold">Join us</span> in empowering students to find the careers they
+                    love while building a profitable business for yourself.
+                </p>
 
-              <li class="mb-1" style=" text-align: justify;">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Exclusive Portfolio Expansion Benefits: As a Franchise Partner, you will get access to ongoing opportunities for growth and expansion. Participate in our innovative solutions and diverse portfolio offering that will keep you ahead in the market.
-              </li>
+                <p style="text-align: justify" class="text-muted">
+                    Visit
+                    <a href="https://careerwader.in/" class="text-primary fw-bold">www.careerwader.in</a>
+                    to take the first step towards becoming a successful edupreneur.
+                </p>
 
-              <li class="mb-1">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Access to cutting edge AI Technology
-              </li>
+                <p style="text-align: justify" class="text-muted">Join thousands of students and working professionals
+                    who are shaping their futures with our unique AI empowered solutions.</p>
 
-              <li class="mb-1">
-                <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Collaborative Success
-              </li>
-            </ul>
+                <p style="text-align:" class="text-muted">
+                    <span class="text-primary fw-bold">Contact Number:</span><a
+                        href="tel:+919108760180">+919108760180</a> / <a
+                        href="tel:+91 9591577855">+919591577855</a><br />
+                    <span class="text-primary fw-bold">Website</span>: <a href="https://careerwader.in/"
+                        class="text-primary fw-bold">www.careerwader.in</a>
+                </p>
 
-            <p>
-              <a href="{% url 'register' 'franchise' %}" class="btn btn-primary m-1">
-                Ready to take the Next Steps?
-                <i class="uil uil-angle-right-b align-middle"></i>
-              </a>
-            </p>
-
-            <p class="text-muted para-desc">
-              Become a Partner in our exciting journey and unlock high levels of growth and opportunity.<br /><a href="{% url 'contact' %}" class="text-primary fw-bold">Contact us</a>
-              to learn more about becoming a Franchise partner with us.
-            </p>
-          </div>
+                <h5>
+                    Make an Impact! Make a Profit!
+                    <span class="text-primary fw-bold">Become our Franchisee today</span>
+                </h5>
+            </div>
         </div>
         <!-- end col -->
 
         <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
-          <div class="position-relative">
-            <img src="{% static 'home/assets/images/sharing.webp' %}" class="rounded img-fluid mx-auto d-block" alt="franchise-partner" title="franchise partner with us" />
-          </div>
+            <div class="position-relative">
+                <img src="{% static 'home/assets/images/join.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="Join careerwader" title="Join careerwader" />
+            </div>
         </div>
         <!-- end col -->
-      </div>
-      <!-- end row -->
     </div>
-    <!-- end container -->
-  </section>
+    <!-- end row -->
+</div>
+<!-- end container -->
+<!-- end container -->
 
-  <section class="section" style="background-color: #ededed">
-    <div class="container mt-60">
-      <div class="row justify-content-center">
+<div class="container mt-100 mt-60">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div class="position-relative">
+                <img src="{% static 'home/assets/images/unfold.webp' %}" class="rounded img-fluid mx-auto d-block"
+                    alt="Mission Statement" title="Mission Statement" />
+            </div>
+        </div>
+        <!-- end col -->
+        <div class="col-lg-6">
+            <div class="section-title">
+                <h4>Mission Statement</h4>
+
+                <p style="text-align: justify" class="text-muted para-desc">Empowering individuals to navigate their
+                    career paths with clarity and confidence, we provide guidance and resources to unlock their full
+                    potential. Our mission is to foster growth, inspire ambition and steer them to success by connecting
+                    people true calling and the opportunities of study and employment that align with their passion,
+                    skills, aptitudes, personality and motivation through evidence and assessment based scientific
+                    analytical methods with individual counseling and guidance.</p>
+            </div>
+        </div>
+        <!-- end col -->
+    </div>
+    <!-- end row -->
+</div>
+<!-- end container -->
+
+<!-- end section -->
+<div class="container mt-100 mt-60">
+    <div class="row justify-content-center">
         <div class="col-12 text-center">
-          <div class="section-title mb-4 pb-2">
-            <h4 class="title mb-4">How To Get Started?</h4>
-          </div>
-        </div>
-        <!-- end col -->
-      </div>
-      <!-- end row -->
+            <div class="section-title mb-4 pb-2">
+                <h4 class="title mb-4">Interest Inventory</h4>
+                <p class="text-muted para-desc mb-0 mx-auto">Discover your true calling with our unique Interest
+                    Inventory. Our Interest inventory, compiled by us, is designed to help you uncover your true
+                    passions and interests, guiding you towards a fulfilling career.</p>
+                <br>
 
-      <div class="row">
-        <img src="{% static 'home/assets/images/easy-entry.webp' %}" class="rounded img-fluid mx-auto d-block" alt="How to Get Started?" title="How to Get Started?" />
-      </div>
-      <!-- end row -->
-    </div>
-  </section>
+                <span class="badge bg-soft-primary rounded-pill fw-bold pt-2">Here is how it works</span>
 
-  <!-- Team Start -->
 
-  <div class="container mt-100 mt-60">
-    <div class="row align-items-center">
-      <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
-        <div class="section-title ms-lg-4">
-          <h4 class="title mb-4">Ready to Make a Difference in your Life</h4>
-          <p style="text-align: justify" class="text-muted">
-            <span class="text-primary fw-bold">Join us</span> in empowering students to find the careers they love while building a profitable business for yourself.
-          </p>
-
-          <p style="text-align: justify" class="text-muted">
-            Visit
-            <a href="https://careerwader.in/" class="text-primary fw-bold">www.careerwader.in</a>
-            to take the first step towards becoming a successful edupreneur.
-          </p>
-
-          <p style="text-align: justify" class="text-muted">Join thousands of students and working professionals who are shaping their futures with our unique AI empowered solutions.</p>
-
-          <p style="text-align:" class="text-muted">
-            <span class="text-primary fw-bold">Contact Number:</span><a href="tel:+919108760180">+919108760180</a> / <a href="tel:+91 9591577855">+919591577855</a><br />
-            <span class="text-primary fw-bold">Website</span>: <a href="https://careerwader.in/" class="text-primary fw-bold">www.careerwader.in</a>
-          </p>
-
-          <h5>
-            Make an Impact! Make a Profit!
-            <span class="text-primary fw-bold">Become our Franchisee today</span>
-          </h5>
-        </div>
-      </div>
-      <!-- end col -->
-
-      <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
-        <div class="position-relative">
-          <img src="{% static 'home/assets/images/join.webp' %}" class="rounded img-fluid mx-auto d-block" alt="Join careerwader" title="Join careerwader" />
-        </div>
-      </div>
-      <!-- end col -->
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-  <!-- end container -->
-
-  <div class="container mt-100 mt-60">
-    <div class="row align-items-center">
-      <div class="col-lg-6">
-        <div class="position-relative">
-          <img src="{% static 'home/assets/images/unfold.webp' %}" class="rounded img-fluid mx-auto d-block" alt="Mission Statement" title="Mission Statement" />
-        </div>
-      </div>
-      <!-- end col -->
-      <div class="col-lg-6">
-        <div class="section-title">
-          <h4>Mission Statement</h4>
-
-          <p style="text-align: justify" class="text-muted para-desc">Empowering individuals to navigate their career paths with clarity and confidence, we provide guidance and resources to unlock their full potential. Our mission is to foster growth, inspire ambition and steer them to success by connecting people true calling and the opportunities of study and employment that align with their passion, skills, aptitudes, personality and motivation through evidence and assessment based scientific analytical methods with individual counseling and guidance.</p>
-        </div>
-      </div>
-      <!-- end col -->
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-
-  <!-- end section -->
-
-  <br />
-
-   <div class="container" style="margin-bottom: 100px;">
-    <div class="row align-items-center">
-      <div class="col-lg-8">
-        <div class="section-title">
-          <h4>FAQ</h4>
-          <br />
-
-          <div class="accordion" id="buyingquestion">
-            {% comment %} <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="headingOne"><button class="accordion-button border-0 bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is the purpose of this network?</button></h2>
-              <div id="collapseOne" class="accordion-collapse border-0 collapse show" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <p>Our network aims to provide comprehensive career counseling services to students, professionals, and entrepreneurs.</p>
-                </div>
-              </div>
-            </div> {% endcomment %}
-
-            {% comment %} <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="heading2"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse1">What are the benefits of joining this network?</button></h2>
-              <div id="collapse2" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <p>As a member of our network, you will have the opportunity to make a positive impact, enhance your skills, and connect with like-minded professionals.</p>
-                </div>
-              </div>
-            </div> {% endcomment %}
-
-            {% comment %} <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="heading3"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse1">What are the requirements for joining this network?</button></h2>
-              <div id="collapse3" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <p>We require a minimum of [X] years of experience in career counseling, mentoring, coaching, or counseling, and a [Degree/Certification] in Psychology, Education, or a related field.</p>
-                </div>
-              </div>
-            </div> {% endcomment %}
-
-            <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="heading1"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">What do we offer?</button></h2>
-              <div id="collapse1" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <ul class="list-unstyled text-muted">
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>AI powered Career Tests that align the students’ career with their skills, interests, strength, motivation and personality traits.
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Different Plans and Affordable pricing to ensure that we reach more number of enrolments, creating an impact and growth opportunities for you.
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Training and support at nominal costs with refundable deposit plans ensuring that your investment is safe with us.
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Earn up to 50% of Revenues from student enrolments – A highly lucrative business opportunity
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
+        </div><!--end col-->
+    </div><!--end row-->
 
-            <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="headingTwo"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Why Partner with Career Wader?</button></h2>
-              <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <ul class="list-unstyled text-muted">
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Scalable & High Growth due to high Demand: Career Counseling is a growing need across students and working professionals capturing an estimated Current Market Size of over 5000 crores in India for students in Metros, Tier 2 and Tier 3 Cities of India.
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Minimal set up required to operate from as small as 500 sq.ft. space.
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Quick Returns and High Earnings: With our easy to implement system and support, you can start seeing results in no time. <br />
-
-                      Be a part of the Revolution
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>100 + Franchisees in Record Time
-                    </li>
-
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Exclusive Territories in Tier 2 and Tier 3 Cities and 3-4 Franchisees per Metro/ Tier 1 City.
-                    </li>
-
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Affordable, sustainable Model- Perfect for Tier 3 Cities owing to the highly aspirational population and in particular parents.
-                    </li>
-                  </ul>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+                <div class="card-body py-5">
+                    <img src="{% static 'home/assets/images/franchise/join3.png'%}">
+                    <div class="mt-2">
+                        <h5 class="card-title"> Personalized insights</h5>
+                        <p class="text-muted mt-3 mb-0" style=" height: 102px;">Identify your preferences across various
+                            fields and activities giving you a very clear understanding of what motivates you.</p>
+                    </div>
                 </div>
-              </div>
             </div>
+        </div><!--end col-->
 
-            <div class="accordion-item rounded mt-2">
-              <h2 class="accordion-header" id="headingthree"><button class="accordion-button border-0 bg-light collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">Your Role as a Franchise Partner:</button></h2>
-              <div id="collapsethree" class="accordion-collapse border-0 collapse" aria-labelledby="headingthree" data-bs-parent="#buyingquestion">
-                <div class="accordion-body text-muted">
-                  <ul class="list-unstyled text-muted">
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Promote and Market our Career Counseling Services in your City/town
-                    </li>
-                    <li class="mb-1">
-                      <span class="text-primary h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>Help students make informed Career decisions and choices backed by cutting edge AI Technology and expert guidance.
-                    </li>
-                  </ul>
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+                <div class="card-body py-5">
+                    <img src="{% static 'home/assets/images/franchise/join4.png'%}">
+                    <div class="mt-2">
+                        <h5 class="card-title">Comprehensive Assessment</h5>
+                        <p class="text-muted mt-3 mb-0">Our Interest inventory covers a wide range of interests,
+                            ensuring a thorough evaluation that matches your potential career paths. </p>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
+        </div><!--end col-->
+
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+                <div class="card-body py-5">
+                    <img src="{% static 'home/assets/images/franchise/join5.png'%}">
+                    <div class="mt-2">
+                        <h5 class="card-title">Career Alignment</h5>
+                        <p class="text-muted mt-3 mb-0" style=" height: 102px;">Link your interests to specific career
+                            options, helping you make informed decisions about your professional future.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+                <div class="card-body py-5">
+                    <img src="{% static 'home/assets/images/franchise/join6.png'%}">
+                    <div class="mt-2">
+                        <h5 class="card-title"> Actionable Results</h5>
+                        <p class="text-muted mt-3 mb-0">Receive a detailed report with actionable insights and
+                            recommendations tailored to your unique interests. </p>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+                <div class="card-body py-5">
+                    <img src="{% static 'home/assets/images/franchise/join7.png'%}">
+                    <div class="mt-2">
+                        <h5 class="card-title">Continuous Support</h5>
+                        <p class="text-muted mt-3 mb-0">Stay connected with our team for ongoing guidance as you
+                            explore, expand and pursue your career goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--end col-->
+
+        <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+            <div class="card bg-light rounded shadow border-0">
+
+                <img src="{% static 'home/assets/images/franchise/join8.png'%}" class="rounded">
+
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+    <br>
+
+    <div class="col-12 text-center">
+
+        <h5> Unlock your potential and find a career that truly resonates with <span class="text-primary fw-bold">your
+                interests. </span> </h5>
+        <a href="{% url 'register' 'franchise' %}" 
+            class="btn btn-primary m-1">Start your journey with Career Wader today<i
+                class="uil uil-angle-right-b align-middle"></i></a>
+    </div>
+</div><!--end container-->
+
+<div class="container mt-100 mt-60">
+
+
+    <div class="row align-items-center">
+
+
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <div class="section-title ms-lg-4">
+                <h4 class="title mb-4">Career Aptitude Assessments</h4>
+                <ul class="list-unstyled text-muted">
+                    <li class="mb-1"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Skill
+                            Identification:</strong>Aptitude tests assess a range of skills, including natural aptitudes
+                        like logical reasoning, Verbal and Numerical Ability and spatial awareness to name a few. </li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2 "><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Career Matching:</strong>
+                        Career Matching helps franchisees offer personalized guidance by aligning individuals’ skills
+                        and interests with the most suitable career paths.</li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Objective
+                            Evaluation:</strong> Our tests provide unbiased evaluation of your abilities offering a
+                        clear picture of and areas for improvement.</li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Comprehensive
+                            Analysis:</strong>We combine the results of multiple tests to provide a holistic view of
+                        your natural aptitudes.</li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Digital Counseling
+                            :</strong>Online / Personal, one-to-one counseling with our trained counseling partners.
+                    </li>
+
+
+
+                </ul>
+
+            </div>
+        </div><!--end col-->
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <div class="position-relative">
+                <img src="{% static 'home/assets/images/franchise/join9.png'%}" class="rounded img-fluid mx-auto d-block" alt="Join careerwader"
+                    title="Join careerwader">
+
+            </div>
+        </div><!--end col-->
+    </div><!--end row-->
+
+
+</div><!--end container-->
+<div class="container mt-60">
+
+
+    <div class="row align-items-center">
+
+        <div class="col-lg-5 col-md-5 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <div class="position-relative">
+                <img src="{% static 'home/assets/images/franchise/join10.png'%}" class="rounded img-fluid mx-auto d-block" alt="Join careerwader"
+                    title="Join careerwader">
+
+            </div>
+        </div><!--end col-->
+
+
+        <div class="col-lg-7 col-md-7 mt-4 pt-2 mt-sm-0 pt-sm-0">
+            <br>
+            <div class="section-title ms-lg-4">
+
+
+                <ul class="list-unstyled text-muted ">
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Accessible and
+                            convenient:</strong>Our online one-to-one counseling sessions offer expert guidance right at
+                        your doorstep. No matter where you are, you can connect with our trained and experienced
+                        counselors from the comfort of your home.</li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2 "><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Personalized
+                            Attention:</strong> Each session is customized to your unique needs and goals. Our
+                        counselors will take the time to understand, evaluate and provide individual career guidance to
+                        you.</li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Flexible
+                            Scheduling:</strong> We offer flexible scheduling to accumulate your busy lifestyle. You can
+                        choose a time that works best for you, ensuring that you get the best support you need without
+                        disrupting your schedule. </li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Confidential and
+                            secure:</strong>Your privacy is our priority. All online counseling sessions will be kept
+                        confidential, and your information is secure with our dedicated online platforms. </li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Expert
+                            Guidance:</strong>Our team of trained and experienced counselors will provide practical
+                        advice and actionable insights to help you navigate your career journey with confidence. </li>
+
+                    <li class="mb-1 pt-2"><span class="text-primary h5 me-2"><i
+                                class="uil uil-check-circle align-middle"></i></span><strong>Continuous
+                            Support:</strong>Continuous Support: Stay connected with our team for ongoing guidance as
+                        you explore, expand and pursue your career goals.</li>
+
+
+
+                </ul>
+
+            </div>
+        </div><!--end col-->
+
+
+    </div><!--end row-->
+
+
+</div><!--end container-->
+<br />
+
+<div class="container" style="margin-bottom: 100px;">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <div class="section-title">
+                <h4>FAQ</h4>
+                <br />
+
+                <div class="accordion" id="buyingquestion">
+                    {% comment %} <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="headingOne"><button class="accordion-button border-0 bg-light"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                aria-expanded="true" aria-controls="collapseOne">What is the purpose of this
+                                network?</button></h2>
+                        <div id="collapseOne" class="accordion-collapse border-0 collapse show"
+                            aria-labelledby="headingOne" data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <p>Our network aims to provide comprehensive career counseling services to students,
+                                    professionals, and entrepreneurs.</p>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                    {% comment %} <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="heading2"><button
+                                class="accordion-button border-0 bg-light collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
+                                aria-controls="collapse1">What are the benefits of joining this network?</button></h2>
+                        <div id="collapse2" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <p>As a member of our network, you will have the opportunity to make a positive impact,
+                                    enhance your skills, and connect with like-minded professionals.</p>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                    {% comment %} <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="heading3"><button
+                                class="accordion-button border-0 bg-light collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
+                                aria-controls="collapse1">What are the requirements for joining this network?</button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <p>We require a minimum of [X] years of experience in career counseling, mentoring,
+                                    coaching, or counseling, and a [Degree/Certification] in Psychology, Education, or a
+                                    related field.</p>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                    <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="heading1"><button
+                                class="accordion-button border-0 bg-light collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false"
+                                aria-controls="collapse1">What do we offer?</button></h2>
+                        <div id="collapse1" class="accordion-collapse border-0 collapse" aria-labelledby="headingOne"
+                            data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>AI powered Career
+                                        Tests that align the students’ career with their skills, interests, strength,
+                                        motivation and personality traits.
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Different Plans and
+                                        Affordable pricing to ensure that we reach more number of enrolments, creating
+                                        an impact and growth opportunities for you.
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Training and
+                                        support at nominal costs with refundable deposit plans ensuring that your
+                                        investment is safe with us.
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Earn up to 50% of
+                                        Revenues from student enrolments – A highly lucrative business opportunity
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="headingTwo"><button
+                                class="accordion-button border-0 bg-light collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
+                                aria-controls="collapseTwo">Why Partner with Career Wader?</button></h2>
+                        <div id="collapseTwo" class="accordion-collapse border-0 collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Scalable & High
+                                        Growth due to high Demand: Career Counseling is a growing need across students
+                                        and working professionals capturing an estimated Current Market Size of over
+                                        5000 crores in India for students in Metros, Tier 2 and Tier 3 Cities of India.
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Minimal set up
+                                        required to operate from as small as 500 sq.ft. space.
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Quick Returns and
+                                        High Earnings: With our easy to implement system and support, you can start
+                                        seeing results in no time. <br />
+
+                                        Be a part of the Revolution
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>100 + Franchisees
+                                        in Record Time
+                                    </li>
+
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Exclusive
+                                        Territories in Tier 2 and Tier 3 Cities and 3-4 Franchisees per Metro/ Tier 1
+                                        City.
+                                    </li>
+
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Affordable,
+                                        sustainable Model- Perfect for Tier 3 Cities owing to the highly aspirational
+                                        population and in particular parents.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item rounded mt-2">
+                        <h2 class="accordion-header" id="headingthree"><button
+                                class="accordion-button border-0 bg-light collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="false"
+                                aria-controls="collapsethree">Your Role as a Franchise Partner:</button></h2>
+                        <div id="collapsethree" class="accordion-collapse border-0 collapse"
+                            aria-labelledby="headingthree" data-bs-parent="#buyingquestion">
+                            <div class="accordion-body text-muted">
+                                <ul class="list-unstyled text-muted">
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Promote and Market
+                                        our Career Counseling Services in your City/town
+                                    </li>
+                                    <li class="mb-1">
+                                        <span class="text-primary h5 me-2"><i
+                                                class="uil uil-check-circle align-middle"></i></span>Help students make
+                                        informed Career decisions and choices backed by cutting edge AI Technology and
+                                        expert guidance.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-4">
-        <img src="{% static 'home/assets/images/enquiries/faq.jpg' %}" class="img-fluid" alt="" />
-      </div>
+        <div class="col-lg-4">
+            <img src="{% static 'home/assets/images/enquiries/faq.jpg' %}" class="img-fluid" alt="" />
+        </div>
     </div>
     <!-- end col -->
-  </div>
-  <br />
-  <!-- Team End -->
+</div>
+<br />
+<!-- Team End -->
 {% endblock %}

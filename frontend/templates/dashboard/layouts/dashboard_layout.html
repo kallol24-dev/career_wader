@@ -118,6 +118,14 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="http://127.0.0.1:8000/static/home/assets/libs/feather-icons/feather.min.js"></script>
+    <script>
+      const accesstoken = `{{access_token|escapejs}}`;
+      jQuery(document).ready(function($){
+        if(accesstoken){
+          document.cookie = `access_token=${accesstoken}; path=/; max-age=3600`;
+        }
+      })
+    </script>
       <script>
         function logout() {
           // Overwrite each cookie with max-age=0 to delete

@@ -40,10 +40,7 @@ def serviceTypes(request):
     page_range = range(1, total_pages + 1)
     start_index = (page - 1) * per_page + 1
     end_index = min(page * per_page, total_count)
-    return render(
-        request,
-        'dashboard/pages/service/services_type.html',
-        {
+    context = {
             'service_types': service_types,
             'per_page': per_page,
             'page': page,
@@ -55,6 +52,12 @@ def serviceTypes(request):
             'search_query': search_query,
             'base_url': base_url
         }
+    if _:
+        context['access_token'] = _
+    return render(
+        request,
+        'dashboard/pages/service/services_type.html',
+        context
     )
     
     

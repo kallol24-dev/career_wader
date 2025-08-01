@@ -13,9 +13,9 @@ def refreshNewtoken(refresh_token):
     return None
 
 def refresh_access_token(refresh_token):
-    response = requests.post(f'{settings.API_BASE_URL}api/token/refresh/', data={'refresh_token': refresh_token})
+    response = requests.post(f'{settings.API_BASE_URL}api/token/refresh/', data={'refresh': refresh_token})
     if response.ok:
-        return response.json().get('access_token')
+        return response.json().get('access')
     return None
 
 def fetch_api_data_with_new_token(request, api_url, response_override=None):

@@ -3,6 +3,7 @@ from django.shortcuts import render #type:ignore
 from django.http import JsonResponse, HttpResponse #type:ignore
 from django.conf import settings #type:ignore
 from views.dashboard.services import services_list
+from django.shortcuts import redirect
 import requests
 import json
 
@@ -64,9 +65,12 @@ def cart(request):
         cookie_value = request.COOKIES.get('setToCheckout', '')
         access_token = request.COOKIES.get('access_token', '')
         refresh_token = request.COOKIES.get('refresh_token', '')
+        img = None
         
         checkout = safe_int(cookie_value)
-        
+        if checkout is None:
+            return redirect("/")
+            
         service = {}
         data = services_list(request, None, None)
         
@@ -78,8 +82,23 @@ def cart(request):
                 service['sale_price'] = servi['sale_price']
                 service['base_price'] = servi['base_price']
                 service['description'] = [item.strip() for item in servi['description'].split('|')]
-                break
 
+                # Poster map
+                poster_map = {
+                    1: "ccss.jpg",
+                    2: "ccbp.jpg",
+                    3: "ccas.jpg",
+                    4: "iabp.jpg",
+                    5: "iaip.jpg",
+                    6: "iaap.jpg",
+                    7: "rbbp.jpg",
+                    8: "rbpp.jpg",
+                    9: "rbap.jpg"
+                }
+
+                service['poster'] = poster_map.get(servi['id'])  # set to None if not in map
+                break
+            
         context = {
             'set_to_checkout': cookie_value,
             'access_token': access_token,

@@ -54,7 +54,7 @@ urlpatterns = [
     path('api/students/', include('student.urls')),
     path("api/", include(router.urls)),
     path('api/dashboard/', include('dashboard.urls')),
-    path('api/careertest/', include('career_test.urls')),
+   #  path('api/careertest/', include('career_test.urls')),
     path('api/counselors/', include('counselor.urls')),
     path('api/services/', include('service.urls')),
     path('api/cart/', include('cart.urls')),

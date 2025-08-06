@@ -2,29 +2,32 @@
 {% load static %}
 
 {% block content %}
-  <section class="bg-half-170 bg-light d-table w-100">
-    <div class="container">
-      <div class="row mt-5 justify-content-center">
-        <div class="col-lg-12 text-center">
-          <div class="pages-heading">
-            <h4 class="title mb-0">Contact Us</h4>
-          </div>
-        </div> <!-- end col -->
-      </div>
-      <!-- end row -->
-
-      <div class="position-breadcrumb">
-        <nav aria-label="breadcrumb" class="d-inline-block">
-          <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
-            <li class="breadcrumb-item">
-              <a href="#">Page</a>
-            </li>
-            <li class="breadcrumb-item active" aria-current="page">Franchise</li>
-          </ul>
-        </nav>
-      </div>
-    </div> <!-- end container -->
-  </section>
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+    .bg-home-75vh{
+        background: url('{% static 'home/assets/images/resume-building/resume.jpg' %}') center center;
+      }
+     @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+</style>
+  <!-- Hero Start -->
+    <section class="home-slider position-relative">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="bg-home-75vh d-flex align-items-center"
+                        style="background: url('{% static '/home/assets/images/about/about-bg.jpg'%}') center center;">
+                        <div class="bg-overlay1"></div>
+                    </div><!--end slide-->
+                </div>
+            </div>
+        </div>
+    </section><!--end section-->
   <!-- end section -->
   <!-- Hero End -->
 
@@ -40,7 +43,7 @@
 
   <!-- About Start -->
   <section class="section">
-    <div class="container mt-100 mt-60">
+    <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-5 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
           <div class="card custom-form rounded border-0 shadow p-4">
@@ -131,7 +134,7 @@
               </div>
               <div class="flex-1 content">
                 <h6 class="title fw-bold mb-0">Email</h6>
-                <a href="mailto:info@careerwader.in" class="text-primary">info@careerwader.in</a>
+                <a href="mailto:info@careerwader.in" class="text-primary">support@careerwader.in</a>
               </div>
             </div>
 

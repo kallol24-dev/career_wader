@@ -67,15 +67,11 @@ class FranchiseApprovalUpdateView(generics.UpdateAPIView):
     def generate_franchise_uuid(self,city):
         city = city.strip()
         city_code = CITY_CODES.get(city)
-        print(city_code)
         if not city_code:
             raise ValueError(f"No city code found for '{city}'")
-
-        # Get the latest franchise with that city code prefix
         last_franchise = Franchise.objects.filter(
             franchaise_uuid__startswith=f"CW{city_code}"
         ).order_by('-franchaise_uuid').first()
-        print(last_franchise)
         if last_franchise:
             try:
                 last_serial = int(last_franchise.franchaise_uuid[-4:])
@@ -85,73 +81,71 @@ class FranchiseApprovalUpdateView(generics.UpdateAPIView):
             last_serial = 0
 
         new_serial = f"{last_serial + 1:04d}" 
-        print(f"CW{city_code}{new_serial}")# Pad with 0s
         return f"CW{city_code}{new_serial}"
     
     def perform_update(self, serializer):
-        instance = serializer.instance
-        was_approved = instance.is_approved  # Before update
-        franchise_uuid = instance.franchaise_uuid
-        print(instance.user.city)
-       
-        city = instance.user.city.strip()
-        print("City:", city)
-        code = self.generate_franchise_uuid(city)
-        print(code)
-        
-        if not code:
-            raise ValueError(f"No city code found for '{city}'")
+        try:
+            instance = serializer.instance
+            was_approved = instance.is_approved  # Before update
+            franchise_uuid = instance.franchaise_uuid
+            city = instance.user.city.strip()
+            code = self.generate_franchise_uuid(city)
+            
+            if not code:
+                raise ValueError(f"No city code found for '{city}'")
 
-        user = instance.user
-        
-        full_name = f"{user.first_name.strip()} {user.last_name.strip()}"
-        # create a unique franchise UUID if not already set
-        if not franchise_uuid:
-            franchise_uuid = code
-            instance.franchaise_uuid = franchise_uuid
-            instance.save(update_fields=['franchaise_uuid'])
-        # Save updated data
-        updated_instance = serializer.save()
+            user = instance.user
+            
+            full_name = f"{user.first_name.strip()} {user.last_name.strip()}"
+            # create a unique franchise UUID if not already set
+            if not franchise_uuid:
+                franchise_uuid = code
+                instance.franchaise_uuid = franchise_uuid
+                instance.save(update_fields=['franchaise_uuid'])
+            # Save updated data
+            updated_instance = serializer.save()
 
-        now_approved = updated_instance.is_approved
+            now_approved = updated_instance.is_approved
 
-        # Case 1: Just approved
-        if not was_approved and now_approved:
-            subject = "Franchise Approval - Career Wader"
-            html_body = f"""
-            <h2>Dear {full_name},</h2>
-            <p>Congratulations! Your franchise account has been <strong>Approved</strong>.</p>
-            <p> This is your Unique Identification Code {franchise_uuid}<p>
-            <p>You can now log in to your dashboard and start onboarding students.</p>
-            <br>
-            <p>Regards,<br>Career Wader Team</p>
-            """
+            # Case 1: Just approved
+            if not was_approved and now_approved:
+                subject = "Franchise Approval - Career Wader"
+                html_body = f"""
+                <h2>Dear {full_name},</h2>
+                <p>Congratulations! Your franchise account has been <strong>Approved</strong>.</p>
+                <p> This is your Unique Identification Code {franchise_uuid}<p>
+                <p>You can now log in to your dashboard and start onboarding students.</p>
+                <br>
+                <p>Regards,<br>Career Wader Team</p>
+                """
 
-        # Case 2: Just blocked
-        elif was_approved and not now_approved:
-            subject = "Franchise Account Blocked - Career Wader"
-            html_body = f"""
-            <h2>Dear {full_name},</h2>
-            <p>Your franchise account has been <strong>blocked</strong> by the admin.</p>
-            <p>You will no longer have access to your dashboard or onboarding features.</p>
-            <p>If you believe this was a mistake, please contact support.</p>
-            <br>
-            <p>Regards,<br>Career Wader Team</p>
-            """
+            # Case 2: Just blocked
+            elif was_approved and not now_approved:
+                subject = "Franchise Account Blocked - Career Wader"
+                html_body = f"""
+                <h2>Dear {full_name},</h2>
+                <p>Your franchise account has been <strong>blocked</strong> by the admin.</p>
+                <p>You will no longer have access to your dashboard or onboarding features.</p>
+                <p>If you believe this was a mistake, please contact support.</p>
+                <br>
+                <p>Regards,<br>Career Wader Team</p>
+                """
 
-        else:
-            # No change in approval status, skip email
-            return
+            else:
+                # No change in approval status, skip email
+                return
 
-        # Send email
-        email_sent, msg = send_zeptomail(
-            to_email=user.email,
-            subject=subject,
-            html_body=html_body
-        )
+            # Send email
+            email_sent, msg = send_zeptomail(
+                to_email=user.email,
+                subject=subject,
+                html_body=html_body
+            )
 
-        if not email_sent:
-            raise EmailSendFailed(detail=f"Failed to send email: {msg}")
+            if not email_sent:
+                raise EmailSendFailed(detail=f"Failed to send email: {msg}")
+        except Exception as e:
+            print(e)
 
 class AdminOnlyTestView(APIView):
     permission_classes = [IsAuthenticated, IsAdmin]

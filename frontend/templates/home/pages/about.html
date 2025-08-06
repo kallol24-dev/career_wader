@@ -3,29 +3,52 @@
 {% load static %}
 
 {% block content %}
-
-<section class="bg-half-170 bg-light d-table w-100">
-    <div class="container">
-        <div class="row mt-5 justify-content-center">
-            <div class="col-lg-12 text-center">
-                <div class="pages-heading">
-                    <h4 class="title mb-0"> About Us </h4>
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+    .bg-home-75vh{
+        background: url('{% static 'home/assets/images/about/about-bg.jpg' %}') center center;
+      }
+     @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+</style>
+  <!-- Hero Start -->
+  <section class="home-slider position-relative">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="3000">
+          <div class="bg-home-75vh d-flex align-items-center" style="">
+            <div class="bg-overlay1"></div>
+            <div class="container">
+                {% comment %} <div class="row mt-5 justify-content-center">
+                    <div class="col-lg-12 text-center">
+                        <div class="pages-heading">
+                            <h4 class="title mb-0"> About Us </h4>
+                        </div>
+                    </div>  <!--end col-->
+                </div><!--end row-->
+                
+                <div class="position-breadcrumb">
+                    <nav aria-label="breadcrumb" class="d-inline-block">
+                        <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
+                            
+                            <li class="breadcrumb-item"><a href="{% url 'franchise' %}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                        </ul>
+                    </nav>
                 </div>
-            </div>  <!--end col-->
-        </div><!--end row-->
-        
-        <div class="position-breadcrumb">
-            <nav aria-label="breadcrumb" class="d-inline-block">
-                <ul class="breadcrumb rounded shadow mb-0 px-4 py-2">
-                    
-                    <li class="breadcrumb-item"><a href="{% url 'franchise' %}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
-                </ul>
-            </nav>
+            </div> <!--end container--> {% endcomment %}
+          </div>
+          <!-- end slide -->
         </div>
-    </div> <!--end container-->
-</section><!--end section-->
-<!-- Hero End -->
+      </div>
+    </div>
+  </section>
+
 
 <!-- Shape Start -->
 <div class="position-relative">

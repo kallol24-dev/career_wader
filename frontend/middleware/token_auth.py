@@ -8,7 +8,7 @@ class TokenAuthMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
         # URLs that require authentication
-        self.protected_paths = ['/dashboard/', '/short-enquiry-display/','/student-display/']  # Add yours here
+        self.protected_paths = ['/dashboard/']  # Add yours here
 
     def __call__(self, request):
         # Only check for protected paths

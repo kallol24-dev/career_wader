@@ -2,6 +2,12 @@ from django.shortcuts import render #type:ignore
 from django.http import HttpResponse #type:ignore
 
 
+def allEnquiries(request):
+    try:
+        return render(request, 'home/pages/enquiries/all-enquiries.html')
+    except Exception as e:
+        return HttpResponse(f"An error occured {e}", status = 500)
+
 def enquiryBanglore(request):
     try:
         return render(request, 'home/pages/enquiries/bangalore.html')

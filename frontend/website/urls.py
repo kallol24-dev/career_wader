@@ -42,7 +42,7 @@ urlpatterns = [
     path('interview-assistance/',mainPageViews.interviewAssistance, name = "interviewAssistance"),
     path('career-counselling/',mainPageViews.careerCounsellings, name = "careerCounselling"),
     path('resume-building/',mainPageViews.resumeBuilding, name = "resumeBuilding"),
-    path('testimonial/',mainPageViews.testimonial, name = "testimonial"),
+    # path('testimonial/',mainPageViews.testimonial, name = "testimonial"),
     path('study-abroad/',mainPageViews.studyAbroad, name = "studyAbroad"),
     path('career-counsellor/',mainPageViews.careerCounsellor, name = "careerCounsellor"),
     path('education-loan/',mainPageViews.eduLoan, name = "eduLoan"),
@@ -53,6 +53,7 @@ urlpatterns = [
     
     
     #enquiries
+    path('enquiries/all/',enquiryViews.allEnquiries, name = 'allEnquiries'),
     path('enquiries/bangalore/',enquiryViews.enquiryBanglore, name = 'enquiryBanglore'),
     path('enquiries/mysore/',enquiryViews.enquiryMysore, name = 'enquiryMysore'),
     path('enquiries/hubli/',enquiryViews.enquiryHubli, name = 'enquiryHubli'),
@@ -133,7 +134,7 @@ urlpatterns = [
     path('franchise-display/',usersViews.franchiseDisplay, name = 'franchiseDisplay'),
     path('franchise-onboarded/',usersViews.franchiseOnboarded, name = 'franchiseOnboarded'),
     path('state-franchisee/',usersViews.state_franchise_display, name = 'state_franchise_display'),
-    path("shortlisted-franchisee/", usersViews.franchise_approval, name="shortlisted_franchisee"),
+    path("franchisee-approval/", usersViews.franchise_approval, name="shortlisted_franchisee"),
     
     #student
     path('student-display/',usersViews.studentDisplay, name = 'studentDisplay'),

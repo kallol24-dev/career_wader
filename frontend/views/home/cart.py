@@ -67,21 +67,66 @@ def cart(request):
         
         checkout = safe_int(cookie_value)
         
+        service = {}
+        data = services_list(request, None, None)
         
-        data = services_list(request,None,None)
-        services = data['results']
+        for servi in data['results']:
+            if servi['id'] == checkout:
+                service['id'] = servi['id']
+                service['type_name'] = servi['type_name']
+                service['name'] = servi['name']
+                service['sale_price'] = servi['sale_price']
+                service['base_price'] = servi['base_price']
+                service['description'] = [item.strip() for item in servi['description'].split('|')]
+                break
+
         context = {
             'set_to_checkout': cookie_value,
             'access_token': access_token,
             'api_base_url': settings.API_BASE_URL,
-            'services':services,
-            'checkout':checkout
+            'service': service,
+            'checkout': checkout
         }
 
         return render(request, 'home/pages/cart.html', context)
     
     except Exception as e:
         return HttpResponse(f"An error occurred: {e}", status=500)
+    
+# def cart(request):
+#     try:
+#         cookie_value = request.COOKIES.get('setToCheckout', '')
+#         access_token = request.COOKIES.get('access_token', '')
+#         refresh_token = request.COOKIES.get('refresh_token', '')
+        
+#         checkout = safe_int(cookie_value)
+        
+#         service = {}
+#         data = services_list(request,None,None)
+#         for servi in data['results']:
+#             if servi.id == checkout:
+#                 service.id = servi.id
+#                 service.type_name = servi.type_name
+#                 service.name = servi.name
+#                 service.sale_price = servi.sale_price
+#                 service.base_price = servi.base_price
+#                 service.description = servi.description.split('|')
+                
+
+
+#         services = data['results']
+#         context = {
+#             'set_to_checkout': cookie_value,
+#             'access_token': access_token,
+#             'api_base_url': settings.API_BASE_URL,
+#             'services':service,
+#             'checkout':checkout
+#         }
+
+#         return render(request, 'home/pages/cart.html', context)
+    
+#     except Exception as e:
+#         return HttpResponse(f"An error occurred: {e}", status=500)
     
     
 @csrf_exempt

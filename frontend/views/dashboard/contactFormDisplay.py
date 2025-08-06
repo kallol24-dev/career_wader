@@ -15,7 +15,7 @@ def contactFromFDetails(request):
     query_params = {'page': page, 'page_size': per_page, 'search': search_query}
     
     response_override = HttpResponse()
-    data = contact_form_list(request, query_params, response_override)
+    data, _ = contact_form_list(request, query_params, response_override)
 
     enquiries = data['results']
     total_count = data['count']
@@ -26,11 +26,7 @@ def contactFromFDetails(request):
     page_range = range(1, total_pages + 1)
     start_index = (page - 1) * per_page + 1
     end_index = min(page * per_page, total_count)
-
-    return render(
-        request,
-        'dashboard/pages/contactForm/contactForm.html',
-        {
+    context = {
             'enquiries': enquiries,
             'per_page': per_page,
             'page': page,
@@ -42,6 +38,12 @@ def contactFromFDetails(request):
             'search_query': search_query,
             'base_url': base_url
         }
+    if _:
+            context['access_token'] = _
+    return render(
+        request,
+        'dashboard/pages/contactForm/contactForm.html',
+        context
     )
     
 def contact_form_list(request, query_params=None, response_override=None):
@@ -56,7 +58,7 @@ def contact_form_list(request, query_params=None, response_override=None):
     if not response.ok:
         raise Exception(f"API Error: {response.status_code}")
 
-    return response.json()
+    return response.json(), _
     
 @csrf_exempt
 def mark_as_read(request):

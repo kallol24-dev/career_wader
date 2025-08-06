@@ -50,10 +50,7 @@ def studentDisplay(request):
     page_range = range(1, total_pages + 1)
     start_index = (page - 1) * per_page + 1
     end_index = min(page * per_page, total_count)
-    return render(
-        request,
-        'dashboard/pages/users/studentDisplay.html',
-        {
+    context = {
             'students': all_students,
             'states': getStates(),
             'per_page': per_page,
@@ -66,6 +63,12 @@ def studentDisplay(request):
             'search_query': search_query,
             'base_url': base_url
         }
+    if _:
+        context['access_token'] = _
+    return render(
+        request,
+        'dashboard/pages/users/studentDisplay.html',
+        
     )
     
 def franchiseDisplay(request):
@@ -113,11 +116,7 @@ def franchiseDisplay(request):
     page_range = range(1, total_pages + 1)
     start_index = (page - 1) * per_page + 1
     end_index = min(page * per_page, total_count)
-
-    return render(
-        request,
-        'dashboard/pages/users/franchisee/franchiseDisplay.html',
-        {
+    context = {
             'franchises': all_franchises,
             'states': getStates(),
             'per_page': per_page,
@@ -130,12 +129,15 @@ def franchiseDisplay(request):
             'search_query': search_query,
             'base_url': base_url
         }
+    if _:
+        context['access_token'] = _
+    return render(
+        request,
+        'dashboard/pages/users/franchisee/franchiseDisplay.html',
+        context
     )
     
-def franchiseOnboarded(request):
-    access_token = request.COOKIES.get('access_token')
-    if not access_token:
-        return HttpResponse("Access token not found", status=401)
+def franchiseOnboarded(request):    
     page = int(request.GET.get('page', 1))
     per_page = int(request.GET.get('perPage', 10))
     state = request.GET.get('state')
@@ -179,10 +181,7 @@ def franchiseOnboarded(request):
     page_range = range(1, total_pages + 1)
     start_index = (page - 1) * per_page + 1
     end_index = min(page * per_page, total_count)
-    return render(
-        request,
-        'dashboard/pages/users/franchisee/franchiseOnboarded.html',
-        {
+    context = {
             'franchises': all_franchises,
             'states': getStates(),
             'per_page': per_page,
@@ -193,22 +192,26 @@ def franchiseOnboarded(request):
             'total_pages': total_pages,
             'page_range':page_range,
             'search_query': search_query,
-            'base_url': base_url
+            'base_url': base_url,
         }
+    if _:
+        context['access_token'] = _
+    return render(
+        request,
+        'dashboard/pages/users/franchisee/franchiseOnboarded.html',
+        context
     )
 
 def state_franchise_display(request):
     states = getStates()
     state_data = []
     total_count = 0
-
-    # Create empty dummy response to pass for cookie setting
-    response = HttpResponse()
-
+    dummy_response = HttpResponse()
+    access_token = None
     try:
         for state in states:
             query_url = f"{settings.API_BASE_URL}api/franchise/?state={state}"
-            api_response, _ = fetch_api_data_with_new_token(request, query_url, response_override=response)
+            api_response, token = fetch_api_data_with_new_token(request, query_url, response_override=dummy_response)
 
             if not api_response:
                 state_data.append({'state': state, 'count': 0})
@@ -219,22 +222,32 @@ def state_franchise_display(request):
                 count = data.get('count', 0)
                 total_count += count
                 state_data.append({'state': state, 'count': count})
+
+                if token:
+                    access_token = token
             else:
                 state_data.append({'state': state, 'count': 0})
+
     except Exception as e:
         return HttpResponse(f"An error occurred: {e}", status=500)
 
-    # Render template manually and assign content to the response
+    # Prepare context
+    context = {
+        'state_data': state_data,
+        'total_count': total_count,
+    }
+    if access_token:
+        context['access_token'] = access_token
+
+    # Render template manually
     rendered_html = render_to_string(
         'dashboard/pages/users/franchisee/stateWiseFranchise.html',
-        {
-            'state_data': state_data,
-            'total_count': total_count,
-        },
+        context,
         request=request
     )
-    response.content = rendered_html
-    return response
+
+    dummy_response.content = rendered_html
+    return dummy_response
 
     
 @csrf_exempt

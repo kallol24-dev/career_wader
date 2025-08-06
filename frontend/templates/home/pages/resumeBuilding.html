@@ -346,7 +346,9 @@
                     <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
                   </li>
                 </ul>
-                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                 <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="7">Book
+                                Now</a>
+                {% comment %} <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a> {% endcomment %}
               </div>
             </div>
           </div>
@@ -382,7 +384,9 @@
                     <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>X
                   </li>
                 </ul>
-                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                 <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="8">Book
+                                Now</a>
+                {% comment %} <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a> {% endcomment %}
               </div>
             </div>
           </div>
@@ -414,7 +418,9 @@
                     <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>A Cover Letter
                   </li>
                 </ul>
-                <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a>
+                {% comment %} <a href="javascript:void(0)" class="btn btn-primary mt-4">Buy Now</a> {% endcomment %}
+                <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="9">Book
+                                Now</a>
               </div>
             </div>
           </div>
@@ -428,4 +434,14 @@
   </section>
   <!-- end section -->
    {% include 'home/pages/blog-common.html' %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    $('.setTocheckout').click(function () {
+        let plan = $(this).data('plan');
+        console.log(plan);
+        document.cookie = `setToCheckout=${plan}; path=/; max-age=3600`;
+        window.location.href = `https://careerwader.in/cart`
+    })
+</script>
 {% endblock %}

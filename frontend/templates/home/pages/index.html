@@ -4,6 +4,23 @@
 
 <section class="bg-half-260 bg-light d-table w-100 bg-linear-gradient-primary">
     <div class="container">
+        <div class="social-sidebar">
+            <a href="https://www.facebook.com/people/Career-Wader/61578334921458/" target="_blank" class="social-icon facebook">
+            <i class='bx bxl-facebook'></i>
+            </a>
+            {% comment %} <a href="https://twitter.com" target="_blank" class="social-icon twitter">
+            <i class='bx bxl-twitter'></i>
+            </a> {% endcomment %}
+            <a href="https://www.linkedin.com/in/career-wader-5791b5375/" target="_blank" class="social-icon linkedin">
+            <i class='bx bxl-linkedin'></i>
+            </a>
+            <a href="https://www.instagram.com/careerwader?igsh=MTd5aTMzYjBsd2wwcA==" target="_blank" class="social-icon instagram">
+            <i class='bx bxl-instagram'></i>
+            </a>
+            <a href="https://youtube.com/@careerwader?si=iLTvBCbp77B0dYcV" target="_blank" class="social-icon youtube">
+            <i class='bx bxl-youtube'></i>
+            </a>
+        </div>
         <div class="row mt-5 justify-content-center">
             <div class="col-lg-12 text-center">
                 <div class="title-heading">
@@ -371,11 +388,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city1.jpg'%}"
+                                    <a href="{%url 'enquiryBanglore' %}"><img src="{%static 'home/assets/images/career-cities/city1.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Bangalore</a>
+                                        <a href="{%url 'enquiryBanglore' %}" class="text-dark h6 name">Bangalore</a>
 
                                     </div>
                                 </div>
@@ -397,11 +414,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city2.jpg'%}"
+                                    <a href="{%url 'enquiryMysore' %}"><img src="{%static 'home/assets/images/career-cities/city2.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Mysore</a>
+                                        <a href="{%url 'enquiryMysore' %}" class="text-dark h6 name">Mysore</a>
 
                                     </div>
                                 </div>
@@ -423,11 +440,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city3.jpg'%}"
+                                    <a href="{%url 'enquiryMumbai' %}"><img src="{%static 'home/assets/images/career-cities/city3.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Mumbai</a>
+                                        <a href="{%url 'enquiryMumbai' %}" class="text-dark h6 name">Mumbai</a>
 
                                     </div>
                                 </div>
@@ -449,11 +466,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city4.jpg'%}"
+                                    <a href="{%url 'enquiryKolkata' %}"><img src="{%static 'home/assets/images/career-cities/city4.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Kolkata</a>
+                                        <a href="{%url 'enquiryKolkata' %}" class="text-dark h6 name">Kolkata</a>
 
                                     </div>
                                 </div>
@@ -475,11 +492,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city5.jpg'%}"
+                                    <a href="{%url 'enquiryHyderabad' %}"><img src="{%static 'home/assets/images/career-cities/city5.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Hyderabad</a>
+                                        <a href="{%url 'enquiryHyderabad' %}" class="text-dark h6 name">Hyderabad</a>
 
                                     </div>
                                 </div>
@@ -501,11 +518,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city6.jpg'%}"
+                                    <a href="{%url 'enquiryChennai' %}"><img src="{%static 'home/assets/images/career-cities/city6.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Chennai</a>
+                                        <a href="{%url 'enquiryChennai' %}" class="text-dark h6 name">Chennai</a>
 
                                     </div>
                                 </div>
@@ -527,11 +544,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city7.jpg'%}"
+                                    <a href="{%url 'enquiryDelhi' %}"><img src="{%static 'home/assets/images/career-cities/city7.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Delhi</a>
+                                        <a href="{%url 'enquiryDelhi' %}" class="text-dark h6 name">Delhi</a>
 
                                     </div>
                                 </div>
@@ -553,11 +570,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city8.jpg'%}"
+                                    <a href="{%url 'enquiryLucknow' %}"><img src="{%static 'home/assets/images/career-cities/city8.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Lucknow</a>
+                                        <a href="{%url 'enquiryLucknow' %}" class="text-dark h6 name">Lucknow</a>
 
                                     </div>
                                 </div>
@@ -579,11 +596,11 @@
 
                             <div class="content mt-3">
                                 <div class="position-relative text-center">
-                                    <a href="#"><img src="{%static 'home/assets/images/career-cities/city9.jpg'%}"
+                                    <a href="{%url 'enquiryPune' %}"><img src="{%static 'home/assets/images/career-cities/city9.jpg'%}"
                                             class="avatar avatar-small rounded-pill shadow" alt=""></a>
 
                                     <div class="author mt-2">
-                                        <a href="#" class="text-dark h6 name">Pune</a>
+                                        <a href="{%url 'enquiryPune' %}" class="text-dark h6 name">Pune</a>
 
                                     </div>
                                 </div>
@@ -594,8 +611,78 @@
             </div>
         </div><!--end col-->
         <div class="col-12 mt-5 text-center ">
-                <a href="javascript:void(0)" class="btn btn-outline-primary rounded"><i class="uil uil-store"></i> View All</a>
+                <a href="{% url 'allEnquiries' %}" class="btn btn-outline-primary rounded"><i class="uil uil-store"></i> View All</a>
             </div>
+    </div><!--end row-->
+</div><!--end container-->
+<div class="container mt-100 mt-60">
+    <div class="row align-items-center">
+        <div class="col-lg-5 col-md-6">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                    <div
+                        class="card work-container work-primary work-modern overflow-hidden rounded border-0 shadow-md">
+                        <div class="card-body p-0">
+                            <img src="{% static 'home/assets/images/index/studyabroad/eduprenuer.jpg'%}"
+                                class="img-fluid" alt="work-image">
+                            <div class="overlay-work"></div>
+
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-6 col-6">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
+                            <div
+                                class="card work-container work-primary work-modern overflow-hidden rounded border-0 shadow-md">
+                                <div class="card-body p-0">
+                                    <img src="{% static 'home/assets/images/index/studyabroad/eduprenuer1.jpg'%}"
+                                        class="img-fluid" alt="work-image">
+                                    <div class="overlay-work"></div>
+
+                                </div>
+                            </div>
+                        </div><!--end col-->
+
+
+                    </div><!--end row-->
+                </div><!--end col-->
+            </div><!--end row-->
+        </div><!--end col-->
+
+        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
+            <div class="ms-lg-4">
+                <div class="section-title">
+                    <div class="alert alert-pills shadow text-dark" role="alert">
+                        <span class="content">
+                            Unfold your path to
+                            <span class="text-primary">success with</span> our Career Counseling Franchise Opportunity!
+                        </span>
+                    </div>
+                    <h4 class="title mb-4 mt-3">BECOME AN EDUPRENUER TODAY</h4>
+
+                    <span class="text-primary fw-bold">Are you looking to build a rewarding enterprise (business) while
+                        helping students to shape their future?</span>
+
+
+
+
+
+                    <p class="text-muted para-desc mb-0">Join our Career Counseling Platform – the AI based solution
+                        transforming career choices for students across India.</p>
+                </div>
+
+
+
+
+
+                <div class="mt-4 pt-2">
+                    <a href="{% url 'franchise' %}" class="btn btn-outline-primary rounded"><i
+                            class="uil uil-store"></i> Know more</a>
+                </div>
+            </div>
+        </div>
     </div><!--end row-->
 </div><!--end container-->
 <div class="container pb-5 mb-md-5 mt-100 mt-60">
@@ -1006,77 +1093,6 @@
 <div class="container mt-100 mt-60">
     <div class="row align-items-center">
         <div class="col-lg-5 col-md-6">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-                    <div
-                        class="card work-container work-primary work-modern overflow-hidden rounded border-0 shadow-md">
-                        <div class="card-body p-0">
-                            <img src="{% static 'home/assets/images/index/studyabroad/eduprenuer.jpg'%}"
-                                class="img-fluid" alt="work-image">
-                            <div class="overlay-work"></div>
-
-                        </div>
-                    </div>
-                </div><!--end col-->
-
-                <div class="col-lg-6 col-6">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
-                            <div
-                                class="card work-container work-primary work-modern overflow-hidden rounded border-0 shadow-md">
-                                <div class="card-body p-0">
-                                    <img src="{% static 'home/assets/images/index/studyabroad/eduprenuer1.jpg'%}"
-                                        class="img-fluid" alt="work-image">
-                                    <div class="overlay-work"></div>
-
-                                </div>
-                            </div>
-                        </div><!--end col-->
-
-
-                    </div><!--end row-->
-                </div><!--end col-->
-            </div><!--end row-->
-        </div><!--end col-->
-
-        <div class="col-lg-7 col-md-6 mt-4 mt-lg-0 pt-2 pt-lg-0">
-            <div class="ms-lg-4">
-                <div class="section-title">
-                    <div class="alert alert-pills shadow text-dark" role="alert">
-                        <span class="content">
-                            Unfold your path to
-                            <span class="text-primary">success with</span> our Career Counseling Franchise Opportunity!
-                        </span>
-                    </div>
-                    <h4 class="title mb-4 mt-3">BECOME AN EDUPRENUER TODAY</h4>
-
-                    <span class="text-primary fw-bold">Are you looking to build a rewarding enterprise (business) while
-                        helping students to shape their future?</span>
-
-
-
-
-
-                    <p class="text-muted para-desc mb-0">Join our Career Counseling Platform – the AI based solution
-                        transforming career choices for students across India.</p>
-                </div>
-
-
-
-
-
-                <div class="mt-4 pt-2">
-                    <a href="{% url 'franchise' %}" class="btn btn-outline-primary rounded"><i
-                            class="uil uil-store"></i> Know more</a>
-                </div>
-            </div>
-        </div>
-    </div><!--end row-->
-</div><!--end container-->
-
-<div class="container mt-100 mt-60">
-    <div class="row align-items-center">
-        <div class="col-lg-5 col-md-6">
             <div class="position-relative">
                 <img src="{% static 'home/assets/images/index/studyabroad/map.png'%}"
                     class="rounded img-fluid mx-auto d-block " alt="">
@@ -1357,7 +1373,7 @@
 
 <section>
     <div class="container mt-100 mt-60">
-        <div class="container mt-100 mt-60">
+        <div class="container mt-100 mt-60 d-none" >
             <div class="row justify-content-center">
                 <div class="col-12 text-center">
                     <div class="section-title mb-4 pb-2">
@@ -1492,7 +1508,7 @@
                                 <hr>
                                 <li class="h6 text-muted mb-0" style="font-weight: 400; height: 135px;"></li>
                             </ul>
-                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="2">Buy
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="2">Book
                                 Now</a>
                         </div>
                     </div>
@@ -1534,7 +1550,7 @@
                                 <hr>
                                 <li class="h6 text-muted mb-0" style="font-weight: 400; height: 95px;"></li>
                             </ul>
-                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="1">Buy
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="1">Book
                                 Now</a>
                         </div>
                     </div>
@@ -1574,12 +1590,12 @@
                                 <li class="h6 text-muted mb-0" style="font-weight: 400;">
                                     <span class="icon h5 me-2">
                                         <i class="uil uil-check-circle align-middle"></i>
-                                    </span>Handholding for six months,upto a maximum of twelve sessions to develop a
+                                    </span>Handholding for six months,upto a maximum of twelve sessions to dssevelop a
                                     long term Study/ Learning and Careers roadmap and plan of execution.
                                 </li>
 
                             </ul>
-                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="3">Buy
+                            <a href="javascript:void(0)" class="btn btn-primary mt-4 setTocheckout" data-plan="3">Book
                                 Now</a>
                         </div>
                     </div>

@@ -25,6 +25,9 @@
     .form-check-input.form-check-input:checked {
       display: none !important;
     }
+    .form-check{
+      padding-left:0px;
+    }
   </style>
   <section class="bg-half-170 bg-light d-table w-100">
     <div class="container">
@@ -65,48 +68,41 @@
   <!-- Login Form Start -->
   <section class="section">
     <div class="container mt-100 mt-60">
-      <div class="row align-items-center">
-        <div class="col-lg-12 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
-          {% comment %} {% for service in services %}
-            {% endcomment %}
-            {% comment %} {% if service.id == checkout %}
-              {% endcomment %}
-              <div class="row">
-                <div class="col-lg-6 col-lg-4 mb-4">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="selected_service" id="service_{{ service.id }}" value="{{ service.id }}" checked onchange="setSelectedService(this.value)" />
-                    <label class="form-check-label w-100" for="service_{{ service.id }}">
-                      <h4>{{ service.type_name }}</h4>
-                      <h2><span class="icon h5 me-2 text-primary"><i class="uil uil-check-circle align-middle"></i></span>{{ service.name }}</h2>
-                      <span class="text-muted">
-                        Price: Rs.{% if service.sale_price %}
-                          <span class="text-danger fw-bold">{{ service.sale_price }}</span>
-                          <del class="text-muted small ms-1">{{ service.base_price }}</del>
-                        {% else %}
-                          {{ service.base_price }}
-                        {% endif %}
-                      </span>
-                    </label>
-                  </div>
-                </div>
-                <div class="col-lg-6 col-lg-4 mb-4">
-                  <ul class="list-group">
-                    {% for description in service.description %}
-                      <li class="list-group-item">
-                        <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>
-                        {{ description }}
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-              {% comment %}
-            {% endif %} {% endcomment %}
-            {% comment %}
-          {% endfor %} {% endcomment %}
+      <div class="row">
+        <div class="col-lg-6 col-lg-4 mb-4">
+          <div class="form-check">
+            {% if service.poster %}
+              <img src="{% static 'home/assets/images/cart/'|add:service.poster %}" style="width:100%;object-fit:contain;" />
+            {% endif %}
+            <input class="form-check-input" type="radio" name="selected_service" id="service_{{ service.id }}" value="{{ service.id }}" checked onchange="setSelectedService(this.value)" />
+            <label class="form-check-label w-100" for="service_{{ service.id }}">
+              {% comment %} <h4>{{ service.type_name }}</h4> {% endcomment %}
+              {% comment %} <h3><span class="icon h3 me-2 text-primary"><i class="uil uil-check-circle align-middle"></i></span>{{ service.name }}</h3> {% endcomment %}
+              <h4 class="text-muted mt-4">
+                Price: Rs.{% if service.sale_price %}
+                  <span class="text-danger fw-bold">{{ service.sale_price }}</span>
+                  <del class="text-muted small ms-1">{{ service.base_price }}</del>
+                {% else %}
+                  {{ service.base_price }}
+                {% endif %}
+              </h4>
+            </label>
+          </div>
         </div>
+        <div class="col-lg-6 col-lg-4 mb-4">
+          <ul class="list-group">
+            {% for description in service.description %}
+              <li class="list-group-item">
+                <span class="icon h5 me-2"><i class="uil uil-check-circle align-middle"></i></span>
+                {{ description }}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-lg-6 col-md-6 mt-4 mt-sm-0 pt-2 pt-sm-0 order-2 order-md-1">
-          <div class="card custom-form rounded border-0 p-4">
+          <div class="card custom-form rounded border-0 p-4" style="background:#B2DEC6;">
             <div class="app-brand justify-content-center mb-4">
               <a href="{% url 'franchise' %}" class="app-brand-link gap-2"><span class="app-brand-logo demo"><img src="{% static 'home/assets/images/logo-dark.png' %}" alt="Career Wader" /></span></a>
             </div>
@@ -143,7 +139,7 @@
                   </div>
                   <div class="col-md-6">
                     <div class="mb-3">
-                      <label class="form-label text-white">State</label>
+                      <label class="form-label">State</label>
                       <div class="form-icon position-relative">
                         <i data-feather="map-pin" class="fea icon-sm icons"></i>
                         <select name="state" class="form-control ps-5" id="state" required>
@@ -215,7 +211,7 @@
         <!-- end col -->
 
         <div class="col-lg-6 col-md-6 order-1 order-md-2">
-          <div class="title-heading ms-lg-4">
+          <div class="title-heading rounded p-4 w-100" style="background:#E3E297;">
             <h4 class="mb-4">Complete your payment by filling the details 🚀</h4>
 
             <p class="text-muted">Join our Career Counseling Platform – the AI based solution transforming career choices for students across India.</p>

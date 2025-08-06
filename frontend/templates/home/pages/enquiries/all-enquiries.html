@@ -1,0 +1,906 @@
+{% extends "home/layouts/indexbase.html" %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    body > header{
+        background-color:#ffffff!important;
+    }
+    .bg-home-75vh{
+        background: url('{% static 'home/assets/images/resume-building/resume.jpg' %}') center center;
+      }
+     @media screen and (max-width: 768px){
+        .bg-home-75vh{
+            background-position: 0% 50%!important;
+        }
+    }
+</style>
+<!-- Hero Start -->
+    <section class="home-slider position-relative">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <div class="bg-home-75vh d-flex align-items-center"
+                        style="background: url('{% static '/home/assets/images/about/about-bg.jpg'%}') center center;">
+                        <div class="bg-overlay1"></div>
+                    </div><!--end slide-->
+                </div>
+            </div>
+        </div>
+    </section><!--end section-->
+    <div class="position-relative">
+        <div class="shape overflow-hidden text-color-white">
+            <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 filters-group-wrap">
+                    <div class="filters-group">
+                        <ul class="container-filter list-inline mb-0 filter-options text-center">
+
+                            <li class="list-inline-item categories-name border text-dark rounded active"
+                                data-group="all">All</li>
+                            <li class="list-inline-item categories-name border text-dark rounded "
+                                data-group="karnataka">Karnataka</li>
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="ap">Andhra
+                                Pradesh</li>
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="tamil">
+                                Tamil Nadu</li>
+                            <li class="list-inline-item categories-name border text-dark rounded"
+                                data-group="telangana">Telangana</li>
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="mp">MP
+                            </li>
+
+                            <li class="list-inline-item categories-name border text-dark rounded"
+                                data-group="maharashtra">Maharashtra</li>
+
+                            <li class="list-inline-item categories-name border text-dark rounded" data-group="others">
+                                Others</li>
+                        </ul>
+                    </div>
+                </div><!--end col-->
+            </div><!--end row-->
+
+            <div id="grid" class="row">
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/bangalore-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryBanglore' %}" class="badge badge-link bg">Karnataka</a>
+
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Bangalore</a></h5>
+
+                                <a href="{% url 'enquiryBanglore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/kolkata-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryKolkata' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Kolkata</a></h5>
+
+                                <a href="{% url 'enquiryKolkata' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/chennai-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryChennai' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Chennai</a></h5>
+
+                                <a href="{% url 'enquiryChennai' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/mysore1.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMysore' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Mysore</a></h5>
+
+                                <a href="{% url 'enquiryMysore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/dharwad.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryHubli' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Hubli / Dharwad</a></h5>
+
+                                <a href="{% url 'enquiryHubli' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/mangalore1.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMangalore' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">HVAC Counselors
+                                        in Mangalore</a></h5>
+
+                                <a href="{% url 'enquiryMangalore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/shimoga1.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryShimoga' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Shimoga</a></h5>
+
+                                <a href="{% url 'enquiryShimoga' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/davangere1.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryDevangere' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Davangere</a></h5>
+
+                                <a href="{% url 'enquiryDevangere' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/tumkur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryTumkur' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Tumkur</a></h5>
+
+                                <a href="{% url 'enquiryTumkur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/gulbarga-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryGulbarga' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Gulbarga</a></h5>
+
+                                <a href="{% url 'enquiryGulbarga' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/bidar-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryBidar' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Bidar</a></h5>
+
+                                <a href="{% url 'enquiryBidar' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["karnataka"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/belgaum-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryBelgaum' %}" class="badge badge-link bg">Karnataka</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Belagavi</a></h5>
+
+                                <a href="{% url 'enquiryBelgaum' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <!--ap-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/vijayawada-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryVijaywada' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Vijayawada</a></h5>
+
+                                <a href="{% url 'enquiryVijaywada' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/visakhapatnam-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryVishakapatnam' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Visakhapatnam</a></h5>
+
+                                <a href="{% url 'enquiryVishakapatnam' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/nellore-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryNellore' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Nellore</a></h5>
+
+                                <a href="{% url 'enquiryNellore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/kurnool-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryKurnool' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Kurnool</a></h5>
+
+                                <a href="{% url 'enquiryKurnool' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/anantapur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryAnantapur' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Anantapur</a></h5>
+
+                                <a href="{% url 'enquiryAnantapur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/eluru-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryEluru' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Eluru</a></h5>
+
+                                <a href="{% url 'enquiryEluru' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/rajahmundry-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryRajahmundry' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Rajahmundry</a></h5>
+
+                                <a href="{% url 'enquiryRajahmundry' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["ap"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/tirupati-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryTirupati' %}" class="badge badge-link bg">Andhra Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Tirupati</a></h5>
+
+                                <a href="{% url 'enquiryTirupati' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--ap-->
+
+                <!--Tamil Nadu-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/chennai-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryChennai' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Chennai</a></h5>
+
+                                <a href="{% url 'enquiryChennai' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/coimbatore-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryCoimbatore' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Coimbatore</a></h5>
+
+                                <a href="{% url 'enquiryCoimbatore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/salem-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquirySalem' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Salem</a></h5>
+
+                                <a href="{% url 'enquirySalem' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/erode-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryErode' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Erode</a></h5>
+
+                                <a href="{% url 'enquiryErode' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/hosur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryHosur' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Hosur</a></h5>
+
+                                <a href="{% url 'enquiryHosur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/trichy-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryTrichy' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Trichy</a></h5>
+
+                                <a href="{% url 'enquiryTrichy' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["tamil"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/madurai-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMadurai' %}" class="badge badge-link bg">Tamil Nadu</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Madurai</a></h5>
+
+                                <a href="{% url 'enquiryMadurai' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Tamil Nadu-->
+
+                <!--Telangana-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["telangana"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/hyderabad-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryHyderabad' %}" class="badge badge-link bg">Telangana</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Hyderabad</a></h5>
+
+                                <a href="{% url 'enquiryHyderabad' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["telangana"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/nizamabad-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryNizamabad' %}" class="badge badge-link bg">Telangana</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Nizamabad</a></h5>
+
+                                <a href="{% url 'enquiryNizamabad' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["telangana"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/warangal-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryWarangal' %}" class="badge badge-link bg">Telangana</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Warangal</a></h5>
+
+                                <a href="{% url 'enquiryWarangal' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["telangana"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/mahabubnagar-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMahabubnagar' %}" class="badge badge-link bg">Telangana</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Mahabubnagar</a></h5>
+
+                                <a href="{% url 'enquiryMahabubnagar' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Telangana-->
+
+                <!--MP-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["mp"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/bhopal-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryBhopal' %}" class="badge badge-link bg">Madhya Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Bhopal</a></h5>
+
+                                <a href="{% url 'enquiryBhopal' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["mp"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/indore-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryIndore' %}" class="badge badge-link bg">Madhya Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Indore</a></h5>
+
+                                <a href="{% url 'enquiryIndore' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["mp"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/gwalior-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryGwalior' %}" class="badge badge-link bg">Madhya Pradesh</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Gwalior</a></h5>
+
+                                <a href="{% url 'enquiryGwalior' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--MP-->
+
+                <!--Maharashtra-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["maharashtra"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/mumbai-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMumbai' %}" class="badge badge-link bg">Maharashtra</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Mumbai</a></h5>
+
+                                <a href="{% url 'enquiryMumbai' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["maharashtra"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/pune-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryPune' %}" class="badge badge-link bg">Maharashtra</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Pune</a></h5>
+
+                                <a href="{% url 'enquiryPune' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["maharashtra"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/nagpur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryNagpur' %}" class="badge badge-link bg">Maharashtra</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Nagpur</a></h5>
+
+                                <a href="{% url 'enquiryNagpur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["maharashtra"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/nashik-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryNashik' %}" class="badge badge-link bg">Maharashtra</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Nashik</a></h5>
+
+                                <a href="{% url 'enquiryNashik' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["maharashtra"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/kolhapur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryKolhapur' %}" class="badge badge-link bg">Maharashtra</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Kolhapur</a></h5>
+
+                                <a href="{% url 'enquiryKolhapur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Maharashtra-->
+
+                <!--Others-->
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/delhi-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryDelhi' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Delhi</a></h5>
+
+                                <a href="{% url 'enquiryDelhi' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/gurgaon-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryGurgaon' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Gurgaon</a></h5>
+
+                                <a href="{% url 'enquiryGurgaon' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/jaipur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryJaipur' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Jaipur</a></h5>
+
+                                <a href="{% url 'enquiryJaipur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/udaipur-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryUdaipur' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Udaipur</a></h5>
+
+                                <a href="{% url 'enquiryUdaipur' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/lucknow-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryLucknow' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Lucknow</a></h5>
+
+                                <a href="{% url 'enquiryLucknow' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/prayagraj-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryPrayagraj' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Prayagraj</a></h5>
+
+                                <a href="{% url 'enquiryPrayagraj' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/meerut-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryMeerut' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Meerut</a></h5>
+
+                                <a href="{% url 'enquiryMeerut' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mt-4 pt-2 picture-item" data-groups='["others"]'>
+                    <div
+                        class="card blog border-0 work-container work-primary work-classic shadow rounded-md overflow-hidden">
+                        <img src="{% static '/home/assets/images/all-enquiries/bhubaneswar-counselors.jpg'%}" class="img-fluid work-image" alt="">
+                        <div class="card-body">
+                            <div class="content">
+                                <a href="{% url 'enquiryBhubaneswar' %}" class="badge badge-link bg">Others</a>
+                                <h5 class="mt-3"><a href="page-case-detail.html" class="text-dark title">Counselors in
+                                        Bhubaneswar</a></h5>
+
+                                <a href="{% url 'enquiryBhubaneswar' %}" class="link h6">Read More <i
+                                        class="uil uil-angle-right-b align-middle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--Others-->
+
+
+
+            </div><!--end row-->
+        </div><!--end container-->
+    </section><!--end section-->
+    {% endblock %}

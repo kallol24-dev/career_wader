@@ -1,54 +1,59 @@
-from django.db import models
+from django.db import models #type:ignore
 
-# Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-    
-class TestType(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='test_types')
+    description = models.TextField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
 
 class Question(models.Model):
-    USER_GROUP_CHOICES = [
-        ('class_8_10', 'Class 8–10'),
-        ('class_11_12', 'Class 11–12'),
-        ('college', 'College Students'),
-        ('working', 'Working Professionals'),
-    ]
+    class UserGroup(models.TextChoices):
+        CLASS_8_10 = 'class_8_10', 'Class 8-10'
+        CLASS_11_12 = 'class_11_12', 'Class 11-12'
+        COLLEGE = 'college', 'College Students'
+        WORKING = 'working', 'Working Professionals'
 
-    question = models.TextField()
-    category = models.ForeignKey(TestType, on_delete=models.CASCADE, related_name="questions")
-    user_group = models.CharField(max_length=20, choices=USER_GROUP_CHOICES)
-    order = models.PositiveIntegerField(default=0)
+    class QuestionType(models.TextChoices):
+        MCQ = 'mcq', 'Multiple Choice'
+        TRUE_FALSE = 'true_false', 'True/False'
+        SHORT_ANSWER = 'short', 'Short Answer'
+        MATCHING = 'matching', 'Matching'
+        FILL_BLANK = 'fill_blank', 'Fill in the Blank'
+
+    question_text = models.TextField()
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, related_name="questions")
+    user_group = models.CharField(max_length=20, choices=UserGroup.choices)
+    question_type = models.CharField(max_length=20, choices=QuestionType.choices, default=QuestionType.MCQ)
+    explanation = models.TextField(blank=True, null=True)
+    correct_answer = models.TextField(blank=True, null=True)
+    true_false_answer = models.BooleanField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True )
     
-     # Options A-D (text or image)
-    option_a_text = models.CharField(max_length=255, blank=True, null=True)
-    option_a_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
+    def __str__(self):
+        return f"{self.get_user_group_display()} - Q{self.id}"
 
-    option_b_text = models.CharField(max_length=255, blank=True, null=True)
-    option_b_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
+    def save(self, *args, **kwargs):
+        # Clear unnecessary correct answer fields based on question type
+        if self.question_type != Question.QuestionType.TRUE_FALSE:
+            self.true_false_answer = None
+        if self.question_type not in [Question.QuestionType.SHORT_ANSWER, Question.QuestionType.FILL_BLANK]:
+            self.correct_answer = None
+        super().save(*args, **kwargs)
 
-    option_c_text = models.CharField(max_length=255, blank=True, null=True)
-    option_c_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
+class Option(models.Model):
+    question = models.ForeignKey(Question, related_name='options', on_delete=models.CASCADE)
+    label = models.CharField(max_length=1, choices=[(chr(i), chr(i)) for i in range(65, 91)])  # A-Z
+    text = models.TextField(blank=True, null=True)
+    match_text = models.TextField(blank=True, null=True)  # For matching questions
+    image = models.ImageField(upload_to='option_images/', blank=True, null=True)
+    is_correct = models.BooleanField(default=False)  # For MCQ and matching questions
 
-    option_d_text = models.CharField(max_length=255, blank=True, null=True)
-    option_d_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
-    
-    option_e_text = models.CharField(max_length=255, blank=True, null=True)
-    option_e_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
-    
-    option_f_text = models.CharField(max_length=255, blank=True, null=True)
-    option_f_image = models.ImageField(upload_to='option_images/', blank=True, null=True)
-
-    correct_answer = models.CharField(max_length=1, choices=[
-        ('A', 'A'), ('B', 'B'), ('C', 'C'), ('D', 'D'), ('E', 'E'),('F','F')
-    ])
+    class Meta:
+        unique_together = ('question', 'label')
 
     def __str__(self):
-        return f"{self.user_group} - {self.order}. {self.text}"
+        return f"Q{self.question.id} - {self.label}"

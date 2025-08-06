@@ -53,6 +53,7 @@ urlpatterns = [
     
     
     #enquiries
+    path('enquiries/all/',enquiryViews.allEnquiries, name = 'allEnquiries'),
     path('enquiries/bangalore/',enquiryViews.enquiryBanglore, name = 'enquiryBanglore'),
     path('enquiries/mysore/',enquiryViews.enquiryMysore, name = 'enquiryMysore'),
     path('enquiries/hubli/',enquiryViews.enquiryHubli, name = 'enquiryHubli'),
